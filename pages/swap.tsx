@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import React from 'react'
+import SwapInput from '../components/SwapInput'
 
 const Swap = () => {
   return (
@@ -30,25 +31,13 @@ const Swap = () => {
         <div className="h-auto w-4/6 rounded-lg bg-[#1F2237] shadow-lg">
           <div className="h-full px-3 py-4 text-white">
             <div className="font-bold">Swap</div>
-            <div className="h-full px-2 py-2">
-              <div className="p-1 text-sm font-semibold">From:</div>
-              <div className="rounded-lg  shadow-[inset_0.5px_1px_5px_rgba(0,0,0,0.3)]">
-                <div className="px-4 py-2">0.0</div>
-              </div>
-              <div className="p-1 text-xs font-light">Balance:</div>
-            </div>
+            <SwapInput title="From" value={0.0} />
             <div className="flex justify-center">
               <button className="">
                 <Image src={'/SwapButton.svg'} height={30} width={30} />
               </button>
             </div>
-            <div className="h-full px-2 py-2">
-              <div className="p-1 text-sm font-semibold">To:</div>
-              <div className="rounded-lg  shadow-[inset_0.5px_1px_5px_rgba(0,0,0,0.3)]">
-                <div className="px-4 py-2">0.0</div>
-              </div>
-              <div className="p-1 text-xs  font-light">Balance:</div>
-            </div>
+            <SwapInput title="To" value={0.0} />
           </div>
         </div>
       </div>
