@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import React from 'react'
-import SwapInput from '../components/SwapInput'
+import SwapMenu from '../components/SwapMenu'
+import SwapInput from '../components/SwapMenu/SwapInput'
 
 const Swap = () => {
   return (
@@ -28,18 +29,7 @@ const Swap = () => {
       </div>
 
       <div className="mt-10 flex items-center justify-center">
-        <div className="h-auto w-4/6 rounded-lg bg-[#1F2237] shadow-lg">
-          <div className="h-full px-3 py-4 text-white">
-            <div className="font-bold">Swap</div>
-            <SwapInput title="From" value={0.0} />
-            <div className="flex justify-center">
-              <button className="">
-                <Image src={'/SwapButton.svg'} height={30} width={30} />
-              </button>
-            </div>
-            <SwapInput title="To" value={0.0} />
-          </div>
-        </div>
+        <SwapMenu />
       </div>
     </div>
   )
