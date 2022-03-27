@@ -3,22 +3,22 @@ import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
 import { Wallet } from '../SwapMenu/SwapInput'
 
-interface ConnectedWalletsDropDownProps {
+interface SwapWalletDropdownProps {
   wallets: Wallet[]
 }
 
-export default function ConnectedWalletsDropDown({
+export default function SwapWalletDropdown({
   wallets,
-}: ConnectedWalletsDropDownProps) {
+}: SwapWalletDropdownProps) {
   const [selected, setSelected] = useState<Wallet>()
 
   return (
-    <div className="w-32 text-white sm:block sm:w-44">
+    <div className="w-36 text-white">
       <Listbox value={selected} onChange={setSelected}>
         <div className="relative">
-          <Listbox.Button className="relative w-full cursor-default rounded-lg bg-[#7408F8] py-2.5 pl-3 pr-10 text-left text-xs text-button-blue shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-blue-500">
+          <Listbox.Button className="relative w-full cursor-default rounded-lg border border-button-blue bg-opacity-20 pl-3 pr-10 text-left text-xs text-button-blue focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-blue-500">
             <span className="block truncate">
-              {selected ? selected.name : 'Connected Wallets'}
+              {selected ? selected.name : 'Select a wallet'}
             </span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
               <SelectorIcon

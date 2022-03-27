@@ -1,10 +1,10 @@
+import React from 'react'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
-import ConnectedWalletsDropDown from '../ConnectedWalletsDropDown'
-import NetworksDropDown from '../NetworksDropDown'
+import NetworksDropdown from '../NetworksDropdown'
 import { Wallet } from '../SwapMenu/SwapInput'
+import WalletsDropdown from '../WalletsDropdown'
 
 const networks = [{ name: 'Ethereum' }, { name: 'Polygon' }]
 var sampleUserWallets: Wallet[] = [{ name: 'Wallet A' }, { name: 'Wallet B' }]
@@ -12,8 +12,8 @@ var sampleUserWallets: Wallet[] = [{ name: 'Wallet A' }, { name: 'Wallet B' }]
 const Navbar = () => {
   const { theme, setTheme } = useTheme()
   return (
-    <div className="w-full bg-button-blue text-white dark:bg-transparent">
-      <div className="flex justify-evenly">
+    <div className="w-full text-white">
+      <div className="bg-button-blues flex justify-evenly dark:bg-transparent">
         <div className="relative  my-2 h-12 w-12 flex-none hover:animate-spin-once">
           <div className="flex justify-center">
             <Link href="/">
@@ -39,8 +39,8 @@ const Navbar = () => {
 
         <div className="fixed inset-x-0 bottom-0 flex w-auto flex-row-reverse items-center justify-between bg-[#24264C] py-2 px-3 sm:static sm:flex-row sm:bg-transparent">
           <span className="flex w-full flex-row justify-end gap-2">
-            <NetworksDropDown networks={networks} />
-            <ConnectedWalletsDropDown wallets={sampleUserWallets} />
+            <NetworksDropdown networks={networks} />
+            <WalletsDropdown wallets={sampleUserWallets} />
           </span>
           <button
             type="button"

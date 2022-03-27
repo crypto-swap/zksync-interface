@@ -7,13 +7,13 @@ interface Network {
   name: string
 }
 
-interface NetworksDropDownProps {
+interface NetworksDropdownProps {
   networks: Network[]
 }
 
-export default function NetworksDropDown({
+export default function NetworksDropdown({
   networks,
-}: NetworksDropDownProps): JSX.Element {
+}: NetworksDropdownProps): JSX.Element {
   const [selected, setSelected] = useState<Network>()
 
   return (
