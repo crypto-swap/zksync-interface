@@ -4,8 +4,8 @@ import SwapInput from './SwapInput'
 
 const SwapMenu = () => {
   return (
-    <div className="h-auto w-4/6 rounded-lg bg-[#1F2237] shadow-lg">
-      <div className="h-full px-3 py-4 text-white">
+    <div className="light:bg-[#F4F4F5] h-auto w-4/6 rounded-lg shadow-lg dark:bg-[#1F2237]">
+      <div className="light:text-black h-full px-3 py-4 dark:text-white">
         <div className="font-bold">Swap</div>
         <SwapInput title="From" value={0.0} />
         <div className="flex justify-center">
