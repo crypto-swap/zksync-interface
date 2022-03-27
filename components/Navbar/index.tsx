@@ -37,7 +37,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="fixed inset-x-0 bottom-0 flex w-auto flex-row-reverse items-center justify-between bg-button-blue py-2 px-3 dark:bg-[#24264C] sm:static sm:flex-row sm:bg-transparent">
+        <div className="fixed inset-x-0 bottom-0 flex w-auto flex-row-reverse items-center justify-between bg-button-blue py-2 px-3 dark:bg-[#24264C] sm:static sm:flex-row sm:bg-transparent dark:sm:bg-transparent">
           <span className="flex w-full flex-row justify-end gap-2">
             <NetworksDropdown networks={networks} />
             <WalletsDropdown wallets={sampleUserWallets} />
