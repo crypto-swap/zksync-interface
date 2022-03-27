@@ -4,7 +4,7 @@ import SwapInput from './SwapInput'
 
 const SwapMenu = () => {
   return (
-    <div className="light:bg-[#F4F4F5] h-auto w-4/6 rounded-lg shadow-lg dark:bg-[#1F2237]">
+    <div className="light:bg-[#F4F4F5] h-auto w-5/6 max-w-md rounded-xl shadow-lg dark:bg-[#1F2237]">
       <div className="light:text-black h-full px-3 py-4 dark:text-white">
         <div className="font-bold">Swap</div>
         <SwapInput title="From" value={0.0} />
