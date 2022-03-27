@@ -1,4 +1,11 @@
 import React from 'react'
+import DropDown from '../DropDown'
+
+export interface Wallet {
+  name: string
+}
+
+var sampleUserWallets: Wallet[] = [{ name: 'Wallet A' }, { name: 'Wallet B' }]
 
 interface SwapInputProps {
   title: string
@@ -8,7 +15,11 @@ interface SwapInputProps {
 const SwapInput = ({ title, value }: SwapInputProps): JSX.Element => {
   return (
     <div className="h-full p-2">
-      <div className="p-1 text-sm font-semibold">{title}:</div>
+      <div className="flex">
+        <div className="w-16 p-1 text-sm font-semibold">{title}:</div>
+        <DropDown wallets={sampleUserWallets} />
+      </div>
+
       <div className="rounded-lg  shadow-[inset_0.5px_1px_5px_rgba(0,0,0,0.3)]">
         <div className="px-4 py-2">{value.toFixed(1)}</div>
       </div>
