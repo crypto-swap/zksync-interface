@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <div className="w-full bg-button-blue dark:bg-transparent">
       <div className="flex px-5 py-3">
-        <div className="relative mr-2 h-16 w-16">
+        <div className="relative mr-2 h-16 w-16 ease-in-out hover:animate-spin-once">
           <Link href="/">
             <Image src="/logo.png" layout="fill" objectFit="contain" />
           </Link>
