@@ -7,7 +7,9 @@ const Navbar = () => {
     <div className="w-full">
       <div className="flex p-5">
         <div className="relative mr-2 h-16 w-16">
-          <Image src="/logo.png" layout="fill" objectFit="contain" />
+          <Link href="/">
+            <Image src="/logo.png" layout="fill" objectFit="contain" />
+          </Link>
         </div>
 
         <div className="mx-10 flex grow items-center gap-5 ">
