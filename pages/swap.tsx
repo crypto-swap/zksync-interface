@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import React from 'react'
+import Navbar from '../components/Navbar'
 import SwapMenu from '../components/SwapMenu'
 import SwapInput from '../components/SwapMenu/SwapInput'
 
@@ -16,17 +17,7 @@ const Swap = () => {
           rel="stylesheet"
         />
       </Head>
-      <div className="flex p-5">
-        <span className="relative mr-2 w-8">
-          <Image src="/logo.png" layout="fill" objectFit="contain" />
-        </span>
-
-        <div className="flex gap-5">
-          <span className="text-[#7D7E90]">Trade</span>
-          <span className="text-[#7D7E90]">Pool</span>
-          <span className="text-[#7D7E90]">Docs</span>
-        </div>
-      </div>
+      <Navbar />
 
       <div className="mt-10 flex items-center justify-center">
         <SwapMenu />
