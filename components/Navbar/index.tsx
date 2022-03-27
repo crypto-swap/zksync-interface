@@ -1,9 +1,9 @@
 import React from 'react'
-import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import Link from 'next/link'
-import NetworksDropdown from '../NetworksDropdown'
+import { useTheme } from 'next-themes'
 import { Wallet } from '../SwapMenu/SwapInput'
+import NetworksDropdown from '../NetworksDropdown'
 import WalletsDropdown from '../WalletsDropdown'
 
 const networks = [{ name: 'Ethereum' }, { name: 'Polygon' }]
@@ -13,7 +13,7 @@ const Navbar = () => {
   const { theme, setTheme } = useTheme()
   return (
     <div className="w-full text-white">
-      <div className="bg-button-blues flex justify-evenly dark:bg-transparent">
+      <div className="flex justify-evenly bg-button-blue dark:bg-transparent">
         <div className="relative  my-2 h-12 w-12 flex-none hover:animate-spin-once">
           <div className="flex justify-center">
             <Link href="/">
@@ -21,7 +21,7 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
-        <div className="hidden items-center p-3 text-2xl md:flex">
+        <div className="hidden items-center p-3 text-2xl font-medium md:flex">
           CryptoSwap
         </div>
 
@@ -37,7 +37,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="fixed inset-x-0 bottom-0 flex w-auto flex-row-reverse items-center justify-between bg-[#24264C] py-2 px-3 sm:static sm:flex-row sm:bg-transparent">
+        <div className="fixed inset-x-0 bottom-0 flex w-auto flex-row-reverse items-center justify-between bg-button-blue py-2 px-3 dark:bg-[#24264C] sm:static sm:flex-row sm:bg-transparent">
           <span className="flex w-full flex-row justify-end gap-2">
             <NetworksDropdown networks={networks} />
             <WalletsDropdown wallets={sampleUserWallets} />
