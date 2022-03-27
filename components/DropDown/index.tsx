@@ -11,10 +11,10 @@ export default function DropDown({ wallets }: DropDownProps) {
   const [selected, setSelected] = useState<Wallet>()
 
   return (
-    <div className="w-36 text-black">
+    <div className="w-36 text-white">
       <Listbox value={selected} onChange={setSelected}>
         <div className="relative">
-          <Listbox.Button className="sm:text-x relative w-full cursor-default rounded-lg bg-white py-1 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300">
+          <Listbox.Button className="w-fullpy-1 relative cursor-default rounded-lg border border-button-blue bg-opacity-20 pl-3 pr-10 text-left text-button-blue shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-blue-500 sm:text-xs">
             <span className="block truncate">
               {selected ? selected.name : 'Select wallets'}
             </span>
@@ -37,7 +37,7 @@ export default function DropDown({ wallets }: DropDownProps) {
                   key={walletIdx}
                   className={({ active }) =>
                     `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                      active ? 'bg-amber-100 text-amber-900' : 'text-gray-900'
+                      active ? 'bg-blue-100 text-white' : 'text-gray-900'
                     }`
                   }
                   value={wallet}
@@ -52,7 +52,7 @@ export default function DropDown({ wallets }: DropDownProps) {
                         {wallet.name}
                       </span>
                       {selected ? (
-                        <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
+                        <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-button-blue">
                           <CheckIcon className="h-5 w-5" aria-hidden="true" />
                         </span>
                       ) : null}

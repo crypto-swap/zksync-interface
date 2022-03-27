@@ -8,6 +8,9 @@ module.exports = {
       fontFamily: {
         sans: ['Montserrat', 'Helvetica', 'Arial', 'sans-serif'],
       },
+      colors: {
+        'button-blue': '#2669F5',
+      },
     },
   },
   plugins: [],
