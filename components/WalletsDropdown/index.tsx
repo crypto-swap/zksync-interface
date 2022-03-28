@@ -13,14 +13,14 @@ export default function WalletsDropdownProps({
   const [selected, setSelected] = useState<Wallet>()
 
   return (
-    <div className="w-32 text-white sm:block sm:w-44">
+    <div className="flex w-36 items-center justify-center sm:w-44">
       <Listbox value={selected} onChange={setSelected}>
-        <div className="relative">
-          <Listbox.Button className="relative w-full cursor-default rounded-lg bg-[#7408F8] py-2.5 pl-3 pr-10 text-left text-xs text-button-blue shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-blue-500">
-            <span className="block truncate">
+        <div className="w-full">
+          <Listbox.Button className="relative flex w-full cursor-default  items-center justify-center  rounded-lg bg-[#7408F8] py-2.5 text-left text-xs text-button-blue shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-blue-500 sm:pl-3 sm:pr-10">
+            <span className="flex w-full items-center justify-center text-center">
               {selected ? selected.name : 'Connected Wallets'}
             </span>
-            <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+            <span className="pointer-events-none absolute inset-y-0 right-0 hidden  items-center sm:flex sm:pr-2">
               <SelectorIcon
                 className="h-5 w-5 text-gray-400"
                 aria-hidden="true"

@@ -17,20 +17,19 @@ export default function NetworksDropdown({
   const [selected, setSelected] = useState<Network>()
 
   return (
-    <div className="w-32 sm:w-44">
+    <div className="flex w-36 items-center justify-center sm:w-44">
       <Listbox value={selected} onChange={setSelected}>
-        <div className="relative text-[#4E84D0]">
-          <Listbox.Button className="relative w-full cursor-default rounded-lg bg-[#091B32] py-2.5 pl-3 pr-10 text-left text-xs shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300">
-            <span className="block truncate">
-              <div className="flex gap-1">
-                <Image src="/networks-logo.svg" height={15} width={15} />
-                {selected ? selected.name : 'Networks'}
-              </div>
+        <div className="w-full rounded-xl border border-button-blue text-[#4E84D0]">
+          <Listbox.Button className="relative flex w-full cursor-default items-center justify-center  rounded-xl bg-[#091B32] py-2.5 text-xs shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:pl-3 sm:pr-10 sm:text-left">
+            <span className="flex w-full items-center justify-center text-center">
+              <Image src="/networks-logo.svg" height={15} width={15} />
+              {selected ? selected.name : 'Networks'}
             </span>
-            <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+
+            <span className="pointer-events-none absolute inset-y-0 right-0 hidden items-center sm:flex sm:pr-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-black"
+                className="h-6 w-6 text-button-blue"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -50,7 +49,7 @@ export default function NetworksDropdown({
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+            <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md  py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
               {networks.map((network, networkIdx) => (
                 <Listbox.Option
                   key={networkIdx}
