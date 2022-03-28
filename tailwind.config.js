@@ -12,6 +12,10 @@ module.exports = {
       colors: {
         'button-blue': '#2669F5',
       },
+      animation: {
+        // Bounces for a total of 5 seconds
+        'spin-once': 'spin 1s ease-in-out 1',
+      },
     },
   },
   plugins: [],

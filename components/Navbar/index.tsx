@@ -1,41 +1,57 @@
-import { useTheme } from 'next-themes'
+import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import { useTheme } from 'next-themes'
+import { Wallet } from '../SwapMenu/SwapInput'
+import NetworksDropdown from '../NetworksDropdown'
+import WalletsDropdown from '../WalletsDropdown'
+
+const networks = [{ name: 'Ethereum' }, { name: 'Polygon' }]
+var sampleUserWallets: Wallet[] = [{ name: 'Wallet A' }, { name: 'Wallet B' }]
 
 const Navbar = () => {
-  const { systemTheme, theme, setTheme } = useTheme()
+  const { theme, setTheme } = useTheme()
   return (
-    <div className="w-full bg-button-blue dark:bg-transparent">
-      <div className="flex px-5 py-3">
-        <div className="relative mr-2 h-16 w-16">
+    <div className="relative flex justify-between bg-black text-white dark:bg-transparent">
+      <div className="flex items-center justify-center p-3">
+        <div className="relative h-12 w-12  flex-none hover:animate-spin-once">
           <Link href="/">
             <Image src="/logo.png" layout="fill" objectFit="contain" />
           </Link>
         </div>
+        <div className="hidden items-center text-2xl font-medium md:flex">
+          CryptoSwap
+        </div>
+      </div>
 
-        <div className="mx-10 flex grow items-center justify-center gap-5 sm:justify-start">
+      <div className="absolute top-1/2 left-1/2 w-auto shrink-0 -translate-x-1/2 -translate-y-1/2 transform">
+        <div className="flex grow items-center justify-center gap-5 text-[#7D7E90]">
           <Link href="/swap">
-            <a className="hover:text-white dark:marker:selection:text-[#7D7E90]">
-              Trade
-            </a>
+            <a className="hover:text-white">Trade</a>
           </Link>
           <Link href="/pool">
-            <a className="hover:text-white dark:text-[#7D7E90]">Pool</a>
+            <a className="hover:text-white">Pool</a>
           </Link>
           <Link href="/docs">
-            <a className="hover:text-white dark:text-[#7D7E90]">Docs</a>
+            <a className="hover:text-white">Whitepaper</a>
           </Link>
         </div>
+      </div>
+
+      <div className="fixed inset-x-0 bottom-0 flex w-auto flex-row-reverse items-center justify-between bg-black py-2 dark:bg-[#24264C] sm:shrink  lg:static  lg:flex-row dark:lg:bg-transparent">
+        <span className="flex w-full flex-row justify-center gap-5 sm:gap-2 ">
+          <NetworksDropdown networks={networks} />
+          <WalletsDropdown wallets={sampleUserWallets} />
+        </span>
         <button
           type="button"
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-          className="relative mr-2 flex h-16 w-16 items-center justify-center"
+          className="relative mx-3 flex h-6 w-6 items-center justify-center"
         >
           {theme === 'dark' ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className=" h-6 w-6 text-white hover:fill-white"
+              className="h-6 w-6 hover:fill-white"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -49,7 +65,7 @@ const Navbar = () => {
             </svg>
           ) : (
             <svg
-              className="h-6 w-6 hover:fill-black dark:text-black"
+              className="h-6 w-6 hover:fill-white"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

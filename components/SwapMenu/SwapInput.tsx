@@ -1,5 +1,5 @@
 import React from 'react'
-import DropDown from '../DropDown'
+import WalletsDropdownProps from '../SwapWalletDropdown'
 
 export interface Wallet {
   name: string
@@ -17,7 +17,7 @@ const SwapInput = ({ title, value }: SwapInputProps): JSX.Element => {
     <div className="h-full p-2">
       <div className="flex">
         <div className="w-16 p-1 text-sm font-semibold">{title}:</div>
-        <DropDown wallets={sampleUserWallets} />
+        <WalletsDropdownProps wallets={sampleUserWallets} />
       </div>
 
       <div className="rounded-lg  shadow-[inset_0.5px_1px_5px_rgba(0,0,0,0.3)]">
