@@ -13,13 +13,13 @@ const Navbar = () => {
   const { theme, setTheme } = useTheme()
   return (
     <div className="relative flex justify-between bg-black text-white dark:bg-transparent">
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center p-3">
         <div className="relative h-12 w-12  flex-none hover:animate-spin-once">
           <Link href="/">
             <Image src="/logo.png" layout="fill" objectFit="contain" />
           </Link>
         </div>
-        <div className="hidden items-center p-3 text-2xl font-medium md:flex">
+        <div className="hidden items-center text-2xl font-medium md:flex">
           CryptoSwap
         </div>
       </div>
@@ -38,15 +38,15 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="fixed inset-x-0 bottom-0 flex flex-row-reverse items-center justify-between bg-black px-3 py-2 dark:bg-[#24264C] sm:flex-row dark:sm:bg-transparent  lg:static lg:shrink">
-        <span className="flex w-full flex-row justify-center gap-5 ">
+      <div className="fixed inset-x-0 bottom-0 flex w-auto flex-row-reverse items-center justify-between bg-black py-2 dark:bg-[#24264C] sm:shrink  lg:static  lg:flex-row dark:lg:bg-transparent">
+        <span className="flex w-full flex-row justify-center gap-5 sm:gap-2 ">
           <NetworksDropdown networks={networks} />
           <WalletsDropdown wallets={sampleUserWallets} />
         </span>
         <button
           type="button"
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-          className="relative flex h-6 w-6 items-center justify-center sm:mx-5"
+          className="relative mx-3 flex h-6 w-6 items-center justify-center"
         >
           {theme === 'dark' ? (
             <svg
