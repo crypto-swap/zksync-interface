@@ -7,7 +7,7 @@ import SwapInput from '../components/SwapMenu/SwapInput'
 
 const Swap = () => {
   return (
-    <div className="light:bg-[#EDEDED] h-screen font-[Montserrat] dark:bg-[#1B1E31]">
+    <div className="bg-[#EFEFEF] h-screen font-[Montserrat] dark:bg-[#1B1E31]">
       <Head>
         <title>CryptoSwap</title>
         <link rel="icon" href="/favicon.ico" />
