@@ -8,9 +8,9 @@ const Navbar = () => {
   return (
     <div className="navbar">
 
-      <span className="navbar-col-1">
+      <div className="navbar-col-1">
         <a id="home-nav-link" href="/"><div className="navbar-logo"><Image src={'/logo.png'} width={40} height={40}/></div></a>
-      </span>
+      </div>
 
       <div className="navbar-col-2">       
         <a href="/swap" className="navbar-link-item">Trade</a>

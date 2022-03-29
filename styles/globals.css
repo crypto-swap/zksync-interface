@@ -135,7 +135,7 @@
         z-index: 99;
         height: 72px;
         border-radius: 12px 12px 0px 0px;
-        background-color: rgb(36, 38, 76);
+        background-color: black;
     }
 }
 
@@ -152,7 +152,7 @@
         flex-direction: row-reverse;
         -webkit-box-align: center;
         align-items: center;
-        width: 90%;
+        width: 100%;
         -webkit-box-pack: justify;
         justify-content: space-between;
     }
@@ -242,7 +242,7 @@
     -webkit-box-pack: center;
     justify-content: center;
     vertical-align: middle;
-    background-color: rgb(20, 22, 59);
+    background-color: rgba(21, 61, 111, 0.44);
     height: 40px;
     width: 40px;
     border: 1.5px solid #4b86ff;
