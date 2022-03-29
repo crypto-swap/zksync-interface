@@ -20,6 +20,10 @@ const Swap = () => {
       <Navbar />
 
       <div className="mt-10 flex items-center justify-center px-2">
+        Graphs Would Be Here
+      </div>
+
+      <div className="mt-20 flex items-center justify-center px-2">
         <SwapMenu />
       </div>
     </div>
