@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar'
 
 const Home: NextPage = () => {
   return (
-      <div className="light:bg-[#EDEDED] h-screen font-[Montserrat] dark:bg-[#1B1E31]">
+      <div className="bg-[#EFEFEF] h-screen font-[Montserrat] dark:bg-[#1B1E31]">
       <Head>
         <title>CryptoSwap</title>
         <link rel="icon" href="/favicon.ico" />
@@ -15,7 +15,13 @@ const Home: NextPage = () => {
           rel="stylesheet"
         />
       </Head>
-      <Navbar />
+      <Navbar/>
+
+      <div className='mt-20'></div>
+
+      <div className="relative max-w-2xl px-5 mx-auto sm:px-4">
+
+      </div>
 
       <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center font-[Montserrat]">
         <h1 className="text-6xl font-bold">
