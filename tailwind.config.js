@@ -10,7 +10,7 @@ module.exports = {
         sans: ['Montserrat', 'Helvetica', 'Arial', 'sans-serif'],
       },
       colors: {
-        'button-blue': '#2669F5',
+        'button-blue': '#2669F5', 
       },
       animation: {
         // Bounces for a total of 5 seconds
