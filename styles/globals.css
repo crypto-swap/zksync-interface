@@ -73,6 +73,10 @@
     transition: transform 0.3s ease 0s;
 }
 
+.navbar-logo:hover {
+    transform: rotate(360deg);
+}
+
 .navbar-link-item {
     display: flex;
     flex-flow: row nowrap;
@@ -242,7 +246,6 @@
     -webkit-box-pack: center;
     justify-content: center;
     vertical-align: middle;
-    background-color: rgba(21, 61, 111, 0.44);
     height: 40px;
     width: 40px;
     border: 1.5px solid #4b86ff;
