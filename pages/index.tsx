@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar'
 
 const Home: NextPage = () => {
   return (
-      <div className="bg-[#EFEFEF] h-screen font-[Montserrat] dark:bg-[#1B1E31]">
+    <div className="bg-[#EFEFEF] h-screen font-[Montserrat] overflow-x-hidden dark:bg-[#1B1E31] ">
       <Head>
         <title>CryptoSwap</title>
         <link rel="icon" href="/favicon.ico" />
@@ -17,13 +17,27 @@ const Home: NextPage = () => {
       </Head>
       <Navbar/>
 
-      <div className='mt-20'></div>
 
-      <div className="relative max-w-2xl px-5 mx-auto sm:px-4">
 
+      <div className="relative max-w-2xl h-screen w-screen flex items-center justify-center px-5 mx-auto sm:px-4">
+        <div className="flex flex-col space-y-10 place-items-center font-[Montserrat] ">
+          <div className='text-4xl'>
+            Crypto swaps <br></br>
+            are simple here
+          </div>
+          <button className="bg-[#4B86FF] hover:bg-[#2669F5] text-white font-bold py-2 px-4 rounded-full text-base w-9/12 dark: bg-[#2669F5] dark: hover:bg-[#4B86FF] ">
+            <a href="#tutorial">
+              Learn More Now
+            </a>
+          </button>
+        </div>
       </div>
 
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center font-[Montserrat]">
+      <div className="h-screen relative">
+        to be continued...
+      </div>
+
+      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center ">
         <h1 className="text-6xl font-bold">
           <a className="text-blue-600" href="https://nextjs.org">
             CryptoSwap!
