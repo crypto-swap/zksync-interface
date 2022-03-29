@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar'
 
 const Home: NextPage = () => {
   return (
-    <div className="bg-[#EFEFEF] h-screen font-[Montserrat] overflow-x-hidden dark:bg-[#1B1E31] ">
+    <div className="text-[#1F2237] bg-[#EFEFEF] h-screen font-[Montserrat] overflow-x-hidden dark:bg-[#1B1E31] dark:text-[#EFEFEF] ">
       <Head>
         <title>CryptoSwap</title>
         <link rel="icon" href="/favicon.ico" />
@@ -25,7 +25,7 @@ const Home: NextPage = () => {
             Crypto swaps <br></br>
             are simple here
           </div>
-          <button className="bg-[#4B86FF] hover:bg-[#2669F5] text-white font-bold py-2 px-4 rounded-full text-base w-9/12 dark: bg-[#2669F5] dark: hover:bg-[#4B86FF] ">
+          <button className="bg-[#4B86FF] hover:bg-[#2669F5] text-[#EFEFEF] font-bold py-2 px-4 rounded-full text-base w-9/12 dark: bg-[#2669F5] dark: hover:bg-[#4B86FF] ">
             <a href="#tutorial">
               Learn More Now
             </a>
