@@ -19,16 +19,14 @@ const Home: NextPage = () => {
 
       <div className="relative max-w-2xl h-screen w-screen flex items-center justify-center px-5 mx-auto sm:px-4">
         <div className="flex flex-col space-y-10 place-items-center font-[Montserrat] ">
-          <div className='text-4xl font-semibold'>
-          <p className="leading-10">Crypto swaps</p>
+          <div className='text-4xl font-semibold leading-7'>
+          <p className="leading-7">Crypto swaps</p>
           <br></br>
-          <p className="leading-10">are simple here</p>
-             <br></br>
-            
+          <p className="leading-7">are easy here</p>
           </div>
           <button className="bg-[#4B86FF] hover:bg-[#2669F5]  text-[#EFEFEF] font-bold py-2 px-4 rounded-full text-base w-9/12 dark:bg-[#2669F5] dark:hover:bg-[#4B86FF]">
             <a href="#tutorial">
-              Learn More Now
+              Get Started Now
             </a>
           </button>
         </div>
@@ -39,19 +37,21 @@ const Home: NextPage = () => {
 
       <div  className="relative flex-col items-center pt-14 lg:pt-20" >
         <div className='text-4xl text-center font-semibold leading-7'>
-          <p className="leading-10">Swapping crypto</p>
+          <p className="leading-7">Swapping crypto</p>
           <br></br>
-          <p className="leading-10">should be simple</p>
+          <p className="leading-7">should be simple</p>
         </div>
 
         <div className="">
-          <div className="flex-1 max-w-4x1 mx-auto pt-10 px-4">
-            <ul className="grid grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-4 ">
-              <li className="bg-[#363C5F]  rounded-3xl aspect-square flex flex-col items-center">
-                <div className="h-24 mt-3">
-                  <Image src={'/wallets.svg'} width={128} height={128}/>
-                </div>
-                <span className='text-xs mt-8 font-semibold text-[#EFEFEF]'>Connect Your Wallet</span>
+          <div className="flex-1 max-w-4x1 mx-auto pt-10 px-4 lg:px-[10%] xl:px-[20%]">
+            <ul className="grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-4">
+              <li className="bg-[#363C5F]  rounded-3xl square flex flex-col items-center">
+                <button className="flex flex-col items-center square object-contain justify-center p-[10%] gap-y-2">
+                  <div className="h-auto">
+                    <img src={'/wallets.svg'}/>
+                  </div>
+                  <span className='text-xs md:text-md text-center font-semibold text-[#EFEFEF]'>Connect Your Wallet</span>
+                </button>
               </li>
               <li className="">
                 <span>
@@ -63,11 +63,13 @@ const Home: NextPage = () => {
                   xd
                 </span>
               </li>
-              <li className="bg-[#363C5F]  rounded-3xl aspect-square flex flex-col items-center">
-                <div className="h-24 mt-2">
-                  <Image src={'/networks.svg'} width={128} height={128}/>
-                </div>
-                <span className='text-xs mt-9 font-semibold text-[#EFEFEF]'>View Networks</span>
+              <li className="bg-[#363C5F]  rounded-3xl square flex flex-col items-center">
+                <button className="flex flex-col items-center square object-contain justify-center px-[15%] pt-[7.5%] gap-y-1">
+                  <div className="h-auto">
+                    <img src={'/networks.svg'}/>
+                  </div>
+                  <span className='text-xs md:text-md text-center font-semibold text-[#EFEFEF]'>View Networks</span>
+                </button>
               </li>
             </ul>
           </div>
