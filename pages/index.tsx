@@ -17,7 +17,7 @@ const Home: NextPage = () => {
       </Head>
       <Navbar/>
 
-      <div className="relative max-w-2xl h-screen w-screen flex items-center justify-center px-5 mx-auto sm:px-4">
+      <div className="relative max-w-2xl h-screen w-screen flex items-center justify-center px-5 mx-auto sm:px-4 mt-[-5%]">
         <div className="flex flex-col space-y-10 place-items-center font-[Montserrat] ">
           <div className='text-4xl font-semibold leading-7'>
           <p className="leading-7">Crypto swaps</p>
@@ -54,14 +54,14 @@ const Home: NextPage = () => {
                 </button>
               </li>
               <li className="flex mt-[33.33%]">
-                <span className='font-bold text-xs sm:text-sm md:text-md lg:text-lg '>
+                <span className='font-bold text-md lg:text-lg '>
                   Step 1: <br></br>
                   connect your wallet <br></br>
                   ... and you're done!
                 </span>
               </li>
               <li className="flex mt-[20%]">
-                <span className='font-bold text-xs sm:text-sm md:text-md lg:text-lg '>
+                <span className='font-bold text-md lg:text-lg '>
                   Now you can access <br></br>
                   CryptoSwap's great <br></br>
                   features on an ever <br></br>
@@ -70,7 +70,7 @@ const Home: NextPage = () => {
                 </span>
               </li>
               <li className="bg-[#363C5F]  rounded-3xl square flex flex-col items-center">
-                <button className="flex flex-col items-center square object-contain justify-center px-[15%] pt-[7.5%] gap-y-1">
+                <button className="flex flex-col items-center square object-contain justify-center px-[15%] py-[10%] md:pt-[7.5%] md:pb-[0%]  gap-y-1">
                   <div className="h-auto">
                     <img src={'/networks.svg'}/>
                   </div>
