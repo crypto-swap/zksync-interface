@@ -1,13 +1,7 @@
-# Next.js + Tailwind CSS Example
+# Important: CryptoSwap workflow guideline
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+1. You are to push your code to a new branch with format github_username/feature (git push github_username/feature)
+2. If your feature is nonconflicting, you can push it to the dev branch without a review. 
+3. If your feature conflicts with another coworkers code (refer to their /features) then request a review from them and one more overseer. 
 
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+4. Be extremely careful with pushing code to main branch, as it is set to automatically update the S3 bucket. 
