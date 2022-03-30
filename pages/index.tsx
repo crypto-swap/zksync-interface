@@ -8,7 +8,7 @@ const Home: NextPage = () => {
     <div className="text-[#1F2237] bg-[#EFEFEF] h-screen font-[Montserrat] overflow-x-hidden dark:bg-[#1B1E31] dark:text-[#EFEFEF] ">
       <Head>
         <title>CryptoSwap</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
@@ -17,13 +17,14 @@ const Home: NextPage = () => {
       </Head>
       <Navbar/>
 
-
-
       <div className="relative max-w-2xl h-screen w-screen flex items-center justify-center px-5 mx-auto sm:px-4">
         <div className="flex flex-col space-y-10 place-items-center font-[Montserrat] ">
-          <div className='text-4xl'>
-            Crypto swaps <br></br>
-            are simple here
+          <div className='text-4xl font-semibold'>
+          <p className="leading-10">Crypto swaps</p>
+          <br></br>
+          <p className="leading-10">are simple here</p>
+             <br></br>
+            
           </div>
           <button className="bg-[#4B86FF] hover:bg-[#2669F5]  text-[#EFEFEF] font-bold py-2 px-4 rounded-full text-base w-9/12 dark:bg-[#2669F5] dark:hover:bg-[#4B86FF]">
             <a href="#tutorial">
@@ -33,9 +34,45 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className="h-screen relative">
-        to be continued...
-      </div>
+      <div><a id={'tutorial'}>&nbsp;</a></div>
+      <div className='lg:hidden'>&nbsp;</div>
+
+      <div  className="relative flex-col items-center pt-14 lg:pt-20" >
+        <div className='text-4xl text-center font-semibold leading-7'>
+          <p className="leading-10">Swapping crypto</p>
+          <br></br>
+          <p className="leading-10">should be simple</p>
+        </div>
+
+        <div className="">
+          <div className="flex-1 max-w-4x1 mx-auto pt-10 px-4">
+            <ul className="grid grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-4 ">
+              <li className="bg-[#363C5F]  rounded-3xl aspect-square flex flex-col items-center">
+                <div className="h-24 mt-3">
+                  <Image src={'/wallets.svg'} width={128} height={128}/>
+                </div>
+                <span className='text-xs mt-8 font-semibold text-[#EFEFEF]'>Connect Your Wallet</span>
+              </li>
+              <li className="">
+                <span>
+                  Step 1: connect your wallet ... and you're done!
+                </span>
+              </li>
+              <li className="">
+                <span>
+                  xd
+                </span>
+              </li>
+              <li className="bg-[#363C5F]  rounded-3xl aspect-square flex flex-col items-center">
+                <div className="h-24 mt-2">
+                  <Image src={'/networks.svg'} width={128} height={128}/>
+                </div>
+                <span className='text-xs mt-9 font-semibold text-[#EFEFEF]'>View Networks</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>  
 
       <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center ">
         <h1 className="text-6xl font-bold">
