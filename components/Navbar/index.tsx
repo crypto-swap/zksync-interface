@@ -13,10 +13,10 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-col-2">       
-        <a href="/swap" className="navbar-link-item">Trade</a>
+        <a href="/swap" className="navbar-link-item">Swap</a>
         <a href="/pool" className="navbar-link-item">Pool</a>
         <a href="whitepaper_uncompleted.pdf" className="navbar-link-item" target="_blank" rel="noopener noreferrer">Whitepaper</a>
-        <span className="hide-large"><a href="/about" className="navbar-link-item">About</a></span>                   
+        <span className="hide-large"><a href="/about" className="navbar-link-item">Menu</a></span>                   
       </div>
 
       <div className="navbar-col-3">
