@@ -53,7 +53,7 @@ const Home: NextPage = () => {
                   <span className='text-xs md:text-md text-center font-semibold text-[#EFEFEF]'>Connect Your Wallet</span>
                 </button>
               </li>
-              <li className="flex mt-[16.6666666%]">
+              <li className="flex mt-[20%]">
                 <span className='font-bold text-md lg:text-lg '>
                   Step 1: <br></br>
                   connect your wallet <br></br>
@@ -114,8 +114,8 @@ const Home: NextPage = () => {
                   will handle the rest.<br></br>
                 </span>
               </li>
-              <li className="flex mt-[14.2857%]">
-                <span className='font-bold text-[13px] md:text-sm lg:text-md xl:text-lg '>
+              <li className="flex mt-[14.2857%] xl:mt-[20%]">
+                <span className='font-bold text-[13px] md:text-sm lg:text-md xl:text-[17px] '>
                   Pool:<br></br>
                   Pool your crypto funds <br></br>
                   and collect a 0.25% fee <br></br>
