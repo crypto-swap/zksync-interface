@@ -25,7 +25,7 @@ const Home: NextPage = () => {
           <p className="leading-7">are easy here</p>
           </div>
 
-          <button className="bg-[#4B86FF] hover:bg-[#2669F5]  text-[#EFEFEF] font-bold py-2 px-4 rounded-full text-base w-9/12 dark:bg-[#2669F5] dark:hover:bg-[#4B86FF]">
+          <button className="bg-[#4B86FF] hover:bg-[#2669F5]  text-[#EFEFEF] font-bold py-2 px-4 rounded-full text-base w-9/12 dark:bg-[#2669F5] dark:hover:bg-[#4B86FF] shadow-button dark:shadow-button-dark">
             <a href="#tutorial">
               Get Started Now
             </a>
