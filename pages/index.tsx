@@ -18,12 +18,13 @@ const Home: NextPage = () => {
       <Navbar/>
 
       <div className="relative max-w-2xl h-screen w-screen flex items-center justify-center px-5 mx-auto sm:px-4 mt-[-5%] md:mt-[0]">
-        <div className="flex flex-col space-y-10 place-items-center font-[Montserrat] ">
+        <div className="flex flex-col space-y-10 place-items-center font-[Montserrat] p-10 rounded-[64px] shadow-inset-text dark:shadow-inset-text-dark">
           <div className='text-4xl font-semibold leading-7'>
           <p className="leading-7">Crypto swaps</p>
           <br></br>
           <p className="leading-7">are easy here</p>
           </div>
+
           <button className="bg-[#4B86FF] hover:bg-[#2669F5]  text-[#EFEFEF] font-bold py-2 px-4 rounded-full text-base w-9/12 dark:bg-[#2669F5] dark:hover:bg-[#4B86FF]">
             <a href="#tutorial">
               Get Started Now
@@ -35,12 +36,13 @@ const Home: NextPage = () => {
       <div><a id={'tutorial'}>&nbsp;</a></div>
       <div className='lg:hidden'>&nbsp;</div>
 
-      <div  className="relative flex-col items-center pt-14 lg:pt-20" >
-
-        <div className='text-4xl text-center font-semibold leading-7'>
-          <p className="leading-7">Swapping crypto</p>
-          <br></br>
-          <p className="leading-7">should be simple</p>
+      <div  className="relative flex-col items-center place-item pt-14 lg:pt-20" >
+        <div className="flex justify-center">
+          <div className='text-4xl text-center font-semibold leading-7 rounded-[64px] p-10 w-fit shadow-card-text dark:shadow-card-text-dark'>
+              <p className="leading-7">Swapping crypto</p>
+              <br></br>
+              <p className="leading-7">should be simple</p>
+          </div>
         </div>
 
           <div className="flex-1 max-w-4x1 mx-auto pt-10 px-4 lg:px-[10%] xl:px-[20%]">
@@ -84,15 +86,16 @@ const Home: NextPage = () => {
             </ul>
           </div>
 
-
         <div className='text-xl font-bold leading-5 flex flex-col items-center justify-center pt-32'> 
-          <span>
-            <p className="leading-5">CryptoSwap has two features that</p>
+          <div className='shadow-card-text p-10 rounded-[64px] dark:shadow-card-text-dark'>
+            <p className="leading-5">The CryptoSwap protocol </p>
             <br></br>
-            <p className="leading-5">are being researched, tested, and </p>
+            <p className="leading-5">has been researched,</p>
             <br></br>
-            <p className="leading-5">audited for algorithmic excellence. </p>
-            </span>      
+            <p className="leading-5"> tested, and audited for</p>
+            <br></br>
+            <p className="leading-5">algorithmic excellence.</p>
+          </div>      
         </div>
 
           <div className="flex-1 max-w-4x1 mx-auto pt-10 px-4 lg:px-[10%] xl:px-[20%]">
@@ -114,15 +117,14 @@ const Home: NextPage = () => {
                   will handle the rest.<br></br>
                 </span>
               </li>
-              <li className="flex mt-[14.2857%] xl:mt-[21%]">
-                <span className='font-bold text-[13px] md:text-sm lg:text-md '>
+              <li className="flex mt-[16.66666%]">
+                <span className='font-bold  text-sm lg:text-lg '>
                   Pool:<br></br>
-                  Pool your crypto funds <br></br>
-                  and collect a 0.25% fee <br></br>
-                  per trade. Your pooled <br></br>
-                  funds will be linked <br></br>
-                  to your wallet via the <br></br>
-                  CryptoSwap Protocol. <br></br>
+                  Pool your crypto and <br></br>
+                  collect 0.25% per <br></br>
+                  trade. Pooled funds <br></br>
+                  are linked to your<br></br>
+                  wallet through code.<br></br>
                 </span>
               </li>
               <li className="bg-[#4B86FF]  rounded-3xl square flex flex-col items-center">
