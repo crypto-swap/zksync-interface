@@ -115,7 +115,7 @@ const Home: NextPage = () => {
                 </span>
               </li>
               <li className="flex mt-[14.2857%] xl:mt-[20%]">
-                <span className='font-bold text-[13px] md:text-sm lg:text-md xl:text-[17px] '>
+                <span className='font-bold text-[13px] md:text-sm lg:text-md '>
                   Pool:<br></br>
                   Pool your crypto funds <br></br>
                   and collect a 0.25% fee <br></br>
