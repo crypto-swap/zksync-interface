@@ -15,8 +15,8 @@ const Navbar = () => {
       <div className="navbar-col-2">       
         <a href="/swap" className="navbar-link-item">Swap</a>
         <a href="/pool" className="navbar-link-item">Pool</a>
-        <a href="whitepaper_uncompleted.pdf" className="navbar-link-item" target="_blank" rel="noopener noreferrer">Whitepaper</a>
-        <span className="hide-large"><a href="/about" className="navbar-link-item">Menu</a></span>                   
+        <a href="/farm" className="navbar-link-item">Farm</a>  
+        <a href="whitepaper_uncompleted.pdf" className="navbar-link-item" target="_blank" rel="noopener noreferrer">Whitepaper</a>              
       </div>
 
       <div className="navbar-col-3">

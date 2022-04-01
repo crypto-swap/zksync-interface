@@ -45,29 +45,29 @@ const Home: NextPage = () => {
           </div>
         </div>
 
-          <div className="flex-1 max-w-4x1 mx-auto pt-10 px-4 lg:px-[10%] xl:px-[20%]">
-            <ul className="grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-4">
+          <div className="flex-1 max-w-4x1 mx-auto pt-10 px-4 md:px-[15%] lg:px-[20%] xl:px-[25%]">
+            <ul className="grid grid-cols-2 gap-y-6 gap-x-4 md:gap-y-12 md:gap-x-8 lg:gap-x-24 xl:gap-y-16 xl:gap-x-32">
               <li className="bg-[#363C5F]  rounded-3xl square flex flex-col items-center">
-                <button className="flex flex-col items-center square object-contain justify-center p-[10%] gap-y-2">
-                  <div className="h-auto">
+                <button className="flex flex-col items-center square object-contain justify-center p-[10%] gap-y-2 lg:p-[5%] ">
+                  <div className="h-auto lg:p-[5%] xl:px-[7.5%] lg:pb-[-10%]">
                     <img src={'/wallets.svg'}/>
                   </div>
-                  <span className='text-xs md:text-md text-center font-semibold text-[#EFEFEF]'>Connect Your Wallet</span>
+                  <span className='text-xs md:text-lg text-center font-semibold text-[#EFEFEF]'>Connect Your Wallet</span>
                 </button>
               </li>
               <li className="flex mt-[20%]">
-                <span className='font-bold text-md lg:text-lg '>
+                <span className='font-bold text-md md:text-lg lg:text-2xl '>
                   Step 1: <br></br>
-                  connect your wallet <br></br>
+                  Connect your wallet <br></br>
                   ... and you're done! <br></br><br></br>
-                  <span className="text-xs leading-[0px]">
-                    <p className="leading-[0px]">No wallet?</p>
+                  <span className="text-xs lg:text-lg leading-[0px] lg:leading-3">
+                    <p className="leading-[0px] lg:leading-3">No wallet?</p>
                     <a href="" className="text-[#7408F8]">Click Here</a>
                   </span>
                 </span>
               </li>
-              <li className="flex mt-[20%]">
-                <span className='font-bold text-md lg:text-lg '>
+              <li className="flex mt-[20%] lg:mt-[22.5%]">
+                <span className='font-bold text-md md:text-lg lg:text-2xl'>
                   Now you can access <br></br>
                   CryptoSwap's great <br></br>
                   features on an ever <br></br>
@@ -76,63 +76,42 @@ const Home: NextPage = () => {
                 </span>
               </li>
               <li className="bg-[#363C5F]  rounded-3xl square flex flex-col items-center">
-                <button className="flex flex-col items-center square object-contain justify-center px-[15%] py-[7.5%] md:pt-[7.5%] md:pb-[0%]  gap-y-1">
-                  <div className="h-auto">
+                <button className="flex flex-col items-center square object-contain justify-center px-[15%] py-[7.5%] md:pt-[7.5%] md:pb-[2.5%]  gap-y-1 lg:gap-y-2">
+                  <div className="h-auto  lg:p-[2.5%] lg:pb-[-2.5%]">
                     <img src={'/networks.svg'}/>
                   </div>
-                  <span className='text-xs md:text-md text-center font-semibold text-[#EFEFEF]'>View Networks</span>
+                  <span className='text-xs md:text-lg  text-center font-semibold text-[#EFEFEF] lg:mb-2'>View Networks</span>
                 </button>
               </li>
-            </ul>
-          </div>
-
-        <div className='text-xl font-bold leading-5 flex flex-col items-center justify-center pt-32'> 
-          <div className='shadow-card-text p-10 rounded-[64px] dark:shadow-card-text-dark'>
-            <p className="leading-5">The CryptoSwap protocol </p>
-            <br></br>
-            <p className="leading-5">has been researched,</p>
-            <br></br>
-            <p className="leading-5"> tested, and audited for</p>
-            <br></br>
-            <p className="leading-5">algorithmic excellence.</p>
-          </div>      
-        </div>
-
-          <div className="flex-1 max-w-4x1 mx-auto pt-10 px-4 lg:px-[10%] xl:px-[20%]">
-            <ul className="grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-4">
               <li className="bg-[#71B176]  rounded-3xl square flex flex-col items-center">
-                <button className="flex flex-col items-center square object-contain justify-center p-[10%] gap-y-2">
+                <button className="flex flex-col items-center square object-contain justify-center px-[10%] py-[5%] gap-y-2">
                   <div className="h-auto">
                     <img src={'/swap.svg'}/>
                   </div>
-                  <span className='text-xs md:text-md text-center font-semibold text-[#EFEFEF]'>Swap</span>
+                  <span className='text-xs md:text-lg  text-center font-semibold text-[#EFEFEF]'>Swap</span>
                 </button>
               </li>
-              <li className="flex mt-[20%]">
-                <span className='font-bold text-sm lg:text-lg '>
+              <li className="flex mt-[25%] lg:mt-[33.333%]">
+                <span className='font-bold text-md md:text-lg lg:text-2xl '>
                   Swap:<br></br>
-                  Select your wallets<br></br>
-                  and customize your<br></br>
-                  trade, CryptoSwap <br></br>
-                  will handle the rest.<br></br>
+                  Select your wallets,<br></br>
+                  customize your trade.
                 </span>
               </li>
-              <li className="flex mt-[16.66666%]">
-                <span className='font-bold  text-sm lg:text-lg '>
+              <li className="flex mt-[25%]">
+                <span className='font-bold text-md md:text-lg lg:text-2xl '>
                   Pool:<br></br>
-                  Pool your crypto and <br></br>
-                  collect 0.25% per <br></br>
-                  trade. Pooled funds <br></br>
-                  are linked to your<br></br>
-                  wallet through code.<br></br>
+                  Deposit crypto, <br></br>
+                  collect 0.25%  <br></br>
+                  per trade. 
                 </span>
               </li>
               <li className="bg-[#4B86FF]  rounded-3xl square flex flex-col items-center">
-                <button className="flex flex-col items-center square object-contain justify-center p-[10%] gap-y-2">
+                <button className="flex flex-col items-center square object-contain justify-center px-[10%] py-[5%] gap-y-2">
                   <div className="h-auto">
                     <img src={'/pool.svg'}/>
                   </div>
-                  <span className='text-xs md:text-md text-center font-semibold text-[#EFEFEF]'>Pool</span>
+                  <span className='text-xs md:text-lg  text-center font-semibold text-[#EFEFEF]'>Pool</span>
                 </button>
               </li>
             </ul>
