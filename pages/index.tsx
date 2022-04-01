@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar'
 
 const Home: NextPage = () => {
   return (
-    <div className="text-[#1F2237] bg-[#EFEFEF] h-screen font-[Montserrat] overflow-x-hidden dark:bg-[#1B1E31] dark:text-[#EFEFEF] ">
+    <div className="text-text-light bg-bg-light h-screen font-[Montserrat] overflow-x-hidden dark:bg-bg-dark dark:text-text-dark ">
       <Head>
         <title>CryptoSwap</title>
         <link rel="icon" href="/logo.png" />
@@ -25,7 +25,7 @@ const Home: NextPage = () => {
           <p className="leading-7">are easy here</p>
           </div>
 
-          <button className="bg-[#4B86FF] hover:bg-[#2669F5]  text-[#EFEFEF] font-bold py-2 px-4 rounded-full text-base w-9/12 dark:bg-[#2669F5] dark:hover:bg-[#4B86FF] shadow-button dark:shadow-button-dark">
+          <button className="bg-font-blue hover:bg-button-blue text-text-dark font-bold py-2 px-4 rounded-full text-base w-9/12 dark:bg-button-blue dark:hover:bg-font-blue shadow-button dark:shadow-button-dark">
             <a href="#tutorial">
               Get Started Now
             </a>
@@ -47,12 +47,12 @@ const Home: NextPage = () => {
 
           <div className="flex-1 max-w-4x1 mx-auto pt-10 px-4 lg:px-[10%] xl:px-[20%]">
             <ul className="grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-4">
-              <li className="bg-[#363C5F]  rounded-3xl square flex flex-col items-center">
+              <li className="bg-menu-blue rounded-3xl square flex flex-col items-center">
                 <button className="flex flex-col items-center square object-contain justify-center p-[10%] gap-y-2">
                   <div className="h-auto">
                     <img src={'/wallets.svg'}/>
                   </div>
-                  <span className='text-xs md:text-md text-center font-semibold text-[#EFEFEF]'>Connect Your Wallet</span>
+                  <span className='text-xs md:text-md text-center font-semibold text-text-dark'>Connect Your Wallet</span>
                 </button>
               </li>
               <li className="flex mt-[20%]">
@@ -75,12 +75,12 @@ const Home: NextPage = () => {
                   crypto networks! 
                 </span>
               </li>
-              <li className="bg-[#363C5F]  rounded-3xl square flex flex-col items-center">
+              <li className="bg-menu-blue rounded-3xl square flex flex-col items-center">
                 <button className="flex flex-col items-center square object-contain justify-center px-[15%] py-[7.5%] md:pt-[7.5%] md:pb-[0%]  gap-y-1">
                   <div className="h-auto">
                     <img src={'/networks.svg'}/>
                   </div>
-                  <span className='text-xs md:text-md text-center font-semibold text-[#EFEFEF]'>View Networks</span>
+                  <span className='text-xs md:text-md text-center font-semibold text-text-dark'>View Networks</span>
                 </button>
               </li>
             </ul>
@@ -105,7 +105,7 @@ const Home: NextPage = () => {
                   <div className="h-auto">
                     <img src={'/swap.svg'}/>
                   </div>
-                  <span className='text-xs md:text-md text-center font-semibold text-[#EFEFEF]'>Swap</span>
+                  <span className='text-xs md:text-md text-center font-semibold text-text-dark'>Swap</span>
                 </button>
               </li>
               <li className="flex mt-[20%]">
@@ -127,12 +127,12 @@ const Home: NextPage = () => {
                   wallet through code.<br></br>
                 </span>
               </li>
-              <li className="bg-[#4B86FF]  rounded-3xl square flex flex-col items-center">
+              <li className="bg-font-blue  rounded-3xl square flex flex-col items-center">
                 <button className="flex flex-col items-center square object-contain justify-center p-[10%] gap-y-2">
                   <div className="h-auto">
                     <img src={'/pool.svg'}/>
                   </div>
-                  <span className='text-xs md:text-md text-center font-semibold text-[#EFEFEF]'>Pool</span>
+                  <span className='text-xs md:text-md text-center font-semibold text-text-dark'>Pool</span>
                 </button>
               </li>
             </ul>
