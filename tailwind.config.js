@@ -10,12 +10,13 @@ module.exports = {
         sans: ['Montserrat', 'Helvetica', 'Arial', 'sans-serif'],
       },
       colors: {
-        'bg-light': '#EDEDED',
-        'card-light': '#F4F4F5',
+        'bg-light': '#EDEDED', // bg- prefixes to avoid conflicts with other names
         'bg-dark': '#1B1E31',
-        'card-dark': '#1F2237',
+        'bg-card-light': '#F4F4F5',
+        'bg-card-dark': '#1F2237', // same as text-light
         'text-light': '#1F2237',
         'text-dark': '#EFEFEF',
+        // blues
         'menu-blue': '#363C5F',
         'royal-blue': '#163A91',
         'button-blue': '#2669F5', 
