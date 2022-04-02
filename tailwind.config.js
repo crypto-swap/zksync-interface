@@ -10,7 +10,17 @@ module.exports = {
         sans: ['Montserrat', 'Helvetica', 'Arial', 'sans-serif'],
       },
       colors: {
+        'bg-light': '#EDEDED',
+        'card-light': '#F4F4F5',
+        'bg-dark': '#1B1E31',
+        'card-dark': '#1F2237',
+        'text-light': '#1F2237',
+        'text-dark': '#EFEFEF',
+        'menu-blue': '#363C5F',
+        'royal-blue': '#163A91',
         'button-blue': '#2669F5', 
+        'bg-blue': '#5090EA',
+        'font-blue': '#4B86FF',
       },
       animation: {
         // Bounces for a total of 5 seconds
