@@ -3,10 +3,6 @@ import WalletsDropdownProps from '../SwapWalletDropdown'
 import SwapTokenSelect from './SwapTokenSelect'
 import { Token } from './SwapTokenSelect'
 
-const digits = ['', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'] as const
-type Digit = typeof digits[number]
-export const isDigit = (value: any): value is Digit => digits.includes(value)
-
 export interface Wallet {
   name: string
 }
