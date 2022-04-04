@@ -40,6 +40,12 @@
     }
 }
 
+@media (max-width:1325px){
+    .hide-xl{
+        display:none;
+    }
+}
+
 .navbar {
     position: relative;
     display: grid;
@@ -61,15 +67,15 @@
     
 }
 
-@media (max-width: 960px){
+@media (max-width: 1325px){
     .navbar {
         grid-template-columns: 0.12fr 0.8fr 0.05fr;
     }
 }
 
 .navbar-logo {
-    display: inline-block;
-    transition: transform 0.3s ease 0s;
+    display: inline-flex;
+    transition: transform 0.6s ease 0s;
 }
 
 .navbar-logo:hover {
@@ -104,7 +110,7 @@
     width: 100%;
 }
 
-@media (max-width: 960px){
+@media (max-width: 1325px){
     .navbar-col-2 {
         margin-left: 7.5px;
         display: flex;
@@ -123,13 +129,13 @@
 }
 
 
-@media (max-width: 960px){
+@media (max-width: 1325px){
     .navbar-col-3 {
         flex-direction: row;
         -webkit-box-pack: justify;
         justify-content: space-between;
         justify-self: center;
-        max-width: 960px;
+        max-width: 1325px;
         padding: 1rem;
         position: fixed;
         bottom: 0px;
@@ -150,7 +156,7 @@
     gap: 20px;
 }
 
-@media (max-width: 960px){
+@media (max-width: 1325px){
     .navbar-col-3-items {
         flex-direction: row-reverse;
         -webkit-box-align: center;
