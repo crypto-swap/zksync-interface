@@ -22,14 +22,14 @@ const Home: NextPage = () => {
       <div className="relative h-screen w-screen flex items-center justify-center mx-auto mt-[-5%] md:mt-[0]">
         
         
-        <div className="absolute z-auto flex flex-col space-y-10 place-items-center font-[Montserrat] p-10 rounded-[64px] shadow-card dark:shadow-card-dark">
+        <div className="absolute z-10 flex flex-col space-y-10 place-items-center font-[Montserrat] p-10 rounded-[64px] shadow-card dark:shadow-card-dark">
           <div className='text-4xl font-semibold leading-7'>
           <p className="leading-7">Crypto swaps</p>
           <br></br>
           <p className="leading-7">are easy here</p>
           </div>
 
-          <button className=" bg-font-blue hover:bg-button-blue text-text-dark font-bold py-2 px-4 rounded-full text-base w-9/12 dark:bg-button-blue dark:hover:bg-font-blue shadow-button dark:shadow-button-dark">
+          <button className="  bg-font-blue hover:bg-button-blue text-text-dark font-bold py-2 px-4 rounded-full text-base w-9/12 dark:bg-button-blue dark:hover:bg-font-blue shadow-button dark:shadow-button-dark">
             <a href="#tutorial">
               Get Started Now
             </a>
