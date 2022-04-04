@@ -9,7 +9,7 @@ const Navbar = () => {
     <div className="navbar">
 
       <div className="navbar-col-1">
-        <a id="home-nav-link" href="/"><div className="navbar-logo"><Image src={'/white_logo.svg'} width={50} height={50}/></div></a>
+        <a id="home-nav-link" href="/"><div className="navbar-logo"><Image src={'/white_logo.svg'} width={40} height={40}/></div></a>
       </div>
 
       <div className="navbar-col-2">       
