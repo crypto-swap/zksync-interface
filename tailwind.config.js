@@ -10,7 +10,7 @@ module.exports = {
         sans: ['Montserrat', 'Helvetica', 'Arial', 'sans-serif'],
       },
       colors: {
-        'bg-light': '#EDEDED', // bg- prefixes to avoid conflicts with other names
+        'bg-light': '#EAEAEA', // bg- prefixes to avoid conflicts with other names
         'bg-dark': '#1B1E31',
         'bg-card-light': '#F4F4F5',
         'bg-card-dark': '#1F2237', // same as text-light
@@ -27,14 +27,8 @@ module.exports = {
         'spin-once': 'spin 0.5s ease-in-out 1',
       },
       boxShadow: {
-        'inset-text':
-          'inset 7px 7px 14px #bababa, inset -7px -7px 14px #ffffff',
-        'card-text': '7px 7px 7px #bababa, -7px -7px 7px #ffffff',
-        'inset-text-dark':
-          'inset 7px 7px 14px #161827, inset -7px -7px 14px #20243b',
-        'card-text-dark': '7px 7px 7px #161827, -7px -7px 7px #20243b',
-        'card': '5px 5px 10px #b7b7b8, -5px -5px 10px #ffffff',
-        'card-dark': '5px 5px 10px #171a29, -5px -5px 10px  #272b45',
+        'card': '5px 5px 5px #c7c7c7, -5px -5px 5px #ffffff',
+        'card-dark': '5px 5px 5px #171a29, -5px -5px 5px  #272b45',
         button:
           '-1px -1px 3px #4479e6,-1px -1px 2px #4479e6,1px 1px 1px #4479e6,1px 1px 2px #272b45',
         'button-dark':

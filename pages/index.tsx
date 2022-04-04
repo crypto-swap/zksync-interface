@@ -19,10 +19,10 @@ const Home: NextPage = () => {
 
       <Navbar/>
 
-      <div className="relative h-screen w-screen flex items-center justify-center mx-auto mt-[-5%] md:mt-[0]">
+      <div className="relative h-screen w-screen flex items-center justify-center mx-auto">
         
         
-        <div className="absolute z-10 flex flex-col space-y-10 place-items-center font-[Montserrat] p-10 rounded-[64px] shadow-card dark:shadow-card-dark">
+        <div className="absolute z-10 -mt-48 flex flex-col space-y-10 place-items-center font-[Montserrat] p-10 rounded-[64px] shadow-card dark:shadow-card-dark">
           <div className='text-4xl font-semibold leading-7'>
           <p className="leading-7">Crypto swaps</p>
           <br></br>
@@ -63,7 +63,7 @@ const Home: NextPage = () => {
           
         
         <div className="flex items-center justify-center">
-          <div className='text-4xl text-center font-semibold leading-7 rounded-[64px] p-10 w- shadow-card-text dark:shadow-card-text-dark'>
+          <div className='text-4xl text-center font-semibold leading-7 rounded-[64px] p-10 w- shadow-card dark:shadow-card-dark'>
               <p className="leading-7">Swapping crypto</p>
               <br></br>
               <p className="leading-7">should be simple</p>
