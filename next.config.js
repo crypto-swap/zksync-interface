@@ -11,7 +11,6 @@ module.exports = {
     return {
       '/': { page: '/' },
       '/swap' : { page: '/swap'},
-      '/pool' : { page: '/pool'},
     }
   },
 }
