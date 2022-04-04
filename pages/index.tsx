@@ -4,8 +4,9 @@ import Image from 'next/image'
 import Navbar from '../components/Navbar'
 
 const Home: NextPage = () => {
+
   return (
-    <div className="text-text-light bg-bg-light h-screen font-[Montserrat] overflow-x-hidden dark:bg-bg-dark dark:text-text-dark ">
+    <div className="text-text-light bg-bg-light h-screen font-[Montserrat] overflow-x-hidden dark:bg-bg-dark dark:text-text-dark">
       <Head>
         <title>CryptoSwap</title>
         <link rel="icon" href="/logo.png" />
@@ -15,37 +16,61 @@ const Home: NextPage = () => {
           rel="stylesheet"
         />
       </Head>
+
       <Navbar/>
 
-      <div className="relative max-w-2xl h-screen w-screen flex items-center justify-center px-5 mx-auto sm:px-4 mt-[-5%] md:mt-[0]">
-        <div className="flex flex-col space-y-10 place-items-center font-[Montserrat] p-10 rounded-[64px] shadow-inset-text dark:shadow-inset-text-dark">
+      <div className="relative h-screen w-screen flex items-center justify-center mx-auto mt-[-5%] md:mt-[0]">
+        
+        
+        <div className="absolute z-auto flex flex-col space-y-10 place-items-center font-[Montserrat] p-10 rounded-[64px] shadow-card dark:shadow-card-dark">
           <div className='text-4xl font-semibold leading-7'>
           <p className="leading-7">Crypto swaps</p>
           <br></br>
           <p className="leading-7">are easy here</p>
           </div>
 
-          <button className="bg-font-blue hover:bg-button-blue text-text-dark font-bold py-2 px-4 rounded-full text-base w-9/12 dark:bg-button-blue dark:hover:bg-font-blue shadow-button dark:shadow-button-dark">
+          <button className=" bg-font-blue hover:bg-button-blue text-text-dark font-bold py-2 px-4 rounded-full text-base w-9/12 dark:bg-button-blue dark:hover:bg-font-blue shadow-button dark:shadow-button-dark">
             <a href="#tutorial">
               Get Started Now
             </a>
           </button>
         </div>
+
+        <div className="">
+          <ul className="box-area">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+
+        
+        <div className="">
+          <ul className="box-area-dark">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+
       </div>
 
-      <div><a id={'tutorial'}>&nbsp;</a></div>
-      <div className='lg:hidden'>&nbsp;</div>
-
-      <div  className="relative flex-col items-center place-item pt-14 lg:pt-20" >
-        <div className="flex justify-center">
-          <div className='text-4xl text-center font-semibold leading-7 rounded-[64px] p-10 w-fit shadow-card-text dark:shadow-card-text-dark'>
+      <div id={'tutorial'} className="relative flex flex-col items-center justify-center place-items-center pt-14 lg:pt-20" >
+          
+        
+        <div className="flex items-center justify-center">
+          <div className='text-4xl text-center font-semibold leading-7 rounded-[64px] p-10 w- shadow-card-text dark:shadow-card-text-dark'>
               <p className="leading-7">Swapping crypto</p>
               <br></br>
               <p className="leading-7">should be simple</p>
           </div>
         </div>
 
-          <div className="flex-1 max-w-4x1 mx-auto pt-10 px-4 md:px-[15%] lg:px-[20%] xl:px-[25%]">
+          <div className="flex-1 mx-auto pt-10 px-4 md:px-[15%] lg:px-[20%] xl:px-[25%]">
             <ul className="grid grid-cols-2 gap-y-6 gap-x-4 md:gap-y-12 md:gap-x-8 lg:gap-x-24 xl:gap-y-16 xl:gap-x-32">
               <li className="bg-menu-blue rounded-3xl square flex flex-col items-center">
                 <button className="flex flex-col items-center square object-contain justify-center p-[10%] gap-y-2 lg:p-[5%] ">
@@ -117,11 +142,12 @@ const Home: NextPage = () => {
             </ul>
           </div>
 
+          
       </div>  
 
       <div className="mt-96">&nbsp;</div>
 
-      <footer className="flex h-24 w-full items-center justify-center">
+      <footer className="flex h-24 w-full items-center justify-center overflow-hidden">
         <a
           className="flex items-center justify-center gap-2"
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
@@ -132,6 +158,8 @@ const Home: NextPage = () => {
           <Image src="/logo.png" alt="CryptoSwap Logo" width={16} height={16} /> CryptoSwap
         </a>
       </footer>
+
+      
     </div>
   )
 }
