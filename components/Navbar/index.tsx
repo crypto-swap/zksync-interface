@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 
 const Navbar = () => {
+
+  // defaults to dark mode 
   const { theme, setTheme } = useTheme();
   useEffect(() => {
     if (theme === 'system') {
@@ -11,6 +13,7 @@ const Navbar = () => {
     }
     console.log(theme);
   }, []);
+
   return (
     <div className="navbar">
       <div className="navbar-col-1">
