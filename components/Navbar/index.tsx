@@ -1,48 +1,87 @@
-import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useTheme } from 'next-themes'
+import React, { useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useTheme } from 'next-themes';
 
 const Navbar = () => {
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme } = useTheme();
+  useEffect(() => {
+    if (theme === 'system') {
+      setTheme('dark');
+    }
+    console.log(theme);
+  }, []);
   return (
     <div className="navbar">
-
       <div className="navbar-col-1">
-        <a id="home-nav-link" href="/"><div className="navbar-logo"><Image src={'/white_logo.svg'} width={40} height={40}/></div></a>
+        <a id="home-nav-link" href="/">
+          <div className="navbar-logo">
+            <Image src={'/white_logo.svg'} width={40} height={40} />
+          </div>
+        </a>
       </div>
 
-      <div className="navbar-col-2">       
-        <a href="/swap" className="navbar-link-item">Swap</a>
-        <a href="/pool" className="navbar-link-item">Pool</a>
-        <a href="/farm" className="navbar-link-item">Farm</a>  
-        <a href={'/CryptoSwap_Whitepaper.pdf'} className="navbar-link-item" target="_blank" rel="noopener noreferrer">Whitepaper</a>              
+      <div className="navbar-col-2">
+        <a href="/swap" className="navbar-link-item">
+          Swap
+        </a>
+        <a href="/pool" className="navbar-link-item">
+          Pool
+        </a>
+        <a href="/farm" className="navbar-link-item">
+          Farm
+        </a>
+        <a
+          href={'/CryptoSwap_Whitepaper.pdf'}
+          className="navbar-link-item"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Whitepaper
+        </a>
       </div>
 
       <div className="navbar-col-3">
-
         <div className="navbar-col-3-items">
-
           <div className="network" title="">
-              <button id="select-network" className="network-button">
-                  <Image src={'/networks.svg'} width={20} height={20}/>
-                  <span>&nbsp;</span>
-                  Networks
-                  <span className="hide-medium"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
-              </button>
+            <button id="select-network" className="network-button">
+              <Image src={'/networks.svg'} width={20} height={20} />
+              <span>&nbsp;</span>
+              Networks
+              <span className="hide-medium">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </button>
           </div>
 
-          <div className="wallet"><button id="connect-wallet" className="wallet-button-1 wallet-button-2">
+          <div className="wallet">
+            <button
+              id="connect-wallet"
+              className="wallet-button-1 wallet-button-2"
+            >
               <p className="wallet-button-text hide-small">
-                  Connect to a wallet
+                Connect to a wallet
               </p>
-              <p className="wallet-button-text show-small">
-                  Connect wallet
-              </p>
-          </button>
+              <p className="wallet-button-text show-small">Connect wallet</p>
+            </button>
           </div>
 
-          <button className="circle-outline" onClick={() => setTheme(theme==='dark' ? 'light':'dark')}>
+          <button
+            className="circle-outline"
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          >
             {theme === 'dark' ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -75,12 +114,10 @@ const Navbar = () => {
               </svg>
             )}
           </button>
-
         </div>
       </div>
-
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
