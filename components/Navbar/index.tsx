@@ -35,7 +35,7 @@ const Navbar = () => {
           Farm
         </a>
         <a
-          href={'/CryptoSwap_Whitepaper.pdf'}
+          href={'/whitepaper.pdf'}
           className="navbar-link-item"
           target="_blank"
           rel="noopener noreferrer"
