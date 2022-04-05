@@ -20,7 +20,7 @@ const Home: NextPage = () => {
 
       <Navbar/>
 
-      <div className="relative h-[90vh] w-screen flex items-center justify-center mx-auto">
+      <div className="relative h-[95vh] w-screen flex items-center justify-center mx-auto">
         
         
         <div className="absolute z-10 -mt-48 flex flex-col space-y-10 place-items-center font-[Montserrat] p-10 rounded-[64px] shadow-card dark:shadow-card-dark">
