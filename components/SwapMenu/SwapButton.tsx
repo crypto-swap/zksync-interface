@@ -1,77 +1,36 @@
-import React, { Fragment, useState, useRef } from 'react';
-import Image from 'next/image';
 import { Dialog, Transition } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/solid';
+import Image from 'next/image';
+import { Fragment, useState } from 'react';
 
-export type Token = string;
-
-export const tokens: Token[] = [
-  'eth',
-  'wbtc',
-  'dai',
-  'usdc',
-  'usdt',
-  'bat',
-  'zrx',
-  'link',
-  'mkr',
-  'rep',
-  'knc',
-  'gnt',
-  'snt',
-  'bnt',
-  'dnt',
-  'eng',
-  'salt',
-  'fun',
-  'mana',
-];
-
-interface SwapTokenSelectProps {
-  token: Token;
-  setToken: React.Dispatch<React.SetStateAction<Token>>;
+interface SwapButtonProps {
+  wallet: boolean;
+  setWallet: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const SwapTokenSelect = ({ token, setToken }: SwapTokenSelectProps) => {
+const SwapButton = ({ wallet, setWallet }: SwapButtonProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [query, setQuery] = useState('');
-  const inputRef = useRef(null);
 
   function closeModal() {
     setIsOpen(false);
   }
 
   function openModal() {
-    setQuery('');
     setIsOpen(true);
   }
-
-  const filteredTokens =
-    query === ''
-      ? tokens
-      : tokens.filter((token) =>
-          token
-            .toLowerCase()
-            .replace(/\s+/g, '')
-            .includes(query.toLowerCase().replace(/\s+/g, ''))
-        );
 
   return (
     <>
       <button
         type="button"
         onClick={openModal}
-        className="relative my-auto inline-flex items-center gap-1.5 rounded-full border border-button-blue bg-neutral-400 bg-opacity-0 px-1.5 text-xs font-semibold uppercase leading-6 text-button-blue hover:bg-opacity-10"
+        className="mt-8 w-full rounded-md bg-button-blue py-1.5 text-lg font-semibold text-text-dark shadow-button hover:bg-font-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 dark:shadow-button-dark"
       >
-        <Image src={'/logo.png'} width={16} height={16} />
-        {token}
-        <ChevronDownIcon className="inline h-4 w-4" />
+        {wallet ? 'Swap' : 'Add Wallet'}
       </button>
 
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
           as="div"
-          initialFocus={inputRef}
           className="fixed inset-0 z-10 overflow-y-auto"
           onClose={closeModal}
         >
@@ -85,7 +44,7 @@ const SwapTokenSelect = ({ token, setToken }: SwapTokenSelectProps) => {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Dialog.Overlay className="fixed inset-0 bg-neutral-600/40" />
+              <Dialog.Overlay className="fixed inset-0 bg-neutral-600/40 filter backdrop-blur-lg" />
             </Transition.Child>
 
             {/* This element is to trick the browser into centering the modal contents. */}
@@ -105,12 +64,12 @@ const SwapTokenSelect = ({ token, setToken }: SwapTokenSelectProps) => {
               leaveTo="opacity-0 scale-95"
             >
               <div className="my-8 inline-block w-full max-w-md transform overflow-hidden rounded-2xl bg-bg-card-light p-6 text-left align-middle shadow-xl transition-all dark:bg-bg-card-dark">
-                <div className="flex items-center justify-between">
+                <div className="mb-2.5 flex items-center justify-between">
                   <Dialog.Title
                     as="h3"
                     className="text-light dark:text-dark text-lg font-medium leading-6"
                   >
-                    Select Token
+                    Add Wallet
                   </Dialog.Title>
                   <button
                     type="button"
@@ -120,33 +79,21 @@ const SwapTokenSelect = ({ token, setToken }: SwapTokenSelectProps) => {
                     X
                   </button>
                 </div>
-                <input
-                  className="font-lg font-lg mt-3.5 w-full rounded-lg bg-inherit px-4 py-3 shadow-[inset_0.5px_1px_5px_rgba(0,0,0,0.3)]"
-                  placeholder="Search name"
-                  ref={inputRef}
-                  onChange={(event) => setQuery(event.target.value)}
-                  onKeyDown={(event) => {
-                    if (event.key === 'Enter' && tokens.includes(query)) {
-                      setToken(query);
-                      closeModal();
-                    }
-                  }}
-                />
-                <div className="mt-4 h-[325px] overflow-hidden rounded-lg shadow-card dark:shadow-card-dark">
-                  <ol className="h-full snap-y overflow-y-scroll">
-                    {filteredTokens.map((token) => (
-                      <li
-                        className="flex cursor-pointer snap-start items-center p-2.5 hover:bg-bg-blue dark:hover:bg-menu-blue"
+                <div className="">
+                  {['Metawax', 'Metawax', 'Metaverse', 'Metawax'].map(
+                    (name) => (
+                      <button
                         onClick={() => {
-                          setToken(token);
+                          setWallet(true);
                           closeModal();
                         }}
+                        className="mt-5 flex w-full gap-3 rounded-lg bg-slate-500 bg-opacity-0 p-3 text-lg font-bold shadow-card hover:bg-opacity-5 dark:border-bg-light dark:shadow-card-dark"
                       >
                         <Image src={'/logo.png'} width={30} height={30} />
-                        <span className="ml-2 uppercase">{token}</span>
-                      </li>
-                    ))}
-                  </ol>
+                        {name}
+                      </button>
+                    )
+                  )}
                 </div>
               </div>
             </Transition.Child>
@@ -157,4 +104,4 @@ const SwapTokenSelect = ({ token, setToken }: SwapTokenSelectProps) => {
   );
 };
 
-export default SwapTokenSelect;
+export default SwapButton;
