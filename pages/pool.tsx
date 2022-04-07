@@ -4,7 +4,7 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
-const Team = () => {
+const Pool = () => {
     return (
         <div>
             <Head>
@@ -18,10 +18,10 @@ const Team = () => {
             </Head>
 
             <Navbar/>
-            <div>You'll get to know our team of 17 soon!</div>
+            <div>Pool page coming soon...</div>
             <Footer/>
         </div>    
     )
 }
 
-export default Team 
+export default Pool
