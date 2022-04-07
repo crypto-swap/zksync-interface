@@ -31,8 +31,8 @@ const Navbar = () => {
         <a href="/pool" className="navbar-link-item">
           Pool
         </a>
-        <a href="/farm" className="navbar-link-item">
-          Farm
+        <a href="/team" className="navbar-link-item">
+          Team
         </a>
         <a
           href={'/whitepaper.pdf'}
