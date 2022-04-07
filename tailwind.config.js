@@ -24,7 +24,7 @@ module.exports = {
         'font-blue': '#4B86FF',
       },
       animation: {
-        'spin-once': 'spin 0.5s ease-in-out reverse',
+        'spin-once': 'spin 0.5s ease-in-out 1 reverse',
       },
       boxShadow: {
         card: '5px 5px 5px #c7c7c7, -5px -5px 5px #ffffff',

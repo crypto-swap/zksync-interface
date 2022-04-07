@@ -1,13 +1,13 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import React from 'react'
-import Navbar from '../components/Navbar'
-import SwapMenu from '../components/SwapMenu'
-import SwapInput from '../components/SwapMenu/SwapInput'
+import Head from 'next/head';
+import Image from 'next/image';
+import React from 'react';
+import Navbar from '../components/Navbar';
+import SwapMenu from '../components/SwapMenu';
+import SwapInput from '../components/SwapMenu/SwapInput';
 
 const Swap = () => {
   return (
-    <div className="bg-bg-light h-screen font-[Montserrat] dark:bg-bg-dark">
+    <div className="h-screen bg-bg-light font-[Montserrat] dark:bg-bg-dark">
       <Head>
         <title>CryptoSwap</title>
         <link rel="icon" href="/black_logo.svg" />
@@ -19,11 +19,9 @@ const Swap = () => {
       </Head>
       <Navbar />
 
-      <div className="mt-20 flex items-center justify-center px-2">
-        <SwapMenu />
-      </div>
+      <SwapMenu />
     </div>
-  )
-}
+  );
+};
 
-export default Swap
+export default Swap;

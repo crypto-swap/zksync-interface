@@ -1,8 +1,14 @@
 import { Dialog, Transition } from '@headlessui/react';
+import Image from 'next/image';
 import { Fragment, useState } from 'react';
 
-const SwapButton = () => {
-  const [isOpen, setIsOpen] = useState(true);
+interface SwapButtonProps {
+  wallet: boolean;
+  setWallet: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const SwapButton = ({ wallet, setWallet }: SwapButtonProps) => {
+  const [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
     setIsOpen(false);
@@ -19,7 +25,7 @@ const SwapButton = () => {
         onClick={openModal}
         className="mt-8 w-full rounded-md bg-button-blue py-1.5 text-lg font-semibold text-text-dark shadow-button hover:bg-font-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 dark:shadow-button-dark"
       >
-        Swap
+        {wallet ? 'Swap' : 'Add Wallet'}
       </button>
 
       <Transition appear show={isOpen} as={Fragment}>
@@ -57,28 +63,37 @@ const SwapButton = () => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <div className="my-8 inline-block w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                <Dialog.Title
-                  as="h3"
-                  className="text-lg font-medium leading-6 text-gray-900"
-                >
-                  Add Wallet
-                </Dialog.Title>
-                <div className="mt-2">
-                  <p className="text-sm text-gray-500">
-                    Add your wallet below to swap. Connect to any choice of
-                    wallet!
-                  </p>
-                </div>
-
-                <div className="mt-4">
+              <div className="my-8 inline-block w-full max-w-md transform overflow-hidden rounded-2xl bg-bg-card-light p-6 text-left align-middle shadow-xl transition-all dark:bg-bg-card-dark">
+                <div className="mb-2.5 flex items-center justify-between">
+                  <Dialog.Title
+                    as="h3"
+                    className="text-light dark:text-dark text-lg font-medium leading-6"
+                  >
+                    Add Wallet
+                  </Dialog.Title>
                   <button
                     type="button"
-                    className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                    className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-2 py-1 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                     onClick={closeModal}
                   >
-                    Got it, thanks!
+                    X
                   </button>
+                </div>
+                <div className="">
+                  {['Metawax', 'Metawax', 'Metaverse', 'Metawax'].map(
+                    (name) => (
+                      <button
+                        onClick={() => {
+                          setWallet(true);
+                          closeModal();
+                        }}
+                        className="mt-5 flex w-full gap-3 rounded-lg bg-slate-500 bg-opacity-0 p-3 text-lg font-bold shadow-card hover:bg-opacity-5 dark:border-bg-light dark:shadow-card-dark"
+                      >
+                        <Image src={'/logo.png'} width={30} height={30} />
+                        {name}
+                      </button>
+                    )
+                  )}
                 </div>
               </div>
             </Transition.Child>
