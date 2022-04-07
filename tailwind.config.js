@@ -24,10 +24,10 @@ module.exports = {
         'font-blue': '#4B86FF',
       },
       animation: {
-        'spin-once': 'spin 0.5s ease-in-out 1',
+        'spin-once': 'spin 0.5s ease-in-out reverse',
       },
       boxShadow: {
-        'card': '5px 5px 5px #c7c7c7, -5px -5px 5px #ffffff',
+        card: '5px 5px 5px #c7c7c7, -5px -5px 5px #ffffff',
         'card-dark': '5px 5px 5px #171a29, -5px -5px 5px  #272b45',
         button:
           '-1px -1px 3px #4479e6,-1px -1px 2px #4479e6,1px 1px 1px #4479e6,1px 1px 2px #272b45',
@@ -37,4 +37,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};

@@ -1,9 +1,9 @@
-import React, { Fragment, useState, useRef } from 'react'
-import Image from 'next/image'
-import { Dialog, Transition } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/solid'
+import React, { Fragment, useState, useRef } from 'react';
+import Image from 'next/image';
+import { Dialog, Transition } from '@headlessui/react';
+import { ChevronDownIcon } from '@heroicons/react/solid';
 
-export type Token = string
+export type Token = string;
 
 export const tokens: Token[] = [
   'eth',
@@ -25,25 +25,25 @@ export const tokens: Token[] = [
   'salt',
   'fun',
   'mana',
-]
+];
 
 interface SwapTokenSelectProps {
-  token: Token
-  setToken: React.Dispatch<React.SetStateAction<Token>>
+  token: Token;
+  setToken: React.Dispatch<React.SetStateAction<Token>>;
 }
 
 const SwapTokenSelect = ({ token, setToken }: SwapTokenSelectProps) => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [query, setQuery] = useState('')
-  const inputRef = useRef(null)
+  const [isOpen, setIsOpen] = useState(false);
+  const [query, setQuery] = useState('');
+  const inputRef = useRef(null);
 
   function closeModal() {
-    setIsOpen(false)
+    setIsOpen(false);
   }
 
   function openModal() {
-    setQuery('')
-    setIsOpen(true)
+    setQuery('');
+    setIsOpen(true);
   }
 
   const filteredTokens =
@@ -54,14 +54,14 @@ const SwapTokenSelect = ({ token, setToken }: SwapTokenSelectProps) => {
             .toLowerCase()
             .replace(/\s+/g, '')
             .includes(query.toLowerCase().replace(/\s+/g, ''))
-        )
+        );
 
   return (
     <>
       <button
         type="button"
         onClick={openModal}
-        className="relative my-auto mr-2 inline-flex items-center gap-1.5 rounded-full border border-button-blue bg-neutral-400 bg-opacity-0 px-1.5 text-xs font-semibold uppercase leading-6 text-button-blue hover:bg-opacity-10"
+        className="relative my-auto inline-flex items-center gap-1.5 rounded-full border border-button-blue bg-neutral-400 bg-opacity-0 px-1.5 text-xs font-semibold uppercase leading-6 text-button-blue hover:bg-opacity-10"
       >
         <Image src={'/logo.png'} width={16} height={16} />
         {token}
@@ -127,8 +127,8 @@ const SwapTokenSelect = ({ token, setToken }: SwapTokenSelectProps) => {
                   onChange={(event) => setQuery(event.target.value)}
                   onKeyDown={(event) => {
                     if (event.key === 'Enter' && tokens.includes(query)) {
-                      setToken(query)
-                      closeModal()
+                      setToken(query);
+                      closeModal();
                     }
                   }}
                 />
@@ -138,8 +138,8 @@ const SwapTokenSelect = ({ token, setToken }: SwapTokenSelectProps) => {
                       <li
                         className="flex cursor-pointer snap-start items-center p-2.5 hover:bg-bg-blue dark:hover:bg-menu-blue"
                         onClick={() => {
-                          setToken(token)
-                          closeModal()
+                          setToken(token);
+                          closeModal();
                         }}
                       >
                         <Image src={'/logo.png'} width={30} height={30} />
@@ -154,7 +154,7 @@ const SwapTokenSelect = ({ token, setToken }: SwapTokenSelectProps) => {
         </Dialog>
       </Transition>
     </>
-  )
-}
+  );
+};
 
-export default SwapTokenSelect
+export default SwapTokenSelect;

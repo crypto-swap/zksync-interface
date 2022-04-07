@@ -1,31 +1,32 @@
-import { useState } from 'react'
-import Image from 'next/image'
-import SwapInput from './SwapInput'
+import { useState } from 'react';
+import Image from 'next/image';
+import SwapInput from './SwapInput';
+import SwapButton from './SwapButton';
 
 const SwapMenu = () => {
-  const [effect, setEffect] = useState(false)
+  const [effect, setEffect] = useState(false);
 
-  const [fromToken, setFromToken] = useState('eth')
-  const [toToken, setToToken] = useState('bat')
+  const [fromToken, setFromToken] = useState('eth');
+  const [toToken, setToToken] = useState('bat');
 
   return (
     <div className="h-auto w-full max-w-md rounded-3xl bg-bg-card-light shadow-card dark:bg-bg-card-dark dark:shadow-card-dark">
-      <div className="h-full px-3 py-4 text-text-light dark:text-text-dark">
-        <div className="font-bold">Swap</div>
+      <div className="p-6 pt-5 text-text-light dark:text-text-dark">
+        <div className="mb-[26px] ml-0.5 text-xl font-bold">Swap</div>
         <SwapInput
-          title="From"
+          title="Pay"
           value={'0.0'}
           token={fromToken}
           setToken={setFromToken}
         />
-        <div className="flex justify-center">
+        <div className="mt-6 flex justify-center">
           <button
-            className=""
+            className="h-[30px]"
             onClick={() => {
-              setEffect(true)
-              const temp = fromToken
-              setFromToken(toToken)
-              setToToken(temp)
+              setEffect(true);
+              const temp = fromToken;
+              setFromToken(toToken);
+              setToToken(temp);
             }}
           >
             <Image
@@ -38,14 +39,15 @@ const SwapMenu = () => {
           </button>
         </div>
         <SwapInput
-          title="To"
+          title="Receive"
           value={'0.0'}
           token={toToken}
           setToken={setToToken}
         />
+        <SwapButton />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SwapMenu
+export default SwapMenu;
