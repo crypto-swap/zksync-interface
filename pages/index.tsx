@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Tutorial from '../components/Homepage/tutorial'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 const Home: NextPage = () => {
 
@@ -65,20 +66,7 @@ const Home: NextPage = () => {
       </div>  
 
       <div className="mt-96">&nbsp;</div>
-
-      <footer className="flex h-24 w-full items-center justify-center overflow-hidden">
-        <a
-          className="flex items-center justify-center gap-2"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <Image src="/logo.png" alt="CryptoSwap Logo" width={16} height={16} /> CryptoSwap
-        </a>
-      </footer>
-
-      
+      <Footer/>
     </div>
   )
 }

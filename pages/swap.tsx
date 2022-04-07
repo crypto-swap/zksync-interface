@@ -4,6 +4,7 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import SwapMenu from '../components/SwapMenu'
 import SwapInput from '../components/SwapMenu/SwapInput'
+import Footer from '../components/Footer'
 
 const Swap = () => {
   return (
@@ -22,7 +23,10 @@ const Swap = () => {
       <div className="mt-20 flex items-center justify-center px-2">
         <SwapMenu />
       </div>
+      <div className="mt-96">&nbsp;</div>
+          <Footer/>
     </div>
+         
   )
 }
 
