@@ -6,7 +6,7 @@ import { useTheme } from 'next-themes';
 const Footer = () => {
   const {theme} = useTheme();
   return (
-    <div className="h-45 grid w-full grid-cols-1 grid-rows-4 justify-items-center lg:grid-cols-4 lg:grid-rows-1">
+    <div className="h-45 bg-bg-light grid w-full grid-cols-1 grid-rows-4 justify-items-center lg:grid-cols-4 lg:grid-rows-1 dark:bg-bg-dark">
       <div className="px-12 space-y-3">
         <p className="text-xl font-semibold text-center">Join Our Community</p>
         <div className="grid grid-cols-5 gap-2 pt-5 pb-3">

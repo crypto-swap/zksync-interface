@@ -22,8 +22,9 @@ const Swap = () => {
       <Navbar />
 
       <SwapMenu />
-      <div className="mt-96">&nbsp;</div>
-          <Footer/>
+      <div className="pt-96 bg-bg-light dark:bg-bg-dark">&nbsp;</div>
+      
+      <Footer/>
     </div>
          
   )
