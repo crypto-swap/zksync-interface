@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useContext } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useTheme } from 'next-themes';
+import WalletPopup from '../Navbar/WalletPopup';
+import { WalletContext } from '../../pages/_app';
 
 const Navbar = () => {
-
-  // defaults to dark mode 
+  // defaults to dark mode
   const { theme, setTheme } = useTheme();
   useEffect(() => {
     if (theme === 'system') {
@@ -13,6 +13,12 @@ const Navbar = () => {
     }
     console.log(theme);
   }, []);
+
+  const { wallet, setWalletPopupOpen } = useContext(WalletContext);
+
+  function openModal() {
+    setWalletPopupOpen(true);
+  }
 
   return (
     <div className="navbar">
@@ -72,13 +78,17 @@ const Navbar = () => {
           <div className="wallet">
             <button
               id="connect-wallet"
+              onClick={openModal}
               className="wallet-button-1 wallet-button-2"
             >
               <p className="wallet-button-text hide-small">
-                Connect to a wallet
+                {wallet ? 'Wallet Connected!' : 'Connect to a wallet'}
               </p>
-              <p className="wallet-button-text show-small">Connect wallet</p>
+              <p className="wallet-button-text show-small">
+                {wallet ? 'Wallet Connected!' : 'Connect wallet'}
+              </p>
             </button>
+            <WalletPopup />
           </div>
 
           <button
