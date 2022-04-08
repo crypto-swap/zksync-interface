@@ -1,11 +1,7 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import React from 'react'
-import Navbar from '../components/Navbar'
-import SwapMenu from '../components/SwapMenu'
-import SwapInput from '../components/SwapMenu/SwapInput'
-import Footer from '../components/Footer'
-
+import Head from 'next/head';
+import Navbar from '../components/Navbar';
+import SwapMenu from '../components/SwapMenu';
+import Footer from '../components/Footer';
 
 const Swap = () => {
   return (
@@ -22,13 +18,12 @@ const Swap = () => {
       <Navbar />
 
       <SwapMenu />
-      <div className="pt-96 bg-bg-light dark:bg-bg-dark">&nbsp;</div>
-      
-      <Footer/>
-    </div>
-         
-  )
-}
 
+      <div className="bg-bg-light pt-96 dark:bg-bg-dark">&nbsp;</div>
+
+      <Footer />
+    </div>
+  );
+};
 
 export default Swap;
