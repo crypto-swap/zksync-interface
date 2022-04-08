@@ -31,7 +31,7 @@ const WalletPopup = () => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Dialog.Overlay className="fixed inset-0 bg-neutral-600/40 filter backdrop-blur-lg" />
+            <Dialog.Overlay className="fixed inset-0 bg-neutral-600/40 backdrop-blur-md" />
           </Transition.Child>
 
           {/* This element is to trick the browser into centering the modal contents. */}
