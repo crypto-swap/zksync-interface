@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link'
 
 interface PoolBarProps {
     name: string;
@@ -18,14 +19,15 @@ const PoolBar = ({name, liquidity, volume, fees, apr} : PoolBarProps) => {
     var icon1 = '/discord.svg';
     var icon2 = '/discord.svg';
     return ( 
-        <div className="text-xs lg:text-lg h-12 mx-8 lg:mx-20 mt-4 overflow-hidden rounded-lg shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark grid grid-cols-6 ">
+    <Link href="/">
+        <div className="font-[Montserrat] text-xs lg:text-lg h-12 mx-8 lg:mx-20 mt-4 overflow-hidden rounded-lg shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark grid grid-cols-6 ">
             
-            <div className="col-span-2 grid grid-cols-3 ">
+            <div className="col-span-2 grid grid-cols-3 text-left">
                 <div className="flex justify-center gap-x-0.5 lg:gap-x-2">
                     <Image src={icon1} width={25} height={25} />
                     <Image src={icon2} width={25} height={25} />
                 </div>
-                <div className="flex flex-col justify-center col-span-2 px-2"> 
+                <div className="flex flex-col justify-center col-span-2"> 
                     {name}
                 </div>
                 
@@ -42,7 +44,9 @@ const PoolBar = ({name, liquidity, volume, fees, apr} : PoolBarProps) => {
             <div className="flex flex-col justify-center text-right">
                 {apr}
             </div>
+            
         </div>
+    </Link>
     ) }
     
 export default PoolBar

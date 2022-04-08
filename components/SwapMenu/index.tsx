@@ -56,7 +56,7 @@ const SwapMenu = () => {
         enterFrom="translate-y-[-96px]"
         enterTo="translate-y-0"
       >
-        <div className="relative z-0 mx-auto mt-4 flex w-full max-w-md flex-col gap-4 rounded-3xl bg-bg-card-light p-[26px] shadow-card dark:bg-bg-card-dark  dark:shadow-card-dark">
+        <div className="relative z-0 mx-auto pt-4 flex w-full max-w-md flex-col gap-4 rounded-3xl bg-bg-card-light p-[26px] shadow-card dark:bg-bg-card-dark  dark:shadow-card-dark">
           {['Rate', 'Swap Fee', 'Estimated Cost', 'Minimum Received'].map(
             (label) => (
               <div className="flex place-content-between text-sm font-bold">
