@@ -1,8 +1,9 @@
-import { Fragment, useState } from 'react';
+import { useState, useContext } from 'react';
 import Image from 'next/image';
 import SwapInput from './SwapInput';
 import SwapButton from './SwapButton';
 import { Transition } from '@headlessui/react';
+import { WalletContext } from '../../pages/_app';
 
 const SwapMenu = () => {
   const [effect, setEffect] = useState(false);
@@ -10,7 +11,7 @@ const SwapMenu = () => {
   const [fromToken, setFromToken] = useState('eth');
   const [toToken, setToToken] = useState('bat');
 
-  const [wallet, setWallet] = useState(false);
+  const { wallet } = useContext(WalletContext);
 
   return (
     <div className="text-text-light dark:text-text-dark ">
@@ -47,7 +48,7 @@ const SwapMenu = () => {
           token={toToken}
           setToken={setToToken}
         />
-        <SwapButton {...{ wallet, setWallet }} />
+        <SwapButton />
       </div>
       <Transition
         show={wallet}
