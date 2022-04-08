@@ -20,9 +20,9 @@ const PoolBar = ({name, liquidity, volume, fees, apr} : PoolBarProps) => {
     var icon2 = '/discord.svg';
     return ( 
     <Link href="/">
-        <div className="font-[Montserrat] text-xs lg:text-lg h-12 mx-8 lg:mx-20 mt-4 overflow-hidden rounded-lg shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark grid grid-cols-6 ">
+        <div className="font-[Montserrat] text-xs md:text-lg h-12 mx-8 lg:mx-20 mt-4 overflow-hidden rounded-lg shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark grid grid-cols-6 ">
             
-            <div className="col-span-2 grid grid-cols-3 text-left">
+            <div className="col-span-2 grid grid-cols-3 text-left pl-2">
                 <div className="flex justify-center gap-x-0.5 lg:gap-x-2">
                     <Image src={icon1} width={25} height={25} />
                     <Image src={icon2} width={25} height={25} />
@@ -38,10 +38,10 @@ const PoolBar = ({name, liquidity, volume, fees, apr} : PoolBarProps) => {
             <div className="flex flex-col justify-center text-right">
                 {volume}
             </div>
-            <div className="flex flex-col justify-center text-right">
+            <div className="flex flex-col justify-center hidden md:table-cell md:pt-2.5 text-right">
                 {fees}
             </div>
-            <div className="flex flex-col justify-center text-right">
+            <div className="flex flex-col justify-center text-right pr-2 md:pr-6 lg:pr-10 xl:pr-14">
                 {apr}
             </div>
             
