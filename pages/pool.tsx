@@ -3,10 +3,11 @@ import Image from 'next/image'
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import PoolMenu from '../components/Pool/PoolMenu'
 
 const Pool = () => {
     return (
-        <div>
+        <div className="h-screen bg-bg-light font-[Montserrat] dark:bg-bg-dark">
             <Head>
                 <title>CryptoSwap</title>
                 <link rel="icon" href="/black_logo.svg" />
@@ -16,9 +17,9 @@ const Pool = () => {
                 rel="stylesheet"
                 />
             </Head>
-
             <Navbar/>
-            <div>Pool page coming soon...</div>
+            <PoolMenu/>
+            <br></br>
             <Footer/>
         </div>    
     )

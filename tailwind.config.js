@@ -33,6 +33,8 @@ module.exports = {
           '-1px -1px 3px #4479e6,-1px -1px 2px #4479e6,1px 1px 1px #4479e6,1px 1px 2px #272b45',
         'button-dark':
           '-1px -1px 3px #225fdd,-1px -1px 2px #225fdd,1px 1px 1px #225fdd,1px 1px 2px #2a74ff',
+        'button-hover': '2px 2px 2px #c7c7c7, -2px -2px 2px #ffffff',
+        'button-hover-dark': '2px 2px 2px #171a29, -2px -2px 2px  #272b45',
       },
     },
   },
