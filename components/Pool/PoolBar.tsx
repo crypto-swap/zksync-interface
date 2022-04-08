@@ -38,7 +38,7 @@ const PoolBar = ({name, liquidity, volume, fees, apr} : PoolBarProps) => {
             <div className="flex flex-col justify-center text-right">
                 {volume}
             </div>
-            <div className="flex flex-col justify-center text-right">
+            <div className="flex flex-col justify-center text-right hide md:show">
                 {fees}
             </div>
             <div className="flex flex-col justify-center text-right">

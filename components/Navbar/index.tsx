@@ -82,10 +82,10 @@ const Navbar = () => {
               className="wallet-button-1 wallet-button-2"
             >
               <p className="wallet-button-text hide-small">
-                {wallet ? 'Wallet Connected!' : 'Connect to a wallet'}
+                {wallet ? 'Wallet Connected' : 'Connect to a wallet'}
               </p>
               <p className="wallet-button-text show-small">
-                {wallet ? 'Wallet Connected!' : 'Connect wallet'}
+                {wallet ? 'Wallet Connected' : 'Connect wallet'}
               </p>
             </button>
             <WalletPopup />
