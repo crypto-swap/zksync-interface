@@ -73,7 +73,7 @@ const WalletPopup = () => {
                       setWallet(true);
                       closeModal();
                     }}
-                    className="mt-5 flex w-full gap-3 rounded-lg bg-slate-500 bg-opacity-0 p-3 text-lg font-bold shadow-card hover:bg-opacity-5 dark:border-bg-light dark:shadow-card-dark"
+                    className="mt-5 flex w-full gap-3 rounded-lg bg-slate-500 bg-opacity-0 p-3 text-lg font-bold shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:border-bg-light dark:shadow-card-dark"
                   >
                     <Image src={'/logo.png'} width={30} height={30} />
                     {name}

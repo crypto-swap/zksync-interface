@@ -50,6 +50,7 @@ const SwapMenu = () => {
         />
         <SwapButton />
       </div>
+      <div className='pt-2.5'>
       <Transition
         show={wallet}
         enter="duration-1000"
@@ -67,6 +68,7 @@ const SwapMenu = () => {
           )}
         </div>
       </Transition>
+      </div>
     </div>
   );
 };

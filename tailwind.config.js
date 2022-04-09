@@ -27,15 +27,15 @@ module.exports = {
         'spin-once': 'spin 0.5s ease-in-out 1 reverse',
       },
       boxShadow: {
-        'card': '5px 5px 5px #c7c7c7, -5px -5px 5px #ffffff',
-        'card-dark': '5px 5px 5px #171a29, -5px -5px 5px  #272b45',
-
+        'card': '3px 3px 3px #c7c7c7, -3px -3px 3px #ffffff',
+        'card-dark': '3px 3px 3px #171a29, -3px -3px 3px  #272b45',
+        
         'button':
           '-1px -1px 3px #4479e6,-1px -1px 2px #4479e6,1px 1px 1px #4479e6,1px 1px 2px #272b45',
         'button-dark':
           '-1px -1px 3px #225fdd,-1px -1px 2px #225fdd,1px 1px 1px #225fdd,1px 1px 2px #2a74ff',
-        'button-hover': '2px 2px 2px #c7c7c7, -2px -2px 2px #ffffff',
-        'button-hover-dark': '2px 2px 2px #171a29, -2px -2px 2px  #272b45',
+        'button-hover': 'inset 3px 3px 3px #c7c7c7, inset -3px -3px 3px #ffffff',
+        'button-hover-dark': 'inset 3px 3px 3px #171a29, inset -3px -3px 3px  #272b45',
       },
     },
   },
