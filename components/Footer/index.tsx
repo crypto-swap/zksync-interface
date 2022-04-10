@@ -12,28 +12,28 @@ const Footer = () => {
         <div className="grid grid-cols-5 gap-2 pt-5 pb-3">
           <Link href="https://t.me/+caEx-GqJJy5kMTEx">
             <a target="_blank">
-              <Image src={'/telegram.svg'} width={45} height={45} />
+              <Image src={'/icons/telegram.svg'} width={45} height={45} />
             </a> 
           </Link>
           <Link href="https://medium.com/@cryptoswaporg">
             <a target="_blank">
-              <Image src={theme === 'dark' ? '/medium_dark.svg' : '/medium.svg'} width={45} height={45} />
+              <Image src={theme === 'dark' ? '/icons/medium_dark.svg' : '/icons/medium.svg'} width={45} height={45} />
             </a>
           </Link>
           <Link href="https://discord.gg/KK2Gha9Cyb">
             <a target="_blank">
-              <Image src={'/discord.svg'} width={45} height={45} />
+              <Image src={'/icons/discord.svg'} width={45} height={45} />
             </a>
           </Link>
           <Link href="https://twitter.com/cryptoswaporg/">
             <a target="_blank">
-              <Image src={'/twitter.svg'} width={45} height={45} />
+              <Image src={'/icons/twitter.svg'} width={45} height={45} />
             </a>
             
           </Link>
           <Link href="https://github.com/crypto-swap">
             <a target="_blank">
-            <Image src={theme === 'dark' ? 'github_dark.svg' : '/github.svg'} width={45} height={45} />
+            <Image src={theme === 'dark' ? 'icons/github_dark.svg' : '/icons/github.svg'} width={45} height={45} />
             </a>
           </Link>
         </div>

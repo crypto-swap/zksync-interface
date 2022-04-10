@@ -25,7 +25,7 @@ const SwapMenu = () => {
         />
         <div className="mt-6 flex justify-center">
           <button
-            className="h-[30px] scale-x-[-1]"
+            className="h-[30px] scale-x-[-1] cursor-pointer"
             onClick={() => {
               setEffect(true);
               const temp = fromToken;
@@ -48,7 +48,7 @@ const SwapMenu = () => {
           token={toToken}
           setToken={setToToken}
         />
-        <SwapButton />
+      <SwapButton />
       </div>
       <div className='pt-2.5'>
       <Transition
@@ -57,7 +57,7 @@ const SwapMenu = () => {
         enterFrom="translate-y-[-96px]"
         enterTo="translate-y-0"
       >
-        <div className="relative z-0 mx-auto pt-4 flex w-full max-w-md flex-col gap-4 rounded-3xl bg-bg-card-light p-[26px] shadow-card dark:bg-bg-card-dark  dark:shadow-card-dark">
+        <div className="relative z-0 mx-auto flex w-full max-w-md flex-col gap-4 rounded-3xl bg-bg-card-light p-[26px] pt-4 shadow-card dark:bg-bg-card-dark  dark:shadow-card-dark">
           {['Rate', 'Swap Fee', 'Estimated Cost', 'Minimum Received'].map(
             (label) => (
               <div className="flex place-content-between text-sm font-bold">
