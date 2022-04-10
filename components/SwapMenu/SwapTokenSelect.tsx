@@ -63,7 +63,7 @@ const SwapTokenSelect = ({ token, setToken }: SwapTokenSelectProps) => {
         onClick={openModal}
         className="relative my-auto inline-flex items-center gap-1.5 rounded-full border border-button-blue bg-neutral-400 bg-opacity-0 px-1.5 text-xs font-semibold uppercase leading-6 text-button-blue hover:bg-opacity-10"
       >
-        <Image src={'/logo.png'} width={16} height={16} />
+        <Image src={'/icons/blue_logo.svg'} width={16} height={16} />
         {token}
         <ChevronDownIcon className="inline h-4 w-4" />
       </button>
@@ -142,7 +142,7 @@ const SwapTokenSelect = ({ token, setToken }: SwapTokenSelectProps) => {
                           closeModal();
                         }}
                       >
-                        <Image src={'/logo.png'} width={30} height={30} />
+                        <Image src={'/icons/blue_logo.svg'} width={30} height={30} />
                         <span className="ml-2 uppercase">{token}</span>
                       </li>
                     ))}

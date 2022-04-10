@@ -25,7 +25,7 @@ const Navbar = () => {
       <div className="navbar-col-1">
         <a id="home-nav-link" href="/">
           <div className="navbar-logo">
-            <Image src={'/white_logo.svg'} width={40} height={40} />
+            <Image src={'/icons/white_logo.svg'} width={40} height={40} />
           </div>
         </a>
       </div>
@@ -54,7 +54,7 @@ const Navbar = () => {
         <div className="navbar-col-3-items">
           <div className="network" title="">
             <button id="select-network" className="network-button">
-              <Image src={'/networks.svg'} width={20} height={20} />
+              <Image src={'/assets/networks.svg'} width={20} height={20} />
               <span>&nbsp;</span>
               Networks
               <span className="hide-medium">

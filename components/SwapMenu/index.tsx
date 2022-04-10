@@ -48,7 +48,7 @@ const SwapMenu = () => {
           token={toToken}
           setToken={setToToken}
         />
-        <SwapButton />
+      <SwapButton />
       </div>
       <div className='pt-2.5'>
       <Transition

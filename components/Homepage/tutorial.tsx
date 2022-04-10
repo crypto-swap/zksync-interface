@@ -20,7 +20,7 @@ const Tutorial = () => {
               <li className="bg-menu-blue rounded-3xl square flex flex-col items-center">
                 <button className="flex flex-col items-center square object-contain justify-center p-[10%] gap-y-2 lg:p-[5%] ">
                   <div className="h-auto lg:p-[5%] xl:px-[7.5%] lg:pb-[-10%]">
-                    <img src={'/wallets.svg'}/>
+                    <img src={'/assets/wallets.svg'}/>
                   </div>
                   <span className='text-xs md:text-lg text-center font-semibold text-text-dark'>Connect Your Wallet</span>
                 </button>
@@ -48,7 +48,7 @@ const Tutorial = () => {
               <li className="bg-menu-blue rounded-3xl square flex flex-col items-center">
                 <button className="flex flex-col items-center square object-contain justify-center px-[15%] py-[7.5%] md:pt-[7.5%] md:pb-[2.5%] gap-y-1 lg:gap-y-2">
                   <div className="h-auto lg:p-[2.5%] lg:pb-[-2.5%]">
-                    <img src={'/networks.svg'}/>
+                    <img src={'/assets/networks.svg'}/>
                   </div>
                   <span className='text-xs md:text-lg text-center font-semibold text-text-dark lg:mb-2'>View Networks</span>
                 </button>
@@ -56,7 +56,7 @@ const Tutorial = () => {
               <li className="bg-[#71B176]  rounded-3xl square flex flex-col items-center">
                 <button className="flex flex-col items-center square object-contain justify-center px-[10%] py-[5%] gap-y-2">
                   <div className="h-auto">
-                    <img src={'/swap.svg'}/>
+                    <img src={'/assets/swap.svg'}/>
                   </div>
                   <span className='text-xs md:text-lg text-center font-semibold text-text-dark'>Swap</span>
                 </button>
@@ -79,7 +79,7 @@ const Tutorial = () => {
               <li className="bg-font-blue rounded-3xl square flex flex-col items-center">
                 <button className="flex flex-col items-center square object-contain justify-center px-[10%] py-[5%] gap-y-2">
                   <div className="h-auto">
-                    <img src={'/pool.svg'}/>
+                    <img src={'/assets/pool.svg'}/>
                   </div>
                   <span className='text-xs md:text-lg text-center font-semibold text-text-dark'>Pool</span>
                 </button>

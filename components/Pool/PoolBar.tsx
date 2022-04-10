@@ -16,8 +16,8 @@ const PoolBar = ({name, liquidity, volume, fees, apr} : PoolBarProps) => {
     var icon1 = "/" + coins[0].toString() + ".svg";
     var icon2 = "/" + coins[1].toString() + ".svg";
     //testing images
-    var icon1 = '/discord.svg';
-    var icon2 = '/discord.svg';
+    var icon1 = '/icons/discord.svg';
+    var icon2 = '/icons/discord.svg';
     return ( 
     <Link href="/">
         <div className="font-[Montserrat] text-xs md:text-lg h-12 mx-8 lg:mx-20 mt-4 overflow-hidden rounded-lg shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark grid grid-cols-6 ">
