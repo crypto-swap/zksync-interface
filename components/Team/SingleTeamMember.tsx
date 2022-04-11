@@ -16,7 +16,7 @@ const SingleTeamMember = ({name, title, text, photo} : TeamLayoutProps) => {
     /* const { theme } = useTheme();  not needed for now */
     return (
         <div className='relative group'>
-            <div className='absolute hidden group-hover:block bg-bg-card-light/90 w-full z-20 h-full p-8 pb-10 dark:bg-bg-card-dark/90'>
+            <div className='absolute hidden group-hover:block bg-bg-card-light/90 w-full z-20 h-full px-8 pb-10 dark:bg-bg-card-dark/90'>
                 <div className='text-center'>
                     {text}
                 </div>
