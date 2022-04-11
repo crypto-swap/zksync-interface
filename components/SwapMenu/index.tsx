@@ -34,7 +34,7 @@ const SwapMenu = () => {
             }}
           >
             <Image
-              src={'/SwapButton.svg'}
+              src={'/assets/SwapButton.svg'}
               className={`${effect ? 'animate-spin-once' : ''}`}
               onAnimationEnd={() => setEffect(false)}
               height={30}
