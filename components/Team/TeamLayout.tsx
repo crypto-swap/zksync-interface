@@ -26,7 +26,7 @@ const TeamLayout = () => {
 
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
                         <SingleTeamMember name="Nathan" title="Founder/Intern" text="Decentralized finance
-                        will enable the most efficient economy in the history of mankind. As each event will have roughly
+                        will enable the most efficient economy in the history of civilation. As each event will have roughly
                         measurable impact, entropy will be normalized for all." 
                         photo="/team/nathan.gif"/>
                     </div>
