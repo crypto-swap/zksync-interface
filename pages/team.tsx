@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import TeamLayout from '../components/Team/TeamLayout'
 
 const Team = () => {
     return (
@@ -18,7 +19,9 @@ const Team = () => {
             </Head>
 
             <Navbar/>
-            <div>You'll get to know our team of 17 soon!</div>
+            <div className='bg-bg-light dark:bg-bg-dark'>
+            <TeamLayout />
+            </div>
             <Footer/>
         </div>    
     )
