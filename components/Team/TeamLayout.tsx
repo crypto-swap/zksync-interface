@@ -40,11 +40,11 @@ const TeamLayout = () => {
                     </div>
 
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
-                        <SingleTeamMember name="Botao" title="Developer" text="UCLA 24'" photo="/team/botao.jpg"/>
+                        <SingleTeamMember name="Botao" title="Developer" text="UCLA '24'" photo="/team/botao.jpg"/>
                     </div>
 
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
-                        <SingleTeamMember name="Annie" title="Front-End Intern" text="UCI '25" photo="/team/annie.jpg"/>
+                        <SingleTeamMember name="Annie" title="Front-End Intern" text="UCLA '25" photo="/team/annie.jpg"/>
                     </div>
 
                     
