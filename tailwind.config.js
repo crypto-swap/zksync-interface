@@ -9,6 +9,9 @@ module.exports = {
       fontFamily: {
         sans: ['Montserrat', 'Helvetica', 'Arial', 'sans-serif'],
       },
+      spacing: {
+        '4.167%': '4.167%', 
+      },
       colors: {
         'bg-light': '#EAEAEA', // bg- prefixes to avoid conflicts with other names
         'bg-dark': '#1B1E31',

@@ -16,8 +16,10 @@ const Swap = () => {
         />
       </Head>
       <Navbar />
-      <SwapMenu />
-      
+
+      <div className="w-11/12 ml-[4.167%]">
+        <SwapMenu />
+      </div>
 
       <div className="bg-bg-light pt-96 dark:bg-bg-dark">&nbsp;</div>
 
