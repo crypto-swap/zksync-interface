@@ -25,7 +25,7 @@ const SwapMenu = () => {
         />
         <div className="mt-6 flex justify-center">
           <button
-            className="h-[30px] scale-x-[-1] cursor-pointer"
+            className="h-[30px] scale-x-[-1]"
             onClick={() => {
               setEffect(true);
               const temp = fromToken;
