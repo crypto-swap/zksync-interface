@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect, useContext } from 'react';
+import { useContext } from 'react';
 import { WalletContext } from '../../pages/_app';
 
 const SwapButton = () => {
