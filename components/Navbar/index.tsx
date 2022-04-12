@@ -32,7 +32,7 @@ const Navbar = () => {
       <div className="navbar-col-1">
         <a id="home-nav-link" href="/">
           <span className="navbar-logo">
-            <Image src={'/icons/white_logo.svg'} width={50} height={50} />
+            <Image src={'/icons/white_logo.svg'} width={40} height={40} />
           </span>
         </a>
       </div>

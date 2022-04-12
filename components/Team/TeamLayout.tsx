@@ -25,7 +25,7 @@ const TeamLayout = () => {
                     </div>
 
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
-                        <SingleTeamMember name="Nathan" title="Founder/Intern" text="UCLA Math-CS    Decentralized finance
+                        <SingleTeamMember name="Nathan" title="Developer (Manager)" text="UCLA Math-CS    Decentralized finance
                         will enable the most efficient economy in the history of civilation. As each event will have roughly
                         measurable impact, entropy will be normalized for all." 
                         photo="/team/nathan.gif"/>
@@ -36,7 +36,7 @@ const TeamLayout = () => {
                     </div>
 
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
-                        <SingleTeamMember name="Katie" title="UX/UI/Front-End Intern" text="UCI Cog Sci" photo="/team/katie.png"/>
+                        <SingleTeamMember name="Katie" title="Front-End Wizard" text="UCI Cog Sci" photo="/team/katie.png"/>
                     </div>
 
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
@@ -44,12 +44,24 @@ const TeamLayout = () => {
                     </div>
 
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
-                        <SingleTeamMember name="Annie" title="Front-End Intern" text="UCLA CS" photo="/team/annie.jpg"/>
+                        <SingleTeamMember name="Annie" title="Front-End Developer" text="UCLA CS" photo="/team/annie.jpg"/>
                     </div>
 
                     
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
                         <SingleTeamMember name="Austin" title="Business Development" text="UCLA Cog Sci" photo="/team/austin.jpeg"/>
+                    </div>
+
+                    <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
+                        <SingleTeamMember name="Janak" title="Marketing Coordinator" text="UCLA Biz Econ" photo="/team/janak.jpg"/>
+                    </div>
+
+                    <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
+                        <SingleTeamMember name="Batman" title="Graphic Designer" text="UCSD ICAM" photo="/team/batman.png"/>
+                    </div>
+
+                    <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
+                        <SingleTeamMember name="Katsuya" title="Developer" text="UCLA CS" photo="/team/katsuya.png"/>
                     </div>
 
                 </div>
