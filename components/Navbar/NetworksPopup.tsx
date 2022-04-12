@@ -43,9 +43,9 @@ const NetworksPopup = ({
             <Image src={image} width={30} height={30} />
             {name}
             <div
-              className={`ml-auto mr-2 h-2 w-2 rounded-full ${
+              className={`ml-auto mr-2 h-[9px] w-[9px] rounded-full shadow-inner ${
                 status ? 'bg-green-500' : 'bg-red-500'
-              }`}
+              } shadow-neutral-900/25`}
             ></div>
           </div>
         ))}
