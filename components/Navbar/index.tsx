@@ -31,9 +31,9 @@ const Navbar = () => {
     <div className="navbar">
       <div className="navbar-col-1">
         <a id="home-nav-link" href="/">
-          <div className="navbar-logo">
-            <Image src={'/icons/white_logo.svg'} width={40} height={40} />
-          </div>
+          <span className="navbar-logo">
+            <Image src={'/icons/white_logo.svg'} width={50} height={50} />
+          </span>
         </a>
       </div>
 
