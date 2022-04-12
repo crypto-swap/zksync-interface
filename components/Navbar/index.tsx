@@ -2,6 +2,7 @@ import React, { useState, useEffect, useLayoutEffect, useContext } from 'react';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import WalletPopup from '../Navbar/WalletPopup';
+import NetworksPopup from '../Navbar/NetworksPopup';
 import { WalletContext } from '../../pages/_app';
 
 const Navbar = () => {
@@ -16,8 +17,14 @@ const Navbar = () => {
 
   const { wallet, setWalletPopupOpen } = useContext(WalletContext);
 
-  function openModal() {
+  function openWalletPopup() {
     setWalletPopupOpen(true);
+  }
+
+  const [networksPopupOpen, setNetworksPopupOpen] = useState(false);
+
+  function openNetworksPopup() {
+    setNetworksPopupOpen(true);
   }
 
   return (
@@ -53,7 +60,11 @@ const Navbar = () => {
       <div className="navbar-col-3">
         <div className="navbar-col-3-items">
           <div className="network" title="">
-            <button id="select-network" className="network-button">
+            <button
+              id="select-network"
+              className="network-button"
+              onClick={openNetworksPopup}
+            >
               <Image src={'/assets/networks.svg'} width={20} height={20} />
               <span>&nbsp;</span>
               Networks
@@ -73,12 +84,13 @@ const Navbar = () => {
                 </svg>
               </span>
             </button>
+            <NetworksPopup {...{ networksPopupOpen, setNetworksPopupOpen }} />
           </div>
 
           <div className="wallet">
             <button
               id="connect-wallet"
-              onClick={openModal}
+              onClick={openWalletPopup}
               className="wallet-button-1 wallet-button-2"
             >
               <p className="wallet-button-text hide-small">
