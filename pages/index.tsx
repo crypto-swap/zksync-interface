@@ -1,14 +1,13 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import Tutorial from '../components/Homepage/tutorial'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
+import Tutorial from '../components/Homepage/tutorial';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const Home: NextPage = () => {
-
   return (
-    <div className="text-text-light bg-bg-light h-screen font-[Montserrat] overflow-x-hidden dark:bg-bg-dark dark:text-text-dark">
+    <div className="relative h-screen overflow-x-hidden bg-bg-light font-[Montserrat] text-text-light dark:bg-bg-dark dark:text-text-dark">
       <Head>
         <title>CryptoSwap</title>
         <link rel="icon" href="/black_logo.svg" />
@@ -19,56 +18,68 @@ const Home: NextPage = () => {
         />
       </Head>
 
-      <Navbar/>
+      <Navbar />
 
-      <div className="relative h-[95vh] w-screen flex items-center justify-center mx-auto">
-        
-        
-        <div className="absolute z-10 -mt-48 flex flex-col space-y-10 place-items-center font-[Montserrat] p-10 rounded-[64px] shadow-card dark:shadow-card-dark">
-          <div className='text-4xl font-semibold leading-7'>
-          <p className="leading-7">Crypto swaps</p>
-          <br></br>
-          <p className="leading-7">are easy here</p>
-          </div>
-
-          <button className="  bg-font-blue hover:bg-button-blue text-text-dark font-bold py-2 px-4 rounded-full text-base w-9/12 dark:bg-button-blue dark:hover:bg-font-blue shadow-button dark:shadow-button-dark">
-            <a href="#tutorial">
-              Get Started Now
-            </a>
-          </button>
-        </div>
-
-        <div className="">
-          <ul className="box-area">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </div>
-
-        
-        <div className="">
-          <ul className="box-area-dark">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </div>
-
+      <div className="absolute z-0 h-full w-full">
+        <ul className="box-area-dark">
+          <li>
+            <img src="/coins/coin1-min.png" />
+          </li>
+          <li>
+            <img src="/coins/coin2-min.png" />
+          </li>
+          <li>
+            <img src="/coins/coin3-min.png" />
+          </li>
+          <li>
+            <img src="/coins/coin4-min.png" />
+          </li>
+          <li>
+            <img src="/coins/coin5-min.png" />
+          </li>
+          <li>
+            <img src="/coins/coin6-min.png" />
+          </li>
+          <li>
+            <img src="/coins/coin7-min.png" />
+          </li>
+          <li>
+            <img src="/coins/coin8-min.png" />
+          </li>
+          <li>
+            <img src="/coins/coin9-min.png" />
+          </li>
+          <li>
+            <img src="/coins/coin10-min.png" />
+          </li>
+        </ul>
       </div>
 
-      <div id={'tutorial'} className="relative flex flex-col items-center justify-center place-items-center pt-5" >
-       <Tutorial/>
-      </div>  
+      <div className="relative mx-auto flex h-[95vh] w-screen items-center justify-center">
+        <div className="absolute z-20 flex flex-col items-center justify-center space-y-10 rounded-[64px] p-10 font-[Montserrat] shadow-card dark:shadow-card-dark">
+          <div className="text-4xl font-semibold leading-7">
+            <p className="z-30 leading-7">Crypto swaps</p>
+            <br></br>
+            <p className="leading-7">are easy here</p>
+          </div>
+
+          <button className="  w-9/12 rounded-full bg-font-blue py-2 px-4 text-base font-bold text-text-dark shadow-button hover:bg-button-blue dark:bg-button-blue dark:shadow-button-dark dark:hover:bg-font-blue">
+            <a href="#tutorial">Get Started Now</a>
+          </button>
+        </div>
+      </div>
+
+      <div
+        id={'tutorial'}
+        className="relative flex flex-col place-items-center items-center justify-center pt-5"
+      >
+        <Tutorial />
+      </div>
 
       <div className="mt-96">&nbsp;</div>
-      <Footer/>
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
