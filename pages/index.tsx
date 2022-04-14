@@ -26,14 +26,12 @@ const Home: NextPage = () => {
       <div className="relative h-[95vh] w-screen flex items-center justify-center mx-auto">
         
         
-        <div className="absolute z-10 -mt-48 flex flex-col space-y-10 place-items-center font-[Montserrat] p-10 rounded-[64px] shadow-card dark:shadow-card-dark">
-          <div className='text-4xl font-semibold leading-7'>
-          <p className="leading-7">Crypto swaps</p>
-          <br></br>
-          <p className="leading-7">are easy here</p>
+        <div className="absolute z-10 -mt-48 max-w-xs flex flex-col space-y-10 place-items-center font-[Montserrat] p-5 py-10 rounded-[64px] shadow-card dark:shadow-card-dark">
+          <div className='text-3xl font-semibold leading-9 text-center'>
+            CryptoSwap is a one-stop-shop for all crypto swaps. 
           </div>
 
-          <button className="  bg-font-blue hover:bg-button-blue text-text-dark font-bold py-2 px-4 rounded-full text-base w-9/12 dark:bg-button-blue dark:hover:bg-font-blue shadow-button dark:shadow-button-dark">
+          <button className="  bg-font-blue hover:bg-button-blue text-text-dark font-bold py-2 px-4 rounded-full text-base w-9/12 dark:bg-button-blue dark:hover:bg-font-blue shadow-blue-button hover:shadow-blue-button-hover">
             <a href="#tutorial">
               Get Started Now
             </a>

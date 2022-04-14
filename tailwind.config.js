@@ -42,6 +42,22 @@ module.exports = {
           'inset 3px 3px 3px #c7c7c7, inset -3px -3px 3px #ffffff',
         'button-hover-dark':
           'inset 3px 3px 3px #171a29, inset -3px -3px 3px  #272b45',
+        'green-card':
+          '5px 5px 0px #609664, -5px -5px 0px #82cc88',
+        'green-card-hover':
+          'inset 15px 15px 15px #609664, inset -15px -15px 15px #82cc88',
+        'blue-card':
+          '5px 5px 0px #4072d9, -5px -5px 0px #569aff',
+        'blue-card-hover':
+          'inset 15px 15px 15px #4072d9, inset -15px -15px 15px #569aff',
+        'grey-card':
+          '5px 5px 0px #2e3351, -5px -5px 0px #3e456d',
+        'grey-card-hover':
+          'inset 15px 15px 15px #2e3351, inset -15px -15px 15px #3e456d',
+        'blue-button':
+          '1px 1px 0px #4072d9, -1px -1px 0px #569aff',
+        'blue-button-hover':
+          'inset 3px 3px 3px #4072d9, inset -3px -3px 3px #569aff',
       },
     },
   },
