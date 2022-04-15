@@ -16,8 +16,13 @@ const networks: Network[] = [
     status: true,
   },
   {
-    name: 'Cosmos Testnet',
-    image: '/network_icons/cosmos_logo.svg',
+    name: 'StarkNet Testnet',
+    image: '/network_icons/starknet_logo.png',
+    status: false,
+  },
+  {
+    name: 'Ethereum Testnet',
+    image: '/network_icons/eth_logo.png',
     status: false,
   },
 ];
