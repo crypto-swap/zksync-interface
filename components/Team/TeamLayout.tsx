@@ -19,11 +19,6 @@ const TeamLayout = () => {
                         <SingleTeamMember name="Calvin" title="Developer" text="Caltech CS" photo="/team/calvin.png"/>
                     </div>
 
-
-                    <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
-                        <SingleTeamMember name="Hamza" title="Marketing Advisor" text="UCLA Communications" photo="/team/hamza.jpeg"/>
-                    </div>
-
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
                         <SingleTeamMember name="Nathan" title="Developer (Manager)" text="UCLA Math-CS    Decentralized finance
                         will enable the most efficient economy in the history of civilation. As each event will have roughly
@@ -36,33 +31,36 @@ const TeamLayout = () => {
                     </div>
 
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
-                        <SingleTeamMember name="Katie" title="Front-End Wizard" text="UCI Cog Sci" photo="/team/katie.png"/>
-                    </div>
-
-                    <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
                         <SingleTeamMember name="Botao" title="Developer" text="UCLA CS" photo="/team/botao.jpg"/>
                     </div>
 
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
-                        <SingleTeamMember name="Annie" title="Front-End Developer" text="UCLA CS" photo="/team/annie.jpg"/>
+                        <SingleTeamMember name="Michael" title="Developer" text="University of Washington Math" photo="/team/michael.png"/>
                     </div>
 
+                    <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
+                        <SingleTeamMember name="Annie" title="Front-End" text="UCLA CS" photo="/team/annie.jpg"/>
+                    </div>
                     
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
-                        <SingleTeamMember name="Austin" title="Business Development" text="UCLA Cog Sci" photo="/team/austin.jpeg"/>
+                        <SingleTeamMember name="Hamza" title="Marketing" text="UCLA Communications" photo="/team/hamza.jpeg"/>
                     </div>
 
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
-                        <SingleTeamMember name="Janak" title="Marketing Coordinator" text="UCLA Biz Econ" photo="/team/janak.jpg"/>
+                        <SingleTeamMember name="Janak" title="Marketing" text="UCLA Biz Econ" photo="/team/janak.jpg"/>
+                    </div>
+
+                    <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
+                        <SingleTeamMember name="Monke" title="Marketing" text="McDonalds" photo="/team/jason.png"/>
                     </div>
 
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
                         <SingleTeamMember name="Batman" title="Graphic Designer" text="UCSD ICAM" photo="/team/batman.png"/>
                     </div>
 
-                    <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
-                        <SingleTeamMember name="Michael" title="Developer" text="University of Washington Math" photo="/team/michael.png"/>
-                    </div>
+
+
+
 
                 </div>
             </div>
