@@ -7,7 +7,7 @@ import PoolMenu from '../components/Pool/PoolMenu'
 
 const Pool = () => {
     return (
-        <div className="h-screen bg-bg-light font-[Montserrat] dark:bg-bg-dark">
+        <div className="h-screen bg-bg-light font-[Montserrat] dark:bg-bg-dark overflow-auto">
             <Head>
                 <title>CryptoSwap</title>
                 <link rel="icon" href="/icons/black_logo.svg" />
