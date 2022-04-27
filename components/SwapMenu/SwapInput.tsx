@@ -32,13 +32,14 @@ const SwapInput = ({
       </div>
       <div className="relative flex flex-row-reverse place-content-between rounded-lg px-4 py-2 shadow-[inset_0.5px_1px_5px_rgba(0,0,0,0.3)]">
         <input
-          value={amount}
+          placeholder='0.0'
           onChange={(event) => {
             if (/^\d*\.?\d*$/.test(event.target.value)) {
               setAmount(event.target.value);
             }
           }}
           className="absolute inset-0 inline-block h-full w-full rounded-lg bg-transparent p-4"
+
         />
         <SwapTokenSelect {...{ token, setToken }} />
       </div>
