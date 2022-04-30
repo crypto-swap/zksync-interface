@@ -17,7 +17,7 @@ const WalletPopup = () => {
   return (
     <Popup title="Add Wallet" {...{ open, closeModal }}>
       <div className="mt-2.5">
-        {['MetaMask', 'Metawax', 'Metaverse', 'Metawax'].map((name) => (
+        {['MetaMask', 'WalletConnect', 'Metaverse', 'Metawax'].map((name) => (
           <button
             onClick={() => {
               setWallet(true);
