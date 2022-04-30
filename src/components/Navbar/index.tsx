@@ -22,7 +22,7 @@ const Navbar = () => {
     setWalletPopupOpen(true);
   }
 
-  const [network, setNetwork] = useState(0);
+  const [network, setNetwork] = useState<number | null>(null);
   const [networksPopupOpen, setNetworksPopupOpen] = useState(false);
 
   function openNetworksPopup() {
@@ -67,9 +67,19 @@ const Navbar = () => {
               className="network-button"
               onClick={openNetworksPopup}
             >
-              <Image src={networks[network].image} width={20} height={20} />
+              <Image
+                src={
+                  network != null
+                    ? networks[network].image
+                    : '/assets/networks.svg'
+                }
+                width={20}
+                height={20}
+              />
               <span>&nbsp;</span>
-              {networks[network].name.split(' ')[0]}
+              {network != null
+                ? networks[network].name.split(' ')[0]
+                : 'Networks'}
               <span className="hide-medium">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

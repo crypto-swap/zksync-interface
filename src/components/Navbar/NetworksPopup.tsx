@@ -28,7 +28,7 @@ export const networks: Network[] = [
 ];
 
 interface NetworksPopupProps {
-  setNetwork: React.Dispatch<React.SetStateAction<number>>;
+  setNetwork: React.Dispatch<React.SetStateAction<number | null>>;
   networksPopupOpen: boolean;
   setNetworksPopupOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
