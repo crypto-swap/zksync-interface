@@ -114,7 +114,7 @@ const Navbar = () => {
                 {wallet ? 'Wallet Connected' : 'Connect wallet'}
               </p>
             </button>
-            <WalletPopup />
+            <WalletPopup {...{ setNetwork }} />
           </div>
 
           <button
