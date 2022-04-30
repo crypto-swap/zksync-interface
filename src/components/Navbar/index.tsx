@@ -4,6 +4,7 @@ import { useTheme } from 'next-themes';
 import WalletPopup from '../Navbar/WalletPopup';
 import NetworksPopup from '../Navbar/NetworksPopup';
 import { WalletContext } from '../../pages/_app';
+import { networks } from '../Navbar/NetworksPopup';
 
 const Navbar = () => {
   // defaults to dark mode
@@ -21,6 +22,7 @@ const Navbar = () => {
     setWalletPopupOpen(true);
   }
 
+  const [network, setNetwork] = useState(0);
   const [networksPopupOpen, setNetworksPopupOpen] = useState(false);
 
   function openNetworksPopup() {
@@ -65,9 +67,9 @@ const Navbar = () => {
               className="network-button"
               onClick={openNetworksPopup}
             >
-              <Image src={'/assets/networks.svg'} width={20} height={20} />
+              <Image src={networks[network].image} width={20} height={20} />
               <span>&nbsp;</span>
-              Networks
+              {networks[network].name.split(' ')[0]}
               <span className="hide-medium">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +86,9 @@ const Navbar = () => {
                 </svg>
               </span>
             </button>
-            <NetworksPopup {...{ networksPopupOpen, setNetworksPopupOpen }} />
+            <NetworksPopup
+              {...{ setNetwork, networksPopupOpen, setNetworksPopupOpen }}
+            />
           </div>
 
           <div className="wallet">
