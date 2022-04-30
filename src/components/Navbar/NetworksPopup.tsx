@@ -16,13 +16,13 @@ const networks: Network[] = [
     status: true,
   },
   {
-    name: 'Polygon Testnet',
-    image: '/network_icons/polygon_logo.svg',
+    name: 'Ethereum Testnet',
+    image: '/network_icons/eth_logo.png',
     status: false,
   },
   {
-    name: 'Cosmos Testnet',
-    image: '/network_icons/cosmos_logo.svg',
+    name: 'Polygon Testnet',
+    image: '/network_icons/polygon_logo.svg',
     status: false,
   },
 ];
