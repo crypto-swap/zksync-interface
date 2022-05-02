@@ -56,7 +56,7 @@ const PoolMenu = () => {
                     currentPage={currPage}
                     totalCount={numBars}
                     pageSize={numBarInPage}
-                    onPageChange={page => setCurrPage(page)}
+                    onPageChange={(page: any) => setCurrPage(page)}
                 />
             </div>
             {/* This two buttons are for developers
