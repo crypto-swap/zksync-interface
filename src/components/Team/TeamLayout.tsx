@@ -37,17 +37,9 @@ const TeamLayout = () => {
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
                         <SingleTeamMember name="Michael" title="Developer" text="University of Washington Math" photo="/team/michael.png"/>
                     </div>
-
-                    <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
-                        <SingleTeamMember name="Annie" title="Front-End" text="UCLA CS" photo="/team/annie.jpg"/>
-                    </div>
                     
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
                         <SingleTeamMember name="Hamza" title="Marketing" text="UCLA Communications" photo="/team/hamza.jpeg"/>
-                    </div>
-
-                    <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
-                        <SingleTeamMember name="Janak" title="Marketing" text="UCLA Biz Econ" photo="/team/janak.jpg"/>
                     </div>
 
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
