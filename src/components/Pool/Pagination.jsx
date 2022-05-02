@@ -41,7 +41,7 @@ const Pagination = props => {
 
     return (
         <div className='flex flex-row gap-5'>
-            <div className='rounded-full' onClick={onPrevious} > last </div>
+            <div className='text-center h-7 w-7 rounded-full shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark' onClick={onPrevious} > &#60; </div>
             {
                 paginationRange.map(pageNumber => {
                     if (pageNumber === DOTS) {
@@ -49,7 +49,7 @@ const Pagination = props => {
                     }
                     return (
                         <div
-                            className={currentPage === pageNumber ? 'bg-button-blue rounded-full' : 'rounded-full'}
+                            className={currentPage === pageNumber ? 'text-center h-7 w-7 bg-button-blue rounded-full shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark' : 'text-center h-7 w-7 rounded-full shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark'}
                             onClick={() => onPageChange(pageNumber)}
                         >
                             {pageNumber}
@@ -57,7 +57,7 @@ const Pagination = props => {
                     );
                 })
             }
-            <div className='rounded-full' onClick={onNext} > next </div>
+            <div className='text-center h-7 w-7 rounded-full shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark' onClick={onNext} > &#62; </div>
         </div >
     );
 };
