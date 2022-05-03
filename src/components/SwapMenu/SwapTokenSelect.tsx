@@ -2,37 +2,19 @@ import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import Popup from '../Navbar/Popup';
-
-export type Token = string;
-
-export const tokens: Token[] = [
-  'eth',
-  'wbtc',
-  'dai',
-  'usdc',
-  'usdt',
-  'bat',
-  'zrx',
-  'link',
-  'mkr',
-  'rep',
-  'knc',
-  'gnt',
-  'snt',
-  'bnt',
-  'dnt',
-  'eng',
-  'salt',
-  'fun',
-  'mana',
-];
+import { Token, tokens } from '../SwapMenu';
 
 interface SwapTokenSelectProps {
-  token: Token;
+  value: Token;
   setToken: React.Dispatch<React.SetStateAction<Token>>;
+  onChange: (to: Token) => void;
 }
 
-const SwapTokenSelect = ({ token, setToken }: SwapTokenSelectProps) => {
+const SwapTokenSelect = ({
+  value,
+  setToken,
+  onChange,
+}: SwapTokenSelectProps) => {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
   const inputRef = useRef(null);
@@ -44,6 +26,12 @@ const SwapTokenSelect = ({ token, setToken }: SwapTokenSelectProps) => {
   function openModal() {
     setQuery('');
     setOpen(true);
+  }
+
+  function handleTokenChange(token: Token) {
+    setToken(token);
+    closeModal();
+    onChange(token);
   }
 
   const filteredTokens =
@@ -64,7 +52,7 @@ const SwapTokenSelect = ({ token, setToken }: SwapTokenSelectProps) => {
         className="relative my-auto inline-flex items-center gap-1.5 rounded-full border border-button-blue bg-neutral-400 bg-opacity-0 px-1.5 text-xs font-semibold uppercase leading-6 text-button-blue hover:bg-opacity-10"
       >
         <Image src={'/icons/blue_logo.svg'} width={16} height={16} />
-        {token}
+        {value}
         <ChevronDownIcon className="inline h-4 w-4" />
       </button>
 
@@ -76,8 +64,7 @@ const SwapTokenSelect = ({ token, setToken }: SwapTokenSelectProps) => {
           onChange={(event) => setQuery(event.target.value)}
           onKeyDown={(event) => {
             if (event.key === 'Enter' && tokens.includes(query)) {
-              setToken(query);
-              closeModal();
+              handleTokenChange(query);
             }
           }}
         />
@@ -87,8 +74,7 @@ const SwapTokenSelect = ({ token, setToken }: SwapTokenSelectProps) => {
               <li
                 className="flex cursor-pointer snap-start items-center p-2.5 hover:bg-bg-blue dark:hover:bg-menu-blue"
                 onClick={() => {
-                  setToken(token);
-                  closeModal();
+                  handleTokenChange(token);
                 }}
               >
                 <Image src={'/icons/blue_logo.svg'} width={30} height={30} />

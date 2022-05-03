@@ -1,47 +1,80 @@
-import React from 'react';
-import WalletsDropdownProps from '../SwapWalletDropdown';
 import SwapTokenSelect from './SwapTokenSelect';
-import { Token } from './SwapTokenSelect';
+import { Token } from '../SwapMenu';
 
 export interface Wallet {
   name: string;
 }
 
-var sampleUserWallets: Wallet[] = [{ name: 'Wallet A' }, { name: 'Wallet B' }];
-
 interface SwapInputProps {
-  title: string;
+  receive?: boolean;
   value: string;
+  onChange: (
+    reverse: boolean,
+    amount?: number,
+    from?: Token,
+    to?: Token
+  ) => number;
+  setPayAmount: React.Dispatch<React.SetStateAction<string>>;
+  setReceiveAmount: React.Dispatch<React.SetStateAction<string>>;
   token: Token;
   setToken: React.Dispatch<React.SetStateAction<Token>>;
+  resetTransactionInformation: () => void;
 }
 
 const SwapInput = ({
-  title,
+  receive = false,
   value,
+  onChange,
+  setPayAmount,
+  setReceiveAmount,
   token,
   setToken,
+  resetTransactionInformation,
 }: SwapInputProps): JSX.Element => {
-  const [amount, setAmount] = React.useState(value);
-
   return (
     <>
       <div className="mb-2 flex place-content-between items-center px-0.5">
-        <div className="text-sm font-bold">{title}</div>
+        <div className="text-sm font-bold">{receive ? 'Receive' : 'Pay'}</div>
         <div className="text-xs">Balance: 0.0</div>
       </div>
       <div className="relative flex flex-row-reverse place-content-between rounded-lg px-4 py-2 shadow-[inset_0.5px_1px_5px_rgba(0,0,0,0.3)]">
         <input
-          placeholder='0.0'
+          inputMode="decimal"
+          placeholder="0.0"
+          {...{ value }}
           onChange={(event) => {
             if (/^\d*\.?\d*$/.test(event.target.value)) {
-              setAmount(event.target.value);
+              if (event.target.value === '') {
+                setPayAmount('');
+                setReceiveAmount('');
+                resetTransactionInformation();
+              } else {
+                const amount = parseFloat(event.target.value);
+                if (Number.isFinite(amount)) {
+                  (receive ? setReceiveAmount : setPayAmount)(
+                    event.target.value
+                  );
+                  (receive ? setPayAmount : setReceiveAmount)(
+                    onChange(receive, amount).toString()
+                  );
+                }
+              }
             }
           }}
           className="absolute inset-0 inline-block h-full w-full rounded-lg bg-transparent p-4"
-
         />
-        <SwapTokenSelect {...{ token, setToken }} />
+        <SwapTokenSelect
+          {...{ value: token, setToken }}
+          onChange={(token) => {
+            let output;
+            if (receive) {
+              output = onChange(false, undefined, undefined, token);
+            } else {
+              output = onChange(false, undefined, token);
+            }
+            if (Number.isFinite(output)) setReceiveAmount(output.toString());
+          }}
+        />
       </div>
     </>
   );
