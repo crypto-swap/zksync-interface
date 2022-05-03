@@ -2,6 +2,6 @@ export {};
 
 declare global {
   interface Window {
-    ethereum: any; // 👈️ turn off type checking
+    ethereum: any; // 👈️ turn off type checking for ethereum
   }
 }

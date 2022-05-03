@@ -2,6 +2,15 @@ import { useContext } from 'react';
 import Image from 'next/image';
 import { WalletContext } from '../../pages/_app';
 import Popup from './Popup';
+import { MetaMaskInpageProvider } from '@metamask/providers';
+
+let ethereum: any;
+
+if (typeof window !== 'undefined') {
+  if (typeof window.ethereum !== 'undefined') {
+    ethereum = window.ethereum as MetaMaskInpageProvider;
+  }
+}
 
 interface WalletPopupProps {
   setNetwork: React.Dispatch<React.SetStateAction<number | null>>;
@@ -27,7 +36,9 @@ const WalletPopup = ({ setNetwork }: WalletPopupProps) => {
               setWallet(true);
               setNetwork(0);
               closeModal();
+              ethereum.request({ method: 'eth_requestAccounts' });
             }}
+            
             className="mt-5 flex w-full gap-3 rounded-lg bg-slate-500 bg-opacity-0 p-3 text-lg font-bold shadow-card hover:shadow-button-hover dark:border-bg-light dark:shadow-card-dark dark:hover:shadow-button-hover-dark"
           >
             <Image src={'/icons/metamask.svg'} width={30} height={30} />
