@@ -16,13 +16,18 @@ export const networks: Network[] = [
     status: true,
   },
   {
-    name: 'Ethereum Testnet',
-    image: '/network_icons/eth_logo.png',
+    name: 'StarkNet Testnet',
+    image: '/network_icons/starknet_logo.png',
     status: false,
   },
   {
     name: 'Polygon Testnet',
     image: '/network_icons/polygon_logo.svg',
+    status: false,
+  },
+  {
+    name: 'Ethereum Testnet',
+    image: '/network_icons/eth_logo.png',
     status: false,
   },
 ];
@@ -59,9 +64,8 @@ const NetworksPopup = ({
             <Image src={image} width={30} height={30} />
             {name}
             <div
-              className={`ml-auto mr-2 h-[9px] w-[9px] rounded-full shadow-inner ${
-                status ? 'bg-green-500' : 'bg-red-500'
-              } shadow-neutral-900/25`}
+              className={`ml-auto mr-2 h-[9px] w-[9px] rounded-full shadow-inner ${status ? 'bg-green-500' : 'bg-red-500'
+                } shadow-neutral-900/25`}
             ></div>
           </button>
         ))}
