@@ -4,7 +4,7 @@ import React from 'react';
 import { usePagination, DOTS } from './usePagination';
 // import './pagination.scss';
 
-const Pagination = props => {
+const Pagination = (props: any) => {
     const {
         onPageChange,
         totalCount,
@@ -20,6 +20,10 @@ const Pagination = props => {
         siblingCount,
         pageSize
     });
+
+    if (!paginationRange) { // makes sure paginationRange is defined
+        return null
+    }
 
     if (currentPage === 0 || paginationRange.length < 2) {
         return null;
@@ -43,7 +47,7 @@ const Pagination = props => {
         <div className='flex flex-row gap-5'>
             <div className='text-center h-7 w-7 rounded-full shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark' onClick={onPrevious} > &#60; </div>
             {
-                paginationRange.map(pageNumber => {
+                paginationRange.map((pageNumber: any) => {
                     if (pageNumber === DOTS) {
                         return <div className='rounded-full'>&#8230;</div>;
                     }
