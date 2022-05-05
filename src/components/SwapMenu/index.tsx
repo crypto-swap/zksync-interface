@@ -64,7 +64,7 @@ function convert(
     [receive, amount] = [amount, output];
   }
   return new Map([
-    ['Receive', output],
+    ['Receive', Number(output.toFixed(4))],
     ['Rate', rate],
     ['Swap Fee', amount * 0.003],
     ['Estimated Cost', amount * 0.004],
@@ -164,7 +164,7 @@ const SwapMenu = () => {
               .map(([label, value]) => (
                 <div className="flex place-content-between text-sm font-bold">
                   <span>{label}</span>
-                  <span>{value}</span>
+                  <span>{value.toFixed(4)}</span>
                 </div>
               ))}
           </div>
