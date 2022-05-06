@@ -1,4 +1,5 @@
 module.exports = {
+  
   darkMode: 'class',
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
@@ -31,10 +32,10 @@ module.exports = {
         'spin-slow': 'spin 3s linear infinite',
       },
       boxShadow: {
-        card: '3px 3px 3px #c7c7c7, -3px -3px 3px #ffffff',
+        'card': '3px 3px 3px #c7c7c7, -3px -3px 3px #ffffff',
         'card-dark': '3px 3px 3px #171a29, -3px -3px 3px  #272b45',
 
-        button:
+        'button':
           '-1px -1px 3px #4479e6,-1px -1px 2px #4479e6,1px 1px 1px #4479e6,1px 1px 2px #272b45',
         'button-dark':
           '-1px -1px 3px #225fdd,-1px -1px 2px #225fdd,1px 1px 1px #225fdd,1px 1px 2px #2a74ff',
@@ -55,9 +56,9 @@ module.exports = {
         'grey-card-hover':
           'inset 15px 15px 15px #2e3351, inset -15px -15px 15px #3e456d',
         'blue-button':
-          '1px 1px 0px #4072d9, -1px -1px 0px #569aff',
+          '2px 2px 0px #2059d0, -2px -2px 0px #2c79ff',
         'blue-button-hover':
-          'inset 3px 3px 3px #4072d9, inset -3px -3px 3px #569aff',
+          'inset 3px 3px 0px #2059d0, inset -3px -3px 0px #2c79ff',
       },
     },
   },
