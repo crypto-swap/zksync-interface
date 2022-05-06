@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import WalletPopup from '../Navbar/WalletPopup';
 import NetworksPopup from '../Navbar/NetworksPopup';
-import { WalletContext } from '../../pages/_app';
+import { WalletContext } from '../../context/wallet';
 import { networks } from '../Navbar/NetworksPopup';
 
 const Navbar = () => {
@@ -16,7 +16,7 @@ const Navbar = () => {
     console.log(theme);
   }, []);
 
-  const { wallet, setWalletPopupOpen } = useContext(WalletContext);
+  const { walletConnected, setWalletPopupOpen } = useContext(WalletContext);
 
   function openWalletPopup() {
     setWalletPopupOpen(true);
@@ -108,10 +108,10 @@ const Navbar = () => {
               className="wallet-button-1 wallet-button-2"
             >
               <p className="wallet-button-text hide-small">
-                {wallet ? 'Wallet Connected' : 'Connect to a wallet'}
+                {walletConnected ? 'Wallet Connected' : 'Connect to a wallet'}
               </p>
               <p className="wallet-button-text show-small">
-                {wallet ? 'Wallet Connected' : 'Connect wallet'}
+                {walletConnected ? 'Wallet Connected' : 'Connect wallet'}
               </p>
             </button>
             <WalletPopup {...{ setNetwork }} />

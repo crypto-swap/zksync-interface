@@ -41,7 +41,7 @@ const SwapInput = ({
         <input
           inputMode="decimal"
           placeholder="0.0"
-          {...{ value }}
+          value={value}
           onChange={(event) => {
             if (/^\d*\.?\d*$/.test(event.target.value)) {
               if (event.target.value === '') {
@@ -52,7 +52,7 @@ const SwapInput = ({
                 const amount = parseFloat(event.target.value);
                 if (Number.isFinite(amount)) {
                   (receive ? setReceiveAmount : setPayAmount)(
-                    event.target.value
+                    event.target.value.substring(0, 32)
                   );
                   (receive ? setPayAmount : setReceiveAmount)(
                     onChange(receive, amount).toString()

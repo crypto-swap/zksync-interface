@@ -3,7 +3,7 @@ import Image from 'next/image';
 import SwapInput from './SwapInput';
 import SwapButton from './SwapButton';
 import { Transition } from '@headlessui/react';
-import { WalletContext } from '../../pages/_app';
+import { WalletContext } from '../../context/wallet';
 
 export type Token = string;
 
@@ -64,7 +64,7 @@ function convert(
     [receive, amount] = [amount, output];
   }
   return new Map([
-    ['Receive', output],
+    ['Receive', Number(output.toFixed(4))],
     ['Rate', rate],
     ['Swap Fee', amount * 0.003],
     ['Estimated Cost', amount * 0.004],
@@ -83,7 +83,7 @@ const SwapMenu = () => {
     Map<string, number>
   >(emptyTransactionInformation);
 
-  const { wallet } = useContext(WalletContext);
+  const { walletConnected } = useContext(WalletContext);
 
   function handleChange(
     reverse: boolean,
@@ -153,7 +153,7 @@ const SwapMenu = () => {
       </div>
       <div className="pt-2.5">
         <Transition
-          show={wallet}
+          show={walletConnected}
           enter="duration-1000"
           enterFrom="translate-y-[-96px]"
           enterTo="translate-y-0"
@@ -164,7 +164,7 @@ const SwapMenu = () => {
               .map(([label, value]) => (
                 <div className="flex place-content-between text-sm font-bold">
                   <span>{label}</span>
-                  <span>{value}</span>
+                  <span>{value.toFixed(4)}</span>
                 </div>
               ))}
           </div>
