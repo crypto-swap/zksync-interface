@@ -4,6 +4,7 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import PoolMenu from '../components/Pool/PoolMenu'
+import Banner from '../components/Pool/Banner'
 
 const Pool = () => {
     return (
@@ -18,7 +19,10 @@ const Pool = () => {
                 />
             </Head>
             <Navbar />
-            <PoolMenu />
+            <div className="p-5 md:p-0">
+                <Banner />
+                <PoolMenu />
+            </div>
             <br></br>
             <br></br>
             <br></br>
@@ -30,6 +34,7 @@ const Pool = () => {
             <br></br>
             <br></br>
             <br></br>
+
             <Footer />
         </div>
     )
