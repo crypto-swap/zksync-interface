@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Image from 'next/image';
 import Popup from '../Navbar/Popup';
-import { WalletContext } from '../../pages/_app';
+import { WalletContext } from '../../context/wallet';
 
 interface Network {
   name: string;
@@ -43,7 +43,7 @@ const NetworksPopup = ({
   networksPopupOpen: open,
   setNetworksPopupOpen: setOpen,
 }: NetworksPopupProps) => {
-  const { setWallet } = useContext(WalletContext);
+  const { setWalletConnected } = useContext(WalletContext);
 
   function closeModal() {
     setOpen(false);
@@ -56,7 +56,7 @@ const NetworksPopup = ({
           <button
             onClick={() => {
               setNetwork(index);
-              setWallet(false);
+              setWalletConnected(false);
               closeModal();
             }}
             className="mt-5 flex w-full items-center gap-3 rounded-lg bg-slate-500 bg-opacity-0 p-3 text-lg font-bold shadow-card  hover:shadow-button-hover dark:border-bg-light dark:shadow-card-dark dark:hover:shadow-button-hover-dark"

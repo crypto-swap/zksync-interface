@@ -3,7 +3,7 @@ import Image from 'next/image';
 import SwapInput from './SwapInput';
 import SwapButton from './SwapButton';
 import { Transition } from '@headlessui/react';
-import { WalletContext } from '../../pages/_app';
+import { WalletContext } from '../../context/wallet';
 
 export type Token = string;
 
@@ -83,7 +83,7 @@ const SwapMenu = () => {
     Map<string, number>
   >(emptyTransactionInformation);
 
-  const { wallet } = useContext(WalletContext);
+  const { walletConnected } = useContext(WalletContext);
 
   function handleChange(
     reverse: boolean,
@@ -153,7 +153,7 @@ const SwapMenu = () => {
       </div>
       <div className="pt-2.5">
         <Transition
-          show={wallet}
+          show={walletConnected}
           enter="duration-1000"
           enterFrom="translate-y-[-96px]"
           enterTo="translate-y-0"
