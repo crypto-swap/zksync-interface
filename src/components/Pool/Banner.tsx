@@ -10,9 +10,11 @@ const style = {
     px-[17px] w-full w-[200px] shadow-blue-button hover:shadow-blue-button-hover`,
     zap: `rounded-xl p-5 card dark:card-dark shadow-card dark:shadow-card-dark md:px-[30px] md:pb-[30px] md:pt-[10px] md:flex md:flex-col md:justify-end`,
     zapText: `flex flex-col space-y-5 md:flex-row md:items-end md:justify-between md:space-y-0 md:space-x-3`,
-    zapButton: `flex select-none items-center justify-center leading-none font-normal 
+    zapButton: `flex select-none text-white items-center justify-center leading-none font-normal 
     cursor-pointer h-[50px] text-sm leading-[24px] rounded-xl py-[13px] px-[17px] w-full 
     md:w-[120px]  bg-button-blue shadow-blue-button hover:shadow-blue-button-hover`,
+
+    mobileLiquidity: `rounded-xl bg-white p-5 shadow-main dark:bg-dark-800 md:hidden md:p-[30px] md:flex md:flex-col md:justify-end`,
 
 }
 
