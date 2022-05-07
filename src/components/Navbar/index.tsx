@@ -3,8 +3,11 @@ import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import WalletPopup from '../Navbar/WalletPopup';
 import NetworksPopup from '../Navbar/NetworksPopup';
-import { WalletContext } from '../../context/wallet';
+import { WalletPopupContext } from '../../context/WalletPopupProvider';
 import { networks } from '../Navbar/NetworksPopup';
+import { hooks } from '../../connectors/metaMask';
+
+const { useIsActive } = hooks;
 
 const Navbar = () => {
   // defaults to dark mode
@@ -16,7 +19,8 @@ const Navbar = () => {
     console.log(theme);
   }, []);
 
-  const { walletConnected, setWalletPopupOpen } = useContext(WalletContext);
+  const walletConnected = useIsActive();
+  const { setWalletPopupOpen } = useContext(WalletPopupContext);
 
   function openWalletPopup() {
     setWalletPopupOpen(true);
