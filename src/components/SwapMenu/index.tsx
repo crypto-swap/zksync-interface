@@ -166,7 +166,7 @@ const SwapMenu = () => {
               .map(([label, value]) => (
                 <div className="flex place-content-between text-sm font-bold">
                   <span>{label}</span>
-                  <span>{value.toFixed(4)}</span>
+                  <span>{(value || 0).toFixed(4)}</span>
                 </div>
               ))}
           </div>
