@@ -45,7 +45,8 @@ const Pagination = (props: any) => {
 
     return (
         <div className='flex flex-row gap-5'>
-            <div className='text-center h-7 w-7 rounded-full shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark' onClick={onPrevious} > &#60; </div>
+            <div className='text-center h-7 w-7 rounded-full shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark 
+            bg-bg-card-light dark:bg-bg-card-dark dark:shadow-card-dark' onClick={onPrevious} > &#60; </div>
             {
                 paginationRange.map((pageNumber: any) => {
                     if (pageNumber === DOTS) {

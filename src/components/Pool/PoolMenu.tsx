@@ -45,8 +45,9 @@ const PoolMenu = () => {
 
     return (
         <div>
-            <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+            <div className="flex flex-col w-full gap-6">
                 Searchbar her
+
             </div>
 
 

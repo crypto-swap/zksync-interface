@@ -24,11 +24,11 @@ const Home: NextPage = () => {
       <Navbar />
 
       <div className="relative h-[95vh] w-screen flex items-center justify-center mx-auto">
-        
-        
+
+
         <div className="absolute z-10 -mt-48 max-w-xs flex flex-col space-y-10 place-items-center font-[Montserrat] p-5 py-10 rounded-[64px] shadow-card dark:shadow-card-dark">
           <div className='text-3xl font-semibold leading-9 text-center'>
-            CryptoSwap is a one-stop-shop for all crypto swaps. 
+            CryptoSwap is a one-stop-shop for all crypto swaps.
           </div>
 
           <button className="  bg-font-blue hover:bg-button-blue text-text-dark font-bold py-2 px-4 rounded-full text-base w-9/12 dark:bg-button-blue dark:hover:bg-font-blue shadow-blue-button hover:shadow-blue-button-hover">
@@ -39,50 +39,50 @@ const Home: NextPage = () => {
         </div>
 
         <div className="absolute z-0 h-full w-full">
-        <ul className="box-area-dark">
-          <li>
-            <img src="/coins/coin8-min.png" />
-          </li>
-          <li>
-            <img src="/coins/coin2-min.png" />
-          </li>
-          <li>
-            <img src="/coins/coin3-min.png" />
-          </li>
-          <li>
-            <img src="/coins/coin4-min.png" />
-          </li>
-          <li>
-            <img src="/coins/coin5-min.png" />
-          </li>
-          <li>
-            <img src="/coins/coin6-min.png" />
-          </li>
-          <li>
-            <img src="/coins/coin7-min.png" />
-          </li>
-          <li>
-            <img src="/coins/coin1-min.png" />
-          </li>
-          <li>
-            <img src="/coins/coin9-min.png" />
-          </li>
-          <li>
-            <img src="/coins/coin10-min.png" />
-          </li>
-        </ul>
-      </div>
+          <ul className="box-area-dark">
+            <li>
+              <img src="/coins/coin8-min.png" />
+            </li>
+            <li>
+              <img src="/coins/coin2-min.png" />
+            </li>
+            <li>
+              <img src="/coins/coin3-min.png" />
+            </li>
+            <li>
+              <img src="/coins/coin4-min.png" />
+            </li>
+            <li>
+              <img src="/coins/coin5-min.png" />
+            </li>
+            <li>
+              <img src="/coins/coin6-min.png" />
+            </li>
+            <li>
+              <img src="/coins/coin7-min.png" />
+            </li>
+            <li>
+              <img src="/coins/coin1-min.png" />
+            </li>
+            <li>
+              <img src="/coins/coin9-min.png" />
+            </li>
+            <li>
+              <img src="/coins/coin10-min.png" />
+            </li>
+          </ul>
+        </div>
 
       </div>
 
       <div id={'tutorial'} className="relative flex flex-col items-center justify-center place-items-center pt-5" >
-       <Tutorial/>
-      </div>  
+        <Tutorial />
+      </div>
 
       <div className="mt-96">&nbsp;</div>
-      
 
-      
+
+
       <Footer />
     </div>
   );
