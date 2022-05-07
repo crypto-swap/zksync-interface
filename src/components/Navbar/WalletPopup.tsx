@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { WalletPopupContext } from '../../context/WalletPopupProvider';
 import { hooks, metaMask } from '../../connectors/metaMask';
 import Popup from './Popup';
+import { NoMetaMaskError } from '@web3-react/metamask';
 
 const { useIsActive, useError } = hooks;
 
@@ -34,12 +35,18 @@ const WalletPopup = ({ setNetwork }: WalletPopupProps) => {
       setNetwork(0);
       closeModal();
     }
-  }, [active, error]);
+  }, [active]);
+
+  useEffect(() => {
+    setActivating(false);
+    if (error instanceof NoMetaMaskError) {
+      window?.open('https://metamask.io/', '_blank');
+    }
+  }, [error]);
 
   useEffect(() => {
     metaMask.connectEagerly()
   }, [])
-
 
   const disabled = active || activating;
 
