@@ -3,7 +3,9 @@ import Image from 'next/image';
 import SwapInput from './SwapInput';
 import SwapButton from './SwapButton';
 import { Transition } from '@headlessui/react';
-import { WalletContext } from '../../context/wallet';
+import { hooks } from '../../connectors/metaMask';
+
+const { useIsActive } = hooks;
 
 export type Token = string;
 
@@ -83,7 +85,7 @@ const SwapMenu = () => {
     Map<string, number>
   >(emptyTransactionInformation);
 
-  const { walletConnected } = useContext(WalletContext);
+  const walletConnected = useIsActive();
 
   function handleChange(
     reverse: boolean,
@@ -164,7 +166,7 @@ const SwapMenu = () => {
               .map(([label, value]) => (
                 <div className="flex place-content-between text-sm font-bold">
                   <span>{label}</span>
-                  <span>{value.toFixed(4)}</span>
+                  <span>{(value || 0).toFixed(4)}</span>
                 </div>
               ))}
           </div>
