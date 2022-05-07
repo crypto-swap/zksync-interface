@@ -15,7 +15,6 @@ const style = {
     md:w-[120px]  bg-button-blue shadow-blue-button hover:shadow-blue-button-hover`,
 
     mobileLiquidity: `rounded-xl bg-white p-5 shadow-main dark:bg-dark-800 md:hidden md:p-[30px] md:flex md:flex-col md:justify-end`,
-
 }
 
 const Banner = () => {

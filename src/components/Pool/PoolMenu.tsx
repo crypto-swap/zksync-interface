@@ -45,6 +45,12 @@ const PoolMenu = () => {
 
     return (
         <div>
+            <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+                Searchbar her
+            </div>
+
+
+
             {
                 pagePools.map((pool) => (
 
