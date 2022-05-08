@@ -19,7 +19,7 @@ const Pool = () => {
                 />
             </Head>
             <Navbar />
-            <div className="p-5 md:p-0">
+            <div className="p-5 lg:p-0 lg:pt-5">
                 <Banner />
                 <PoolMenu />
             </div>

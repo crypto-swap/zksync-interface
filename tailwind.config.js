@@ -59,9 +59,13 @@ module.exports = {
         'blue-button-hover':
           'inset 3px 3px 0px #2059d0, inset -3px -3px 0px #2c79ff',
         'search':
-          '9px 9px 16px #c7c7c7, -9px -9px 16px #ffffff',
+          '4px 4px 7px #c7c7c7, -4px -4px 7px #ffffff',
         'search-dark':
-          '9px 9px 16px #171a29, -9px -9px 16px #272b45',
+          '4px 4px 7px #171a29, -4px -4px 7px #272b45',
+        'search-border':
+          'inset 10px 10px 15px -10px #c7c7c7, inset -10px -10px 15px -10px #ffffff',
+        'search-border-dark':
+          'inset 10px 10px 15px -10px #171a29, inset -10px -10px 15px -10px #272b45',
       },
     },
   },
