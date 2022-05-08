@@ -3,6 +3,14 @@ import pools from './mockPools.json';
 import Pagination from './Pagination';
 import React, { useState, useEffect, useLayoutEffect, useContext } from 'react';
 
+const style = {
+    poolMenuContainer: `md:mx-auto md:max-w-5xl`,
+    searchBarContainer: `flex flex-column text-center items-center justify-center gap-4 w-full sm:w-auto`,
+    searchBar: `bg-bg-card-light dark:bg-bg-card-dark p-2 border border-solid border-white 
+                shadow-search dark:shadow-search-dark dark:border-black rounded-2xl`,
+    searchBarOuter: `flex w-[600px]`,
+}
+
 
 const PoolMenu = () => {
     //temp images
@@ -44,9 +52,21 @@ const PoolMenu = () => {
 
 
     return (
-        <div>
+        <div className={style.poolMenuContainer}>
             <div className="flex flex-col w-full gap-6">
-                Searchbar her
+                <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+                    <div className={style.searchBarContainer}>
+                        <div className={style.searchBar}>
+                            <div className={style.searchBarOuter}>
+                                Searchbar Here
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex gap-2 items-center w-[180px]">
+                        All Pools
+                    </div>
+                </div>
+
 
             </div>
 
