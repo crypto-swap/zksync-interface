@@ -5,12 +5,14 @@ import React, { useState, useEffect, useLayoutEffect, useContext } from 'react';
 
 const style = {
     poolMenuContainer: `md:mx-auto md:max-w-5xl`,
-    searchBarContainer: `flex flex-column  basis-10/12 text-center items-center justify-start gap-4 w-full sm:w-auto pt-5`,
+    searchBarContainer: `flex flex-column  basis-10/12 text-center items-center justify-start gap-4 w-full sm:w-auto mt-5`,
     searchBar: `bg-bg-card-light dark:bg-bg-card-dark p-2 border border-solid border-white 
                 shadow-card dark:shadow-card-dark dark:border-[#272b45] rounded-2xl w-full`,
     searchBarOuter: `flex w-full px-2 py-3 rounded-lg shadow-search-border dark:shadow-search-border-dark`,
     searchBarInner: `flex flex-1 items-center relative `,
     searchBarInput: `bg-transparent appearance-none inline-block border-0 outline-0 w-full select-none`,
+    selectFilterContainer: `flex basis-2/12 gap-2 items-center`,
+    selectFilter: ``,
 }
 
 export interface PoolMenuProps { }
@@ -79,8 +81,10 @@ const PoolMenu = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex basis-2/12 gap-2 items-center">
-                        All Pools
+                    <div className={style.selectFilterContainer}>
+                        <div className={style.selectFilter}>
+                            All Pools
+                        </div>
                     </div>
                 </div>
 
