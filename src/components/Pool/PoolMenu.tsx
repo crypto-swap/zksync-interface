@@ -73,7 +73,7 @@ const PoolMenu = () => {
                                     <input className={style.searchBarInput}
                                         placeholder="Search by token or pair"
                                         value={value}
-                                        onChange={evt => setValue(evt.target.value)} >
+                                        onChange={(ev) => setValue(ev.target.value)} >
                                     </input>
                                 </div>
                             </div>
