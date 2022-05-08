@@ -95,7 +95,7 @@ const PoolMenu = () => {
                     <PoolBar image1='/icons/discord.svg' image2='/icons/discord.svg' ticker1={pool['asset1']} ticker2={pool['asset2']} liquidity={pool['liquidity']} volume={pool['volume']} fees={(pool['volume'] * 0.025).toFixed(2)} apr={(pool['volume'] * 0.025 / pool['liquidity'] * 365).toFixed(5)} />
                 ))
             }
-            <div className='mx-8 md:mx-20 lg:mx-40 xl:mx-60 mt-10 grid justify-items-center select-none'>
+            <div className='flex relative shrink mx-auto mt-10 grid justify-items-center select-none'>
                 <Pagination
                     currentPage={currPage}
                     totalCount={numBars}
