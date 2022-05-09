@@ -46,6 +46,7 @@ const Pagination = (props: any) => {
     return (
         <div className='flex flex-row gap-5'>
             <div className='text-center h-7 w-7 rounded-full shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark' onClick={onPrevious} > &#60; </div>
+            <div className='text-center visible md:hidden h-7 w-7 rounded-full shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark' onClick={onNext} > &#62; </div>
             {
                 paginationRange.map((pageNumber: any) => {
                     if (pageNumber === DOTS) {
@@ -53,7 +54,7 @@ const Pagination = (props: any) => {
                     }
                     return (
                         <div
-                            className={currentPage === pageNumber ? 'text-center h-7 w-7 rounded-full shadow-button-hover dark:shadow-button-hover-dark' : 'text-center h-7 w-7 rounded-full shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark'}
+                            className={currentPage === pageNumber ? 'text-center h-7 w-7 rounded-full shadow-button-hover dark:shadow-button-hover-dark' : 'text-center invisible md:visible h-7 w-7 rounded-full shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark'}
                             onClick={() => onPageChange(pageNumber)}
                         >
                             {pageNumber}
@@ -61,7 +62,7 @@ const Pagination = (props: any) => {
                     );
                 })
             }
-            <div className='text-center h-7 w-7 rounded-full shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark' onClick={onNext} > &#62; </div>
+            <div className='text-center hidden md:inline h-7 w-7 rounded-full shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark' onClick={onNext} > &#62; </div>
         </div >
     );
 };

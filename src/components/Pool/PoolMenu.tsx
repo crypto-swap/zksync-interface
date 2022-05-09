@@ -3,6 +3,17 @@ import pools from './mockPools.json';
 import Pagination from './Pagination';
 import React, { useState, useEffect, useLayoutEffect, useContext } from 'react';
 
+const style = {
+    poolMenuContainer: `md:mx-auto md:max-w-5xl`,
+    searchBarContainer: `flex flex-column  basis-10/12 text-center items-center justify-start gap-4 w-full sm:w-auto pt-5`,
+    searchBar: `bg-bg-card-light dark:bg-bg-card-dark p-2 border border-solid border-white 
+                shadow-card dark:shadow-card-dark dark:border-[#272b45] rounded-2xl w-full`,
+    searchBarOuter: `flex w-full px-2 py-3 rounded-lg shadow-search-border dark:shadow-search-border-dark`,
+    searchBarInner: `flex flex-1 items-center relative `,
+    searchBarInput: `bg-transparent appearance-none inline-block border-0 outline-0 w-full select-none`,
+}
+
+export interface PoolMenuProps { }
 
 const PoolMenu = () => {
     //temp images
@@ -41,17 +52,50 @@ const PoolMenu = () => {
         }
     }
 
+    // search pool bar
 
+    const [value, setValue] = useState("");
 
     return (
-        <div>
+        <div className={style.poolMenuContainer}>
+            <div className="flex flex-col w-full gap-6">
+                <div className="flex flex-col items-center justify-start gap-4 sm:flex-row">
+                    <div className={style.searchBarContainer}>
+                        <div className={style.searchBar}>
+                            <div className={style.searchBarOuter}>
+                                <div className={style.searchBarInner}>
+                                    <div className='mx-3'>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="11" cy="11" r="8"></circle>
+                                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                        </svg>
+                                    </div>
+                                    <input className={style.searchBarInput}
+                                        placeholder="Search by token or pair"
+                                        value={value}
+                                        onChange={(ev) => setValue(ev.target.value)} >
+                                    </input>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex basis-2/12 gap-2 items-center">
+                        All Pools
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
             {
                 pagePools.map((pool) => (
 
                     <PoolBar image1='/icons/discord.svg' image2='/icons/discord.svg' ticker1={pool['asset1']} ticker2={pool['asset2']} liquidity={pool['liquidity']} volume={pool['volume']} fees={(pool['volume'] * 0.025).toFixed(2)} apr={(pool['volume'] * 0.025 / pool['liquidity'] * 365).toFixed(5)} />
                 ))
             }
-            <div className='mx-8 md:mx-20 lg:mx-40 xl:mx-60 mt-10 grid justify-items-center select-none'>
+            <div className='flex relative shrink mx-auto mt-10 grid justify-items-center select-none'>
                 <Pagination
                     currentPage={currPage}
                     totalCount={numBars}
