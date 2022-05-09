@@ -34,7 +34,6 @@ module.exports = {
       boxShadow: {
         'card': '3px 3px 3px #c7c7c7, -3px -3px 3px #ffffff',
         'card-dark': '3px 3px 3px #171a29, -3px -3px 3px  #272b45',
-
         'button':
           '-1px -1px 3px #4479e6,-1px -1px 2px #4479e6,1px 1px 1px #4479e6,1px 1px 2px #272b45',
         'button-dark':
@@ -59,6 +58,14 @@ module.exports = {
           '2px 2px 0px #2059d0, -2px -2px 0px #2c79ff',
         'blue-button-hover':
           'inset 3px 3px 0px #2059d0, inset -3px -3px 0px #2c79ff',
+        'search':
+          '4px 4px 7px #c7c7c7, -4px -4px 7px #ffffff',
+        'search-dark':
+          '4px 4px 7px #171a29, -4px -4px 7px #272b45',
+        'search-border':
+          'inset 10px 10px 15px -10px #c7c7c7, inset -10px -10px 15px -10px #ffffff',
+        'search-border-dark':
+          'inset 10px 10px 15px -10px #171a29, inset -10px -10px 15px -10px #272b45',
       },
     },
   },
