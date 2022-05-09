@@ -10,11 +10,11 @@ const Home: NextPage = () => {
     <div className="relative h-screen overflow-x-hidden bg-bg-light font-[Montserrat] text-text-light dark:bg-bg-dark dark:text-text-dark">
       <Head>
         <title>CryptoSwap</title>
-        <meta name="description" content="CryptoSwap" />
+        <meta name="description" content="CryptoSwap is a decentralized exchange (DEX) on zkSync, StarkNet, Polygon, and Ethereum. Here you can swap crypto, provide liquidity, and get rewarded." />
         <meta key="twitter:description" name="twitter:description" content="CryptoSwap" />
-        <meta key="og:description" property="og:description" content="CryptoSwap" />
         <link rel="icon" href="/icons/black_logo.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="canonical" href="https://cryptoswap.org" />
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
           rel="stylesheet"
@@ -27,9 +27,9 @@ const Home: NextPage = () => {
 
 
         <div className="absolute z-10 -mt-48 max-w-xs flex flex-col space-y-10 place-items-center font-[Montserrat] p-5 py-10 rounded-[64px] shadow-card dark:shadow-card-dark">
-          <div className='text-3xl font-semibold leading-9 text-center'>
+          <h1 className='text-3xl font-semibold leading-9 text-center'>
             CryptoSwap is a one-stop-shop for all crypto swaps.
-          </div>
+          </h1>
 
           <button className="  bg-font-blue hover:bg-button-blue text-text-dark font-bold py-2 px-4 rounded-full text-base w-9/12 dark:bg-button-blue dark:hover:bg-font-blue shadow-blue-button hover:shadow-blue-button-hover">
             <a href="#tutorial">

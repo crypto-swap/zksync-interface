@@ -8,11 +8,11 @@ const Tutorial = () => {
 
     <>
       <div className="flex items-center justify-center">
-        <div className='text-4xl  bg-bg-card-light dark:bg-bg-card-dark text-center font-semibold leading-7 rounded-[64px] p-10 w- shadow-card dark:shadow-card-dark'>
+        <h2 className='text-4xl  bg-bg-card-light dark:bg-bg-card-dark text-center font-semibold leading-7 rounded-[64px] p-10 w- shadow-card dark:shadow-card-dark'>
           <p className="leading-7">Swapping crypto</p>
           <br></br>
           <p className="leading-7">should be simple</p>
-        </div>
+        </h2>
       </div>
 
       <div className="flex-1 mx-auto pt-10 px-4 md:px-[15%] lg:px-[20%] xl:px-[25%]">
