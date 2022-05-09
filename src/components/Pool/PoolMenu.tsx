@@ -4,8 +4,8 @@ import Pagination from './Pagination';
 import React, { useState, useEffect, useLayoutEffect, useContext } from 'react';
 
 const style = {
-    poolMenuContainer: `md:mx-auto md:max-w-5xl`,
-    searchBarContainer: `flex flex-column  basis-10/12 text-center items-center justify-start gap-4 w-full sm:w-auto mt-5`,
+    poolMenuContainer: `md:mx-auto md:max-w-5xl  `,
+    searchBarContainer: `flex flex-column select-none basis-10/12 text-center items-center justify-start gap-4 w-full sm:w-auto mt-5`,
     searchBar: `bg-bg-card-light dark:bg-bg-card-dark p-2 border border-solid border-white 
                 shadow-card dark:shadow-card-dark dark:border-[#272b45] rounded-2xl w-full`,
     searchBarOuter: `flex w-full px-2 py-3 rounded-lg shadow-search-border dark:shadow-search-border-dark`,
