@@ -41,6 +41,7 @@ const SwapInput = ({
         <input
           inputMode="decimal"
           placeholder="0.0"
+          className="absolute inset-0 h-full w-full rounded-lg bg-transparent p-4"
           value={value}
           onChange={(event) => {
             if (/^\d*\.?\d*$/.test(event.target.value)) {
@@ -61,7 +62,6 @@ const SwapInput = ({
               }
             }
           }}
-          className="absolute inset-0 inline-block h-full w-full rounded-lg bg-transparent p-4"
         />
         <SwapTokenSelect
           {...{ value: token, setToken }}
