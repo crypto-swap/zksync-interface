@@ -10,7 +10,7 @@ const style = {
                 shadow-card dark:shadow-card-dark dark:border-[#272b45] rounded-2xl w-full`,
     searchBarOuter: `flex w-full px-2 py-3 rounded-lg shadow-search-border dark:shadow-search-border-dark`,
     searchBarInner: `flex flex-1 items-center relative `,
-    searchBarInput: `bg-transparent appearance-none inline-block border-0 outline-0 w-full select-none`,
+    searchBarInput: `bg-transparent border-0 outline-0 w-full`,
     selectFilterContainer: `flex basis-2/12 gap-2 items-center`,
     selectFilter: ``,
 }
