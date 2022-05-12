@@ -23,7 +23,7 @@ const Banner = () => {
     return (
         <div className={style.wrapper}>
             <div className={style.mobileLiquidity}>
-                <div className="text-lg font-medium">Create a Liquidity Pool</div>
+                <div className="text-lg font-medium">Create a Pool</div>
                 <div className="mt-2 text-gray-500 dark:text-dark-500">
                     Create a liquidity pool. The ratio of tokens added sets the price of this pool.
                 </div>
@@ -33,7 +33,7 @@ const Banner = () => {
             </div>
 
             <div className={style.liquidity}>
-                <div className="text-lg font-medium">Create a Liquidity Pool</div>
+                <div className="text-lg font-medium">Create a Pool</div>
                 <div className="relative mt-2.5 w-2/3 text-gray-500 dark:text-dark-500">
                     Create a liquidity pool. The ratio of tokens you add will set the price of this pool.
                 </div>
