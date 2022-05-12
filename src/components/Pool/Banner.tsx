@@ -13,20 +13,32 @@ const style = {
     zapButton: `flex select-none text-white items-center justify-center leading-none font-normal 
     cursor-pointer h-[50px] text-sm leading-[24px] rounded-xl py-[13px] px-[17px] w-full 
     md:w-[120px]  bg-button-blue shadow-blue-button hover:shadow-blue-button-hover`,
-
-    mobileLiquidity: `rounded-xl bg-white p-5 shadow-main dark:bg-dark-800 md:hidden md:p-[30px] md:flex md:flex-col md:justify-end`,
+    mobileLiquidity: `rounded-xl bg-bg-card-light dark:bg-bg-card-dark p-5 shadow-card dark:shadow-card-dark md:hidden md:p-[30px] md:flex md:flex-col md:justify-end`,
+    mobilePool: `flex select-none items-center justify-center whitespace-nowrap leading-none font-normal transition duration-300 cursor-pointer 
+    bg-button-blue shadow-blue-button hover:shadow-blue-button-hover
+    h-[50px] text-sm leading-[24px] rounded-xl py-[13px] px-[17px] w-full md:w-auto md:min-w-[200px]`
 }
 
 const Banner = () => {
     return (
         <div className={style.wrapper}>
+            <div className={style.mobileLiquidity}>
+                <div className="text-lg font-medium">Create a Pool</div>
+                <div className="mt-2 text-gray-500 dark:text-dark-500">
+                    Create a liquidity pool. The ratio of tokens added sets the price of this pool.
+                </div>
+                <div className="mt-5 space-y-3 md:flex md:space-y-0 md:space-x-4">
+                    <button className={style.mobilePool}>Create a Pool</button>
+                </div>
+            </div>
+
             <div className={style.liquidity}>
                 <div className="text-lg font-medium">Create a Pool</div>
                 <div className="relative mt-2.5 w-2/3 text-gray-500 dark:text-dark-500">
                     Create a liquidity pool. The ratio of tokens you add will set the price of this pool.
                 </div>
                 <div className="relative mt-4 w-[200px] space-y-4">
-                    <div className={style.pool}>Create a Pool</div>
+                    <button className={style.pool}>Create a Pool</button>
                 </div>
 
             </div>
