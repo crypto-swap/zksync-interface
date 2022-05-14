@@ -4,13 +4,14 @@ import Image from 'next/image';
 import Tutorial from '../components/Homepage/tutorial';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import ImageList from '../components/Homepage/imagelist';
 
 const Home: NextPage = () => {
   return (
     <div className="relative h-screen overflow-x-hidden bg-bg-light font-[Montserrat] text-text-light dark:bg-bg-dark dark:text-text-dark">
       <Head>
         <title>CryptoSwap</title>
-        <meta name="description" content="CryptoSwap is a decentralized exchange (DEX) on zkSync, StarkNet, Polygon, and Ethereum. Here you can swap crypto, provide liquidity, and get rewarded." />
+        <meta name="description" content="CryptoSwap is a very efficient simple DEX on zkSync (Swap, Pool, Liquidity Options, and Generate). No presale, fully decentralized, and community-driven." />
         <meta key="twitter:description" name="twitter:description" content="CryptoSwap" />
         <link rel="icon" href="/icons/black_logo.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -39,38 +40,7 @@ const Home: NextPage = () => {
         </div>
 
         <div className="absolute z-0 h-full w-full">
-          <ul className="box-area-dark">
-            <li>
-              <img src="/coins/coin8-min.png" />
-            </li>
-            <li>
-              <img src="/coins/coin2-min.png" />
-            </li>
-            <li>
-              <img src="/coins/coin3-min.png" />
-            </li>
-            <li>
-              <img src="/coins/coin4-min.png" />
-            </li>
-            <li>
-              <img src="/coins/coin5-min.png" />
-            </li>
-            <li>
-              <img src="/coins/coin6-min.png" />
-            </li>
-            <li>
-              <img src="/coins/coin7-min.png" />
-            </li>
-            <li>
-              <img src="/coins/coin1-min.png" />
-            </li>
-            <li>
-              <img src="/coins/coin9-min.png" />
-            </li>
-            <li>
-              <img src="/coins/coin10-min.png" />
-            </li>
-          </ul>
+          <ImageList />
         </div>
 
       </div>

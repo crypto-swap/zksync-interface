@@ -20,7 +20,7 @@ const Tutorial = () => {
           <li className="bg-menu-blue rounded-3xl square flex flex-col items-center shadow-grey-card hover:shadow-grey-card-hover">
             <button className="flex flex-col items-center square object-contain justify-center p-[10%] gap-y-2 lg:p-[5%] ">
               <div className="h-auto lg:p-[5%] xl:px-[7.5%] lg:pb-[-10%]">
-                <img src={'/assets/wallets.svg'} />
+                <img src={'/assets/wallets.svg'} alt='connect wallets like metamask walletconnect' />
               </div>
               <span className='text-xs md:text-lg text-center font-semibold text-text-dark'>Connect Your Wallet</span>
             </button>
@@ -48,7 +48,7 @@ const Tutorial = () => {
           <li className="bg-menu-blue rounded-3xl square flex flex-col items-center shadow-grey-card hover:shadow-grey-card-hover">
             <button className="flex flex-col items-center square object-contain justify-center px-[15%] py-[7.5%] md:pt-[7.5%] md:pb-[2.5%] gap-y-1 lg:gap-y-2">
               <div className="h-auto lg:p-[2.5%] lg:pb-[-2.5%]">
-                <img src={'/assets/networks.svg'} />
+                <img src={'/assets/networks.svg'} alt='networks' />
               </div>
               <span className='text-xs md:text-lg text-center font-semibold text-text-dark lg:mb-2'>View Networks</span>
             </button>
@@ -57,7 +57,7 @@ const Tutorial = () => {
             <Link href="/swap">
               <button className="flex flex-col items-center square object-contain justify-center px-[10%] py-[5%] gap-y-2">
                 <div className="h-auto">
-                  <img src={'/assets/swap.svg'} />
+                  <img src={'/assets/swap.svg'} alt='crypto swap' />
                 </div>
                 <span className='text-xs md:text-lg text-center font-semibold text-text-dark'>Swap</span>
               </button>
@@ -83,7 +83,7 @@ const Tutorial = () => {
             <Link href="/pool">
               <button className="flex flex-col items-center square object-contain justify-center px-[10%] py-[5%] gap-y-2 ">
                 <div className="h-auto">
-                  <img src={'/assets/pool.svg'} />
+                  <img src={'/assets/pool.svg'} alt='liquidity pool' />
                 </div>
                 <span className='text-xs md:text-lg text-center font-semibold text-text-dark'>Pool</span>
               </button>
