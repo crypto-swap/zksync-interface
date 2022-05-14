@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-  trailingSlash: true,
   images: {
     loader: 'akamai',
     path: '',
