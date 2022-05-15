@@ -14,7 +14,7 @@ const style = {
     cursor-pointer h-[50px] text-sm leading-[24px] rounded-xl py-[13px] px-[17px] w-full 
     md:w-[120px]  bg-button-blue shadow-blue-button hover:shadow-blue-button-hover`,
     mobileLiquidity: `rounded-xl bg-bg-card-light dark:bg-bg-card-dark p-5 shadow-card dark:shadow-card-dark md:hidden md:p-[30px] md:flex md:flex-col md:justify-end`,
-    mobilePool: `flex select-none items-center justify-center whitespace-nowrap leading-none font-normal transition duration-300 cursor-pointer 
+    mobilePool: `flex select-none items-center text-white justify-center whitespace-nowrap leading-none font-normal transition duration-300 cursor-pointer 
     bg-button-blue shadow-blue-button hover:shadow-blue-button-hover
     h-[50px] text-sm leading-[24px] rounded-xl py-[13px] px-[17px] w-full md:w-auto md:min-w-[200px]`
 }
