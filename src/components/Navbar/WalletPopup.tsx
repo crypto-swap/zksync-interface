@@ -4,6 +4,8 @@ import { WalletPopupContext } from '../../context/WalletPopupProvider';
 import { hooks, metaMask } from '../../connectors/metaMask';
 import Popup from './Popup';
 import { NoMetaMaskError } from '@web3-react/metamask';
+import { NoEthereumProviderError } from '@web3-react/injected-connector';
+import { ethers } from 'ethers';
 
 const { useIsActive, useError } = hooks;
 
@@ -25,6 +27,18 @@ const WalletPopup = ({ setNetwork }: WalletPopupProps) => {
     setOpen(false);
   }
 
+  function isZK() {
+    // @ts-ignore
+    window.ethereum ? ethereum.request({ method: 'eth_chainId' }).then((chain) => {
+      if (chain != 280) {
+        alert("Wrong Network, please switch to zkSync alpha testnet!");
+      } else {
+        console.log("zksync");
+      }
+    }) : console.log("wallet not connected")
+
+  }
+
   const active = useIsActive();
   const [activating, setActivating] = useState(false);
   const error = useError();
@@ -34,6 +48,7 @@ const WalletPopup = ({ setNetwork }: WalletPopupProps) => {
     if (active) {
       setNetwork(0);
       closeModal();
+      isZK();
     }
   }, [active]);
 
