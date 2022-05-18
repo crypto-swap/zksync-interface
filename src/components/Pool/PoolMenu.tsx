@@ -67,7 +67,7 @@ const PoolMenu = () => {
                             <div className={style.searchBarOuter}>
                                 <div className={style.searchBarInner}>
                                     <div className='mx-3'>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                                             <circle cx="11" cy="11" r="8"></circle>
                                             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                                         </svg>
@@ -99,7 +99,7 @@ const PoolMenu = () => {
                     <PoolBar image1='/icons/discord.svg' image2='/icons/discord.svg' ticker1={pool['asset1']} ticker2={pool['asset2']} liquidity={pool['liquidity']} volume={pool['volume']} fees={(pool['volume'] * 0.025).toFixed(2)} apr={(pool['volume'] * 0.025 / pool['liquidity'] * 365).toFixed(5)} />
                 ))
             }
-            <div className='flex relative shrink mx-auto mt-10 grid justify-items-center select-none'>
+            <div className='flex relative shrink mx-auto mt-10 justify-items-center select-none'>
                 <Pagination
                     currentPage={currPage}
                     totalCount={numBars}

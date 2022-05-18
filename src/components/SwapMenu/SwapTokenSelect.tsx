@@ -38,11 +38,11 @@ const SwapTokenSelect = ({
     query === ''
       ? tokens
       : tokens.filter((token) =>
-          token
-            .toLowerCase()
-            .replace(/\s+/g, '')
-            .includes(query.toLowerCase().replace(/\s+/g, ''))
-        );
+        token
+          .toLowerCase()
+          .replace(/\s+/g, '')
+          .includes(query.toLowerCase().replace(/\s+/g, ''))
+      );
 
   return (
     <>
@@ -58,7 +58,7 @@ const SwapTokenSelect = ({
 
       <Popup title="Select Token" {...{ open, closeModal }}>
         <input
-          className="font-lg font-lg mt-3.5 w-full rounded-lg bg-inherit px-4 py-3 shadow-[inset_0.5px_1px_5px_rgba(0,0,0,0.3)]"
+          className="font-lg mt-3.5 w-full rounded-lg bg-inherit px-4 py-3 shadow-[inset_0.5px_1px_5px_rgba(0,0,0,0.3)]"
           placeholder="Search name"
           ref={inputRef}
           onChange={(event) => setQuery(event.target.value)}
@@ -72,6 +72,7 @@ const SwapTokenSelect = ({
           <ol className="h-full snap-y overflow-y-scroll">
             {filteredTokens.map((token) => (
               <li
+                key={token}
                 className="flex cursor-pointer snap-start items-center p-2.5 hover:bg-bg-blue dark:hover:bg-menu-blue"
                 onClick={() => {
                   handleTokenChange(token);
