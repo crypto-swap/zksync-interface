@@ -2,6 +2,9 @@ import PoolBar from './PoolBar';
 import pools from './mockPools.json';
 import Pagination from './Pagination';
 import React, { useState, useEffect, useLayoutEffect, useContext } from 'react';
+import { Menu, Transition } from '@headlessui/react';
+import { ChevronDownIcon } from '@heroicons/react/solid';
+import SelectFilter from '../../features/pool/SelectFilter'
 
 const style = {
     poolMenuContainer: `md:mx-auto md:max-w-5xl`,
@@ -12,10 +15,9 @@ const style = {
     searchBarInner: `flex flex-1 items-center relative `,
     searchBarInput: `bg-transparent border-0 outline-0 w-full`,
     selectFilterContainer: `flex basis-2/12 gap-2 items-center`,
-    selectFilterSubContainer: `relative inline-block w-full text-left`,
-    selectFilter: `w-full px-4 py-3 text-sm font-bold bg-transparent border-solid border-white rounded 
-    dark:border-[#272b45] bg-bg-card-light dark:bg-bg-card-dark shadow-card dark:shadow-card-dark hover:animate-pulse`,
 }
+
+
 
 export interface PoolMenuProps { }
 
@@ -23,7 +25,6 @@ const PoolMenu = () => {
     //temp images
     var imgs = {
         'SEK': '/icons/discord.svg'
-
     }
 
     // ========================
@@ -60,6 +61,7 @@ const PoolMenu = () => {
 
     const [value, setValue] = useState("");
 
+
     return (
         <div className={style.poolMenuContainer}>
             <div className="flex flex-col w-full gap-6">
@@ -84,18 +86,7 @@ const PoolMenu = () => {
                         </div>
                     </div>
                     <div className={style.selectFilterContainer}>
-                        <div className={style.selectFilterSubContainer}>
-                            <button className={style.selectFilter}>
-                                <div className="flex flex-row items-center justify-between">
-                                    <div className="text-sm leading-5 font-bold currentColor">All Pools</div>
-                                    <div className="shadow-card dark:shadow-card-dark rounded-full hover:shadow-button-hover hover:dark:shadow-button-hover-dark ">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className="w-5 h-5">
-                                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd">
-                                            </path></svg>
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
+                        <SelectFilter />
                     </div>
                 </div>
 
