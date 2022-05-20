@@ -17,7 +17,7 @@ const AlertPopup = ({
   }
 
   return (
-    <Popup title="Unsupported Network" {...{ open: true, closeModal }}>
+    <Popup title="Unsupported Network" {...{ open, closeModal }}>
       <p className="text-sm mt-4">
         Wrong Network, please switch to zkSync Alpha Testnet.
       </p>

@@ -59,6 +59,7 @@ const WalletPopup = ({ setNetwork }: WalletPopupProps) => {
 
   return (
     <>
+
       <AlertPopup {...{ alertPopupOpen, setAlertPopupOpen }} />
       <Popup title="Add Wallet" {...{ open, closeModal }}>
         <div className="mt-2.5">
