@@ -8,7 +8,7 @@ const style = {
     selectFilterSubContainer: `relative inline-block w-full text-left`,
     selectFilter: `w-full px-4 py-3 text-sm font-bold bg-transparent border-solid border-white rounded 
     dark:border-[#272b45] bg-bg-card-light dark:bg-bg-card-dark shadow-card dark:shadow-card-dark hover:animate-pulse`,
-    selectFilterDropdown: `absolute z-10 w-full mt-2 border border-white divide-y dark:border-[#272b45] rounded shadow-card dark:shadow-card-dark 
+    selectFilterDropdown: `absolute px-4 z-10 w-full mt-2 border border-white divide-y dark:border-[#272b45] rounded shadow-card dark:shadow-card-dark 
     focus:outline-none bg-bg-card-light dark:bg-bg-card-dark divide-white dark:divide-black`,
 }
 

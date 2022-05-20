@@ -2,8 +2,6 @@ import PoolBar from './PoolBar';
 import pools from './mockPools.json';
 import Pagination from './Pagination';
 import React, { useState, useEffect, useLayoutEffect, useContext } from 'react';
-import { Menu, Transition } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/solid';
 import SelectFilter from '../../features/pool/SelectFilter'
 
 const style = {
@@ -89,32 +87,31 @@ const PoolMenu = () => {
                         <SelectFilter />
                     </div>
                 </div>
-
-
             </div>
 
 
+            <div>
+                {
+                    pagePools.map((pool) => (
 
-            {
-                pagePools.map((pool) => (
-
-                    <PoolBar image1='/icons/discord.svg' image2='/icons/discord.svg' ticker1={pool['asset1']} ticker2={pool['asset2']} liquidity={pool['liquidity']} volume={pool['volume']} fees={(pool['volume'] * 0.025).toFixed(2)} apr={(pool['volume'] * 0.025 / pool['liquidity'] * 365).toFixed(5)} />
-                ))
-            }
-            <div className='flex relative shrink mx-auto mt-10 justify-items-center select-none'>
-                <Pagination
-                    currentPage={currPage}
-                    totalCount={numBars}
-                    pageSize={numBarInPage}
-                    onPageChange={(page: any) => setCurrPage(page)}
-                />
+                        <PoolBar image1='/icons/discord.svg' image2='/icons/discord.svg' ticker1={pool['asset1']} ticker2={pool['asset2']} liquidity={pool['liquidity']} volume={pool['volume']} fees={(pool['volume'] * 0.025).toFixed(2)} apr={(pool['volume'] * 0.025 / pool['liquidity'] * 365).toFixed(5)} />
+                    ))
+                }
+                <div className='flex relative shrink mx-auto mt-10 justify-items-center justify-center items-center select-none'>
+                    <Pagination
+                        currentPage={currPage}
+                        totalCount={numBars}
+                        pageSize={numBarInPage}
+                        onPageChange={(page: any) => setCurrPage(page)}
+                    />
+                </div>
+                {/* This two buttons are for developers
+                Can be removed
+                
+                <div className='h-12 mx-8 md:mx-20 lg:mx-40 xl:mx-60 mt-4 overflow-hidden rounded-lg shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark grid grid-cols-6' onClick={addOneBarPerPage}>Add one bar per page Current: {numBarInPage} bars per page</div>
+                <div className='h-12 mx-8 md:mx-20 lg:mx-40 xl:mx-60 mt-4 overflow-hidden rounded-lg shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark grid grid-cols-6' onClick={minusOneBarPerPage}>Minus one bar per page Current: {numBarInPage} bars per page</div>
+                */}
             </div>
-            {/* This two buttons are for developers
-            Can be removed
-            
-            <div className='h-12 mx-8 md:mx-20 lg:mx-40 xl:mx-60 mt-4 overflow-hidden rounded-lg shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark grid grid-cols-6' onClick={addOneBarPerPage}>Add one bar per page Current: {numBarInPage} bars per page</div>
-            <div className='h-12 mx-8 md:mx-20 lg:mx-40 xl:mx-60 mt-4 overflow-hidden rounded-lg shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark grid grid-cols-6' onClick={minusOneBarPerPage}>Minus one bar per page Current: {numBarInPage} bars per page</div>
-            */}
         </div>
     )
 }
