@@ -53,6 +53,7 @@ const NetworksPopup = ({
       <div className="mt-2.5">
         {networks.map(({ image, name, status }, index) => (
           <button
+            key={image}
             onClick={() => {
               setNetwork(index);
               metaMask.deactivate();
