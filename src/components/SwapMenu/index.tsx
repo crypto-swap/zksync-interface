@@ -46,7 +46,7 @@ const emptyTransactionInformation = new Map([
   ['Receive', 0],
   ['Rate', 0],
   ['Swap Fee', 0],
-  ['Estimated Cost', 0],
+  ['Optimization Fee', 0],
   ['Minimum Received', 0],
 ]);
 
@@ -69,7 +69,7 @@ function convert(
     ['Receive', Number(output.toFixed(4))],
     ['Rate', rate],
     ['Swap Fee', amount * 0.003],
-    ['Estimated Cost', amount * 0.004],
+    ['Optimization Fee', amount * 0.0005],
     ['Minimum Received', receive * 0.995],
   ]);
 }

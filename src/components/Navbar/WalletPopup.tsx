@@ -4,10 +4,9 @@ import { WalletPopupContext } from '../../context/WalletPopupProvider';
 import { hooks, metaMask } from '../../connectors/metaMask';
 import Popup from './Popup';
 import { NoMetaMaskError } from '@web3-react/metamask';
-import { NoEthereumProviderError } from '@web3-react/injected-connector';
-import { ethers } from 'ethers';
+import AlertPopup from './AlertPopup';
 
-const { useIsActive, useError } = hooks;
+const { useChainId, useIsActive, useError } = hooks;
 
 interface WalletPopupProps {
   setNetwork: React.Dispatch<React.SetStateAction<number | null>>;
@@ -27,18 +26,9 @@ const WalletPopup = ({ setNetwork }: WalletPopupProps) => {
     setOpen(false);
   }
 
-  function isZK() {
-    // @ts-ignore
-    window.ethereum ? ethereum.request({ method: 'eth_chainId' }).then((chain) => {
-      if (chain != 280) {
-        alert("Wrong Network, please switch to zkSync alpha testnet!");
-      } else {
-        console.log("zksync");
-      }
-    }) : console.log("wallet not connected")
+  const [alertPopupOpen, setAlertPopupOpen] = useState(false);
 
-  }
-
+  const chainId = useChainId();
   const active = useIsActive();
   const [activating, setActivating] = useState(false);
   const error = useError();
@@ -48,7 +38,9 @@ const WalletPopup = ({ setNetwork }: WalletPopupProps) => {
     if (active) {
       setNetwork(0);
       closeModal();
-      isZK();
+      if (chainId !== 280) {
+        setAlertPopupOpen(true);
+      }
     }
   }, [active]);
 
@@ -66,27 +58,31 @@ const WalletPopup = ({ setNetwork }: WalletPopupProps) => {
   const disabled = active || activating;
 
   return (
-    <Popup title="Add Wallet" {...{ open, closeModal }}>
-      <div className="mt-2.5">
-        <button
-          {...{ disabled }}
-          onClick={
-            activating ? undefined : () => {
-              setActivating(true);
-              metaMask.activate();
+    <>
+
+      <AlertPopup {...{ alertPopupOpen, setAlertPopupOpen }} />
+      <Popup title="Add Wallet" {...{ open, closeModal }}>
+        <div className="mt-2.5">
+          <button
+            {...{ disabled }}
+            onClick={
+              activating ? undefined : () => {
+                setActivating(true);
+                metaMask.activate();
+              }
             }
-          }
-          className={`mt-5 flex w-full items-center gap-3 rounded-lg bg-slate-500 bg-opacity-0 p-3 text-lg font-bold shadow-card ${disabled ? '' : "hover:shadow-button-hover dark:hover:shadow-button-hover-dark"} dark:border-bg-light dark:shadow-card-dark `}
-        >
-          <Image src={'/icons/metamask.svg'} width={30} height={30} />
-          {active ?
-            CONNECTED_TEXT
-            : (activating ?
-              CONNECTING_TEXT
-              : CONNECT_TEXT)}
-        </button>
-      </div>
-    </Popup >
+            className={`mt-5 flex w-full items-center gap-3 rounded-lg bg-slate-500 bg-opacity-0 p-3 text-lg font-bold shadow-card ${disabled ? '' : "hover:shadow-button-hover dark:hover:shadow-button-hover-dark"} dark:border-bg-light dark:shadow-card-dark `}
+          >
+            <Image src={'/icons/metamask.svg'} width={30} height={30} />
+            {active ?
+              CONNECTED_TEXT
+              : (activating ?
+                CONNECTING_TEXT
+                : CONNECT_TEXT)}
+          </button>
+        </div>
+      </Popup >
+    </>
   );
 };
 

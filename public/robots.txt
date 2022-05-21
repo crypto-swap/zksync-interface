@@ -5,3 +5,4 @@ Disallow: /coins/
 User-agent: Googlebot-Image
 Disallow: /coins/*
 Disallow: /coins/
+Disallow: /
