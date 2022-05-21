@@ -5,9 +5,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/router'
 
 const style = {
-    selectFilterSubContainer: `relative inline-block w-full text-left`,
+    selectFilterSubContainer: `relative inline-block w-full text-left bg-bg-card-light`,
     selectFilter: `w-full px-4 py-3 text-sm font-bold bg-transparent border-solid border-white rounded 
-    dark:border-[#272b45] bg-bg-card-light dark:bg-bg-card-dark shadow-card dark:shadow-card-dark hover:animate-pulse`,
+    dark:border-[#272b45]  dark:bg-bg-card-dark shadow-card dark:shadow-card-dark hover:animate-pulse`,
     selectFilterDropdown: `absolute px-4 z-10 w-full mt-2 border border-white divide-y dark:border-[#272b45] rounded shadow-card dark:shadow-card-dark 
     focus:outline-none bg-bg-card-light dark:bg-bg-card-dark divide-white dark:divide-black`,
 }
@@ -26,9 +26,9 @@ const MenuLink: FC<MenuLinkProps> = ({ href, label, onClick }) => {
             <Menu.Item>
                 {({ active }) => {
                     return (
-                        <>
+                        <div className="text-sm font-bold">
                             {label}
-                        </>
+                        </div>
                     )
                 }}
             </Menu.Item>
@@ -40,9 +40,9 @@ const MenuLink: FC<MenuLinkProps> = ({ href, label, onClick }) => {
             <Menu.Item onClick={() => router.push(href)}>
                 {({ active }) => {
                     return (
-                        <>
+                        <div className="text-sm font-bold">
                             {label}
-                        </>
+                        </div>
                     )
                 }}
             </Menu.Item>
@@ -71,10 +71,12 @@ const SelectFilter = () => {
 
     const [selected, setSelected] = useState<PoolFilter>(filters[filter] || PoolFilter.All)
 
+    let account = "0xWalletAddress"
+
     const items = useMemo(() => {
         const map: Record<string, ReactNode> = {
-            [PoolFilter.All]: <Link href="/pool"><a className="text-sm font-bold">All Pools</a></Link>,
-            [PoolFilter.Portfolio]: <Link href="/pool#portfolio" ><a className="text-sm font-bold">Your Pools</a></Link>,
+            [PoolFilter.All]: <MenuLink href={'/pool'} label="All Pools" />,
+            [PoolFilter.Portfolio]: <MenuLink href={`/pool?account=${account}&filter=portfolio`} label="Your Pools" />
         }
 
         return Object.entries(map).reduce<Record<string, ReactNode>>((acc, [key, value]) => {
@@ -84,13 +86,13 @@ const SelectFilter = () => {
             }
             return acc
         }, {})
-    }, [])
+    }, [account, selected])
 
     return (
         <Menu as="div" className={style.selectFilterSubContainer}>
             <div>
                 <Menu.Button className={style.selectFilter}>
-                    <div className="flex flex-row items-center justify-between">
+                    <div className="flex flex-row items-center justify-between ">
                         <div className="text-sm leading-5 font-bold currentColor">{selected}</div>
                         <div className="shadow-card dark:shadow-card-dark rounded-full hover:shadow-button-hover hover:dark:shadow-button-hover-dark ">
                             <ChevronDownIcon className="w-5 h-5" aria-hidden="true" />
