@@ -1,4 +1,4 @@
-import React, { useState, useMemo, Fragment, useEffect, useLayoutEffect, useContext, ReactNode } from 'react';
+import React, { useState, useMemo, FC, Fragment, useEffect, useLayoutEffect, useContext, ReactNode } from 'react';
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import Link from 'next/link';
@@ -10,6 +10,46 @@ const style = {
     dark:border-[#272b45] bg-bg-card-light dark:bg-bg-card-dark shadow-card dark:shadow-card-dark hover:animate-pulse`,
     selectFilterDropdown: `absolute px-4 z-10 w-full mt-2 border border-white divide-y dark:border-[#272b45] rounded shadow-card dark:shadow-card-dark 
     focus:outline-none bg-bg-card-light dark:bg-bg-card-dark divide-white dark:divide-black`,
+}
+
+interface MenuLinkProps {
+    href?: string;
+    label: string;
+    onClick?(): void
+}
+
+const MenuLink: FC<MenuLinkProps> = ({ href, label, onClick }) => {
+    const router = useRouter()
+
+    if (onClick) {
+        return (
+            <Menu.Item>
+                {({ active }) => {
+                    return (
+                        <>
+                            {label}
+                        </>
+                    )
+                }}
+            </Menu.Item>
+        )
+    }
+
+    if (href) {
+        return (
+            <Menu.Item onClick={() => router.push(href)}>
+                {({ active }) => {
+                    return (
+                        <>
+                            {label}
+                        </>
+                    )
+                }}
+            </Menu.Item>
+        )
+    }
+
+    return <></>
 }
 
 enum PoolFilter {
