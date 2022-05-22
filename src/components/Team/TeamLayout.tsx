@@ -27,7 +27,7 @@ const TeamLayout = () => {
                     </div>
 
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
-                        <SingleTeamMember name="Qianli" title="Developer" text="UCLA Math-CS " photo="/team-image/qianli.png" />
+                        <SingleTeamMember name="Phoebe" title="Business Lead" text="East Coast US, Employed Elsewhere..." photo="/team-image/phoebe.jpg" />
                     </div>
 
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
@@ -35,24 +35,26 @@ const TeamLayout = () => {
                     </div>
 
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
-                        <SingleTeamMember name="Michael" title="Developer" text="University of Washington Math" photo="/team-image/michael.png" />
+                        <SingleTeamMember name="Anonymous ZK" title="Smart Contract Dev" text="somewhere in LA..." photo="/team-image/anonymous_dev.png" />
+                    </div>
+
+                    <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
+                        <SingleTeamMember name="Monke" title="Digital Marketing" text="McDonalds" photo="/team-image/jason.png" />
                     </div>
 
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
                         <SingleTeamMember name="Hamza" title="Marketing" text="UCLA Communications" photo="/team-image/hamza.jpeg" />
                     </div>
 
+
+
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
-                        <SingleTeamMember name="Monke" title="Marketing" text="McDonalds" photo="/team-image/jason.png" />
+                        <SingleTeamMember name="Batman" title="Digital Graphics" text="UCSD ICAM" photo="/team-image/batman.png" />
                     </div>
 
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
-                        <SingleTeamMember name="Batman" title="Graphic Designer" text="UCSD ICAM" photo="/team-image/batman.png" />
+                        <SingleTeamMember name="Katie" title="Digital Artist" text="UCI" photo="/team-image/katie.png" />
                     </div>
-
-
-
-
 
                 </div>
             </div>
