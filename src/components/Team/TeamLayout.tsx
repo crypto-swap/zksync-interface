@@ -56,6 +56,11 @@ const TeamLayout = () => {
                         <SingleTeamMember name="Katie" title="Digital Artist" text="UCI" photo="/team-image/katie.png" />
                     </div>
 
+
+                    <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
+                        <SingleTeamMember name="Qianli" title="Developer" text="UCLA Math-CS" photo="/team-image/qianli.png" />
+                    </div>
+
                 </div>
             </div>
         </div>
