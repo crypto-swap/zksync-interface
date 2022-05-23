@@ -1,9 +1,35 @@
-import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useTheme } from 'next-themes'
+import React, { useState, useEffect, useContext } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useTheme } from 'next-themes';
+import WalletPopup from '../Navbar/WalletPopup';
+import NetworksPopup from '../Navbar/NetworksPopup';
+import { WalletPopupContext } from '../../context/WalletPopupProvider';
+import { networks } from '../Navbar/NetworksPopup';
+import { hooks } from '../../connectors/metaMask';
+
+const { useIsActive } = hooks;
+
+
+
+
 
 const Tutorial = () => {
+
+  const walletConnected = useIsActive();
+  const { setWalletPopupOpen } = useContext(WalletPopupContext);
+
+  function openWalletPopup() {
+    setWalletPopupOpen(true);
+  }
+
+  const [network, setNetwork] = useState<number | null>(null);
+  const [networksPopupOpen, setNetworksPopupOpen] = useState(false);
+
+  function openNetworksPopup() {
+    setNetworksPopupOpen(true);
+  }
+
   return (
 
     <>
@@ -18,12 +44,14 @@ const Tutorial = () => {
       <div className="flex-1 mx-auto pt-10 px-4 md:px-[15%] lg:px-[20%] xl:px-[25%]">
         <ul className="grid grid-cols-2 gap-y-6 gap-x-4 md:gap-y-12 md:gap-x-8 lg:gap-x-24 xl:gap-y-16 xl:gap-x-32">
           <li className="bg-menu-blue rounded-3xl square flex flex-col items-center shadow-grey-card hover:shadow-grey-card-hover">
-            <button className="flex flex-col items-center square object-contain justify-center p-[10%] gap-y-2 lg:p-[5%] ">
+            <button className="flex flex-col items-center square object-contain justify-center p-[10%] gap-y-2 lg:p-[5%] "
+              onClick={openWalletPopup}>
               <div className="h-auto lg:p-[5%] xl:px-[7.5%] lg:pb-[-10%]">
                 <img src={'/assets/wallets.svg'} alt='connect wallets like metamask walletconnect' />
               </div>
               <span className='text-xs md:text-lg text-center font-semibold text-text-dark'>Connect Your Wallet</span>
             </button>
+            <WalletPopup {...{ setNetwork }} />
           </li>
           <li className="flex mt-[20%]">
             <span className='font-bold text-md md:text-lg lg:text-2xl '>
@@ -32,7 +60,7 @@ const Tutorial = () => {
               ... and you're done! <br></br><br></br>
               <span className="text-xs lg:text-lg leading-[0px] lg:leading-3">
                 <p className="leading-[0px] lg:leading-3">No wallet?</p>
-                <a href="" className="text-[#7408F8]">Click Here</a>
+                <a href="https://metamask.io/download/" className="text-[#7408F8]">Click Here</a>
               </span>
             </span>
           </li>
@@ -46,12 +74,16 @@ const Tutorial = () => {
             </span>
           </li>
           <li className="bg-menu-blue rounded-3xl square flex flex-col items-center shadow-grey-card hover:shadow-grey-card-hover">
-            <button className="flex flex-col items-center square object-contain justify-center px-[15%] py-[7.5%] md:pt-[7.5%] md:pb-[2.5%] gap-y-1 lg:gap-y-2">
+            <button className="flex flex-col items-center square object-contain justify-center px-[15%] py-[7.5%] md:pt-[7.5%] md:pb-[2.5%] gap-y-1 lg:gap-y-2"
+              onClick={openNetworksPopup}>
               <div className="h-auto lg:p-[2.5%] lg:pb-[-2.5%]">
                 <img src={'/assets/networks.svg'} alt='networks' />
               </div>
               <span className='text-xs md:text-lg text-center font-semibold text-text-dark lg:mb-2'>View Networks</span>
             </button>
+            <NetworksPopup
+              {...{ setNetwork, networksPopupOpen, setNetworksPopupOpen }}
+            />
           </li>
           <li className="bg-[#71B176]  rounded-3xl square flex flex-col items-center shadow-green-card hover:shadow-green-card-hover">
             <Link href="/swap">
