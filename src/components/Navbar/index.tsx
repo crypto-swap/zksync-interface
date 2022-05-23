@@ -54,7 +54,7 @@ const Navbar = () => {
           Team
         </a>
         <a
-          href={'/whitepaper.pdf'}
+          href={'https://docs.cryptoswap.org'}
           className="navbar-link-item"
           target="_blank"
           rel="noopener noreferrer"

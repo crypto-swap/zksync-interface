@@ -43,7 +43,7 @@ const Footer = () => {
         <div className="text-xl font-semibold"> About Us </div>
         <div className="w-full space-y-2.5 text-center text-base font-semibold text-font-blue">
           <p>
-            <Link href="">
+            <Link href="/team">
               <a>Team</a>
             </Link>
           </p>
@@ -68,13 +68,13 @@ const Footer = () => {
             </Link>
           </p>
           <p>
-            <Link href="">
-              <a>Tutorials</a>
+            <Link href="https://docs.cryptoswap.org">
+              <a>Documentation</a>
             </Link>
           </p>
           <p>
-            <Link href="">
-              <a>Support</a>
+            <Link href="#tutorial">
+              <a>Tutorials</a>
             </Link>
           </p>
         </div>
@@ -83,7 +83,7 @@ const Footer = () => {
         <div className="text-xl font-semibold"> Business </div>
         <div className="w-full text-center space-y-2.5 text-base font-semibold text-font-blue">
           <p>
-            <Link href="">
+            <Link href="mailto: cryptoswaporg@gmail.com">
               <a>Contact Us</a>
             </Link>
           </p>

@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import TeamLayout from '../components/Team/TeamLayout'
+import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
+import TeamLayout from '../../components/Team/TeamLayout'
 
 const Team = () => {
     return (
