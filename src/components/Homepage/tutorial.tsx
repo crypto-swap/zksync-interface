@@ -1,37 +1,20 @@
-import React, { useState, useEffect, useContext } from 'react';
-import Image from 'next/image';
+import React, { useContext } from 'react';
 import Link from 'next/link';
-import { useTheme } from 'next-themes';
-import WalletPopup from '../Navbar/WalletPopup';
-import NetworksPopup from '../Navbar/NetworksPopup';
-import { WalletPopupContext } from '../../context/WalletPopupProvider';
-import { networks } from '../Navbar/NetworksPopup';
-import { hooks } from '../../connectors/metaMask';
-
-const { useIsActive } = hooks;
-
-
-
+import { PopupContext } from '../../context/PopupProvider';
 
 
 const Tutorial = () => {
-
-  const walletConnected = useIsActive();
-  const { setWalletPopupOpen } = useContext(WalletPopupContext);
+  const { setWalletPopupOpen, setNetworksPopupOpen } = useContext(PopupContext);
 
   function openWalletPopup() {
     setWalletPopupOpen(true);
   }
-
-  const [network, setNetwork] = useState<number | null>(null);
-  const [networksPopupOpen, setNetworksPopupOpen] = useState(false);
 
   function openNetworksPopup() {
     setNetworksPopupOpen(true);
   }
 
   return (
-
     <>
       <div className="flex items-center justify-center">
         <h2 className='text-4xl  bg-bg-card-light dark:bg-bg-card-dark text-center font-semibold leading-7 rounded-[64px] p-10 w- shadow-card dark:shadow-card-dark'>
@@ -51,7 +34,6 @@ const Tutorial = () => {
               </div>
               <span className='text-xs md:text-lg text-center font-semibold text-text-dark'>Connect Your Wallet</span>
             </button>
-            <WalletPopup {...{ setNetwork }} />
           </li>
           <li className="flex mt-[20%]">
             <span className='font-bold text-md md:text-lg lg:text-2xl '>
@@ -81,9 +63,6 @@ const Tutorial = () => {
               </div>
               <span className='text-xs md:text-lg text-center font-semibold text-text-dark lg:mb-2'>View Networks</span>
             </button>
-            <NetworksPopup
-              {...{ setNetwork, networksPopupOpen, setNetworksPopupOpen }}
-            />
           </li>
           <li className="bg-[#71B176]  rounded-3xl square flex flex-col items-center shadow-green-card hover:shadow-green-card-hover">
             <Link href="/swap">

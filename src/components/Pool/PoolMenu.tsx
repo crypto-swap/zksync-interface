@@ -94,7 +94,7 @@ const PoolMenu = () => {
                 {
                     pagePools.map((pool) => (
 
-                        <PoolBar image1='/icons/discord.svg' image2='/icons/discord.svg' ticker1={pool['asset1']} ticker2={pool['asset2']} liquidity={pool['liquidity']} volume={pool['volume']} fees={(pool['volume'] * 0.025).toFixed(2)} apr={(pool['volume'] * 0.025 / pool['liquidity'] * 365).toFixed(5)} />
+                        <PoolBar key={pool.asset1 + pool.asset2} image1='/icons/discord.svg' image2='/icons/discord.svg' ticker1={pool['asset1']} ticker2={pool['asset2']} liquidity={pool['liquidity']} volume={pool['volume']} fees={(pool['volume'] * 0.025).toFixed(2)} apr={(pool['volume'] * 0.025 / pool['liquidity'] * 365).toFixed(5)} />
                     ))
                 }
                 <div className='flex relative shrink mx-auto mt-10 justify-items-center justify-center items-center select-none'>

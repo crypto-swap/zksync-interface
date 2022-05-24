@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import Image from 'next/image';
-import { WalletPopupContext } from '../../context/WalletPopupProvider';
+import { PopupContext } from '../../context/PopupProvider';
 import { hooks, metaMask } from '../../connectors/metaMask';
 import Popup from './Popup';
 import { NoMetaMaskError } from '@web3-react/metamask';
@@ -8,19 +8,31 @@ import AlertPopup from './AlertPopup';
 
 const { useChainId, useIsActive, useError } = hooks;
 
-interface WalletPopupProps {
-  setNetwork: React.Dispatch<React.SetStateAction<number | null>>;
-}
-
 const CONNECT_TEXT = 'MetaMask';
 const CONNECTING_TEXT = 'MetaMask (Connecting...)';
 const CONNECTED_TEXT = 'MetaMask Connected';
 
-const WalletPopup = ({ setNetwork }: WalletPopupProps) => {
+const zkSyncChainParameter = {
+  chainId: 280,
+  chainName: 'zkSync alpha testnet',
+  nativeCurrency: {
+    name: "Ethereum",
+    symbol: "ETH",
+    decimals: 18 as 18
+  },
+  rpcUrls: ["https://zksync2-testnet.zksync.dev"],
+  blockExplorerUrls: ["https://zksync2-testnet.zkscan.io"],
+}
+
+export function connect() {
+  metaMask.activate(zkSyncChainParameter);
+}
+
+const WalletPopup = () => {
   const {
     walletPopupOpen: open,
     setWalletPopupOpen: setOpen,
-  } = useContext(WalletPopupContext);
+  } = useContext(PopupContext);
 
   function closeModal() {
     setOpen(false);
@@ -36,18 +48,15 @@ const WalletPopup = ({ setNetwork }: WalletPopupProps) => {
   useEffect(() => {
     setActivating(false);
     if (active) {
-      setNetwork(0);
       closeModal();
-      if (chainId !== 280) {
-        setAlertPopupOpen(true);
-      }
+      setAlertPopupOpen(chainId !== 280);
     }
-  }, [active]);
+  }, [active, chainId]);
 
   useEffect(() => {
     setActivating(false);
     if (error instanceof NoMetaMaskError) {
-      window?.open('https://metamask.io/', '_blank');
+      setTimeout(() => window.open('https://metamask.io/', '_blank'), 500);
     }
   }, [error]);
 
@@ -59,7 +68,6 @@ const WalletPopup = ({ setNetwork }: WalletPopupProps) => {
 
   return (
     <>
-
       <AlertPopup {...{ alertPopupOpen, setAlertPopupOpen }} />
       <Popup title="Add Wallet" {...{ open, closeModal }}>
         <div className="mt-2.5">
@@ -68,7 +76,7 @@ const WalletPopup = ({ setNetwork }: WalletPopupProps) => {
             onClick={
               activating ? undefined : () => {
                 setActivating(true);
-                metaMask.activate();
+                connect();
               }
             }
             className={`mt-5 flex w-full items-center gap-3 rounded-lg bg-slate-500 bg-opacity-0 p-3 text-lg font-bold shadow-card ${disabled ? '' : "hover:shadow-button-hover dark:hover:shadow-button-hover-dark"} dark:border-bg-light dark:shadow-card-dark `}
