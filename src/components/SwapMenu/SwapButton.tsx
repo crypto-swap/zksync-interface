@@ -6,7 +6,7 @@ import { connect } from '../Navbar/WalletPopup';
 const { useChainId, useIsActive } = hooks;
 
 const SwapButton = () => {
-  const chainIsCorrect = useChainId() == 280;
+  const chainIsCorrect = useChainId() === 280;
   const walletConnected = useIsActive();
   const { setWalletPopupOpen } = useContext(PopupContext);
 

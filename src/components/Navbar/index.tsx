@@ -7,7 +7,7 @@ import { PopupContext } from '../../context/PopupProvider';
 import { networks } from '../Navbar/NetworksPopup';
 import { hooks } from '../../connectors/metaMask';
 
-const { useIsActive } = hooks;
+const { useChainId, useIsActive } = hooks;
 
 const Navbar = () => {
   // defaults to dark mode
@@ -19,6 +19,7 @@ const Navbar = () => {
     console.log(theme);
   }, []);
 
+  const chainIsCorrect = useChainId() === 280;
   const walletConnected = useIsActive();
   const { setWalletPopupOpen, setNetworksPopupOpen } = useContext(PopupContext);
 
@@ -72,7 +73,7 @@ const Navbar = () => {
             >
               <Image
                 src={
-                  walletConnected
+                  chainIsCorrect
                     ? networks[0].image
                     : '/assets/networks.svg'
                 }
@@ -80,7 +81,7 @@ const Navbar = () => {
                 height={20}
               />
               <span>&nbsp;</span>
-              {walletConnected
+              {chainIsCorrect
                 ? networks[0].name.split(' ')[0]
                 : 'Networks'}
               <span className="hide-medium">
