@@ -50,10 +50,11 @@ const Pagination = (props: any) => {
             {
                 paginationRange.map((pageNumber: any) => {
                     if (pageNumber === DOTS) {
-                        return <div className='rounded-full'>&#8230;</div>;
+                        return <div key={pageNumber} className='rounded-full'>&#8230;</div>;
                     }
                     return (
                         <div
+                            key={pageNumber}
                             className={currentPage === pageNumber ? 'text-center bg-bg-card-light dark:bg-bg-card-dark  h-7 w-7 rounded-full shadow-button-hover dark:shadow-button-hover-dark' : 'text-center invisible md:visible h-7 w-7 rounded-full shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark'}
                             onClick={() => onPageChange(pageNumber)}
                         >
