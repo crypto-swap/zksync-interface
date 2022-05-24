@@ -166,7 +166,7 @@ const SwapMenu = () => {
             {Array.from(transactionInformation)
               .slice(1)
               .map(([label, value]) => (
-                <div className="flex place-content-between text-sm font-bold">
+                <div className="flex place-content-between text-sm font-bold" key={label}>
                   <span>{label}</span>
                   <span>{(value || 0).toFixed(4)}</span>
                 </div>
