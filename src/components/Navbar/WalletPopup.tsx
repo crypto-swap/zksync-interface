@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import Image from 'next/image';
 import { PopupContext } from '../../context/PopupProvider';
 import { hooks, metaMask } from '../../connectors/metaMask';
-import Popup from '../../features/Popup';
+import Popup from './Popup';
 import { NoMetaMaskError } from '@web3-react/metamask';
 import AlertPopup from './AlertPopup';
 
