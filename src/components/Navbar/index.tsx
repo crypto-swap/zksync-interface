@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import WalletPopup from '../Navbar/WalletPopup';
 import NetworksPopup from '../Navbar/NetworksPopup';
-import { WalletPopupContext } from '../../context/WalletPopupProvider';
+import { PopupContext } from '../../context/PopupProvider';
 import { networks } from '../Navbar/NetworksPopup';
 import { hooks } from '../../connectors/metaMask';
 
@@ -20,14 +20,11 @@ const Navbar = () => {
   }, []);
 
   const walletConnected = useIsActive();
-  const { setWalletPopupOpen } = useContext(WalletPopupContext);
+  const { setWalletPopupOpen, setNetworksPopupOpen } = useContext(PopupContext);
 
   function openWalletPopup() {
     setWalletPopupOpen(true);
   }
-
-  const [network, setNetwork] = useState<number | null>(null);
-  const [networksPopupOpen, setNetworksPopupOpen] = useState(false);
 
   function openNetworksPopup() {
     setNetworksPopupOpen(true);
@@ -35,6 +32,8 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
+      <WalletPopup />
+      <NetworksPopup />
       <div className="navbar-col-1">
         <a id="home-nav-link" href="/">
           <span className="navbar-logo">
@@ -73,16 +72,16 @@ const Navbar = () => {
             >
               <Image
                 src={
-                  network != null
-                    ? networks[network].image
+                  walletConnected
+                    ? networks[0].image
                     : '/assets/networks.svg'
                 }
                 width={20}
                 height={20}
               />
               <span>&nbsp;</span>
-              {network != null
-                ? networks[network].name.split(' ')[0]
+              {walletConnected
+                ? networks[0].name.split(' ')[0]
                 : 'Networks'}
               <span className="hide-medium">
                 <svg
@@ -100,9 +99,6 @@ const Navbar = () => {
                 </svg>
               </span>
             </button>
-            <NetworksPopup
-              {...{ setNetwork, networksPopupOpen, setNetworksPopupOpen }}
-            />
           </div>
 
           <div className="wallet">
@@ -118,7 +114,6 @@ const Navbar = () => {
                 {walletConnected ? 'Wallet Connected' : 'Connect wallet'}
               </p>
             </button>
-            <WalletPopup {...{ setNetwork }} />
           </div>
 
           <button

@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
+import { PopupContext } from '../../context/PopupProvider';
 import Image from 'next/image';
-import Popup from '../Navbar/Popup';
-import { metaMask } from '../../connectors/metaMask';
+import Popup from '../../features/Popup';
+import { connect } from '../Navbar/WalletPopup';
 
 interface Network {
   name: string;
@@ -32,17 +33,11 @@ export const networks: Network[] = [
   },
 ];
 
-interface NetworksPopupProps {
-  setNetwork: React.Dispatch<React.SetStateAction<number | null>>;
-  networksPopupOpen: boolean;
-  setNetworksPopupOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-const NetworksPopup = ({
-  setNetwork,
-  networksPopupOpen: open,
-  setNetworksPopupOpen: setOpen,
-}: NetworksPopupProps) => {
+const NetworksPopup = () => {
+  const {
+    networksPopupOpen: open,
+    setNetworksPopupOpen: setOpen,
+  } = useContext(PopupContext);
 
   function closeModal() {
     setOpen(false);
@@ -51,15 +46,15 @@ const NetworksPopup = ({
   return (
     <Popup title="Networks" {...{ open, closeModal }}>
       <div className="mt-2.5">
-        {networks.map(({ image, name, status }, index) => (
+        {networks.map(({ image, name, status }) => (
           <button
+            disabled={!status}
             key={image}
             onClick={() => {
-              setNetwork(index);
-              metaMask.deactivate();
+              connect();
               closeModal();
             }}
-            className="mt-5 flex w-full items-center gap-3 rounded-lg bg-slate-500 bg-opacity-0 p-3 text-lg font-bold shadow-card  hover:shadow-button-hover dark:border-bg-light dark:shadow-card-dark dark:hover:shadow-button-hover-dark"
+            className={"mt-5 flex w-full items-center gap-3 rounded-lg bg-slate-500 bg-opacity-0 p-3 text-lg font-bold shadow-card dark:border-bg-light dark:shadow-card-dark" + (status ? ' hover:shadow-button-hover dark:hover:shadow-button-hover-dark' : '')}
           >
             <Image src={image} width={30} height={30} />
             {name}

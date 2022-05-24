@@ -1,14 +1,14 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'next-themes';
-import { WalletPopupProvider } from '../context/WalletPopupProvider';
+import { PopupProvider } from '../context/PopupProvider';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
-      <WalletPopupProvider>
+      <PopupProvider>
         <Component {...pageProps} />
-      </WalletPopupProvider>
+      </PopupProvider>
     </ThemeProvider>
   );
 }
