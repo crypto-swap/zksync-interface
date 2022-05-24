@@ -16,6 +16,22 @@ const CONNECT_TEXT = 'MetaMask';
 const CONNECTING_TEXT = 'MetaMask (Connecting...)';
 const CONNECTED_TEXT = 'MetaMask Connected';
 
+const zkSyncChainParameter = {
+  chainId: 280,
+  chainName: 'zkSync Goerli Test Network',
+  nativeCurrency: {
+    name: "Goerli ETH",
+    symbol: "gorETH",
+    decimals: 18 as 18
+  },
+  rpcUrls: ["https://zksync2-testnet.zksync.dev"],
+  blockExplorerUrls: ["https://zksync2-testnet.zkscan.io"],
+}
+
+export function connect() {
+  metaMask.activate(zkSyncChainParameter);
+}
+
 const WalletPopup = ({ setNetwork }: WalletPopupProps) => {
   const {
     walletPopupOpen: open,
@@ -42,7 +58,7 @@ const WalletPopup = ({ setNetwork }: WalletPopupProps) => {
         setAlertPopupOpen(true);
       }
     }
-  }, [active]);
+  }, [active, chainId]);
 
   useEffect(() => {
     setActivating(false);
@@ -68,7 +84,7 @@ const WalletPopup = ({ setNetwork }: WalletPopupProps) => {
             onClick={
               activating ? undefined : () => {
                 setActivating(true);
-                metaMask.activate();
+                connect();
               }
             }
             className={`mt-5 flex w-full items-center gap-3 rounded-lg bg-slate-500 bg-opacity-0 p-3 text-lg font-bold shadow-card ${disabled ? '' : "hover:shadow-button-hover dark:hover:shadow-button-hover-dark"} dark:border-bg-light dark:shadow-card-dark `}
