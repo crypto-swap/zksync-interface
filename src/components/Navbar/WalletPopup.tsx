@@ -56,7 +56,7 @@ const WalletPopup = () => {
   useEffect(() => {
     setActivating(false);
     if (error instanceof NoMetaMaskError) {
-      window?.open('https://metamask.io/', '_blank');
+      setTimeout(() => window.open('https://metamask.io/', '_blank'), 500);
     }
   }, [error]);
 
