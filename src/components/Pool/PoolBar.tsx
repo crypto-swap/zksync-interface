@@ -5,6 +5,7 @@ import internal from 'stream';
 
 
 interface PoolBarProps {
+    key: string;
     image1: string;
     image2: string;
     ticker1: string;
