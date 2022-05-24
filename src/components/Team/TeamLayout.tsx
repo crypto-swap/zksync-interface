@@ -10,10 +10,6 @@ const TeamLayout = () => {
             <div className="relative z-10 mx-auto mt-16 px-20 h-auto w-full p-20 pt-5 max-w-sm md:max-w-5xl">
                 <div className='grid grid-cols-1 md:grid-cols-3 grid-flow-row gap-10'>
 
-                    <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
-                        <SingleTeamMember name="Tiger" title="Developer" text="Caltech CS" photo="/team-image/tiger.jpg" />
-                    </div>
-
 
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
                         <SingleTeamMember name="Calvin" title="Developer" text="Caltech CS" photo="/team-image/calvin.png" />
@@ -27,7 +23,7 @@ const TeamLayout = () => {
                     </div>
 
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
-                        <SingleTeamMember name="Phoebe" title="Business Lead" text="East Coast US, Employed Elsewhere..." photo="/team-image/phoebe.jpg" />
+                        <SingleTeamMember name="Phoebe" title="Business Relations" text="East Coast US, Employed Elsewhere..." photo="/team-image/phoebe.jpg" />
                     </div>
 
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
@@ -46,19 +42,12 @@ const TeamLayout = () => {
                         <SingleTeamMember name="Hamza" title="Marketing" text="UCLA Communications" photo="/team-image/hamza.jpeg" />
                     </div>
 
-
-
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
                         <SingleTeamMember name="Batman" title="Digital Graphics" text="UCSD ICAM" photo="/team-image/batman.png" />
                     </div>
 
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
                         <SingleTeamMember name="Katie" title="Digital Artist" text="UCI" photo="/team-image/katie.png" />
-                    </div>
-
-
-                    <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
-                        <SingleTeamMember name="Qianli" title="Developer" text="UCLA Math-CS" photo="/team-image/qianli.png" />
                     </div>
 
                 </div>
