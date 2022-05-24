@@ -1,16 +1,12 @@
 import { useState, useEffect, useContext } from 'react';
 import Image from 'next/image';
-import { WalletPopupContext } from '../../context/WalletPopupProvider';
+import { PopupContext } from '../../context/PopupProvider';
 import { hooks, metaMask } from '../../connectors/metaMask';
 import Popup from './Popup';
 import { NoMetaMaskError } from '@web3-react/metamask';
 import AlertPopup from './AlertPopup';
 
 const { useChainId, useIsActive, useError } = hooks;
-
-interface WalletPopupProps {
-  setNetwork: React.Dispatch<React.SetStateAction<number | null>>;
-}
 
 const CONNECT_TEXT = 'MetaMask';
 const CONNECTING_TEXT = 'MetaMask (Connecting...)';
@@ -32,11 +28,11 @@ export function connect() {
   metaMask.activate(zkSyncChainParameter);
 }
 
-const WalletPopup = ({ setNetwork }: WalletPopupProps) => {
+const WalletPopup = () => {
   const {
     walletPopupOpen: open,
     setWalletPopupOpen: setOpen,
-  } = useContext(WalletPopupContext);
+  } = useContext(PopupContext);
 
   function closeModal() {
     setOpen(false);
@@ -52,11 +48,8 @@ const WalletPopup = ({ setNetwork }: WalletPopupProps) => {
   useEffect(() => {
     setActivating(false);
     if (active) {
-      setNetwork(0);
       closeModal();
-      if (chainId !== 280) {
-        setAlertPopupOpen(true);
-      }
+      setAlertPopupOpen(chainId !== 280);
     }
   }, [active, chainId]);
 
@@ -75,7 +68,6 @@ const WalletPopup = ({ setNetwork }: WalletPopupProps) => {
 
   return (
     <>
-
       <AlertPopup {...{ alertPopupOpen, setAlertPopupOpen }} />
       <Popup title="Add Wallet" {...{ open, closeModal }}>
         <div className="mt-2.5">

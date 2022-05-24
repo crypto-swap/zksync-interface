@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { WalletPopupContext } from '../../context/WalletPopupProvider';
+import { PopupContext } from '../../context/PopupProvider';
 import { hooks } from '../../connectors/metaMask';
 import { connect } from '../Navbar/WalletPopup';
 
@@ -8,7 +8,7 @@ const { useChainId, useIsActive } = hooks;
 const SwapButton = () => {
   const chainIsCorrect = useChainId() == 280;
   const walletConnected = useIsActive();
-  const { setWalletPopupOpen } = useContext(WalletPopupContext);
+  const { setWalletPopupOpen } = useContext(PopupContext);
 
   function swap() {
 
