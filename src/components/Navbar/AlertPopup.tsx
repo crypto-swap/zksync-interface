@@ -1,5 +1,5 @@
 import React from 'react';
-import Popup from '../Navbar/Popup';
+import Popup from '../../features/Popup';
 import { connect } from '../Navbar/WalletPopup';
 import { ChevronRightIcon } from '@heroicons/react/solid';
 

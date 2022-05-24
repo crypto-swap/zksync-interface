@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { PopupContext } from '../../context/PopupProvider';
 import Image from 'next/image';
-import Popup from '../Navbar/Popup';
+import Popup from '../../features/Popup';
 import { connect } from '../Navbar/WalletPopup';
 
 interface Network {
