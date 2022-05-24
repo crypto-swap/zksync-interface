@@ -14,7 +14,7 @@ const CONNECTED_TEXT = 'MetaMask Connected';
 
 const zkSyncChainParameter = {
   chainId: 280,
-  chainName: 'zkSync Goerli Test Network',
+  chainName: 'zkSync alpha testnet',
   nativeCurrency: {
     name: "Ethereum",
     symbol: "ETH",

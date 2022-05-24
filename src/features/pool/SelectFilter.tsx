@@ -1,7 +1,6 @@
 import React, { useState, useMemo, FC, Fragment, useEffect, useLayoutEffect, useContext, ReactNode } from 'react';
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
-import Link from 'next/link';
 import { useRouter } from 'next/router'
 
 const style = {
