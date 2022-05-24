@@ -16,8 +16,8 @@ const zkSyncChainParameter = {
   chainId: 280,
   chainName: 'zkSync Goerli Test Network',
   nativeCurrency: {
-    name: "Goerli ETH",
-    symbol: "gorETH",
+    name: "Ethereum",
+    symbol: "ETH",
     decimals: 18 as 18
   },
   rpcUrls: ["https://zksync2-testnet.zksync.dev"],
