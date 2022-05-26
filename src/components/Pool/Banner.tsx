@@ -28,7 +28,7 @@ const Banner = () => {
                     Create a liquidity pool. The ratio of tokens added sets the price of this pool.
                 </div>
                 <div className="mt-5 space-y-3 md:flex md:space-y-0 md:space-x-4">
-                    <button className={style.mobilePool}>Create a Pool</button>
+                    <button className={style.mobilePool}><Link href="/create">Create a Pool</Link></button>
                 </div>
             </div>
 
@@ -57,7 +57,9 @@ const Banner = () => {
                     </div>
                     <div>
                         <button className={style.zapButton}>
-                            ⚡ Zap
+                            <Link href="/zap">
+                                ⚡ Zap
+                            </Link>
                         </button>
                     </div>
                 </div>

@@ -12,7 +12,9 @@ module.exports = {
       '/': { page: '/' },
       '/swap' : { page: '/swap'},
       '/team' : { page: '/team'},
-      '/pool' : { page: '/pool'}
+      '/pool' : { page: '/pool'},
+      'pool/create' : { page: '/create'},
+      'pool/zap' : { page: '/zap' }
     }
   },
 }
