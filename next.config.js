@@ -10,11 +10,11 @@ module.exports = {
   ) {
     return {
       '/': { page: '/' },
-      '/swap/index' : { page: '/swap'},
-      '/team/index' : { page: '/team'},
-      '/pool/index' : { page: '/pool'},
-      '/create/index' : { page: '/create'},
-      '/zap/index' : { page: '/zap'},
+      '/swap' : { page: '/swap'},
+      '/team' : { page: '/team'},
+      '/pool' : { page: '/pool'},
+      '/create' : { page: '/create'},
+      '/zap' : { page: '/zap'},
     }
   },
 }
