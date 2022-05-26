@@ -14,7 +14,7 @@ module.exports = {
       '/team' : { page: '/team'},
       '/pool' : { page: '/pool'},
       '/add' : { page: '/add'},
-      '/zap' : { page: '/zap'},
+      '/zap' : { page: '/zap'}
     }
   },
 }
