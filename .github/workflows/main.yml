@@ -16,9 +16,8 @@ jobs:
       - run: npm install -g yarn
       - run: yarn install --frozen-lockfile
       - run: yarn build
-      - run: yarn export
-      - run: cd ./out 
-      - run: mv swap.html swap
+      - run: yarn export 
+      - run: mv out/swap.html out/swap
       - uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
