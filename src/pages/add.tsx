@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import CreatePool from '../components/Create/CreatePool'
+import AddPool from '../components/Add/AddPool'
 
-const Create = () => {
+const Add = () => {
     return (
         <div className="bg-bg-light dark:bg-bg-dark">
             <Head>
@@ -21,8 +21,8 @@ const Create = () => {
 
             <Navbar />
 
-            <div className="mt-5 mb-10 ">
-                <CreatePool />
+            <div className="mb-10">
+                <AddPool />
             </div>
 
             <Footer />
@@ -30,4 +30,4 @@ const Create = () => {
     )
 }
 
-export default Create //export single class/module create 
+export default Add //export single class/module create 

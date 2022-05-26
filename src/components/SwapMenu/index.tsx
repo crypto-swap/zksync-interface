@@ -5,8 +5,6 @@ import SwapButton from './SwapButton';
 import { Transition } from '@headlessui/react';
 import { hooks } from '../../connectors/metaMask';
 
-
-
 const { useIsActive } = hooks;
 
 export type Token = string;
