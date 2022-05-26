@@ -18,6 +18,7 @@ jobs:
       - run: yarn build
       - run: yarn export
       - name: Rename file 
+        run: cd /out 
         run: mv swap.html swap
       - uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -25,3 +26,4 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - run: aws s3 sync ./out s3://cryptoswap
+

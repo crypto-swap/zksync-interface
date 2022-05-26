@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import Navbar from '../../components/Navbar';
-import SwapMenu from '../../components/SwapMenu';
-import Footer from '../../components/Footer';
+import Navbar from '../components/Navbar';
+import SwapMenu from '../components/SwapMenu';
+import Footer from '../components/Footer';
 
 const Swap = () => {
   return (

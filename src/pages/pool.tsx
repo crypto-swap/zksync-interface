@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import React from 'react'
-import Navbar from '../../components/Navbar'
-import Footer from '../../components/Footer'
-import PoolMenu from '../../components/Pool/PoolMenu'
-import Banner from '../../components/Pool/Banner'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+import PoolMenu from '../components/Pool/PoolMenu'
+import Banner from '../components/Pool/Banner'
 
 const Pool = () => {
     return (
