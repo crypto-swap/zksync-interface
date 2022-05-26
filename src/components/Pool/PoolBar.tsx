@@ -19,10 +19,10 @@ interface PoolBarProps {
 const PoolBar = ({ image1, image2, ticker1, ticker2, liquidity, volume, fees, apr }: PoolBarProps) => {
     return (
         <Link href="/add">
-            <div className="font-[Montserrat] text-[0.5rem] cursor-pointer select-none md:p-0 md:text-base h-12 md:max-width mt-4 overflow-hidden rounded-lg shadow-card 
+            <div className="font-[Montserrat] text-[0.6rem] cursor-pointer select-none md:p-0 md:text-base h-12 md:max-width mt-4 overflow-hidden rounded-lg shadow-card 
                             bg-bg-card-light dark:bg-bg-card-dark hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark grid grid-cols-6 ">
 
-                <div className="col-span-2 grid grid-cols-3 text-left pl-2">
+                <div className="col-span-2 grid grid-cols-3 text-left gap-x-0.5 pl-2">
                     <div className="flex justify-center gap-x-0.5 lg:gap-x-2">
                         <Image src={image1} width={25} height={25} />
                         <Image src={image2} width={25} height={25} />
