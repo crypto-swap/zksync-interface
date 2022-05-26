@@ -13,8 +13,8 @@ module.exports = {
       '/swap' : { page: '/swap'},
       '/team' : { page: '/team'},
       '/pool' : { page: '/pool'},
-      'pool/create' : { page: '/create'},
-      'pool/zap' : { page: '/zap' }
+      '/create' : { page: '/pool/create'},
+      '/zap' : { page: '/pool/zap'}
     }
   },
 }
