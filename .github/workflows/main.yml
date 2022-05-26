@@ -18,7 +18,7 @@ jobs:
       - run: yarn build
       - run: yarn export
       - name: Rename file 
-        run: cd /out 
+        run: cd ./out 
         run: mv swap.html swap
       - uses: aws-actions/configure-aws-credentials@v1
         with:
