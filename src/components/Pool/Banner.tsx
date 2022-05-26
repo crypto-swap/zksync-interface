@@ -28,7 +28,7 @@ const Banner = () => {
                     Create a liquidity pool. The ratio of tokens added sets the price of this pool.
                 </div>
                 <div className="mt-5 space-y-3 md:flex md:space-y-0 md:space-x-4">
-                    <button className={style.mobilePool}><Link href="/create">Create a Pool</Link></button>
+                    <button className={style.mobilePool}><Link href="/add">Create a Pool</Link></button>
                 </div>
             </div>
 
@@ -38,7 +38,7 @@ const Banner = () => {
                     Create a liquidity pool. The ratio of tokens you add will set the price of this pool.
                 </div>
                 <div className="relative mt-4 w-[200px] space-y-4">
-                    <button className={style.pool}><Link href="/create">Create a Pool</Link></button>
+                    <button className={style.pool}><Link href="/add">Create a Pool</Link></button>
                 </div>
 
             </div>

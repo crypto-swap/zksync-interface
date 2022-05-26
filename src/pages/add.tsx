@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import AddPool from '../components/Add/AddPool'
 
-const Zap = () => {
+const Add = () => {
     return (
         <div className="bg-bg-light dark:bg-bg-dark">
             <Head>
@@ -20,8 +21,8 @@ const Zap = () => {
 
             <Navbar />
 
-            <div className="mt-10 mb-10">
-                Zap Page coming soon
+            <div className="mb-10">
+                <AddPool />
             </div>
 
             <Footer />
@@ -29,4 +30,4 @@ const Zap = () => {
     )
 }
 
-export default Zap
+export default Add //export single class/module create 
