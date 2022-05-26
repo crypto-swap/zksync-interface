@@ -4,7 +4,7 @@ import Footer from '../components/Footer'
 
 const Zap = () => {
     return (
-        <>
+        <div className="bg-bg-light dark:bg-bg-dark">
             <Head>
                 <title>CryptoSwap</title>
                 <meta name="description" content="CryptoSwap is a very efficient simple DEX on zkSync (Swap, Pool, Liquidity Options, and Generate). No presale, fully decentralized, and community-driven." />
@@ -25,7 +25,7 @@ const Zap = () => {
             </div>
 
             <Footer />
-        </>
+        </div>
     )
 }
 
