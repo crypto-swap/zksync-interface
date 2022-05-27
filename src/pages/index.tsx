@@ -5,6 +5,7 @@ import Tutorial from '../components/Homepage/tutorial';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ImageList from '../components/Homepage/imagelist';
+import Information from '../components/Homepage/information';
 
 const Home: NextPage = () => {
   return (
@@ -45,14 +46,14 @@ const Home: NextPage = () => {
 
       </div>
 
-      <div id={'tutorial'} className="relative flex flex-col items-center justify-center place-items-center pt-5" >
+      <div id={'tutorial'} className="relative flex flex-col items-center justify-center place-items-center pt-5 mb-10" >
         <Tutorial />
       </div>
 
-      <div className="mt-96">&nbsp;</div>
-
-
-
+      <div className="relative flex flex-col items-center justify-center place-items-center pt-16 bg-intro-background z-2 bg-no-repeat bg-cover" >
+        <Information />
+      </div>
+      <div className="mb-16"></div>
       <Footer />
     </div>
   );
