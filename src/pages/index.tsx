@@ -46,11 +46,12 @@ const Home: NextPage = () => {
 
       </div>
 
-      <div id={'tutorial'} className="relative flex flex-col items-center justify-center place-items-center pt-5 mb-10" >
+      <div id={'tutorial'} className="relative flex flex-col items-center justify-center place-items-center pt-5 pb-24
+      bg-gradient-to-b from-[#141432] to-[#33274B]" >
         <Tutorial />
       </div>
 
-      <div className="relative flex flex-col items-center justify-center place-items-center pt-16 bg-intro-background z-2 bg-no-repeat bg-cover" >
+      <div className="relative flex flex-col items-center justify-center place-items-center  bg-intro-background z-2 bg-no-repeat bg-cover pt-10" >
         <Information />
       </div>
       <div className="mb-16"></div>
