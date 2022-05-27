@@ -67,6 +67,9 @@ module.exports = {
         'search-border-dark':
           'inset 10px 10px 15px -10px #171a29, inset -10px -10px 15px -10px #272b45',
       },
+      backgroundImage : {
+        'intro-background': "url('/assets/intro_background.png')",
+      },
     },
   },
   plugins: [],
