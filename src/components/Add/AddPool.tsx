@@ -16,16 +16,12 @@ const AddPool = () => {
                 <div className="flex flex-column items-center">
                     <button>
                         <Link href="/pool">
-                            <ChevronLeftIcon className="w-20 h-20" />
+                            <ChevronLeftIcon className="w-16 h-16" />
                         </Link>
                     </button>
                     <text className="text-2xl">
                         Manage Pool
                     </text>
-                </div>
-
-                <div className="flex items-center mr-5">
-                    <Image src="/assets/pool.svg" width={75} height={75} />
                 </div>
             </div>
         </div>

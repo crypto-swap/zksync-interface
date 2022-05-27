@@ -29,12 +29,12 @@ const Home: NextPage = () => {
 
         <div className="absolute z-10 -mt-48 max-w-xs flex flex-col space-y-10 place-items-center font-[Montserrat] p-5 py-10 rounded-[64px] shadow-card dark:shadow-card-dark">
           <h1 className='text-3xl font-semibold leading-9 text-center'>
-            CryptoSwap is a one-stop-shop for all crypto swaps.
+            Crypto swaps <br></br> are easy here.
           </h1>
 
           <button className="  bg-font-blue hover:bg-button-blue text-text-dark font-bold py-2 px-4 rounded-full text-base w-9/12 dark:bg-button-blue dark:hover:bg-font-blue shadow-blue-button hover:shadow-blue-button-hover">
             <a href="#tutorial">
-              Get Started Now
+              Get Started
             </a>
           </button>
         </div>
