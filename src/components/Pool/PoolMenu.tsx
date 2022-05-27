@@ -13,6 +13,8 @@ const style = {
     searchBarInner: `flex flex-1 items-center relative `,
     searchBarInput: `bg-transparent border-0 outline-0 w-full`,
     selectFilterContainer: `flex basis-2/12 gap-2 items-center`,
+    poolSortBar: `font-[Montserrat] text-[0.5rem] select-none md:p-0 md:text-sm h-8 md:max-width mt-4 overflow-hidden rounded-lg shadow-card 
+    bg-bg-card-light dark:bg-bg-card-dark dark:shadow-card-dark flex items-center grid grid-cols-6 `,
 }
 
 
@@ -91,10 +93,44 @@ const PoolMenu = () => {
 
 
             <div>
+                <div className={style.poolSortBar}>
+
+                    <div className="col-span-2 grid grid-cols-3 text-left gap-x-0.5 pl-2">
+                        <button className="flex justify-center gap-x-0.5 lg:gap-x-2 text-gray-500 dark:text-gray-300">
+                            Name
+                        </button>
+                    </div>
+
+                    <div className="flex flex-col justify-center">
+                        <button className="text-right text-gray-500 dark:text-gray-300">
+                            Liquidity
+                        </button>
+                    </div>
+
+                    <div className="flex flex-col justify-center">
+                        <button className="text-right text-gray-500 dark:text-gray-300">
+                            Volume (24H)
+                        </button>
+                    </div>
+
+                    <div className="flex flex-col justify-center ">
+                        <button className="text-right text-gray-500 dark:text-gray-300">
+                            Fees (24H)
+                        </button>
+                    </div>
+
+
+                    <div className="flex flex-col justify-center pr-2 md:pr-6 lg:pr-10 xl:pr-14">
+                        <button className=" text-right text-gray-500 dark:text-gray-300">
+                            APR
+                        </button>
+                    </div>
+
+                </div>
                 {
                     pagePools.map((pool) => (
-
-                        <PoolBar key={pool.asset1 + pool.asset2} image1='/icons/discord.svg' image2='/icons/discord.svg' ticker1={pool['asset1']} ticker2={pool['asset2']} liquidity={pool['liquidity']} volume={pool['volume']} fees={(pool['volume'] * 0.025).toFixed(2)} apr={(pool['volume'] * 0.025 / pool['liquidity'] * 365).toFixed(5)} />
+                        <PoolBar key={pool.asset1 + pool.asset2} image1='/icons/discord.svg' image2='/icons/discord.svg' ticker1={pool['asset1']} ticker2={pool['asset2']}
+                            liquidity={pool['liquidity']} volume={pool['volume']} fees={(pool['volume'] * 0.025).toFixed(0)} apr={(pool['volume'] * 0.025 / pool['liquidity'] * 365).toFixed(4)} />
                     ))
                 }
                 <div className='flex relative shrink mx-auto mt-10 justify-items-center justify-center items-center select-none'>
@@ -112,7 +148,7 @@ const PoolMenu = () => {
                 <div className='h-12 mx-8 md:mx-20 lg:mx-40 xl:mx-60 mt-4 overflow-hidden rounded-lg shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark grid grid-cols-6' onClick={minusOneBarPerPage}>Minus one bar per page Current: {numBarInPage} bars per page</div>
                 */}
             </div>
-        </div>
+        </div >
     )
 }
 
