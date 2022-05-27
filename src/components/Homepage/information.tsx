@@ -4,13 +4,13 @@ const Information = () => {
     return (
         <>
             <div className="flex items-center justify-center z-1">
-                <h2 className='text-2xl md:text-3xl lg:text-4xl  text-center font-semibold leading-7 rounded-[64px] p-10'>
+                <h2 className='text-2xl md:text-3xl lg:text-4xl text-white text-center font-semibold leading-7 rounded-[64px] p-10'>
                     <p className="leading-5">Practical and efficient,</p>
                     <br></br>
                     <p className="leading-5">that's innovation.</p>
                 </h2>
             </div>
-            <div className="font-sans text-center m-[10%] mt-10 text-base md:leading-9 z-1 md:w-[700px]">
+            <div className="font-sans text-center m-[10%] mt-10 text-white text-base md:leading-9 z-1 md:w-[700px]">
                 <p>
                     CryptoSwap wasn't intended to be innovative, it was supposed to be like any other DEX.
                     However, we couldn't quite find a whitepaper that matched what we were looking for.
