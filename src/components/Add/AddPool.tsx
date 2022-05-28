@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ChevronLeftIcon } from '@heroicons/react/solid'
+import { ChevronLeftIcon, AdjustmentsIcon } from '@heroicons/react/solid'
 
 const style = {
     wrapper: `flex flex-col w-full max-w-5xl mr-auto ml-auto items-center flex-1 basis-0 overflow-hidden overflow-auto justify-center p-2`,
@@ -33,7 +33,21 @@ const AddPool = () => {
 
                 </div>
                 <div className="w-full md:w-96 rounded-2xl shrink-0 p-[20px] bg-bg-card-light dark:bg-bg-card-dark shadow-card dark:shadow-card-dark">
-                    test 2
+                    <div className="box-border w-full flex flex wrap items-center min-w-0">
+                        <div className="border-box w-full flex items-center justify-between">
+                            <div className="flex flex-nowrap flex-row justify-start items-center">
+                                <a href="#" id="pool-add-link" className="flex flex-row flex-nowrap items-center justify-center 
+                                cursor-pointer outline-none text-none text-base mr-[15px]" aria-current="page">Add</a>
+                                <a href="#" className="flex flex-row flex-nowrap items-center justify-center 
+                                cursor-pointer outline-none text-none text-base mr-[15px]" aria-current="page">Remove</a>
+                            </div>
+                            <div className="ml-2 flex relative border-none text-left justify-center items-center">
+                                <button><div className="flex justify-center items-center rounded-[50%] h-[40px] w-[40px]">
+                                    <AdjustmentsIcon className="w-6 h-6" />
+                                </div></button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
