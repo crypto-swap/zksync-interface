@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
-import WalletPopup from '../Navbar/WalletPopup';
-import NetworksPopup from '../Navbar/NetworksPopup';
+import WalletPopup from '../Popups/WalletPopup';
+import NetworksPopup from '../Popups/NetworksPopup';
 import { PopupContext } from '../../context/PopupProvider';
-import { networks } from '../Navbar/NetworksPopup';
+import { networks } from '../Popups/NetworksPopup';
 import { hooks } from '../../connectors/metaMask';
 
 const { useChainId, useIsActive } = hooks;

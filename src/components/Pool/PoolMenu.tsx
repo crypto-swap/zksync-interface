@@ -34,7 +34,7 @@ const PoolMenu = () => {
     var numBars: number = pools.length;
 
     // Number of Bars per Page
-    const [numBarInPage, setNumBarInPage] = useState(10);
+    const [numBarInPage, setNumBarInPage] = useState(9);
 
     // Current Page
     const [currPage, setCurrPage] = useState(1);
@@ -133,7 +133,7 @@ const PoolMenu = () => {
                             liquidity={pool['liquidity']} volume={pool['volume']} fees={(pool['volume'] * 0.025).toFixed(0)} apr={(pool['volume'] * 0.025 / pool['liquidity'] * 365).toFixed(4)} />
                     ))
                 }
-                <div className='flex relative shrink mx-auto mt-10 justify-items-center justify-center items-center select-none'>
+                <div className='flex relative shrink mx-auto mt-7 justify-items-center justify-center items-center select-none'>
                     <Pagination
                         currentPage={currPage}
                         totalCount={numBars}

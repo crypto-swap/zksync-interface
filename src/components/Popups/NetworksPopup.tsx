@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { PopupContext } from '../../context/PopupProvider';
 import Image from 'next/image';
-import Popup from '../Navbar/Popup';
-import { connect } from '../Navbar/WalletPopup';
+import Popup from './Popup';
+import { connect } from './WalletPopup';
 
 interface Network {
   name: string;
@@ -22,13 +22,13 @@ export const networks: Network[] = [
     status: false,
   },
   {
-    name: 'Polygon Testnet',
-    image: '/network_icons/polygon_logo.svg',
+    name: 'Cosmos Testnet',
+    image: '/network_icons/cosmos_logo.svg',
     status: false,
   },
   {
-    name: 'Ethereum Testnet',
-    image: '/network_icons/eth_logo.png',
+    name: 'Atomic Swaps',
+    image: '/network_icons/atomic_swaps.jpg',
     status: false,
   },
 ];

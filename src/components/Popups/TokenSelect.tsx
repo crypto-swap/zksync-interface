@@ -1,20 +1,20 @@
 import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { ChevronDownIcon } from '@heroicons/react/solid';
-import Popup from '../Navbar/Popup';
+import Popup from './Popup';
 import { Token, tokens } from '../SwapMenu';
 
-interface SwapTokenSelectProps {
+interface TokenSelectProps {
   value: Token;
   setToken: React.Dispatch<React.SetStateAction<Token>>;
   onChange: (to: Token) => void;
 }
 
-const SwapTokenSelect = ({
+const TokenSelect = ({
   value,
   setToken,
   onChange,
-}: SwapTokenSelectProps) => {
+}: TokenSelectProps) => {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
   const inputRef = useRef(null);
@@ -89,4 +89,4 @@ const SwapTokenSelect = ({
   );
 };
 
-export default SwapTokenSelect;
+export default TokenSelect;

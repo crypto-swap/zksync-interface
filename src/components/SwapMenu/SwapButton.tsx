@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { PopupContext } from '../../context/PopupProvider';
 import { hooks } from '../../connectors/metaMask';
-import { connect } from '../Navbar/WalletPopup';
+import { connect } from '../Popups/WalletPopup';
 
 const { useChainId, useIsActive } = hooks;
 
