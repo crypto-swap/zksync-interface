@@ -47,7 +47,7 @@ const Home: NextPage = () => {
       </div>
 
       <div id={'tutorial'} className="relative flex flex-col items-center justify-center place-items-center pt-5 pb-24
-      bg-gradient-to-b from-[#141432] to-[#33274B]" >
+      bg-gradient-to-b from-[#DAE3F8] to-[#9FA1E8] dark:from-[#141432] dark:to-[#33274B]" >
         <Tutorial />
       </div>
 
