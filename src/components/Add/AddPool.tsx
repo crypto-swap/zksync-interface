@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ChevronLeftIcon, AdjustmentsIcon, PlusIcon } from '@heroicons/react/solid'
+import PoolInput from './PoolInput'
 
 const style = {
     wrapper: `flex flex-col w-full max-w-5xl mr-auto ml-auto items-center flex-1 basis-0 overflow-hidden overflow-auto justify-center p-2`,
@@ -52,9 +53,9 @@ const AddPool = () => {
                     </div>
                     <div className="mt-[20px]">
                         <div className="grid auto-rows-auto gap-y-[20px] mt-[0.2rem]">
-                            <div id="add-liquidity-input-token-a" className=""></div>
+                            <div id="add-liquidity-input-token-a" className=""><PoolInput /></div>
                             <div className="flex flex-col justify-start items-center w-full"><PlusIcon className="w-5 h-5" /></div>
-                            <div id="add-liquidity-input-token-b" className=""></div>
+                            <div id="add-liquidity-input-token-b" className=""><PoolInput /></div>
                         </div>
                     </div>
                 </div>
