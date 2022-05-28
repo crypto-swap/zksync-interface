@@ -1,6 +1,6 @@
 import React from 'react';
-import Popup from '../Navbar/Popup';
-import { connect } from '../Navbar/WalletPopup';
+import Popup from './Popup';
+import { connect } from './WalletPopup';
 import { ChevronRightIcon } from '@heroicons/react/solid';
 
 interface AlertPopupProps {

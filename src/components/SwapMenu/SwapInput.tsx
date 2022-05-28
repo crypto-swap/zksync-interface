@@ -1,4 +1,4 @@
-import SwapTokenSelect from './SwapTokenSelect';
+import SwapTokenSelect from '../Popups/TokenSelect';
 import { Token } from '../SwapMenu';
 
 export interface Wallet {

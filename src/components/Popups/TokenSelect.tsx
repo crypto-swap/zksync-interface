@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { ChevronDownIcon } from '@heroicons/react/solid';
-import Popup from '../Navbar/Popup';
+import Popup from './Popup';
 import { Token, tokens } from '../SwapMenu';
 
 interface SwapTokenSelectProps {
