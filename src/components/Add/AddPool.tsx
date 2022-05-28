@@ -32,7 +32,7 @@ const AddPool = () => {
                     </div>
 
                 </div>
-                <div className="w-full md:w-96 rounded-2xl shrink-0 p-[20px] bg-bg-card-light dark:bg-bg-card-dark shadow-card dark:shadow-card-dark">
+                <div className="w-full md:w-96 mt-4 md:mt-0 rounded-2xl shrink-0 p-[20px] bg-bg-card-light dark:bg-bg-card-dark shadow-card dark:shadow-card-dark">
                     <div className="box-border w-full flex flex wrap items-center min-w-0">
                         <div className="border-box w-full flex items-center justify-between">
                             <div className="flex flex-nowrap flex-row justify-start items-center">

@@ -1,4 +1,4 @@
-import SwapTokenSelect from '../Popups/TokenSelect';
+import TokenSelect from '../Popups/TokenSelect';
 import { Token } from '../SwapMenu';
 
 export interface Wallet {
@@ -63,7 +63,7 @@ const SwapInput = ({
             }
           }}
         />
-        <SwapTokenSelect
+        <TokenSelect
           {...{ value: token, setToken }}
           onChange={(token) => {
             let output;
