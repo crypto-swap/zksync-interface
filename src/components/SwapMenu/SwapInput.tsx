@@ -37,7 +37,7 @@ const SwapInput = ({
         <div className="text-sm font-bold">{receive ? 'Receive' : 'Pay'}</div>
         <div className="text-xs">Balance: 0.0</div>
       </div>
-      <div className="relative flex flex-row-reverse place-content-between rounded-lg px-4 py-2 shadow-[inset_0.5px_1px_5px_rgba(0,0,0,0.3)]">
+      <div className="relative flex flex-row-reverse text-lg h-[60px] place-content-between rounded-lg px-4 py-2 shadow-[inset_0.5px_1px_5px_rgba(0,0,0,0.3)]">
         <input
           inputMode="decimal"
           placeholder="0.0"
