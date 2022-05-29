@@ -1,9 +1,13 @@
 import Head from 'next/head';
-import Navbar from '../../components/Navbar'
-import Footer from '../../components/Footer'
-import AddPool from '../../components/Add/AddPool'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+import AddPool from '../components/Add/AddPool'
+import { useParams } from 'react-router-dom'
 
-const Add = () => {
+const Add: React.FC = (): JSX.Element => {
+
+    const params = useParams(); // views the parameters from routing i.e add/ETH/BTC <--
+
     return (
         <div className="bg-bg-light dark:bg-bg-dark">
             <Head>

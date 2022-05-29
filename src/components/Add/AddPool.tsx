@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback, useContext, useEffect, } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ChevronLeftIcon, AdjustmentsIcon, PlusIcon } from '@heroicons/react/solid'
 import PoolInput from './PoolInput'
 import { hooks } from '../../connectors/metaMask'
 import AddPoolButton from './AddPoolButton'
-
 const { useIsActive } = hooks;
 
 const style = {
