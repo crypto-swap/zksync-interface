@@ -14,12 +14,9 @@ const { useChainId, useIsActive } = hooks;
 const Navbar = () => {
   // defaults to dark mode
   const { theme, setTheme } = useTheme();
-  useEffect(() => {
-    if (theme === 'system') {
-      setTheme('dark');
-    }
-    console.log(theme);
-  }, []);
+  if (theme === 'system') {
+    setTheme('dark');
+  }
 
   const chainIsCorrect = useChainId() === 280;
   const walletConnected = useIsActive();
@@ -160,7 +157,9 @@ const Navbar = () => {
                   strokeLinejoin="round"
                   strokeWidth="2"
                   d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                ></path>
+                >
+
+                </path>
               </svg>
             )}
           </button>
