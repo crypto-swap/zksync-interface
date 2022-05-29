@@ -7,6 +7,7 @@ import { PopupContext } from '../../context/PopupProvider';
 import { networks } from '../Popups/NetworksPopup';
 import { hooks } from '../../connectors/metaMask';
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const { useChainId, useIsActive } = hooks;
 
@@ -32,6 +33,8 @@ const Navbar = () => {
     setNetworksPopupOpen(true);
   }
 
+  const router = useRouter();
+
   return (
     <div className="navbar">
       <WalletPopup />
@@ -45,17 +48,17 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-col-2">
-        <div className="navbar-link-item">
+        <div className={"navbar-link-item" + (router.pathname == "/swap" ? " !opacity-100 " : "")}>
           <Link href="/swap" >
             Swap
           </Link>
         </div>
-        <div className="navbar-link-item">
+        <div className={"navbar-link-item" + (router.pathname == "/pool" ? " !opacity-100 " : "")}>
           <Link href="/pool" >
             Pool
           </Link>
         </div>
-        <div className="navbar-link-item">
+        <div className={"navbar-link-item" + (router.pathname == "/team" ? " !opacity-100 " : "")}>
           <Link href="/team" >
             Team
           </Link>
