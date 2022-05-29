@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import AddPool from '../components/Add/AddPool'
+import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
+import AddPool from '../../components/Add/AddPool'
 
 const Add = () => {
     return (

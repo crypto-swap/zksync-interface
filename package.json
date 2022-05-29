@@ -8,6 +8,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "@ethersproject/providers": "^5.6.8",
     "@headlessui/react": "^1.5.0",
     "@heroicons/react": "^1.0.6",
     "@metamask/providers": "^8.1.1",
