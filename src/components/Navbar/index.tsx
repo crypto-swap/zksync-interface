@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import WalletPopup from '../Popups/WalletPopup';
@@ -6,6 +6,7 @@ import NetworksPopup from '../Popups/NetworksPopup';
 import { PopupContext } from '../../context/PopupProvider';
 import { networks } from '../Popups/NetworksPopup';
 import { hooks } from '../../connectors/metaMask';
+import Link from "next/link";
 
 const { useChainId, useIsActive } = hooks;
 
@@ -35,24 +36,31 @@ const Navbar = () => {
     <div className="navbar">
       <WalletPopup />
       <NetworksPopup />
-      <div className="navbar-col-1">
-        <a id="home-nav-link" href="/">
+      <div className="navbar-col-1 cursor-pointer">
+        <Link href="/">
           <span className="navbar-logo">
             <Image src={'/icons/white_logo.svg'} width={40} height={40} />
           </span>
-        </a>
+        </Link>
       </div>
 
       <div className="navbar-col-2">
-        <a href="/swap" className="navbar-link-item">
-          Swap
-        </a>
-        <a href="/pool" className="navbar-link-item">
-          Pool
-        </a>
-        <a href="/team" className="navbar-link-item">
-          Team
-        </a>
+        <div className="navbar-link-item">
+          <Link href="/swap" >
+            Swap
+          </Link>
+        </div>
+        <div className="navbar-link-item">
+          <Link href="/pool" >
+            Pool
+          </Link>
+        </div>
+        <div className="navbar-link-item">
+          <Link href="/team" >
+            Team
+          </Link>
+        </div>
+
         <a
           href={'https://docs.cryptoswap.org'}
           className="navbar-link-item"
