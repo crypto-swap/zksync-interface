@@ -53,7 +53,7 @@ const SwapInput = ({
                 const amount = parseFloat(event.target.value);
                 if (Number.isFinite(amount)) {
                   (receive ? setReceiveAmount : setPayAmount)(
-                    event.target.value.substring(0, 32)
+                    event.target.value.substring(0, 27)
                   );
                   (receive ? setPayAmount : setReceiveAmount)(
                     onChange(receive, amount).toString()
