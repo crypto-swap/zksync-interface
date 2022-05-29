@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import WalletPopup from '../Popups/WalletPopup';
