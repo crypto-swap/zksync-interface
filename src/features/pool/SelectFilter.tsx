@@ -4,7 +4,7 @@ import { ChevronDownIcon } from '@heroicons/react/solid'
 import { useRouter } from 'next/router'
 
 const style = {
-    selectFilterSubContainer: `relative inline-block w-full text-left bg-bg-card-light`,
+    selectFilterSubContainer: `relative inline-block w-full text-left bg-bg-card-light dark:bg-bg-card-dark`,
     selectFilter: `w-full px-4 py-3 text-sm font-bold bg-transparent border-solid border-white rounded 
     dark:border-[#272b45]  dark:bg-bg-card-dark shadow-card dark:shadow-card-dark hover:animate-pulse`,
     selectFilterDropdown: `absolute px-4 z-10 w-full mt-2 border border-white divide-y dark:border-[#272b45] rounded shadow-card dark:shadow-card-dark 
@@ -93,7 +93,7 @@ const SelectFilter = () => {
                 <Menu.Button className={style.selectFilter}>
                     <div className="flex flex-row items-center justify-between ">
                         <div className="text-sm leading-5 font-bold currentColor">{selected}</div>
-                        <div className="shadow-card dark:shadow-card-dark rounded-full hover:shadow-button-hover hover:dark:shadow-button-hover-dark ">
+                        <div className="shadow-card dark:shadow-card-dark rounded-full hover:shadow-button-hover dark:hover:shadow-button-hover-dark ">
                             <ChevronDownIcon className="w-5 h-5" aria-hidden="true" />
                         </div>
                     </div>
