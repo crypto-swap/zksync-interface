@@ -1,6 +1,7 @@
+//@ts-ignore
 import { ChainId, Currency, NATIVE } from '@crypto-swap/core-sdk'
-import { useCurrency } from ''
-import { useActiveWeb3React } from '../../src/hooks/useActiveWeb3React'
+import { useCurrency } from '../hooks'
+import { useActiveWeb3React } from '../hooks'
 import { useRouter } from 'next/router'
 import { useCallback, useMemo } from 'react'
 
