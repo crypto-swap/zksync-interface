@@ -16,7 +16,7 @@ const TeamLayout = () => {
                     </div>
 
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
-                        <SingleTeamMember name="Nathan" title="Dev / insert_title" text="UCLA Math-CS    Decentralized finance
+                        <SingleTeamMember name="Nathan" title="Developer / insert_title" text="UCLA Math-CS    Decentralized finance
                         will enable the most efficient economy in the history of civilation. As each event will have roughly
                         measurable impact, entropy will be normalized for all."
                             photo="/team-image/nathan.gif" />
