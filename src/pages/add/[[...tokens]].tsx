@@ -4,6 +4,7 @@ import Footer from '../../components/Footer';
 import React, { useState, useCallback, useContext, useEffect, } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { ChevronLeftIcon, AdjustmentsIcon, PlusIcon } from '@heroicons/react/solid';
 import PoolInput from '../../components/Add/PoolInput';
 import { hooks } from '../../connectors/metaMask';
@@ -92,6 +93,9 @@ function convert(
 
 
 const Add: React.FC = (): JSX.Element => {
+
+    const router = useRouter()
+    const add = router.query.add || []
 
     const params = useParams(); // views the parameters from routing i.e add/ETH/BTC <--
 
