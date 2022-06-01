@@ -11,7 +11,7 @@ import { hooks } from '../../connectors/metaMask';
 import AddPoolButton from '../../components/Add/AddPoolButton';
 import { useParams } from 'react-router-dom';
 
-//[[...tokens]] catches all routes /add , /add/TokenA, /add/TokenA/TokenB
+//[[...tokens]] catches all routes /add , /add/TokenA, /add/TokenA/TokenB yeet
 const { useIsActive } = hooks;
 
 
