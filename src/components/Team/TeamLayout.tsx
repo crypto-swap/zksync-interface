@@ -23,19 +23,7 @@ const TeamLayout = () => {
                     </div>
 
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
-                        <SingleTeamMember name="Phoebe" title="Business Relations" text="East Coast US, Employed Elsewhere..." photo="/team-image/phoebe.jpg" />
-                    </div>
-
-                    <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
-                        <SingleTeamMember name="Botao" title="Developer" text="UCLA CS" photo="/team-image/botao.jpg" />
-                    </div>
-
-                    <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
                         <SingleTeamMember name="Anonymous ZK" title="Smart Contract Dev" text="somewhere in LA..." photo="/team-image/anonymous_dev.png" />
-                    </div>
-
-                    <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
-                        <SingleTeamMember name="Monke" title="Digital Marketing" text="McDonalds" photo="/team-image/jason.png" />
                     </div>
 
                     <div className="bg-bg-card-light dark:bg-bg-card-dark rounded-2xl shadow-card dark:shadow-card-dark">
