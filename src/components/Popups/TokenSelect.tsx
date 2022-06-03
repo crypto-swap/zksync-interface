@@ -26,24 +26,29 @@ const TokenSelect = ({
   const path_array = asPath.split("/")
   let tokenA;
   let tokenB;
-  let origin = path_array.at(1);
-  let path = `${origin}/${tokenA}/${tokenB}`;
+  let path = `${tokenA}/${tokenB}`;
+
+  if (path_array.length < 2) {
+    path_array[2] = '';
+  }
+
+  if (path_array.length < 3) {
+    path_array[2] = '';
+  }
 
   function changeTokenA(value) {
     tokenA = value;
-    tokenB = path_array.at(3)
-    origin = path_array.at(1)
-    path = `${origin}/${tokenA}/${tokenB}`;
+    tokenB = path_array.at(3);
+    path = `${tokenA}/${tokenB}`;
     console.log(isTokenA);
     console.log("token a");
     console.log(path);
   }
 
   function changeTokenB(value) {
-    tokenA = path_array.at(2)
+    tokenA = path_array.at(2);
     tokenB = value;
-    origin = path_array.at(1)
-    path = `${origin}/${tokenA}/${tokenB}`;
+    path = `${tokenA}/${tokenB}`;
     console.log("token b");
     console.log(path);
   }
@@ -112,23 +117,22 @@ const TokenSelect = ({
           <ol className="h-full snap-y overflow-y-scroll">
             {filteredTokens.map((token) => (
               <li>
-                <button
-                  key={token}
-                  className="flex cursor-pointer w-full snap-start items-center p-2.5 hover:bg-bg-blue dark:hover:bg-menu-blue"
-                  onClick={() => {
-                    console.log(token);
-                    { isTokenA ? changeTokenA(token) : changeTokenB(token) };
-                    handleTokenChange(token);
-                  }}
-                >
-                  <Link href="[[...tokens]]" as={path}>
+                <Link href="[[...tokens]]" as={path}>
+                  <button
+                    key={token}
+                    className="flex cursor-pointer w-full snap-start items-center p-2.5 hover:bg-bg-blue dark:hover:bg-menu-blue"
+                    onClick={() => {
+                      console.log(token);
+                      { isTokenA ? changeTokenA(token) : changeTokenB(token) };
+                      handleTokenChange(token);
+                    }}
+                  >
                     <QuestionMarkCircleIcon className="w-[30px] h-[30px]" />
-                  </Link>
-                  <Link href="[[...tokens]]" as={path}>
-                    <div className="ml-2 uppercase">{token}</div>
-                  </Link>
-                </button>
+                    <span className="ml-2 uppercase">{token}</span>
+                  </button>
+                </Link>
               </li>
+
             ))}
           </ol>
         </div>
