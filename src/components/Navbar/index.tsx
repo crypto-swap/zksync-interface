@@ -38,7 +38,7 @@ const Navbar = () => {
       <div className="navbar-col-1">
         <a id="home-nav-link" href="/">
           <span className="navbar-logo">
-            <Image src={'/icons/white_logo.svg'} width={40} height={40} />
+            <Image src='https://cryptoswap.org/icons/white_logo.svg' width={40} height={40} />
           </span>
         </a>
       </div>
@@ -75,7 +75,7 @@ const Navbar = () => {
                 src={
                   chainIsCorrect
                     ? networks[0].image
-                    : '/assets/networks.svg'
+                    : 'https://cryptoswap.org/assets/networks.svg'
                 }
                 width={20}
                 height={20}

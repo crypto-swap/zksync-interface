@@ -114,6 +114,7 @@ const SwapMenu = () => {
             token: payToken,
             setToken: setPayToken,
             resetTransactionInformation,
+            isTokenA: true,
           }}
           onChange={handleChange}
         />
@@ -131,7 +132,7 @@ const SwapMenu = () => {
             }}
           >
             <Image
-              src={'/assets/SwapButton.svg'}
+              src={'https://cryptoswap.org/assets/SwapButton.svg'}
               className={`${effect ? 'animate-spin-once' : ''}`}
               onAnimationEnd={() => setEffect(false)}
               height={30}
@@ -148,6 +149,7 @@ const SwapMenu = () => {
             token: receiveToken,
             setToken: setReceiveToken,
             resetTransactionInformation,
+            isTokenA: false,
           }}
           onChange={handleChange}
         />

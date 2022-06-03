@@ -1,9 +1,14 @@
 import Head from 'next/head';
-import Navbar from '../components/Navbar';
-import SwapMenu from '../components/SwapMenu';
-import Footer from '../components/Footer';
+import Navbar from '../../components/Navbar';
+import SwapMenu from '../../components/SwapMenu';
+import Footer from '../../components/Footer';
+import { useRouter } from 'next/router'
 
 const Swap = () => {
+
+  const router = useRouter()
+  const tokens = router.query.tokens || []
+
   return (
     <div className="h-screen bg-bg-light font-[Montserrat] dark:bg-bg-dark overflow-auto">
       <Head>
