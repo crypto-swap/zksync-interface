@@ -114,6 +114,7 @@ const SwapMenu = () => {
             token: payToken,
             setToken: setPayToken,
             resetTransactionInformation,
+            isTokenA: true,
           }}
           onChange={handleChange}
         />
@@ -148,6 +149,7 @@ const SwapMenu = () => {
             token: receiveToken,
             setToken: setReceiveToken,
             resetTransactionInformation,
+            isTokenA: false,
           }}
           onChange={handleChange}
         />
