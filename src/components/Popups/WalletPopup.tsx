@@ -81,7 +81,7 @@ const WalletPopup = () => {
             }
             className={`mt-5 flex w-full items-center gap-3 rounded-lg bg-slate-500 bg-opacity-0 p-3 text-lg font-bold shadow-card ${disabled ? '' : "hover:shadow-button-hover dark:hover:shadow-button-hover-dark"} dark:border-bg-light dark:shadow-card-dark `}
           >
-            <Image src={'/icons/metamask.svg'} width={30} height={30} />
+            <Image src={'https://cryptoswap.org/icons/metamask.svg'} width={30} height={30} />
             {active ?
               CONNECTED_TEXT
               : (activating ?

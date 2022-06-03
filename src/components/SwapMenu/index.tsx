@@ -132,7 +132,7 @@ const SwapMenu = () => {
             }}
           >
             <Image
-              src={'/assets/SwapButton.svg'}
+              src={'https://cryptoswap.org/assets/SwapButton.svg'}
               className={`${effect ? 'animate-spin-once' : ''}`}
               onAnimationEnd={() => setEffect(false)}
               height={30}
