@@ -4,18 +4,51 @@ import { ChevronDownIcon } from '@heroicons/react/solid';
 import Popup from './Popup';
 import { Token, tokens } from '../SwapMenu';
 import { QuestionMarkCircleIcon } from '@heroicons/react/outline'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 interface TokenSelectProps {
   value: Token;
   setToken: React.Dispatch<React.SetStateAction<Token>>;
   onChange: (to: Token) => void;
+  isTokenA: boolean;
 }
 
 const TokenSelect = ({
   value,
   setToken,
   onChange,
+  isTokenA,
 }: TokenSelectProps) => {
+
+  // token routing 
+  const { asPath, pathname } = useRouter();
+  const path_array = asPath.split("/")
+  let tokenA;
+  let tokenB;
+  let origin = path_array.at(1);
+  let path = `${origin}/${tokenA}/${tokenB}`;
+
+  function changeTokenA(value) {
+    tokenA = value;
+    tokenB = path_array.at(3)
+    origin = path_array.at(1)
+    path = `${origin}/${tokenA}/${tokenB}`;
+    console.log(isTokenA);
+    console.log("token a");
+    console.log(path);
+  }
+
+  function changeTokenB(value) {
+    tokenA = path_array.at(2)
+    tokenB = value;
+    origin = path_array.at(1)
+    path = `${origin}/${tokenA}/${tokenB}`;
+    console.log("token b");
+    console.log(path);
+  }
+  // end token routing 
+
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
   const inputRef = useRef(null);
@@ -69,18 +102,32 @@ const TokenSelect = ({
             }
           }}
         />
+        <Link
+          href="[[...tokens]]"
+          as="/add/popup/test/works"
+        >
+          <a>Random Test</a>
+        </Link>
         <div className="mt-4 h-[325px] overflow-hidden rounded-lg shadow-card dark:shadow-card-dark">
           <ol className="h-full snap-y overflow-y-scroll">
             {filteredTokens.map((token) => (
-              <li
-                key={token}
-                className="flex cursor-pointer snap-start items-center p-2.5 hover:bg-bg-blue dark:hover:bg-menu-blue"
-                onClick={() => {
-                  handleTokenChange(token);
-                }}
-              >
-                <QuestionMarkCircleIcon className="w-[30px] h-[30px]" />
-                <span className="ml-2 uppercase">{token}</span>
+              <li>
+                <button
+                  key={token}
+                  className="flex cursor-pointer w-full snap-start items-center p-2.5 hover:bg-bg-blue dark:hover:bg-menu-blue"
+                  onClick={() => {
+                    console.log(token);
+                    { isTokenA ? changeTokenA(token) : changeTokenB(token) };
+                    handleTokenChange(token);
+                  }}
+                >
+                  <Link href="[[...tokens]]" as={path}>
+                    <QuestionMarkCircleIcon className="w-[30px] h-[30px]" />
+                  </Link>
+                  <Link href="[[...tokens]]" as={path}>
+                    <div className="ml-2 uppercase">{token}</div>
+                  </Link>
+                </button>
               </li>
             ))}
           </ol>
