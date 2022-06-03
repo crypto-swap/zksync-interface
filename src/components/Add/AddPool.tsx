@@ -127,15 +127,7 @@ const AddPool = () => {
             <div className={style.poolContainer}>
                 <div className={style.poolInfo}>
                     <div className="flex flex-right flex-row justify-start p-8 mr-4">
-                        <Link
-                            href="/add/[[...tokens]]"
-                            as="/add/test/works"
-                        >
-                            <a>Test</a>
-                        </Link>
-                        <h1>Slug: {slug.join('/')}</h1>
                     </div>
-
                 </div>
                 <div className={style.addPoolMenu}>
                     <div className="box-border w-full flex flex wrap items-center min-w-0">

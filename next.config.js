@@ -10,10 +10,10 @@ module.exports = {
   ) {
     return {
       '/': { page: '/' },
-      '/swap' : { page: '/swap'},
+      '/swap' : { page: '/swap/[[...tokens]]'},
       '/team' : { page: '/team'},
       '/pool' : { page: '/pool'},
-      '/add' : { page: '/add'},
+      '/add' : { page: '/add/[[...tokens]]'},
       '/zap' : { page: '/zap'}
     }
   },
