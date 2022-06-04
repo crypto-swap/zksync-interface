@@ -128,7 +128,7 @@ const AddPool = () => {
                     </div>
                 </div>
                 <div className={style.addPoolMenu}>
-                    <div className="box-border w-full flex flex wrap items-center min-w-0">
+                    <div className="box-border w-full flex wrap items-center min-w-0">
                         <div className="border-box w-full flex items-center justify-between">
                             <div className="flex flex-nowrap flex-row justify-start items-center">
                                 <a href="#" id="pool-add-link" className="flex flex-row flex-nowrap items-center justify-center 
