@@ -1,12 +1,10 @@
-import React, { useState, useCallback, useContext, useEffect, } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { ChevronLeftIcon, AdjustmentsIcon, PlusIcon } from '@heroicons/react/solid';
 import PoolInput from '../../components/Add/PoolInput';
 import { hooks } from '../../connectors/metaMask';
 import AddPoolButton from '../../components/Add/AddPoolButton';
-import { useParams } from 'react-router-dom';
 const { useIsActive } = hooks;
 
 const style = {
@@ -119,9 +117,9 @@ const AddPool = () => {
                             <ChevronLeftIcon className="w-14 h-14" />
                         </Link>
                     </button>
-                    <text className="text-2xl">
+                    <h1 className="text-2xl">
                         Manage Pool
-                    </text>
+                    </h1>
                 </div>
             </div>
             <div className={style.poolContainer}>
