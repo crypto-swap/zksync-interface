@@ -26,7 +26,7 @@ const TokenSelect = ({
   const path_array = asPath.split("/")
   let tokenA;
   let tokenB;
-  let path = `${tokenA}/${tokenB}`;
+  let path;
 
   if (path_array.length < 2) {
     path_array[2] = '';

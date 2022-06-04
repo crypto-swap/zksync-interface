@@ -4,6 +4,7 @@ import SwapInput from './SwapInput';
 import SwapButton from './SwapButton';
 import { Transition } from '@headlessui/react';
 import { hooks } from '../../connectors/metaMask';
+import { AdjustmentsIcon } from '@heroicons/react/solid';
 
 const { useIsActive } = hooks;
 
@@ -104,8 +105,11 @@ const SwapMenu = () => {
 
   return (
     <div className="text-text-light dark:text-text-dark ">
-      <div className="relative z-10 mx-auto mt-16 h-auto w-full max-w-md rounded-3xl bg-bg-card-light p-6 pt-5 shadow-card dark:bg-bg-card-dark dark:shadow-card-dark">
-        <div className="mb-[27px] ml-0.5 text-xl font-bold">Swap</div>
+      <div className="relative z-10 mx-auto mt-16 text-left h-auto w-full max-w-md rounded-3xl bg-bg-card-light p-7 pt-6 shadow-card dark:bg-bg-card-dark dark:shadow-card-dark">
+        <div className="mb-[27px] text-xl font-bold flex flex-nowrap flex-row justify-between items-center">
+          <div>Swap</div>
+          <button><AdjustmentsIcon className="w-6 h-6" /></button>
+        </div>
         <SwapInput
           {...{
             value: payAmount,

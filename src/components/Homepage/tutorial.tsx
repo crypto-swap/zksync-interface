@@ -42,7 +42,7 @@ const Tutorial = () => {
               ... and you're done! <br></br><br></br>
               <span className="text-xs lg:text-lg leading-[0px] lg:leading-3">
                 <p className="leading-[0px] lg:leading-3">No wallet?</p>
-                <a href="https://metamask.io/download/" className="text-[#7408F8]">Click Here</a>
+                <a href="https://metamask.io/download/" target="_blank" className="text-[#7408F8]">Click Here</a>
               </span>
             </span>
           </li>

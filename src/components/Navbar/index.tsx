@@ -1,4 +1,5 @@
-import React, { useEffect, useContext } from 'react';
+
+import React, { useContext } from 'react';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import WalletPopup from '../Popups/WalletPopup';
@@ -6,18 +7,17 @@ import NetworksPopup from '../Popups/NetworksPopup';
 import { PopupContext } from '../../context/PopupProvider';
 import { networks } from '../Popups/NetworksPopup';
 import { hooks } from '../../connectors/metaMask';
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 const { useChainId, useIsActive } = hooks;
 
 const Navbar = () => {
   // defaults to dark mode
   const { theme, setTheme } = useTheme();
-  useEffect(() => {
-    if (theme === 'system') {
-      setTheme('dark');
-    }
-    console.log(theme);
-  }, []);
+  if (theme === 'system') {
+    setTheme('dark');
+  }
 
   const chainIsCorrect = useChainId() === 280;
   const walletConnected = useIsActive();
@@ -31,28 +31,37 @@ const Navbar = () => {
     setNetworksPopupOpen(true);
   }
 
+  const router = useRouter();
+
   return (
     <div className="navbar">
       <WalletPopup />
       <NetworksPopup />
-      <div className="navbar-col-1">
-        <a id="home-nav-link" href="/">
+      <div className="navbar-col-1 cursor-pointer">
+        <Link href="/">
           <span className="navbar-logo">
             <Image src='https://cryptoswap.org/icons/white_logo.svg' width={40} height={40} />
           </span>
-        </a>
+        </Link>
       </div>
 
       <div className="navbar-col-2">
-        <a href="/swap" className="navbar-link-item">
-          Swap
-        </a>
-        <a href="/pool" className="navbar-link-item">
-          Pool
-        </a>
-        <a href="/team" className="navbar-link-item">
-          Team
-        </a>
+        <div className={"navbar-link-item" + (router.pathname.startsWith("/swap") ? " !opacity-100 " : "")}>
+          <Link href="/swap" >
+            Swap
+          </Link>
+        </div>
+        <div className={"navbar-link-item" + (router.pathname.startsWith("/pool") ? " !opacity-100 " : "")}>
+          <Link href="/pool" >
+            Pool
+          </Link>
+        </div>
+        <div className={"navbar-link-item" + (router.pathname.startsWith("/team") ? " !opacity-100 " : "")}>
+          <Link href="/team" >
+            Team
+          </Link>
+        </div>
+
         <a
           href={'https://docs.cryptoswap.org'}
           className="navbar-link-item"
@@ -149,7 +158,9 @@ const Navbar = () => {
                   strokeLinejoin="round"
                   strokeWidth="2"
                   d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                ></path>
+                >
+
+                </path>
               </svg>
             )}
           </button>
