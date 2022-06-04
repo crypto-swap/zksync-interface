@@ -116,10 +116,9 @@ const TokenSelect = ({
         <div className="mt-4 h-[325px] overflow-hidden rounded-lg shadow-card dark:shadow-card-dark">
           <ol className="h-full snap-y overflow-y-scroll">
             {filteredTokens.map((token) => (
-              <li onClick={() => { isTokenA ? changeTokenA(token) : changeTokenB(token) }}>
+              <li key={token} onClick={() => { isTokenA ? changeTokenA(token) : changeTokenB(token) }}>
                 <Link href="[[...tokens]]" as={path}>
                   <button
-                    key={token}
                     className="flex cursor-pointer w-full snap-start items-center p-2.5 hover:bg-bg-blue dark:hover:bg-menu-blue"
                     onClick={() => {
                       console.log(path);
