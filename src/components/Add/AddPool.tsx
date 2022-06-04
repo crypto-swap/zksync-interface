@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { ChevronLeftIcon, AdjustmentsIcon, PlusIcon } from '@heroicons/react/solid'
-import PoolInput from './PoolInput'
-import { hooks } from '../../connectors/metaMask'
-import AddPoolButton from './AddPoolButton'
-
+import React, { useState, useCallback, useContext, useEffect, } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import { ChevronLeftIcon, AdjustmentsIcon, PlusIcon } from '@heroicons/react/solid';
+import PoolInput from '../../components/Add/PoolInput';
+import { hooks } from '../../connectors/metaMask';
+import AddPoolButton from '../../components/Add/AddPoolButton';
+import { useParams } from 'react-router-dom';
 const { useIsActive } = hooks;
 
 const style = {
@@ -83,9 +84,16 @@ function convert(
     ]);
 }
 
-
 const AddPool = () => {
 
+    // check for existing tokenID from URL
+    // assign it to the tokens array 
+
+    // test
+    const router = useRouter()
+    const slug = router.query.tokens || []
+
+    //test 
     const [tokenA, setTokenA] = useState(tokens[0]);
     const [tokenB, setTokenB] = useState(tokens[1]);
     const [tokenA_Amount, setTokenA_Amount] = useState('');
@@ -101,6 +109,8 @@ const AddPool = () => {
     const walletConnected = useIsActive();
 
     return (
+
+
         <div className={style.wrapper}>
             <div className={style.returnBar}>
                 <div className="flex flex-column items-center">
@@ -117,9 +127,7 @@ const AddPool = () => {
             <div className={style.poolContainer}>
                 <div className={style.poolInfo}>
                     <div className="flex flex-right flex-row justify-start p-8 mr-4">
-                        test
                     </div>
-
                 </div>
                 <div className={style.addPoolMenu}>
                     <div className="box-border w-full flex flex wrap items-center min-w-0">
@@ -141,6 +149,7 @@ const AddPool = () => {
                         <div className="grid auto-rows-auto gap-y-[20px] mt-[0.2rem]">
                             <div id="add-liquidity-input-token-a" className="">
                                 <PoolInput {...{
+                                    tokenB: false,
                                     value: tokenA_Amount,
                                     token: tokenA,
                                     setToken: setTokenA,
@@ -152,8 +161,10 @@ const AddPool = () => {
                             <div className="flex flex-col justify-start items-center w-full"><PlusIcon className="w-5 h-5" /></div>
                             <div id="add-liquidity-input-token-b" className="">
                                 <PoolInput {...{
+                                    tokenB: true,
                                     value: tokenB_Amount,
-                                    token: tokenB, setToken: setTokenB,
+                                    token: tokenB,
+                                    setToken: setTokenB,
                                     setTokenA_Amount: setTokenA_Amount,
                                     setTokenB_Amount: setTokenB_Amount,
                                 }}

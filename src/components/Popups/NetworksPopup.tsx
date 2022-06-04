@@ -13,22 +13,22 @@ interface Network {
 export const networks: Network[] = [
   {
     name: 'zkSync Testnet',
-    image: '/network_icons/zksync_logo.svg',
+    image: 'https://cryptoswap.org/network_icons/zksync_logo.svg',
     status: true,
   },
   {
     name: 'StarkNet Testnet',
-    image: '/network_icons/starknet_logo.png',
+    image: 'https://cryptoswap.org/network_icons/starknet_logo.png',
     status: false,
   },
   {
     name: 'Cosmos Testnet',
-    image: '/network_icons/cosmos_logo.svg',
+    image: 'https://cryptoswap.org/network_icons/cosmos_logo.svg',
     status: false,
   },
   {
     name: 'Atomic Swaps',
-    image: '/network_icons/atomic_swaps.jpg',
+    image: 'https://cryptoswap.org/network_icons/atomic_swaps.jpg',
     status: false,
   },
 ];

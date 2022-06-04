@@ -1,9 +1,16 @@
-import Head from 'next/head';
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import AddPool from '../components/Add/AddPool'
+import Head from 'next/head';;
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import { useRouter } from 'next/router';
+import React, { useState } from 'react'
+import AddPool from '../../components/Add/AddPool'
+//[[...tokens]] catches all routes /add , /add/TokenA, /add/TokenA/TokenB yeet
 
 const Add = () => {
+
+    const router = useRouter()
+    const tokens = router.query.tokens || []
+
     return (
         <div className="bg-bg-light dark:bg-bg-dark">
             <Head>
@@ -20,11 +27,9 @@ const Add = () => {
             </Head>
 
             <Navbar />
-
             <div className="mb-10">
                 <AddPool />
             </div>
-
             <Footer />
         </div>
     )

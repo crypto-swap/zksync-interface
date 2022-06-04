@@ -14,9 +14,9 @@ module.exports = {
         '4.167%': '4.167%', 
       },
       colors: {
-        'bg-light': '#EAEAEA', // bg- prefixes to avoid conflicts with other names
+        'bg-light': '#F2F3FD', // bg- prefixes to avoid conflicts with other names
         'bg-dark': '#1B1E31',
-        'bg-card-light': '#F4F4F5',
+        'bg-card-light': '#F7F8F8',
         'bg-card-dark': '#1F2237', // same as text-light
         'text-light': '#1F2237',
         'text-dark': '#EFEFEF',
@@ -68,7 +68,7 @@ module.exports = {
           'inset 10px 10px 15px -10px #171a29, inset -10px -10px 15px -10px #272b45',
       },
       backgroundImage : {
-        'intro-background': "url('/assets/intro_background.png')",
+        'intro-background': "url('/assets/intro_backgrounds.png')",
       },
     },
   },

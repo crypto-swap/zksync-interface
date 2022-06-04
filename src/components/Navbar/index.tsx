@@ -1,3 +1,4 @@
+
 import React, { useContext } from 'react';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
@@ -39,7 +40,7 @@ const Navbar = () => {
       <div className="navbar-col-1 cursor-pointer">
         <Link href="/">
           <span className="navbar-logo">
-            <Image src={'/icons/white_logo.svg'} width={40} height={40} />
+            <Image src='https://cryptoswap.org/icons/white_logo.svg' width={40} height={40} />
           </span>
         </Link>
       </div>
@@ -83,7 +84,7 @@ const Navbar = () => {
                 src={
                   chainIsCorrect
                     ? networks[0].image
-                    : '/assets/networks.svg'
+                    : 'https://cryptoswap.org/assets/networks.svg'
                 }
                 width={20}
                 height={20}
