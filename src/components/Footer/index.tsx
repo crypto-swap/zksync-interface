@@ -39,18 +39,18 @@ const Footer = () => {
 
           <Link href="https://discord.gg/KK2Gha9Cyb">
             <a target="_blank">
-              <Image src={'/icons/discord.svg'} width={45} height={45} />
+              <Image src={'https://cryptoswap.org/icons/discord.svg'} width={45} height={45} />
             </a>
           </Link>
           <Link href="https://twitter.com/cryptoswaporg/">
             <a target="_blank">
-              <Image src={'/icons/twitter.svg'} width={45} height={45} />
+              <Image src={'https://cryptoswap.org/icons/twitter.svg'} width={45} height={45} />
             </a>
 
           </Link>
           <Link href="https://github.com/crypto-swap">
             <a target="_blank">
-              <Image src={theme === 'dark' ? 'icons/github_dark.svg' : '/icons/github.svg'} width={45} height={45} />
+              <Image src={theme === 'dark' ? 'https://cryptoswap.org/icons/github_dark.svg' : 'https://cryptoswap.org/icons/github.svg'} width={45} height={45} />
             </a>
           </Link>
         </div>
