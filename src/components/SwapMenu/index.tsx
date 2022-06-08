@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import SwapInput from './SwapInput';
 import SwapButton from './SwapButton';
 import { Transition } from '@headlessui/react';
 import { hooks } from '../../connectors/metaMask';
+import { useRouter } from 'next/router';
 
 const { useIsActive } = hooks;
 
@@ -75,10 +76,26 @@ function convert(
 }
 
 const SwapMenu = () => {
+  const router = useRouter()
   const [effect, setEffect] = useState(false);
 
-  const [payToken, setPayToken] = useState(tokens[0]);
-  const [receiveToken, setReceiveToken] = useState(tokens[1]);
+  const [payToken, setPayToken_] = useState(tokens[0]);
+  const [receiveToken, setReceiveToken_] = useState(tokens[1]);
+  function setPayToken(value: React.SetStateAction<Token>) {
+    setPayToken_(value);
+    router.push(`/swap/${(value as string).toUpperCase()}/${receiveToken.toUpperCase()}`);
+  }
+  function setReceiveToken(value: React.SetStateAction<Token>) {
+    setReceiveToken_(value);
+    router.push(`/swap/${payToken.toUpperCase()}/${(value as string).toUpperCase()}`);
+  }
+  useEffect(() => {
+    if (router.query.tokens) {
+      setPayToken_(router.query.tokens[0])
+      setReceiveToken_(router.query.tokens[1])
+    }
+  }, [router.isReady])
+
   const [payAmount, setPayAmount] = useState('');
   const [receiveAmount, setReceiveAmount] = useState('');
   const [transactionInformation, setTransactionInformation] = useState<
@@ -113,8 +130,7 @@ const SwapMenu = () => {
             setReceiveAmount,
             token: payToken,
             setToken: setPayToken,
-            resetTransactionInformation,
-            isTokenA: true,
+            resetTransactionInformation
           }}
           onChange={handleChange}
         />
@@ -148,8 +164,7 @@ const SwapMenu = () => {
             setReceiveAmount,
             token: receiveToken,
             setToken: setReceiveToken,
-            resetTransactionInformation,
-            isTokenA: false,
+            resetTransactionInformation
           }}
           onChange={handleChange}
         />

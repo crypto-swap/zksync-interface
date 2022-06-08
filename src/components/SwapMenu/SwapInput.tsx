@@ -19,7 +19,6 @@ interface SwapInputProps {
   token: Token;
   setToken: React.Dispatch<React.SetStateAction<Token>>;
   resetTransactionInformation: () => void;
-  isTokenA: boolean;
 }
 
 const SwapInput = ({
@@ -30,8 +29,7 @@ const SwapInput = ({
   setReceiveAmount,
   token,
   setToken,
-  resetTransactionInformation,
-  isTokenA,
+  resetTransactionInformation
 }: SwapInputProps): JSX.Element => {
   return (
     <>
@@ -66,7 +64,7 @@ const SwapInput = ({
           }}
         />
         <TokenSelect
-          {...{ value: token, setToken, isTokenA: isTokenA }}
+          {...{ value: token, setToken }}
           onChange={(token) => {
             let output;
             if (receive) {
@@ -74,7 +72,9 @@ const SwapInput = ({
             } else {
               output = onChange(false, undefined, token);
             }
-            if (Number.isFinite(output)) setReceiveAmount(output.toString());
+            if (Number.isFinite(output)) {
+              setReceiveAmount(output.toString());
+            }
           }}
         />
       </div>
