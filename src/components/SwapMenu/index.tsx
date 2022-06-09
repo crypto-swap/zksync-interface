@@ -33,6 +33,15 @@ export const tokens: Token[] = [
   'mana',
 ];
 
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { tokens: false }
+    ],
+    fallback: false
+  }
+}
+
 function getRate(token: Token) {
   switch (token) {
     case 'eth':
@@ -200,5 +209,7 @@ const SwapMenu = () => {
     </div>
   );
 };
+
+
 
 export default SwapMenu;
