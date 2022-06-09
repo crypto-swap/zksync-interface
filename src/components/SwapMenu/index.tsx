@@ -84,11 +84,11 @@ const SwapMenu = () => {
   const [receiveToken, setReceiveToken_] = useState(tokens[1]);
   function setPayToken(value: React.SetStateAction<Token>) {
     setPayToken_(value);
-    router.push(`/swap/${(value as string).toUpperCase()}/${receiveToken.toUpperCase()}`);
+    router.push(`/swap?/${(value as string).toUpperCase()}/${receiveToken.toUpperCase()}`);
   }
   function setReceiveToken(value: React.SetStateAction<Token>) {
     setReceiveToken_(value);
-    router.push(`/swap/${payToken.toUpperCase()}/${(value as string).toUpperCase()}`);
+    router.push(`/swap?/${payToken.toUpperCase()}/${(value as string).toUpperCase()}`);
   }
   useEffect(() => {
     if (router.query.tokens) {

@@ -87,11 +87,11 @@ const AddPool = () => {
   const [tokenB, setTokenB_] = useState(tokens[1]);
   function setTokenA(value: React.SetStateAction<Token>) {
     setTokenA_(value);
-    router.push(`/add/${(value as string).toUpperCase()}/${tokenB.toUpperCase()}`);
+    router.push(`/add?/${(value as string).toUpperCase()}/${tokenB.toUpperCase()}`);
   }
   function setTokenB(value: React.SetStateAction<Token>) {
     setTokenB_(value);
-    router.push(`/add/${tokenA.toUpperCase()}/${(value as string).toUpperCase()}`);
+    router.push(`/add?/${tokenA.toUpperCase()}/${(value as string).toUpperCase()}`);
   }
   useEffect(() => {
     if (router.query.tokens) {
