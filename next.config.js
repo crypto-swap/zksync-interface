@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   historyApiFallback: true,
+  contentBase: './',
+  hot: true,
   images: {
     loader: 'akamai',
     path: '',
