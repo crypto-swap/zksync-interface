@@ -1,3 +1,4 @@
+import { Router, useRouter } from 'next/router';
 import TokenSelect from '../Popups/TokenSelect';
 import { Token } from '../SwapMenu';
 
@@ -31,6 +32,7 @@ const SwapInput = ({
   setToken,
   resetTransactionInformation
 }: SwapInputProps): JSX.Element => {
+
   return (
     <>
       <div className="mb-2 flex place-content-between items-center px-0.5">
