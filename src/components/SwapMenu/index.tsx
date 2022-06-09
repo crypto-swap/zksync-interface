@@ -85,8 +85,15 @@ function convert(
   ]);
 }
 
+const getToken = (urlToken: string | undefined) => {
+  if (!urlToken) return undefined;
+  return urlToken
+}
+
 const SwapMenu = () => {
+
   const router = useRouter()
+
   const [effect, setEffect] = useState(false);
 
   const [payToken, setPayToken_] = useState(tokens[0]);
@@ -102,6 +109,7 @@ const SwapMenu = () => {
     router.push(`${payToken.toUpperCase()}/${(value as string).toUpperCase()}`);
   }
 
+  console.log(router.query.tokens)
 
   useEffect(() => {
     if (router.query.tokens) {

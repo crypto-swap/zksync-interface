@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import WalletPopup from '../Popups/WalletPopup';
 import NetworksPopup from '../Popups/NetworksPopup';
-import { PopupContext } from '../../context/PopupProvider';
+import { PopupContext } from '../../contexts/PopupProvider';
 import { networks } from '../Popups/NetworksPopup';
 import { hooks } from '../../connectors/metaMask';
 import Link from "next/link";

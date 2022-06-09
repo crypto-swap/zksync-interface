@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Link from 'next/link';
-import { PopupContext } from '../../context/PopupProvider';
+import { PopupContext } from '../../contexts/PopupProvider';
 
 
 const Tutorial = () => {

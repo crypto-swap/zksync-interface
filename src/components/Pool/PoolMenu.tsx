@@ -2,7 +2,7 @@ import PoolBar from './PoolBar';
 import pools from './mockPools.json';
 import Pagination from './Pagination';
 import React, { useState, useEffect, useLayoutEffect, useContext } from 'react';
-import SelectFilter from '../../features/pool/SelectFilter'
+import SelectFilter from './SelectFilter'
 
 const style = {
     poolMenuContainer: `md:mx-auto md:max-w-5xl`,
@@ -16,8 +16,6 @@ const style = {
     poolSortBar: `font-[Montserrat] text-[0.5rem] select-none md:p-0 md:text-sm h-8 md:max-width mt-4 overflow-hidden rounded-lg shadow-card 
     bg-bg-card-light dark:bg-bg-card-dark dark:shadow-card-dark flex items-center grid grid-cols-6 `,
 }
-
-
 
 export interface PoolMenuProps { }
 

@@ -1,7 +1,7 @@
 import Head from 'next/head';;
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
-import AddPool from '../../components/Add/AddPool'
+import AddLiquidity from '../../views/AddLiquidity'
 //[[...tokens]] catches all routes /add , /add/TokenA, /add/TokenA/TokenB yeet
 
 const Add = () => {
@@ -22,7 +22,7 @@ const Add = () => {
 
             <Navbar />
             <div className="mb-10">
-                <AddPool />
+                <AddLiquidity />
             </div>
             <Footer />
         </div>

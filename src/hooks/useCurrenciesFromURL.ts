@@ -1,5 +1,5 @@
 import { Token, tokens } from '../components/SwapMenu'
-import { useActiveWeb3React } from '../hooks'
+import { useActiveWeb3React } from '.'
 import { useRouter } from 'next/router' 
 import { useCallback, useMemo } from 'react' 
 
@@ -19,7 +19,7 @@ const useCurrenciesFromURL = (): {
 
     const currencyA = getToken(router.query.tokens?.[0]) || undefined
     const currencyB = getToken(router.query.tokens?.[1]) || undefined 
-
+    
     const switchCurrencies = useCallback(async () => {
         if (!chainId) return
 

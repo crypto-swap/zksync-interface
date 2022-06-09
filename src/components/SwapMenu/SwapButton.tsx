@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { PopupContext } from '../../context/PopupProvider';
+import { PopupContext } from '../../contexts/PopupProvider';
 import { hooks } from '../../connectors/metaMask';
 import { connect } from '../Popups/WalletPopup';
 

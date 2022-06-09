@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ChevronLeftIcon, AdjustmentsIcon, PlusIcon } from '@heroicons/react/solid';
-import PoolInput from '../../components/Add/PoolInput';
-import AddPoolButton from '../../components/Add/AddPoolButton';
+import PoolInput from '../components/Add/PoolInput';
+import AddPoolButton from '../components/Add/AddPoolButton';
 
 const style = {
   wrapper: `flex flex-col w-full max-w-5xl mr-auto ml-auto items-center flex-1 basis-0 overflow-hidden overflow-auto justify-center p-2`,
@@ -80,8 +80,11 @@ function convert(
   ]);
 }
 
-const AddPool = () => {
+const AddLiquidity = () => {
   const router = useRouter()
+
+  const [currencyIdA, currencyIdB] = router.query.currency || []
+
 
   const [tokenA, setTokenA_] = useState(tokens[0]);
   const [tokenB, setTokenB_] = useState(tokens[1]);
@@ -94,9 +97,9 @@ const AddPool = () => {
     router.push(`${tokenA.toUpperCase()}/${(value as string).toUpperCase()}`);
   }
   useEffect(() => {
-    if (router.query.tokens) {
-      setTokenA_(router.query.tokens[0])
-      setTokenB_(router.query.tokens[1])
+    if (router.query.currency) {
+      setTokenA_(router.query.currency[0])
+      setTokenB_(router.query.currency[1])
     }
   }, [router.isReady])
 
@@ -184,4 +187,4 @@ const AddPool = () => {
   )
 }
 
-export default AddPool
+export default AddLiquidity
