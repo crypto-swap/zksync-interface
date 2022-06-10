@@ -15,6 +15,8 @@ import {
 import storage from 'redux-persist/lib/storage'
 import IndexedDBStorage from '../utils/IndexedDBStorage'
 import { updateVersion } from './global/actions'
+import mint from './mint/reducer'
+import multicall from './multicall/reducer'
 
 const PERSISTED_KEYS: string[] = ['user', 'transactions']
 
@@ -56,6 +58,8 @@ const ListsConfig = {
 const persistedReducer = persistReducer(
   persistConfig,
   combineReducers({
+    multicall,
+    mint,
   }),
 )
 

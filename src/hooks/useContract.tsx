@@ -8,7 +8,7 @@ import ERC20_ABI from '../config/abi/erc20.json'
 import WETH_ABI from '../config/abi/weth.json'
 import multiCallAbi from '../config/abi/Multicall.json'
 import { getContract, getProviderOrSigner } from '../utils'
-
+import { getMulticallAddress } from '../utils/addressHelpers'
 
 // returns null on errors
 export function useContract<T extends Contract = Contract>(
@@ -37,7 +37,6 @@ export function useTokenContract(tokenAddress?: string, withSignerIfPossible?: b
     return useContract(tokenAddress, ERC20_ABI, withSignerIfPossible)
 }
 
-export function useMulticall2Contract() {
-    const { chainId } = useActiveWeb3React()
-    return useContract(chainId ? MULTICALL2_ADDRESS[chainId] : undefined, MULTICALL2_ABI, false)
+export function useMulticallContract() {
+    return useContract(getMulticallAddress(), multiCallAbi, false)
 }
