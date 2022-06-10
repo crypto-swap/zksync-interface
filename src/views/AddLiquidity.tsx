@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import { useActiveWeb3React } from '../hooks';
 import { useRouter } from 'next/router';
 import { ChevronLeftIcon, AdjustmentsIcon, PlusIcon } from '@heroicons/react/solid';
 import PoolInput from '../components/Add/PoolInput';
 import AddPoolButton from '../components/Add/AddPoolButton';
+
 
 const style = {
   wrapper: `flex flex-col w-full max-w-5xl mr-auto ml-auto items-center flex-1 basis-0 overflow-hidden overflow-auto justify-center p-2`,
@@ -38,64 +40,54 @@ export const tokens: Token[] = [
   'mana',
 ];
 
-const emptyPoolInformation = new Map([
-  ['Rate', 0],
-  ['Token B Amount', 0],
-  ['Share of pool', 0],
-]);
-
-function getRate(token: Token) {
-  switch (token) {
-    case 'eth':
-      return 1;
-    case 'bat':
-      return 5;
-    default:
-      return 10;
-  }
-}
-
-function convert(
-  amount: number,
-  token_a: Token,
-  token_b: Token,
-  reverse: boolean = false
-) {
-  let rate = getRate(token_b) / getRate(token_a);
-  if (reverse) {
-    rate = 1 / rate;
-  }
-  const output = amount * rate;
-  let tokenB = output;
-  if (reverse) {
-    [tokenB, amount] = [amount, output];
-  }
-
-  // TODO: create a function to get pool share
-
-  return new Map([
-    ['Rate', rate],
-    ['Token B Amount', amount],
-    ['Share of pool', amount * 2]
-  ]);
-}
-
 const AddLiquidity = () => {
+
   const router = useRouter()
 
   const [currencyIdA, currencyIdB] = router.query.currency || []
-
+  const { account, chainId } = useActiveWeb3React()
 
   const [tokenA, setTokenA_] = useState(tokens[0]);
   const [tokenB, setTokenB_] = useState(tokens[1]);
-  function setTokenA(value: React.SetStateAction<Token>) {
-    setTokenA_(value);
-    router.push(`${(value as string).toUpperCase()}/${tokenB.toUpperCase()}`);
-  }
-  function setTokenB(value: React.SetStateAction<Token>) {
-    setTokenB_(value);
-    router.push(`${tokenA.toUpperCase()}/${(value as string).toUpperCase()}`);
-  }
+
+
+  useEffect(() => {
+    if (!currencyIdA && !currencyIdB) {
+      setTokenA_(tokens[0]);
+      setTokenB_(tokens[1])
+    }
+  }, [currencyIdA, currencyIdB])
+
+  const handleCurrencyASelect = useCallback(
+    (currencyA_: Token) => {
+      const newCurrencyIdA = currencyA_
+      if (newCurrencyIdA === currencyIdB) {
+        router.replace(`/add/${currencyIdB}/${currencyIdA}`, undefined, { shallow: true })
+      } else if (currencyIdB) {
+        router.replace(`/add/${newCurrencyIdA}/${currencyIdB}`, undefined, { shallow: true })
+      } else {
+        router.replace(`/add/${newCurrencyIdA}`, undefined, { shallow: true })
+      }
+    },
+    [currencyIdB, router, currencyIdA],
+  )
+
+  const handleCurrencyBSelect = useCallback(
+    (currencyB_: Token) => {
+      const newCurrencyIdB = currencyB_
+      if (currencyIdA === currencyIdB) {
+        if (currencyIdB) {
+          router.replace(`/add/${currencyIdB}/${newCurrencyIdB}`, undefined, { shallow: true })
+        } else {
+          router.replace(`/add/${newCurrencyIdB}`, undefined, { shallow: true })
+        }
+      } else {
+        router.replace(`/add/${currencyIdA || 'ETH'}/${newCurrencyIdB}`, undefined, { shallow: true })
+      }
+    },
+    [currencyIdA, router, currencyIdB],
+  )
+
   useEffect(() => {
     if (router.query.currency) {
       setTokenA_(router.query.currency[0])
