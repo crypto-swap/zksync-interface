@@ -1,6 +1,6 @@
-import { TokenAmount, Pair, Currency } from '@crypto-swap/sdk/src'
+import { TokenAmount, Pair, Currency } from '@crypto-swap/sdk'
 import { useMemo } from 'react'
-import ICryptoPairABI from '@crypto-swap/sdk/src/abis/ERC20.json'
+import ICryptoPairABI from '../config/abi/ICryptoPair.json'
 import { Interface } from '@ethersproject/abi'
 import useActiveWeb3React from './useActiveWeb3React'
 

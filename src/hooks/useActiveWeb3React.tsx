@@ -1,13 +1,17 @@
 import { Web3Provider } from '@ethersproject/providers'
 import { useWeb3React } from '@web3-react/core'
 
-import { NetworkContextName } from '../constants/misc'
+export function useActiveWeb3React() {
+    // if (process.env.REACT_APP_IS_WIDGET) {
+    //   return useWidgetsWeb3React()
+    // }
 
-const useActiveWeb3React = () => {
     const interfaceContext = useWeb3React<Web3Provider>()
-    const interfaceNetworkContext = useWeb3React<Web3Provider>()
+    const interfaceNetworkContext = useWeb3React<Web3Provider>(
+        process.env.REACT_APP_IS_WIDGET ? undefined : 'NETWORK'
+    )
 
-    if (interfaceContext.isActive) {
+    if (interfaceContext.active) {
         return interfaceContext
     }
 
