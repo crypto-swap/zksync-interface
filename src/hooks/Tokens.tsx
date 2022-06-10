@@ -4,7 +4,7 @@ import { parseBytes32String } from '@ethersproject/strings'
 import { Currency, currencyEquals, ETHER, Token } from '@crypto-swap/sdk'
 import { createSelector } from '@reduxjs/toolkit'
 import { GELATO_NATIVE } from '../config/constants'
-import useActiveWeb3React from '../hooks/useActiveWeb3React'
+import { useWeb3React } from '@web3-react/core'
 import { useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { TokenAddressMap } from '../state/types'
@@ -17,7 +17,7 @@ import useUserAddedTokens, { userAddedTokenSelector } from '../state/user/hooks/
 import { isAddress } from '../utils'
 import { useBytes32TokenContract, useTokenContract } from './useContract'
 
-const { chainId } = useActiveWeb3React()
+const { chainId } = useWeb3React()
 
 const mapWithoutUrls = (tokenMap: TokenAddressMap) => {
 
@@ -92,7 +92,7 @@ function parseStringOrBytes32(str: string | undefined, bytes32: string | undefin
 // null if loading
 // otherwise returns the token
 export function useToken(tokenAddress?: string): Token | undefined | null {
-    const { chainId } = useActiveWeb3React()
+    const { chainId } = useWeb3React()
     const tokens = useAllTokens()
 
     const address = isAddress(tokenAddress)

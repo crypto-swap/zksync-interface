@@ -1,5 +1,5 @@
 import { Token, tokens } from '../components/SwapMenu'
-import { useActiveWeb3React } from '.'
+import { useActiveWeb3React } from './'
 import { useRouter } from 'next/router' 
 import { useCallback, useMemo } from 'react' 
 

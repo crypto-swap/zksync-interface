@@ -1,5 +1,5 @@
 import { ChainId, Token } from '@crypto-swap/sdk'
-import { useActiveWeb3React } from '../../hooks'
+import { useWeb3React } from '@web3-react/core'
 import { serializeToken } from '../../state/user/hooks/helpers'
 import { SerializedToken } from './types'
 
@@ -32,7 +32,7 @@ export const testnetTokens = defineTokens({
 
 
 const tokens = () => {
-    const { chainId } = useActiveWeb3React()
+    const { chainId } = useWeb3React()
 
     // If testnet - return list comprised of testnetTokens wherever they exist, and mainnetTokens where they don't
     // @ts-ignore needs type fixing

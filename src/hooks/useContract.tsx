@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import useActiveWeb3React from '../hooks/useActiveWeb3React';
+import { useWeb3React } from '@web3-react/core';
 import { Contract } from '@ethersproject/contracts'
 import { WETH } from '@crypto-swap/sdk'
 import ICryptoPairABI from '../config/abi/ICryptoPair.json'
@@ -18,21 +18,21 @@ export function useContract<T extends Contract = Contract>(
     ABI: any,
     withSignerIfPossible = true
 ): T | null {
-    const { library, account, chainId } = useActiveWeb3React()
+    const { provider, account, chainId } = useWeb3React()
 
     return useMemo(() => {
-        if (!addressOrAddressMap || !ABI || !library || !chainId) return null
+        if (!addressOrAddressMap || !ABI || !provider || !chainId) return null
         let address: string | undefined
         if (typeof addressOrAddressMap === 'string') address = addressOrAddressMap
         else address = addressOrAddressMap[chainId]
         if (!address) return null
         try {
-            return getContract(address, ABI, library, withSignerIfPossible && account ? account : undefined)
+            return getContract(address, ABI, provider, withSignerIfPossible && account ? account : undefined)
         } catch (error) {
             console.error('Failed to get contract', error)
             return null
         }
-    }, [addressOrAddressMap, ABI, library, chainId, withSignerIfPossible, account]) as T
+    }, [addressOrAddressMap, ABI, provider, chainId, withSignerIfPossible, account]) as T
 }
 
 export function useTokenContract(tokenAddress?: string, withSignerIfPossible?: boolean): Contract | null {
