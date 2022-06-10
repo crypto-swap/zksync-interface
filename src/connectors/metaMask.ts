@@ -1,4 +1,6 @@
-import { InjectedConnector } from '@web3-react/injected-connector'
+import { initializeConnector } from '@web3-react/core';
+import { MetaMask } from '@web3-react/metamask';
 
-
-export const metaMask = new InjectedConnector({ supportedChainIds: [1, 280] })
+export const [metaMask, hooks] = initializeConnector<MetaMask>(
+  (actions) => new MetaMask(actions)
+);
