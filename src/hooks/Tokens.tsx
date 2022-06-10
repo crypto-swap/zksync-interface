@@ -4,49 +4,33 @@ import { parseBytes32String } from '@ethersproject/strings'
 import { Currency, currencyEquals, ETHER, Token } from '@crypto-swap/sdk'
 import { createSelector } from '@reduxjs/toolkit'
 import { GELATO_NATIVE } from '../config/constants'
-import { CHAIN_ID } from '../config/constants/networks'
 import useActiveWeb3React from '../hooks/useActiveWeb3React'
 import { useMemo } from 'react'
 import { useSelector } from 'react-redux'
-import { TokenAddressMap } from 'state/types'
+import { TokenAddressMap } from '../state/types'
+import { NEVER_RELOAD, useSingleCallResult } from '../state/multicall/hooks'
 import {
     combinedTokenMapFromActiveUrlsSelector,
     combinedTokenMapFromOfficialsUrlsSelector,
-    useUnsupportedTokenList,
-    useWarningTokenList,
 } from '../state/lists/hooks'
-import { NEVER_RELOAD, useSingleCallResult } from '../state/multicall/hooks'
 import useUserAddedTokens, { userAddedTokenSelector } from '../state/user/hooks/useUserAddedTokens'
 import { isAddress } from '../utils'
 import { useBytes32TokenContract, useTokenContract } from './useContract'
 
-const mapWithoutUrls = (tokenMap: TokenAddressMap) =>
-    Object.keys(tokenMap[CHAIN_ID]).reduce<{ [address: string]: Token }>((newMap, address) => {
-        newMap[address] = tokenMap[CHAIN_ID][address].token
-        return newMap
-    }, {})
+const { chainId } = useActiveWeb3React()
+
+const mapWithoutUrls = (tokenMap: TokenAddressMap) => {
+
+    if (chainId) {
+        Object.keys(tokenMap[chainId]).reduce<{ [address: string]: Token }>((newMap, address) => {
+            newMap[address] = tokenMap[chainId][address].token
+            return newMap
+        }, {})
+    }
+}
 
 const allTokenSelector = createSelector(
     [combinedTokenMapFromActiveUrlsSelector, userAddedTokenSelector],
-    (tokenMap, userAddedTokens) => {
-        return (
-            userAddedTokens
-                // reduce into all ALL_TOKENS filtered by the current chain
-                .reduce<{ [address: string]: Token }>(
-                    (tokenMap_, token) => {
-                        tokenMap_[token.address] = token
-                        return tokenMap_
-                    },
-                    // must make a copy because reduce modifies the map, and we do not
-                    // want to make a copy in every iteration
-                    mapWithoutUrls(tokenMap),
-                )
-        )
-    },
-)
-
-const allOfficialsAndUserAddedTokensSelector = createSelector(
-    [combinedTokenMapFromOfficialsUrlsSelector, userAddedTokenSelector],
     (tokenMap, userAddedTokens) => {
         return (
             userAddedTokens
@@ -69,23 +53,6 @@ const allOfficialsAndUserAddedTokensSelector = createSelector(
  */
 export function useAllTokens(): { [address: string]: Token } {
     return useSelector(allTokenSelector)
-}
-
-/**
- * Returns all tokens that are from officials token list and user added tokens
- */
-export function useOfficialsAndUserAddedTokens(): { [address: string]: Token } {
-    return useSelector(allOfficialsAndUserAddedTokensSelector)
-}
-
-export function useUnsupportedTokens(): { [address: string]: Token } {
-    const unsupportedTokensMap = useUnsupportedTokenList()
-    return useMemo(() => mapWithoutUrls(unsupportedTokensMap), [unsupportedTokensMap])
-}
-
-export function useWarningTokens(): { [address: string]: Token } {
-    const warningTokensMap = useWarningTokenList()
-    return useMemo(() => mapWithoutUrls(warningTokensMap), [warningTokensMap])
 }
 
 export function useIsTokenActive(token: Token | undefined | null): boolean {

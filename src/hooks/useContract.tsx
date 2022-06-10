@@ -10,6 +10,8 @@ import multiCallAbi from '../config/abi/Multicall.json'
 import { getContract, getProviderOrSigner } from '../utils'
 import { getMulticallAddress } from '../utils/addressHelpers'
 
+// mostly use sushiswap as reference
+
 // returns null on errors
 export function useContract<T extends Contract = Contract>(
     addressOrAddressMap: string | { [chainId: number]: string } | undefined,
@@ -35,6 +37,11 @@ export function useContract<T extends Contract = Contract>(
 
 export function useTokenContract(tokenAddress?: string, withSignerIfPossible?: boolean): Contract | null {
     return useContract(tokenAddress, ERC20_ABI, withSignerIfPossible)
+}
+
+
+export function useBytes32TokenContract(tokenAddress?: string, withSignerIfPossible?: boolean): Contract | null {
+    return useContract(tokenAddress, ERC20_BYTES32_ABI, withSignerIfPossible)
 }
 
 export function useMulticallContract() {
