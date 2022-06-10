@@ -11,7 +11,7 @@ import { useSingleContractMultipleData, useMultipleContractSingleData } from '..
 /**
  * Returns a map of the given addresses to their eventually consistent BNB balances.
  */
-export function useBNBBalances(uncheckedAddresses?: (string | undefined)[]): {
+export function useETHBalances(uncheckedAddresses?: (string | undefined)[]): {
   [address: string]: CurrencyAmount | undefined
 } {
   const multicallContract = useMulticallContract()

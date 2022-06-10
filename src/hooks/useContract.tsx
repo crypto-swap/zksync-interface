@@ -36,3 +36,8 @@ export function useContract<T extends Contract = Contract>(
 export function useTokenContract(tokenAddress?: string, withSignerIfPossible?: boolean): Contract | null {
     return useContract(tokenAddress, ERC20_ABI, withSignerIfPossible)
 }
+
+export function useMulticall2Contract() {
+    const { chainId } = useActiveWeb3React()
+    return useContract(chainId ? MULTICALL2_ADDRESS[chainId] : undefined, MULTICALL2_ABI, false)
+}
