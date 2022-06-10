@@ -5,13 +5,13 @@ import useActiveWeb3React from '../../hooks/useActiveWeb3React'
 import { PairState, usePair } from '../../hooks/usePairs'
 import useTotalSupply from '../../hooks/useTotalSupply'
 
+import { wrappedCurrency, wrappedCurrencyAmount } from '../../utils/wrappedCurrency'
 import tryParseAmount from '../../utils/tryParseAmount'
 import { AppDispatch, AppState } from '../index'
-// import { useCurrencyBalances } from '../wallet/hooks'
+import { useCurrencyBalances } from '../wallet/hooks'
 import { Field, typeInput } from './actions'
 
-
-const ZERO = 0
+const ZERO = JSBI.BigInt(0)
 
 export function useMintState(): AppState['mint'] {
   return useSelector<AppState, AppState['mint']>((state) => state.mint)
@@ -59,8 +59,6 @@ export function useDerivedMintInfo(
   error?: string
 } {
   const { account, chainId } = useActiveWeb3React()
-
-  const { t } = useTranslation()
 
   const { independentField, typedValue, otherTypedValue } = useMintState()
 
@@ -166,25 +164,25 @@ export function useDerivedMintInfo(
 
   let error: string | undefined
   if (!account) {
-    error = t('Connect Wallet')
+    error = 'Connect Wallet'
   }
 
   if (pairState === PairState.INVALID) {
-    error = error ?? t('Invalid pair')
+    error = error ?? 'Invalid pair'
   }
 
   if (!parsedAmounts[Field.CURRENCY_A] || !parsedAmounts[Field.CURRENCY_B]) {
-    error = error ?? t('Enter an amount')
+    error = error ?? 'Enter an amount'
   }
 
   const { [Field.CURRENCY_A]: currencyAAmount, [Field.CURRENCY_B]: currencyBAmount } = parsedAmounts
 
   if (currencyAAmount && currencyBalances?.[Field.CURRENCY_A]?.lessThan(currencyAAmount)) {
-    error = t('Insufficient %symbol% balance', { symbol: currencies[Field.CURRENCY_A]?.symbol })
+    error = 'Insufficient %symbol% balance', { symbol: currencies[Field.CURRENCY_A]?.symbol }
   }
 
   if (currencyBAmount && currencyBalances?.[Field.CURRENCY_B]?.lessThan(currencyBAmount)) {
-    error = t('Insufficient %symbol% balance', { symbol: currencies[Field.CURRENCY_B]?.symbol })
+    error = 'Insufficient %symbol% balance', { symbol: currencies[Field.CURRENCY_B]?.symbol }
   }
 
   return {
