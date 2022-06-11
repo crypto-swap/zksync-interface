@@ -1,5 +1,5 @@
 import React, { createContext, FC, useContext, useMemo } from 'react'
-import { useActiveWeb3React } from '../hooks'
+import useActiveWeb3React from '../hooks/useActiveWeb3React'
 import { Token, tokens } from '../components/SwapMenu'
 import useCurrenciesFromURL from '../hooks/useCurrenciesFromURL'
 

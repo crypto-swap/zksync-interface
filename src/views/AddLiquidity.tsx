@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { useActiveWeb3React } from '../hooks';
+import useActiveWeb3React from '../hooks/useActiveWeb3React'
 import { useRouter } from 'next/router';
 import { ChevronLeftIcon, AdjustmentsIcon, PlusIcon } from '@heroicons/react/solid';
 import PoolInput from '../components/Add/PoolInput';
