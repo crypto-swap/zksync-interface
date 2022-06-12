@@ -1,7 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import useActiveWeb3React from '../hooks/useActiveWeb3React'
+import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
+import { CHAIN_ID } from '../config/constants/networks';
+import { useCurrency } from '../hooks/Tokens'
+import { AppDispatch } from '../state'
+
 import { ChevronLeftIcon, AdjustmentsIcon, PlusIcon } from '@heroicons/react/solid';
 import PoolInput from '../components/Add/PoolInput';
 import AddPoolButton from '../components/Add/AddPoolButton';
@@ -13,7 +18,6 @@ const style = {
   poolContainer: `auto-rows-auto max-w-5xl w-full flex flex-col md:flex-row justify-start md:justify-between`,
   poolInfo: `flex flex-1 flex-row md:mr-4 justify-start rounded-2xl bg-bg-card-light dark:bg-bg-card-dark shadow-card dark:shadow-card-dark`,
   addPoolMenu: `w-full md:w-96 mt-4 md:mt-0 rounded-2xl shrink-0 p-[20px] bg-bg-card-light dark:bg-bg-card-dark shadow-card dark:shadow-card-dark`,
-
 }
 
 export type Token = string;
@@ -45,11 +49,14 @@ const AddLiquidity = () => {
   const router = useRouter()
 
   const [currencyIdA, currencyIdB] = router.query.currency || []
-  const { account, chainId } = useActiveWeb3React()
+  const { account, chainId, library } = useActiveWeb3React()
+  const dispatch = useDispatch<AppDispatch>()
 
   const [tokenA, setTokenA_] = useState(tokens[0]);
   const [tokenB, setTokenB_] = useState(tokens[1]);
 
+  const currencyA = useCurrency(currencyIdA)
+  const currencyB = useCurrency(currencyIdB)
 
   useEffect(() => {
     if (!currencyIdA && !currencyIdB) {
@@ -97,12 +104,13 @@ const AddLiquidity = () => {
 
   const [tokenA_Amount, setTokenA_Amount] = useState('');
   const [tokenB_Amount, setTokenB_Amount] = useState('');
-  const [poolInformation, setPoolInformation] = useState<Map<string, number>>(emptyPoolInformation)
 
-  function handleChange(reverse: boolean, amount: number = parseFloat(tokenA_Amount), token_a: Token = tokenA, token_b: Token = tokenB) {
-    const poolInformation = convert(amount, token_a, token_b, reverse);
-    setPoolInformation(poolInformation);
-    return poolInformation.get('Token B Amount')! //non-null (!)
+  const handleChange = () => {
+    return (
+      <div>
+        hi
+      </div>
+    )
   }
 
   return (
@@ -148,7 +156,7 @@ const AddLiquidity = () => {
                 <PoolInput {...{
                   value: tokenA_Amount,
                   token: tokenA,
-                  setToken: setTokenA,
+                  setToken: setTokenA_,
                   setTokenA_Amount: setTokenA_Amount,
                   setTokenB_Amount: setTokenB_Amount,
                 }}
@@ -161,11 +169,11 @@ const AddLiquidity = () => {
                   {...{
                     value: tokenB_Amount,
                     token: tokenB,
-                    setToken: setTokenB,
+                    setToken: setTokenB_,
                     setTokenA_Amount: setTokenA_Amount,
                     setTokenB_Amount: setTokenB_Amount,
                   }}
-                  onChange={handleChange}
+                  onChange={handleCurrencyBSelect}
                 />
               </div>
             </div>
