@@ -26,6 +26,34 @@ const PoolMenu = () => {
     'SEK': '/icons/discord.svg'
   }
 
+  // ====================
+  // Variables for Search
+  // ====================
+  // Search Value
+  const [value, setValue] = useState("");
+
+  // Pools Matching Search Value (i.e., Pairs)
+  function findPools() {
+    console.log("findPools");
+
+    let matchingPools = pools.filter(function (pool) {
+      let pair = pool.asset1 + "-" + pool.asset2;
+      // console.log(pair, pair.includes(value.toUpperCase()));
+      return pair.includes(value.toUpperCase()) ? true : false;
+    });
+
+    return matchingPools;
+  }
+
+  //let searchedPools = findPools();
+
+  // console.log(findPools().length);
+
+  // let tmpPools = findPools();
+  // for (let i = 0; i < tmpPools.length; ++i) {
+  //   console.log(tmpPools[i].asset1 + "-" + tmpPools[i].asset2);
+  // }
+
   // ========================
   // Variables for Pagination
   // ========================
@@ -55,26 +83,6 @@ const PoolMenu = () => {
       setNumBarInPage(numBarInPage - 1);
     }
   }
-
-  // search pool bar
-
-  const [value, setValue] = useState("");
-
-  function findPairs() {
-    let pairs = pools.map(pool => pool.asset1 + "-" + pool.asset2);
-    let matchingPairs = [];
-
-    pairs.forEach((pair, i) => {
-      console.log(pair)
-      if (pair.includes(value)) {
-        matchingPairs += [value];
-      }
-    });
-
-    return matchingPairs;
-  }
-
-  findPair();
 
   return (
     <div className={style.poolMenuContainer}>
