@@ -1,4 +1,7 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react'
+import { BigNumber } from '@ethersproject/bignumber'
+import { TransactionResponse } from '@ethersproject/providers'
+import { Currency, currencyEquals, ETHER, TokenAmount, WETH } from '@crypto-swap/sdk'
 import Link from 'next/link';
 import useActiveWeb3React from '../hooks/useActiveWeb3React'
 import { useDispatch } from 'react-redux';
@@ -6,6 +9,7 @@ import { useRouter } from 'next/router';
 import { CHAIN_ID } from '../config/constants/networks';
 import { useCurrency } from '../hooks/Tokens'
 import { AppDispatch } from '../state'
+import { currencyId } from '../utils/currencyId'
 
 import { ChevronLeftIcon, AdjustmentsIcon, PlusIcon } from '@heroicons/react/solid';
 import PoolInput from '../components/Add/PoolInput';
@@ -20,30 +24,6 @@ const style = {
   addPoolMenu: `w-full md:w-96 mt-4 md:mt-0 rounded-2xl shrink-0 p-[20px] bg-bg-card-light dark:bg-bg-card-dark shadow-card dark:shadow-card-dark`,
 }
 
-export type Token = string;
-
-export const tokens: Token[] = [
-  'eth',
-  'bat',
-  'wbtc',
-  'dai',
-  'usdc',
-  'usdt',
-  'zrx',
-  'link',
-  'mkr',
-  'rep',
-  'knc',
-  'gnt',
-  'snt',
-  'bnt',
-  'dnt',
-  'eng',
-  'salt',
-  'fun',
-  'mana',
-];
-
 const AddLiquidity = () => {
 
   const router = useRouter()
@@ -52,22 +32,12 @@ const AddLiquidity = () => {
   const { account, chainId, library } = useActiveWeb3React()
   const dispatch = useDispatch<AppDispatch>()
 
-  const [tokenA, setTokenA_] = useState(tokens[0]);
-  const [tokenB, setTokenB_] = useState(tokens[1]);
-
   const currencyA = useCurrency(currencyIdA)
   const currencyB = useCurrency(currencyIdB)
 
-  useEffect(() => {
-    if (!currencyIdA && !currencyIdB) {
-      setTokenA_(tokens[0]);
-      setTokenB_(tokens[1])
-    }
-  }, [currencyIdA, currencyIdB])
-
   const handleCurrencyASelect = useCallback(
-    (currencyA_: Token) => {
-      const newCurrencyIdA = currencyA_
+    (currencyA_: Currency) => {
+      const newCurrencyIdA = currencyId(currencyA_)
       if (newCurrencyIdA === currencyIdB) {
         router.replace(`/add/${currencyIdB}/${currencyIdA}`, undefined, { shallow: true })
       } else if (currencyIdB) {
@@ -80,8 +50,8 @@ const AddLiquidity = () => {
   )
 
   const handleCurrencyBSelect = useCallback(
-    (currencyB_: Token) => {
-      const newCurrencyIdB = currencyB_
+    (currencyB_: Currency) => {
+      const newCurrencyIdB = currencyId(currencyB_)
       if (currencyIdA === currencyIdB) {
         if (currencyIdB) {
           router.replace(`/add/${currencyIdB}/${newCurrencyIdB}`, undefined, { shallow: true })

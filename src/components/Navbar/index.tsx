@@ -1,4 +1,4 @@
-
+/*
 import React, { useContext } from 'react';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
@@ -169,5 +169,10 @@ const Navbar = () => {
     </div>
   );
 };
+*/
 
+const Navbar = () => {
+  return (<></>)
+}
 export default Navbar;
+

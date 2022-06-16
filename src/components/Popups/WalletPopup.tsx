@@ -1,3 +1,4 @@
+/*
 import { useState, useEffect, useContext } from 'react';
 import Image from 'next/image';
 import { PopupContext } from '../../contexts/PopupProvider';
@@ -93,5 +94,10 @@ const WalletPopup = () => {
     </>
   );
 };
+*/
+
+const WalletPopup = () => {
+  return (<></>)
+}
 
 export default WalletPopup;
