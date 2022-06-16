@@ -1,4 +1,4 @@
-import React, { useState, useMemo, FC, Fragment, useEffect, useLayoutEffect, useContext, ReactNode } from 'react';
+import React, { useState, useMemo, FC, Fragment,  ReactNode } from 'react';
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { useRouter } from 'next/router'
@@ -11,13 +11,8 @@ const style = {
     focus:outline-none bg-bg-card-light dark:bg-bg-card-dark divide-white dark:divide-black`,
 }
 
-interface MenuLinkProps {
-    href?: string;
-    label: string;
-    onClick?(): void
-}
 
-const MenuLink: FC<MenuLinkProps> = ({ href, label, onClick }) => {
+const MenuLink: FC< { href?: string; label: string; onClick?(): void } > = ({ href, label, onClick }) => {
     const router = useRouter()
 
     if (onClick) {
@@ -36,6 +31,7 @@ const MenuLink: FC<MenuLinkProps> = ({ href, label, onClick }) => {
 
     if (href) {
         return (
+            // @ts-ignore
             <Menu.Item onClick={() => router.push(href)}>
                 {({ active }) => {
                     return (
