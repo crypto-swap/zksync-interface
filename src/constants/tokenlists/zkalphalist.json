@@ -1,6 +1,6 @@
 [
     {
-      "name": "Goerli Ether",
+      "name": "Ether",
       "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
       "symbol": "ETH",
       "decimals": 18,
@@ -14,5 +14,13 @@
       "decimals": 6,
       "chainId": 280,
       "logoSRC": "https://assets.coingecko.com/coins/images/6319/small/USD_Coin_icon.png?1547042389"
+    },
+    {
+      "name": "CryptoSwap Dao",
+      "address": "0x8b8f72a08780CB4deA2179d049472d57eB3Fe9e6",
+      "symbol": "CSD",
+      "decimals": 18,
+      "chainId": 280,
+      "logoSRC": "/icons/black_logo.svg"
     }
 ]
