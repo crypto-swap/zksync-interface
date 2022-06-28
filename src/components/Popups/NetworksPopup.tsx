@@ -6,6 +6,7 @@ import { connect } from './WalletPopup';
 
 interface Network {
   name: string;
+  subdomain: string;
   image: string;
   status: boolean;
 }
@@ -13,21 +14,19 @@ interface Network {
 export const networks: Network[] = [
   {
     name: 'zkSync Testnet',
+    subdomain: 'zksync',
     image: 'https://cryptoswap.org/network_icons/zksync_logo.svg',
     status: true,
   },
   {
     name: 'StarkNet Testnet',
+    subdomain: 'starknet',
     image: 'https://cryptoswap.org/network_icons/starknet_logo.png',
     status: false,
   },
   {
-    name: 'Cosmos Testnet',
-    image: 'https://cryptoswap.org/network_icons/cosmos_logo.svg',
-    status: false,
-  },
-  {
     name: 'Atomic Swaps',
+    subdomain: 'atomic',
     image: 'https://cryptoswap.org/network_icons/atomic_swaps.jpg',
     status: false,
   },
@@ -41,6 +40,10 @@ const NetworksPopup = () => {
 
   function closeModal() {
     setOpen(false);
+  }
+
+  function changeSubdomain(subdomain) {
+    // reroute to '${subdomain}.cryptoswap.org' 
   }
 
   return (
