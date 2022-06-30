@@ -42,8 +42,11 @@ const NetworksPopup = () => {
     setOpen(false);
   }
 
-  function changeSubdomain(subdomain) {
-    // reroute to '${subdomain}.cryptoswap.org' 
+  function changeSubdomain(subdomain, status) {
+    if (status) {
+      const newUrl = `https://${subdomain}.cryptoswap.org`
+      window.location.href = newUrl; 
+    }
   }
 
   return (
