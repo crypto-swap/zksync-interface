@@ -52,13 +52,14 @@ const NetworksPopup = () => {
   return (
     <Popup title="Networks" {...{ open, closeModal }}>
       <div className="mt-2.5">
-        {networks.map(({ image, name, status }) => (
+        {networks.map(({ image, name, status, subdomain }) => (
           <button
             disabled={!status}
             key={image}
             onClick={() => {
               connect();
               closeModal();
+              changeSubdomain(subdomain, status); 
             }}
             className={"mt-5 flex w-full items-center gap-3 rounded-lg bg-slate-500 bg-opacity-0 p-3 text-lg font-bold shadow-card dark:border-bg-light dark:shadow-card-dark" + (status ? ' hover:shadow-button-hover dark:hover:shadow-button-hover-dark' : '')}
           >
