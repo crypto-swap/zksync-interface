@@ -38,7 +38,7 @@ const Navbar = () => {
       <WalletPopup />
       <NetworksPopup />
       <div className="navbar-col-1 cursor-pointer">
-        <Link href="/">
+        <Link href="https://cryptoswap.org">
           <span className="navbar-logo">
             <Image src='https://cryptoswap.org/icons/white_logo.svg' width={40} height={40} />
           </span>
