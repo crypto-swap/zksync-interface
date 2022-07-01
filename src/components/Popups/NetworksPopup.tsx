@@ -27,7 +27,7 @@ export const networks: Network[] = [
   {
     name: 'Atomic Swaps',
     subdomain: 'atomic',
-    image: 'https://cryptoswap.org/network_icons/atomic_swaps.jpg',
+    image: 'https://cryptoswap.org/assets/networks.svg',
     status: false,
   },
 ];
@@ -45,7 +45,7 @@ const NetworksPopup = () => {
   function changeSubdomain(subdomain, status) {
     if (status) {
       const newUrl = `https://${subdomain}.cryptoswap.org`
-      window.location.href = newUrl; 
+      window.location.href = newUrl; // redirects to newUrl 
     }
   }
 
