@@ -85,7 +85,7 @@ const Navbar = () => {
                 src={
                   chainIsCorrect
                     ? networks[0].image
-                    : 'https://cryptoswap.org/assets/networks.svg'
+                    : 'https://cryptoswap.org/network_icons/zksync_logo.svg'
                 }
                 width={20}
                 height={20}
@@ -93,7 +93,7 @@ const Navbar = () => {
               <span>&nbsp;</span>
               {chainIsCorrect
                 ? networks[0].name.split(' ')[0]
-                : 'Networks'}
+                : 'zkSync'}
               <span className="hide-medium">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
