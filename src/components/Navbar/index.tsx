@@ -58,7 +58,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className={"navbar-link-item" + (router.pathname.startsWith("/team") ? " !opacity-100 " : "")}>
-          <Link href="/team" >
+          <Link href="https://cryptoswap.org/team" >
             Team
           </Link>
         </div>
