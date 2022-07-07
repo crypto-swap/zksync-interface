@@ -57,6 +57,16 @@ const Navbar = () => {
             Pool
           </Link>
         </div>
+        <div className={"navbar-link-item" + (router.pathname.startsWith("/pool") ? " !opacity-100 " : "")}>
+          <Link href="" >
+            Farm
+          </Link>
+        </div>
+        <div className={"navbar-link-item" + (router.pathname.startsWith("/pool") ? " !opacity-100 " : "")}>
+          <Link href="" >
+            Dashboard
+          </Link>
+        </div>
       </div>
 
       <div className="navbar-col-3">

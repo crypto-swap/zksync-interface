@@ -47,7 +47,7 @@
 .navbar {
     position: relative;
     display: grid;
-    grid-template-columns: 1.15fr 1.6fr 1.25fr;
+    grid-template-columns: 1fr 1.5fr 1fr;
     -webkit-box-pack: justify;
     justify-content: space-between;
     -webkit-box-align: center;
@@ -127,7 +127,8 @@
   flex-direction: row;
   -webkit-box-align: center;
   align-items: center;
-  justify-self: center;
+  justify-self: right;
+  margin-right: 1rem;
 }
 
 @media (max-width: 1325px) {
