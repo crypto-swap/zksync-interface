@@ -47,22 +47,23 @@ const Navbar = () => {
 
       <div className="navbar-col-2">
         <div className={"navbar-link-item" + 
-          (! (router.pathname.startsWith("/pool") ||  router.pathname.startsWith("/team") ) ? " !opacity-100 " : "")}>
+          (! (router.pathname.startsWith("/pool") ||  router.pathname.startsWith("/dashboard")
+          ||  router.pathname.startsWith("/farm") ) ? " !opacity-100 " : "")}>
           <Link href="/" >
             Swap
           </Link>
         </div>
-        <div className={"navbar-link-item" + (router.pathname.startsWith("/pool") ? " !opacity-100 " : "")}>
+        <div className={"navbar-link-item" + ( (router.pathname.startsWith("/pool") ||  router.pathname.startsWith("/add") )? " !opacity-100 " : "")}>
           <Link href="/pool" >
             Pool
           </Link>
         </div>
-        <div className={"navbar-link-item" + (router.pathname.startsWith("/pool") ? " !opacity-100 " : "")}>
+        <div className={"navbar-link-item" + (router.pathname.startsWith("/farm") ? " !opacity-100 " : "")}>
           <Link href="" >
             Farm
           </Link>
         </div>
-        <div className={"navbar-link-item" + (router.pathname.startsWith("/pool") ? " !opacity-100 " : "")}>
+        <div className={"navbar-link-item" + (router.pathname.startsWith("/dashboard") ? " !opacity-100 " : "")}>
           <Link href="" >
             Dashboard
           </Link>
