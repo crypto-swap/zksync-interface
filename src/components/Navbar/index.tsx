@@ -57,20 +57,6 @@ const Navbar = () => {
             Pool
           </Link>
         </div>
-        <div className={"navbar-link-item" + (router.pathname.startsWith("/team") ? " !opacity-100 " : "")}>
-          <Link href="https://cryptoswap.org/team" >
-            Team
-          </Link>
-        </div>
-
-        <a
-          href={'https://docs.cryptoswap.org'}
-          className="navbar-link-item"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Whitepaper
-        </a>
       </div>
 
       <div className="navbar-col-3">
