@@ -47,7 +47,7 @@ const Banner = () => {
             </div>
             <div className={style.zap}>
                 <div className="hidden h-[100px] w-full text-center md:block">
-                    <Image src="https://zksync-cryptoswap.s3.amazonaws.com/assets/zap.png" width={210} height={125}/>
+                    <Image src="https://zksync-cryptoswap.s3.amazonaws.com/assets/zap.png" width={210} height={135}/>
                 </div>
                 <div className={style.zapText}>
                     <div>
