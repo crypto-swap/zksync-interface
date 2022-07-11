@@ -48,7 +48,7 @@ const Navbar = () => {
       <div className="navbar-col-2">
         <div className={"navbar-link-item" + 
           (! (router.pathname.startsWith("/pool") ||  router.pathname.startsWith("/dashboard")
-          ||  router.pathname.startsWith("/farm") ) ? " !opacity-100 " : "")}>
+          ||  router.pathname.startsWith("/farm") ||  router.pathname.startsWith("/add")) ? " !opacity-100 " : "")}>
           <Link href="/" >
             Swap
           </Link>
