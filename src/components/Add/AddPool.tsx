@@ -9,9 +9,11 @@ const style = {
   wrapper: `flex flex-col w-full max-w-5xl mr-auto ml-auto items-center flex-1 basis-0 overflow-hidden overflow-auto justify-center p-2`,
   returnBar: `flex justify-between items-center p-2 w-full bg-bg-card-light dark:bg-bg-card-dark shadow-card dark:shadow-card-dark rounded-2xl mx-2 mt-6 mb-4`,
   poolContainer: `auto-rows-auto max-w-5xl w-full flex flex-col md:flex-row justify-start md:justify-between`,
-  poolInfo: `flex flex-1 flex-row md:mr-4 justify-start rounded-2xl bg-bg-card-light dark:bg-bg-card-dark shadow-card dark:shadow-card-dark`,
+  poolInfo: `flex flex-1 flex-row md:mr-4 p-6 justify-start rounded-2xl bg-bg-card-light dark:bg-bg-card-dark shadow-card dark:shadow-card-dark`,
   addPoolMenu: `w-full md:w-96 mt-4 md:mt-0 rounded-2xl shrink-0 p-[20px] bg-bg-card-light dark:bg-bg-card-dark shadow-card dark:shadow-card-dark`,
-
+  infoItem: `flex flex-col`,
+  infoItemTitle: `text-sm font-bold text-gray-500 dark:text-gray-400 `,
+  infoItemData: `text-2xl font-medium py-2 md:py-4 `,
 }
 
 export type Token = string;
@@ -128,7 +130,28 @@ const AddPool = () => {
       </div>
       <div className={style.poolContainer}>
         <div className={style.poolInfo}>
-          <div className="flex flex-right flex-row justify-start p-8 mr-4">
+          <div className="flex flex-col justify-start w-full h-full">
+            <div className="">
+              Overview
+            </div>
+            <div className="grid grid-cols-2 justify-between content-start w-full h-full md:gap-y-10 lg:gap-y-20 pt-4 md:pt-8 lg:pt-12  ">
+              <div className={style.infoItem}>
+                <span className={style.infoItemTitle}>Liquidity</span>
+                <span className={style.infoItemData}>$0</span>
+              </div >
+              <div className={style.infoItem}>
+                <span className={style.infoItemTitle}>APR</span>
+                <span className={style.infoItemData}>0%</span>
+              </div>
+              <div className={style.infoItem}>
+                <span className={style.infoItemTitle}>Your Pool Share</span>
+                <span className={style.infoItemData}>0%</span>
+              </div>
+              <div className={style.infoItem}>
+                <span className={style.infoItemTitle}>Your Pool Tokens</span>
+                <span className={style.infoItemData}>0</span>
+              </div>
+            </div>
           </div>
         </div>
         <div className={style.addPoolMenu}>
@@ -147,7 +170,7 @@ const AddPool = () => {
               </div>
             </div>
           </div>
-          <div className="mt-[20px]">
+          <div className="mt-9">
             <div className="grid auto-rows-auto gap-y-[20px] mt-[0.2rem]">
               <div id="add-liquidity-input-token-a" className="">
                 <PoolInput {...{
@@ -174,7 +197,7 @@ const AddPool = () => {
                 />
               </div>
             </div>
-            <div className="mt-20">
+            <div className="mt-12">
               <AddPoolButton />
             </div>
           </div>

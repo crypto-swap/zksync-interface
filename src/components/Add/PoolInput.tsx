@@ -28,12 +28,6 @@ const style = {
 const PoolInput = ({ tokenB = false, value, token, setToken, setTokenA_Amount, setTokenB_Amount, onChange }: PoolInputProps) => {
   return (
     <>
-      <Link
-        href="[[...tokens]]"
-        as="/add/routing/test/works"
-      >
-        <a>Test</a>
-      </Link>
       <div className={style.poolInputContainer}>
         <div className="text-sm font-bold text-gray-500 dark:text-gray-400 ">Input</div>
         <div className="text-xs">Balance: 0.0</div>
