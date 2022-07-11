@@ -29,7 +29,7 @@ const Banner = () => {
                     Create a liquidity pool. The ratio of tokens added sets the price of this pool.
                 </div>
                 <div className="mt-5 space-y-3 md:flex md:space-y-0 md:space-x-4">
-                    <Link href="/add"><button className={style.mobilePool}>Create a Pool</button></Link>
+                    <Link href="/pool"><button className={style.mobilePool}>Create a Pool</button></Link>
                 </div>
             </div>
 
@@ -39,7 +39,7 @@ const Banner = () => {
                     Create a liquidity pool. The ratio of tokens you add will set the price of this pool.
                 </div>
                 <div className="relative mt-4 w-[200px] space-y-4">
-                    <Link href="/add"><button className={style.pool}>Create a Pool</button></Link>
+                    <Link href="/pool"><button className={style.pool}>Create a Pool</button></Link>
                 </div>
                 <div className={style.poolImage}>
                     <Image src='https://zksync-cryptoswap.s3.amazonaws.com/assets/stolen_temp_image.png' width={171} height={208.62}/>

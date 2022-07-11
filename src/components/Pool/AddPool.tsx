@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ChevronLeftIcon, AdjustmentsIcon, PlusIcon } from '@heroicons/react/solid';
 import PoolInput from './PoolInput';
-import AddPoolButton from '../../components/Add/AddPoolButton';
+import AddPoolButton from './AddPoolButton';
 import RemoveInterface from './RemoveInterface';
 
 const style = {
@@ -120,12 +120,12 @@ const AddPool = () => {
       <div className={style.returnBar}>
         <div className="flex flex-column items-center">
           <button>
-            <Link href="/pool">
+            <Link href="/pools">
               <ChevronLeftIcon className="w-14 h-14" />
             </Link>
           </button>
           <h1 className="text-2xl">
-            Manage Pool
+            Manage Pools
           </h1>
         </div>
       </div>

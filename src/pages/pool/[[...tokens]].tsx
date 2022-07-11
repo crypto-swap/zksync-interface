@@ -1,14 +1,14 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import PoolMenu from '../components/Pool/PoolMenu'
-import Banner from '../components/Pool/Banner'
+import { GetStaticPaths, GetStaticProps } from 'next';
+import Head from 'next/head';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import AddPool from '../../components/Pool/AddPool'
+
+//[[...tokens]] catches all routes /add , /add/TokenA, /add/TokenA/TokenB yeet
 
 const Pool = () => {
     return (
-        <div className="h-screen bg-bg-light font-[Montserrat] dark:bg-bg-dark overflow-auto">
+        <div className="bg-bg-light dark:bg-bg-dark">
             <Head>
                 <title>CryptoSwap</title>
                 <meta name="description" content="CryptoSwap is a very efficient simple DEX on zkSync (Swap, Pool, Liquidity Options, and Generate). No presale, fully decentralized, and community-driven." />
@@ -21,26 +21,15 @@ const Pool = () => {
                     rel="stylesheet"
                 />
             </Head>
-            <Navbar />
-            <div className="p-5 lg:p-0 lg:pt-5">
-                <Banner />
-                <PoolMenu />
-            </div>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
 
+            <Navbar />
+            <div className="mb-10">
+                <AddPool />
+            </div>
             <Footer />
         </div>
     )
 }
 
-export default Pool
+export default Pool //export single class/module create 
+
