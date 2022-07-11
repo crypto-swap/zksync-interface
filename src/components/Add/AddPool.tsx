@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ChevronLeftIcon, AdjustmentsIcon, PlusIcon } from '@heroicons/react/solid';
-import PoolInput from '../../components/Add/PoolInput';
+import PoolInput from './PoolInput';
 import AddPoolButton from '../../components/Add/AddPoolButton';
+import RemoveInterface from './RemoveInterface';
 
 const style = {
   wrapper: `flex flex-col w-full max-w-5xl mr-auto ml-auto items-center flex-1 basis-0 overflow-hidden overflow-auto justify-center p-2`,
