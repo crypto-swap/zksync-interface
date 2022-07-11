@@ -1,7 +1,9 @@
-import Head from 'next/head';;
+import { GetStaticPaths, GetStaticProps } from 'next';
+import Head from 'next/head';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import AddPool from '../../components/Add/AddPool'
+
 //[[...tokens]] catches all routes /add , /add/TokenA, /add/TokenA/TokenB yeet
 
 const Add = () => {
@@ -30,3 +32,4 @@ const Add = () => {
 }
 
 export default Add //export single class/module create 
+
