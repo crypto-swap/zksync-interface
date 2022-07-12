@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
-import AddPool from '../../components/Pool/AddPool'
+import AddPool from '../../components/Pool/Pool'
 
 //[[...tokens]] catches all routes /add , /add/TokenA, /add/TokenA/TokenB yeet
 
