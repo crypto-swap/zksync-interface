@@ -5,6 +5,7 @@ import { ChevronLeftIcon, AdjustmentsIcon, PlusIcon } from '@heroicons/react/sol
 import PoolInput from './PoolInput';
 import AddPoolButton from './AddPoolButton';
 import RemoveInterface from './RemoveInterface';
+import AddInterface from './AddInterface';
 
 const style = {
   wrapper: `flex flex-col w-full max-w-5xl mr-auto ml-auto items-center flex-1 basis-0 overflow-hidden overflow-auto justify-center p-2`,
