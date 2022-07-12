@@ -69,6 +69,35 @@ function convert(
 
 const AddInterface = () => {
     
+    const router = useRouter()
+
+    const [tokenA, setTokenA_] = useState(tokens[0]);
+    const [tokenB, setTokenB_] = useState(tokens[1]);
+    function setTokenA(value: React.SetStateAction<Token>) {
+      setTokenA_(value);
+      router.push(`${(value as string).toUpperCase()}/${tokenB.toUpperCase()}`);
+    }
+    function setTokenB(value: React.SetStateAction<Token>) {
+      setTokenB_(value);
+      router.push(`${tokenA.toUpperCase()}/${(value as string).toUpperCase()}`);
+    }
+    useEffect(() => {
+      if (router.query.tokens) {
+        setTokenA_(router.query.tokens[0])
+        setTokenB_(router.query.tokens[1])
+      }
+    }, [router.isReady])
+  
+    const [tokenA_Amount, setTokenA_Amount] = useState('');
+    const [tokenB_Amount, setTokenB_Amount] = useState('');
+    const [poolInformation, setPoolInformation] = useState<Map<string, number>>(emptyPoolInformation)
+  
+    function handleChange(reverse: boolean, amount: number = parseFloat(tokenA_Amount), token_a: Token = tokenA, token_b: Token = tokenB) {
+      const poolInformation = convert(amount, token_a, token_b, reverse);
+      setPoolInformation(poolInformation);
+      return poolInformation.get('Token B Amount')! //non-null (!)
+    }
+    
     return (
         <>
                     <div className="grid auto-rows-auto gap-y-[20px] mt-[0.2rem]">
