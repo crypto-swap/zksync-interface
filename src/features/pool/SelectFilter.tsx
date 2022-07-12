@@ -70,8 +70,8 @@ const SelectFilter = () => {
 
     const items = useMemo(() => {
         const map: Record<string, ReactNode> = {
-            [PoolFilter.All]: <MenuLink href={'/pool'} label="All Pools" />,
-            [PoolFilter.Portfolio]: <MenuLink href={`/pool?account=${account}&filter=portfolio`} label="Your Pools" />
+            [PoolFilter.All]: <MenuLink href={'/pools'} label="All Pools" />,
+            [PoolFilter.Portfolio]: <MenuLink href={`/pools?account=${account}&filter=portfolio`} label="Your Pools" />
         }
 
         return Object.entries(map).reduce<Record<string, ReactNode>>((acc, [key, value]) => {

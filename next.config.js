@@ -14,8 +14,8 @@ module.exports = {
     return {
       '/': { page: '/' },
       '/team' : { page: '/team'},
-      '/pool' : { page: '/pool'},
-      '/add' : { page: '/add/[[...tokens]]'},
+      '/pools' : { page: '/pools'},
+      '/pool' : { page: '/pool/[[...tokens]]'},
       '/zap' : { page: '/zap'}
     }
   },
