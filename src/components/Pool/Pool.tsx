@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ChevronLeftIcon, AdjustmentsIcon, PlusIcon } from '@heroicons/react/solid';
-
 import RemoveInterface from './RemoveInterface';
 import AddInterface from './AddInterface';
 
@@ -17,71 +16,7 @@ const style = {
   infoItemData: `text-2xl font-medium py-2 md:py-4 `,
 }
 
-export type Token = string;
 
-export const tokens: Token[] = [
-  'eth',
-  'bat',
-  'wbtc',
-  'dai',
-  'usdc',
-  'usdt',
-  'zrx',
-  'link',
-  'mkr',
-  'rep',
-  'knc',
-  'gnt',
-  'snt',
-  'bnt',
-  'dnt',
-  'eng',
-  'salt',
-  'fun',
-  'mana',
-];
-
-const emptyPoolInformation = new Map([
-  ['Rate', 0],
-  ['Token B Amount', 0],
-  ['Share of pool', 0],
-]);
-
-function getRate(token: Token) {
-  switch (token) {
-    case 'eth':
-      return 1;
-    case 'bat':
-      return 5;
-    default:
-      return 10;
-  }
-}
-
-function convert(
-  amount: number,
-  token_a: Token,
-  token_b: Token,
-  reverse: boolean = false
-) {
-  let rate = getRate(token_b) / getRate(token_a);
-  if (reverse) {
-    rate = 1 / rate;
-  }
-  const output = amount * rate;
-  let tokenB = output;
-  if (reverse) {
-    [tokenB, amount] = [amount, output];
-  }
-
-  // TODO: create a function to get pool share
-
-  return new Map([
-    ['Rate', rate],
-    ['Token B Amount', amount],
-    ['Share of pool', amount * 2]
-  ]);
-}
 
 const AddPool = () => {
   const router = useRouter()
