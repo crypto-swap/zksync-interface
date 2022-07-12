@@ -1,5 +1,8 @@
 import PoolInput from './PoolInput';
 import AddPoolButton from './AddPoolButton';
+import { useRouter } from 'next/router';
+import React, { useState, useEffect } from 'react';
+import { PlusIcon } from '@heroicons/react/solid';
 
 export type Token = string;
 
@@ -97,7 +100,7 @@ const AddInterface = () => {
       setPoolInformation(poolInformation);
       return poolInformation.get('Token B Amount')! //non-null (!)
     }
-    
+
     return (
         <>
                     <div className="grid auto-rows-auto gap-y-[20px] mt-[0.2rem]">
