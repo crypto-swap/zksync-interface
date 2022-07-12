@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { ChevronLeftIcon, AdjustmentsIcon, PlusIcon } from '@heroicons/react/solid';
+import { ChevronLeftIcon, AdjustmentsIcon } from '@heroicons/react/solid';
 import RemoveInterface from './RemoveInterface';
 import AddInterface from './AddInterface';
 
