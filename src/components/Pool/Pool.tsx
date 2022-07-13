@@ -14,7 +14,8 @@ const style = {
   infoItem: `flex flex-col`,
   infoItemTitle: `text-sm font-bold text-gray-500 dark:text-gray-400 `,
   infoItemData: `text-2xl font-medium py-2 md:py-4 `,
-  poolOption: `flex flex-row flex-nowrap items-center justify-center cursor-pointer outline-none text-none text-base mr-[15px]`
+  addOption: `flex flex-row flex-nowrap items-center justify-center cursor-pointer outline-none text-none text-base mr-[15px]`,
+  removeOption: `flex flex-row flex-nowrap items-center justify-center cursor-pointer outline-none text-none text-base`,
 }
 
 
@@ -24,14 +25,6 @@ const AddPool = () => {
   const router = useRouter(); 
 
   const [option, setOption] = useState('add');
-
-  const optionToggler = () => {
-    if (option === 'add') {
-      setOption('remove');
-    } else {
-      setOption('add');
-    }
-  }
 
   return (
 
@@ -80,11 +73,11 @@ const AddPool = () => {
             <div className="border-box w-full flex items-center justify-between">
               <div className="flex flex-nowrap flex-row justify-start items-center">
                 <Link href={`${(typeof window === "undefined") ? router.asPath : window.location.pathname}`} id="pool-add-link" aria-current="page">
-                  <a className={style.poolOption + ((option === 'add') ? "": "text-gray-500 dark:text-gray-400")}>Add</a>
+                  <a className={style.addOption + ((option === 'add') ? "": " text-gray-500 dark:text-gray-400")} onClick={ () => {setOption('add')} }>Add</a>
                 </Link>
 
                 <Link href={`${(typeof window === "undefined") ? router.asPath : window.location.pathname}`} id="pool-remove-link" aria-current="page">
-                  <a className={style.poolOption + ((option === 'removed') ? "": "text-gray-500 dark:text-gray-400")}>Remove</a>
+                  <a className={style.removeOption + ((option === 'remove') ? "": " text-gray-500 dark:text-gray-400")} onClick={ () => {setOption('remove')} }>Remove</a>
                 </Link>
               </div>
               <div className="ml-2 flex relative border-none text-left justify-center items-center">
