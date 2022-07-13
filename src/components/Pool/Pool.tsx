@@ -20,6 +20,7 @@ const style = {
 
 const AddPool = () => {
 
+  const router = useRouter() 
 
   return (
 
@@ -67,10 +68,10 @@ const AddPool = () => {
           <div className="box-border w-full flex wrap items-center min-w-0">
             <div className="border-box w-full flex items-center justify-between">
               <div className="flex flex-nowrap flex-row justify-start items-center">
-                <Link href={`${(typeof window === "undefined") ? '' : window.location.pathname}`} id="pool-add-link" className="flex flex-row flex-nowrap items-center justify-center 
+                <Link href={`${(typeof window === "undefined") ? router.asPath : window.location.pathname}`} id="pool-add-link" className="flex flex-row flex-nowrap items-center justify-center 
                                 cursor-pointer outline-none text-none text-base mr-[15px]" aria-current="page">Add</Link>
 
-                <Link href={`${(typeof window === "undefined") ? '' : window.location.pathname}`} id="pool-remove-link" className="flex flex-row flex-nowrap items-center justify-center 
+                <Link href={`${(typeof window === "undefined") ? router.asPath : window.location.pathname}`} id="pool-remove-link" className="flex flex-row flex-nowrap items-center justify-center 
                                 cursor-pointer outline-none text-none text-base mr-[15px]" aria-current="page">Remove</Link>
               </div>
               <div className="ml-2 flex relative border-none text-left justify-center items-center">
