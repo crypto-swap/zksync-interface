@@ -67,11 +67,11 @@ const AddPool = () => {
           <div className="box-border w-full flex wrap items-center min-w-0">
             <div className="border-box w-full flex items-center justify-between">
               <div className="flex flex-nowrap flex-row justify-start items-center">
-                <a href="" id="pool-add-link" className="flex flex-row flex-nowrap items-center justify-center 
-                                cursor-pointer outline-none text-none text-base mr-[15px]" aria-current="page">Add</a>
+                <Link href={`${(typeof window === "undefined") ? '' : window.location.pathname}`} id="pool-add-link" className="flex flex-row flex-nowrap items-center justify-center 
+                                cursor-pointer outline-none text-none text-base mr-[15px]" aria-current="page">Add</Link>
 
-                <a href="" id="pool-remove-link" className="flex flex-row flex-nowrap items-center justify-center 
-                                cursor-pointer outline-none text-none text-base mr-[15px]" aria-current="page">Remove</a>
+                <Link href={`${(typeof window === "undefined") ? '' : window.location.pathname}`} id="pool-remove-link" className="flex flex-row flex-nowrap items-center justify-center 
+                                cursor-pointer outline-none text-none text-base mr-[15px]" aria-current="page">Remove</Link>
               </div>
               <div className="ml-2 flex relative border-none text-left justify-center items-center">
                 <button><div className="flex justify-center items-center rounded-[50%] h-[40px] w-[40px]">
