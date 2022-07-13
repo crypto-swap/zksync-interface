@@ -72,11 +72,11 @@ const AddPool = () => {
           <div className="box-border w-full flex wrap items-center min-w-0">
             <div className="border-box w-full flex items-center justify-between">
               <div className="flex flex-nowrap flex-row justify-start items-center">
-                <Link href={`${(typeof window === "undefined") ? router.asPath : window.location.pathname}`} id="pool-add-link" aria-current="page">
+                <Link href={`${(typeof window === "undefined") ? router.asPath : window.location.pathname}`} id="pool-add-link">
                   <a className={style.addOption + ((option === 'add') ? "": " text-gray-500 dark:text-gray-400")} onClick={ () => {setOption('add')} }>Add</a>
                 </Link>
 
-                <Link href={`${(typeof window === "undefined") ? router.asPath : window.location.pathname}`} id="pool-remove-link" aria-current="page">
+                <Link href={`${(typeof window === "undefined") ? router.asPath : window.location.pathname}`} id="pool-remove-link" >
                   <a className={style.removeOption + ((option === 'remove') ? "": " text-gray-500 dark:text-gray-400")} onClick={ () => {setOption('remove')} }>Remove</a>
                 </Link>
               </div>
