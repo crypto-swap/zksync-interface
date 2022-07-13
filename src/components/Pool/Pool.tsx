@@ -21,7 +21,17 @@ const style = {
 
 const AddPool = () => {
 
-  const router = useRouter() 
+  const router = useRouter(); 
+
+  const [option, setOption] = useState('add');
+
+  const optionToggler = () => {
+    if (option === 'add') {
+      setOption('remove');
+    } else {
+      setOption('add');
+    }
+  }
 
   return (
 
