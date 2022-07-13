@@ -103,7 +103,7 @@ const AddInterface = () => {
 
     return (
         <>
-                    <div className="grid auto-rows-auto gap-y-[20px] mt-[0.2rem]">
+            <div className="grid auto-rows-auto gap-y-[20px] mt-[0.2rem]">
               <div id="add-liquidity-input-token-a" className="">
                 <PoolInput {...{
                   value: tokenA_Amount,

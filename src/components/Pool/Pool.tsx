@@ -14,12 +14,17 @@ const style = {
   infoItem: `flex flex-col`,
   infoItemTitle: `text-sm font-bold text-gray-500 dark:text-gray-400 `,
   infoItemData: `text-2xl font-medium py-2 md:py-4 `,
+  addOption: `flex flex-row flex-nowrap items-center justify-center cursor-pointer outline-none text-none text-base mr-[15px]`,
+  removeOption: `flex flex-row flex-nowrap items-center justify-center cursor-pointer outline-none text-none text-base`,
 }
 
 
 
 const AddPool = () => {
 
+  const router = useRouter(); 
+
+  const [option, setOption] = useState('add');
 
   return (
 
@@ -67,10 +72,13 @@ const AddPool = () => {
           <div className="box-border w-full flex wrap items-center min-w-0">
             <div className="border-box w-full flex items-center justify-between">
               <div className="flex flex-nowrap flex-row justify-start items-center">
-                <a href="#" id="pool-add-link" className="flex flex-row flex-nowrap items-center justify-center 
-                                cursor-pointer outline-none text-none text-base mr-[15px]" aria-current="page">Add</a>
-                <a href="#" className="flex flex-row flex-nowrap items-center justify-center 
-                                cursor-pointer outline-none text-none text-base mr-[15px]" aria-current="page">Remove</a>
+                <Link href={`${(typeof window === "undefined") ? router.asPath : window.location.pathname}`} id="pool-add-link" aria-current="page">
+                  <a className={style.addOption + ((option === 'add') ? "": " text-gray-500 dark:text-gray-400")} onClick={ () => {setOption('add')} }>Add</a>
+                </Link>
+
+                <Link href={`${(typeof window === "undefined") ? router.asPath : window.location.pathname}`} id="pool-remove-link" aria-current="page">
+                  <a className={style.removeOption + ((option === 'remove') ? "": " text-gray-500 dark:text-gray-400")} onClick={ () => {setOption('remove')} }>Remove</a>
+                </Link>
               </div>
               <div className="ml-2 flex relative border-none text-left justify-center items-center">
                 <button><div className="flex justify-center items-center rounded-[50%] h-[40px] w-[40px]">
@@ -80,7 +88,7 @@ const AddPool = () => {
             </div>
           </div>
           <div className="mt-9">
-
+            <AddInterface/>
           </div>
         </div>
       </div>
