@@ -1,7 +1,7 @@
 import React, { useState } from 'react'; 
 
 
-const AddPoolButton = () => {
+const AddLiquidityButton = () => {
     return (
         <button
             className="flex select-none items-center justify-center bg-button-blue  leading-none font-normal 
@@ -12,4 +12,4 @@ const AddPoolButton = () => {
     )
 }
 
-export default AddPoolButton
+export default AddLiquidityButton
