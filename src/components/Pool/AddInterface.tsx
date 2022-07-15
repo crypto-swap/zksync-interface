@@ -1,5 +1,5 @@
 import PoolInput from './PoolInput';
-import AddPoolButton from './AddPoolButton';
+import AddPoolButton from './AddLiquidityButton';
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
 import { PlusIcon } from '@heroicons/react/solid';
