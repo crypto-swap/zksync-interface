@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import Popup from './Popup';
-import { Token, tokens } from '../SwapMenu';
+import { Token, tokens } from '../../views/Swap';
 import { QuestionMarkCircleIcon } from '@heroicons/react/outline'
 import Link from 'next/link';
 
