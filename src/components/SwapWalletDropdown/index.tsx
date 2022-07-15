@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
-import { Wallet } from '../SwapMenu/SwapInput'
+import { Wallet } from '../../views/Swap/SwapInput'
 
 interface SwapWalletDropdownProps {
   wallets: Wallet[]

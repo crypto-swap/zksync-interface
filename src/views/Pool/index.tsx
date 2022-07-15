@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ChevronLeftIcon, AdjustmentsIcon } from '@heroicons/react/solid';
-import RemoveInterface from './RemoveInterface';
-import AddInterface from './AddInterface';
+import RemoveInterface from './components/RemoveInterface';
+import AddInterface from './components/AddInterface';
 
 const style = {
   wrapper: `flex flex-col w-full max-w-5xl mr-auto ml-auto items-center flex-1 basis-0 overflow-hidden overflow-auto justify-center p-2`,
   returnBar: `flex justify-between items-center p-2 w-full bg-bg-card-light dark:bg-bg-card-dark shadow-card dark:shadow-card-dark rounded-2xl mx-2 mt-6 mb-6`,
   poolContainer: `auto-rows-auto max-w-5xl w-full flex flex-col md:flex-row justify-start md:justify-between`,
   poolInfo: `flex flex-1 flex-row md:mr-4 p-6 justify-start rounded-2xl bg-bg-card-light dark:bg-bg-card-dark shadow-card dark:shadow-card-dark`,
-  addPoolMenu: `w-full md:w-96 mt-4 md:mt-0 rounded-2xl shrink-0 p-[20px] bg-bg-card-light dark:bg-bg-card-dark shadow-card dark:shadow-card-dark`,
+  poolMenu: `w-full md:w-96 mt-4 md:mt-0 rounded-2xl shrink-0 p-[20px] bg-bg-card-light dark:bg-bg-card-dark shadow-card dark:shadow-card-dark`,
   infoItem: `flex flex-col`,
   infoItemTitle: `text-sm font-bold text-gray-500 dark:text-gray-400 `,
   infoItemData: `text-2xl font-medium py-2 md:py-4 `,
@@ -68,7 +68,7 @@ const AddPool = () => {
             </div>
           </div>
         </div>
-        <div className={style.addPoolMenu}>
+        <div className={style.poolMenu}>
           <div className="box-border w-full flex wrap items-center min-w-0">
             <div className="border-box w-full flex items-center justify-between">
               <div className="flex flex-nowrap flex-row justify-start items-center">
@@ -87,8 +87,8 @@ const AddPool = () => {
               </div>
             </div>
           </div>
-          <div className="mt-9">
-            <AddInterface/>
+          <div className="mt-8">
+            { ( option === 'add' ) ? <AddInterface/> : <RemoveInterface/> }
           </div>
         </div>
       </div>

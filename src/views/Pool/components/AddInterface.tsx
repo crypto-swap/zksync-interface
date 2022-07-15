@@ -1,4 +1,4 @@
-import PoolInput from './PoolInput';
+import PoolInput from './AddInput';
 import AddPoolButton from './AddLiquidityButton';
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
@@ -103,7 +103,7 @@ const AddInterface = () => {
 
     return (
         <>
-            <div className="grid auto-rows-auto gap-y-[20px] mt-[0.2rem]">
+            <div className="grid auto-rows-auto gap-y-[20px] ">
               <div id="add-liquidity-input-token-a" className="">
                 <PoolInput {...{
                   value: tokenA_Amount,
@@ -129,7 +129,7 @@ const AddInterface = () => {
                 />
               </div>
             </div>
-            <div className="mt-12">
+            <div className="mt-12 pb-2">
               <AddPoolButton />
             </div>
         </>

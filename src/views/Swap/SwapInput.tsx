@@ -1,6 +1,6 @@
 import { Router, useRouter } from 'next/router';
-import TokenSelect from '../Popups/TokenSelect';
-import { Token } from '../SwapMenu';
+import TokenSelect from '../../components/Popups/TokenSelect';
+import { Token } from '.';
 
 export interface Wallet {
   name: string;

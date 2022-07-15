@@ -1,6 +1,6 @@
 import React, { createContext, FC, useContext, useMemo } from 'react'
 import { useActiveWeb3React } from '../hooks'
-import { Token, tokens } from '../components/SwapMenu'
+import { Token, tokens } from '../views/Swap'
 import useCurrenciesFromURL from '../features/useCurrenciesFromURL'
 
 // this page returns the context for each pool by quering into the blockchain. 
