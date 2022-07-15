@@ -71,12 +71,6 @@ const TokenSelect = ({
             }
           }}
         />
-        <Link
-          href="[[...tokens]]"
-          as="/add/popup/test/works"
-        >
-          <a>Random Test</a>
-        </Link>
         <div className="mt-4 h-[325px] overflow-hidden rounded-lg shadow-card dark:shadow-card-dark">
           <ol className="h-full snap-y overflow-y-scroll">
             {filteredTokens.map((token) => (
