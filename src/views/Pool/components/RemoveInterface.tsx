@@ -1,4 +1,6 @@
-import RemoveLiquidityButton from './RemoveLiquidityButton'
+import RemoveLiquidityButton from './RemoveLiquidityButton';
+import RemoveInput from './RemoveInput';
+import RemoveOutput from './RemoveOutput';
 
 const style = { 
     wrapper: ``,
