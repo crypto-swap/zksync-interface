@@ -1,5 +1,5 @@
-import TokenSelect from '../Popups/TokenSelect';
-import { Token } from '../SwapMenu';
+import TokenSelect from '../../../components/Popups/TokenSelect';
+import { Token } from '../../Swap';
 import Link from 'next/link'
 
 export interface Wallet {

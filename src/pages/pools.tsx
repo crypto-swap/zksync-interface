@@ -3,8 +3,8 @@ import Image from 'next/image'
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import PoolMenu from '../components/Pools/PoolsMenu'
-import Banner from '../components/Pools/Banner'
+import PoolMenu from '../views/Pools/PoolsMenu'
+import Banner from '../views/Pools/Banner'
 
 const Pools = () => {
     return (

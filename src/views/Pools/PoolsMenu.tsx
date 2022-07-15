@@ -2,7 +2,7 @@ import PoolBar from './PoolBar';
 import pools from './mockPools.json';
 import Pagination from './Pagination';
 import React, { useState, useEffect, useLayoutEffect, useContext } from 'react';
-import SelectFilter from '../../features/pool/SelectFilter'
+import SelectFilter from './SelectFilter'
 
 const style = {
     poolMenuContainer: `md:mx-auto md:max-w-5xl`,
