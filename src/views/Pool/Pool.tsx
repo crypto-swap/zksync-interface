@@ -88,7 +88,7 @@ const AddPool = () => {
             </div>
           </div>
           <div className="mt-9">
-            <AddInterface/>
+            { ( option === 'add' ) ? <AddInterface/> : <RemoveInterface/> }
           </div>
         </div>
       </div>
