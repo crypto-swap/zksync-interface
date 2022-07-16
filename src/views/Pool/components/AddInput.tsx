@@ -22,13 +22,13 @@ interface PoolInputProps {
 }
 
 const style = {
-  poolInputContainer: `mb-2 flex place-content-between items-center px-0.5`,
+  addInputContainer: `mb-2 flex place-content-between items-center px-0.5`,
 }
 
 const PoolInput = ({ tokenB = false, value, token, setToken, setTokenA_Amount, setTokenB_Amount, onChange }: PoolInputProps) => {
   return (
     <>
-      <div className={style.poolInputContainer}>
+      <div className={style.addInputContainer}>
         <div className="text-sm font-bold text-gray-500 dark:text-gray-400 ">Input</div>
         <div className="text-xs">Balance: 0.0</div>
       </div>
