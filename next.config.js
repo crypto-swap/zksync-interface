@@ -13,7 +13,6 @@ module.exports = {
   ) {
     return {
       '/': { page: '/' },
-      '/team' : { page: '/team'},
       '/pools' : { page: '/pools'},
       '/pool' : { page: '/pool/[[...tokens]]'},
       '/zap' : { page: '/zap'}
