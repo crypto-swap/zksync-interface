@@ -23,7 +23,7 @@ const Pool = () => {
             </Head>
 
             <Navbar />
-            <div className="mb-10">
+            <div className="mb-12">
                 <AddPool />
             </div>
             <Footer />

@@ -114,7 +114,7 @@ const AddInterface = () => {
                 }}
                   onChange={handleChange} />
               </div>
-              <div className="flex flex-col justify-start items-center w-full"><PlusIcon className="w-5 h-5" /></div>
+              <div className="flex flex-col justify-start items-center w-full mb-[-1rem]"><PlusIcon className="w-5 h-5" /></div>
               <div id="add-liquidity-input-token-b" className="">
                 <PoolInput
                   tokenB
@@ -129,7 +129,7 @@ const AddInterface = () => {
                 />
               </div>
             </div>
-            <div className="mt-12 pb-2">
+            <div className="mt-12 pb-3">
               <AddPoolButton />
             </div>
         </>
