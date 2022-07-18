@@ -7,7 +7,7 @@ const style = {
     outputBox: `flex flex-col h-full w-full rounded-lg bg-transparent p-4 shadow-[inset_0.5px_1px_5px_rgba(0,0,0,0.3)]`,
     asset1: `grid grid-cols-2 text-lg`,
     asset2: `grid grid-cols-2 text-lg pt-2`,
-    gridcol1: `flex flex-row gap-x-3`,
+    gridcol1: `flex flex-row gap-x-3 justify-start`,
     gridcol2: `text-right`,
 }
 
@@ -21,14 +21,14 @@ const RemoveOutput = () => {
             <div className={style.outputBox}>
                 <div className={style.asset1}>
                     <div className={style.gridcol1}>
-                        <Image src="https://cryptoswap-assets.s3.amazonaws.com/network_icons/zksync_logo.svg" width={20} height={20} />
+                        <div className="relative w-7"><Image src="https://cryptoswap-assets.s3.amazonaws.com/network_icons/zksync_logo.svg" layout="fill" objectFit="contain" /></div>
                         <div>0.0</div>
                     </div>
                     <div className={style.gridcol2}>Asset 1</div>
                 </div>
                 <div className={style.asset2}>
                     <div className={style.gridcol1}>
-                        <Image src="https://cryptoswap-assets.s3.amazonaws.com/network_icons/starknet_logo.png" width={20} height={20} />
+                        <div className="relative w-7"><Image src="https://cryptoswap-assets.s3.amazonaws.com/network_icons/starknet_logo.png" layout="fill" objectFit="contain" /></div>
                         <div>0.0</div>
                     </div>
                     <div className={style.gridcol2}>Asset 2</div>
