@@ -7,7 +7,7 @@ const style = {
     wrapper: `max-w-4xl w-screen flex justify-between items-center`,
 }
 
-const Pair = () => {
+const PairView = () => {
     return (
         <div className={style.wrapper}>
             <div>
@@ -21,4 +21,4 @@ const Pair = () => {
     )
 }
 
-export default Pair
+export default PairView

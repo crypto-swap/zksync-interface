@@ -20,7 +20,7 @@ const style = {
 
 
 
-const AddPool = () => {
+const PoolView = () => {
 
   const router = useRouter(); 
 
@@ -96,4 +96,4 @@ const AddPool = () => {
   )
 }
 
-export default AddPool
+export default PoolView

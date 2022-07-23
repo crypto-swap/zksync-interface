@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
-import AddPool from '../../views/Pool'
+import PoolView from '../../views/Pool'
 
 //[[...tokens]] catches all routes /add , /add/TokenA, /add/TokenA/TokenB yeet
 
@@ -24,7 +24,7 @@ const Pool = () => {
 
             <Navbar />
             <div className="mb-12">
-                <AddPool />
+                <PoolView />
             </div>
             <Footer />
         </div>
