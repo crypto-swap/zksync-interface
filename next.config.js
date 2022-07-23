@@ -15,7 +15,8 @@ module.exports = {
       '/': { page: '/' },
       '/pools' : { page: '/pools'},
       '/pool' : { page: '/pool/[[...tokens]]'},
-      '/zap' : { page: '/zap'}
+      '/zap' : { page: '/zap'},
+      '/faucet' : { page: '/faucet'},
     }
   },
 }

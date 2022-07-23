@@ -48,7 +48,7 @@ const Navbar = () => {
       <div className="navbar-col-2">
         <div className={"navbar-link-item" + 
           (! (router.pathname.startsWith("/pools") ||  router.pathname.startsWith("/dashboard")
-          ||  router.pathname.startsWith("/farm") ||  router.pathname.startsWith("/pool")) ? " !opacity-100 " : "")}>
+          ||  router.pathname.startsWith("/faucet") ||  router.pathname.startsWith("/pool")) ? " !opacity-100 " : "")}>
           <Link href="/" >
             Swap
           </Link>
@@ -58,9 +58,9 @@ const Navbar = () => {
             Pool
           </Link>
         </div>
-        <div className={"navbar-link-item" + (router.pathname.startsWith("/farm") ? " !opacity-100 " : "")}>
-          <Link href="" >
-            Farm
+        <div className={"navbar-link-item" + (router.pathname.startsWith("/faucet") ? " !opacity-100 " : "")}>
+          <Link href="/faucet" >
+            Faucet
           </Link>
         </div>
         <div className={"navbar-link-item" + (router.pathname.startsWith("/dashboard") ? " !opacity-100 " : "")}>
