@@ -15,6 +15,9 @@
 # production
 /build
 
+# ide files
+.vscode/
+
 # misc
 .DS_Store
 *.pem
