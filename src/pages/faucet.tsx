@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import FaucetView from '../views/Faucet';
+import FaucetMenu from '../views/Faucet';
 
 const Faucet = () => {
     return (
@@ -21,8 +21,8 @@ const Faucet = () => {
 
             <Navbar />
 
-            <div className="mt-10 mb-10">
-                <FaucetView/>
+            <div className="mt-10 mb-20 px-4">
+                <FaucetMenu/>
             </div>
 
             <Footer/>
