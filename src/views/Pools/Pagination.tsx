@@ -44,7 +44,7 @@ const Pagination = (props: any) => {
     };
 
     return (
-        <div className='flex flex-row gap-5'>
+        <div className='flex flex-row gap-5 max-w-full'>
             <div className='text-center h-7 w-7 rounded-full  bg-bg-card-light dark:bg-bg-card-dark shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark' onClick={onPrevious} > &#60; </div>
             <div className='text-center visible md:hidden bg-bg-card-light dark:bg-bg-card-dark  h-7 w-7 rounded-full shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark' onClick={onNext} > &#62; </div>
             {
@@ -55,7 +55,7 @@ const Pagination = (props: any) => {
                     return (
                         <div
                             key={pageNumber}
-                            className={currentPage === pageNumber ? 'text-center bg-bg-card-light dark:bg-bg-card-dark  h-7 w-7 rounded-full shadow-button-hover dark:shadow-button-hover-dark' : 'text-center invisible md:visible h-7 w-7 rounded-full shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark'}
+                            className={currentPage === pageNumber ? 'text-center bg-bg-card-light dark:bg-bg-card-dark  h-7 w-7 rounded-full shadow-button-hover dark:shadow-button-hover-dark' : 'text-center h-7 w-7 rounded-full shadow-card hover:shadow-button-hover dark:hover:shadow-button-hover-dark dark:shadow-card-dark'}
                             onClick={() => onPageChange(pageNumber)}
                         >
                             {pageNumber}
