@@ -56,7 +56,7 @@ const FaucetMenu = () => {
                 Please claim some tokens from <Link href="https://portal.zksync.io/faucet"><span className={style.zkSyncText}>the zkSync Portal</span></Link> first for gas.
                 <br></br><br></br>
                 Note: Since we are collaborating with <span className={style.syncSwapText}>SyncSwap</span> to implement this faucet, 
-                any funds claimed from the <span className={style.syncSwapText}>SyncSwap faucet</span> will not be claimable. 
+                any tokens claimed from the <span className={style.syncSwapText}>SyncSwap faucet</span> will not be dripped. 
             </div>
 
             { claimed ? 
