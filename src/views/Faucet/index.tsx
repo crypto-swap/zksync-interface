@@ -1,5 +1,10 @@
-import React from 'react'; 
+import React, { useState } from 'react'; 
 import Link from 'next/link';
+import { hooks, metaMask } from '../../connectors/metaMask'
+import * as zksync from "zksync-web3";
+import testnetFaucet from '../../config/constants/contracts';
+
+const { useProvider, useAccounts } = hooks;
 
 const style = {
     faucetMenuWrapper : `flex flex-col relative z-10 mx-auto mt-16 h-auto w-full max-w-md rounded-3xl bg-bg-card-light p-7 pt-6 shadow-card dark:bg-bg-card-dark dark:shadow-card-dark`,
@@ -12,6 +17,32 @@ const style = {
 }
 
 const FaucetMenu = () => {
+
+    const [claimed, setClaimed] = useState(false);
+
+    const provider = useProvider();
+    const accounts = useAccounts();
+
+    const signer = provider?.getSigner();
+
+    const faucetABI = require("../../config/abi/testnet_faucet.json")
+    const faucetContract = new zksync.Contract(testnetFaucet, faucetABI, signer);
+    
+    async function claimTokens() {
+    
+        console.log(`Sending tokens to ${accounts}`);
+    
+        const claimed = await faucetContract.claimAll();
+    
+        if (claimed) {
+            console.log(`Tokens claimed successfully.`);
+        } else {
+            console.error('Failed. It seems the transaction has been reverted.');
+        }
+
+        setClaimed(true);
+    }
+
     return (
         <div className={style.faucetMenuWrapper}>
             <div className={style.header}>
@@ -25,7 +56,7 @@ const FaucetMenu = () => {
                 Note: Since we are collaborating with <span className={style.syncSwapText}>SyncSwap</span> to implement this faucet, 
                 any funds claimed from the <span className={style.syncSwapText}>SyncSwap faucet</span> will not be claimable. 
             </div>
-            <button className={style.button}>
+            <button className={style.button} onClick={ () => claimTokens() }>
                 <span className="font-semibold">Claim Testnet Tokens</span>
             </button>
         </div>
