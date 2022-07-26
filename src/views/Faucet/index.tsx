@@ -11,7 +11,6 @@ const style = {
     header : `mb-[27px] text-xl font-bold text-left`,
     desc : `mb-[27px]`,
     zkSyncText : `text-[#8C8DFC] cursor-pointer font-semibold`,
-    syncSwapText : `text-[#8C8DFC] font-semibold`,
     button : `flex select-none items-center justify-center bg-button-blue  leading-none font-normal 
     cursor-pointer text-white h-[55px] text-lg leading-[24px] rounded-xl w-full shadow-blue-button hover:shadow-blue-button-hover`,
     claimed : `flex select-none items-center justify-center bg-button-blue leading-none font-normal 
@@ -55,8 +54,8 @@ const FaucetMenu = () => {
                 <br></br><br></br>
                 Please claim some tokens from <Link href="https://portal.zksync.io/faucet"><span className={style.zkSyncText}>the zkSync Portal</span></Link> first for gas.
                 <br></br><br></br>
-                Note: Since we are collaborating with <Link href="https://syncswap.xyz"><span className={style.syncSwapText}>SyncSwap</span></Link> to implement this faucet, 
-                any tokens claimed from the <Link href="https://syncswap.xyz"><span className={style.syncSwapText}>SyncSwap faucet</span></Link> will not be dripped. 
+                Note: Since we are collaborating with <Link href="https://syncswap.xyz"><span className={style.zkSyncText}>SyncSwap</span></Link> to implement this faucet, 
+                any tokens claimed from the <Link href="https://syncswap.xyz"><span className={style.zkSyncText}>SyncSwap faucet</span></Link> will not be dripped. 
             </div>
 
             { claimed ? 
