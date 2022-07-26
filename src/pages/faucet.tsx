@@ -5,7 +5,7 @@ import FaucetMenu from '../views/Faucet';
 
 const Faucet = () => {
     return (
-        <div className="bg-bg-light dark:bg-bg-dark">
+        <div className="bg-bg-light dark:bg-bg-dark [scrollbar-width: none]">
             <Head>
                 <title>CryptoSwap</title>
                 <meta name="description" content="CryptoSwap is a very efficient simple DEX on zkSync (Swap, Pool, Liquidity Options, and Generate). No presale, fully decentralized, and community-driven." />
@@ -21,7 +21,7 @@ const Faucet = () => {
 
             <Navbar />
 
-            <div className="mt-10 mb-20 px-4">
+            <div className="mt-10 mb-20 px-4 [scrollbar-width: none]">
                 <FaucetMenu/>
             </div>
 
