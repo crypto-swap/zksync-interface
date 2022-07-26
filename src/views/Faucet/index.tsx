@@ -60,11 +60,13 @@ const FaucetMenu = () => {
             </div>
 
             { claimed ? 
+                <button className={style.claimed}>
+                    <span className="font-semibold">Tokens Have Been Claimed</span>
+                </button>
+                :
                 <button className={style.button} onClick={ () => claimTokens() }>
                     <span className="font-semibold">Claim Testnet Tokens</span> 
                 </button>
-                :
-                <button className={style.claimed}><span className="font-semibold">Tokens Have Been Claimed</span></button>
             }
         </div>
     )
