@@ -14,6 +14,8 @@ const style = {
     syncSwapText : `text-[#8C8DFC] font-semibold`,
     button : `flex select-none items-center justify-center bg-button-blue  leading-none font-normal 
     cursor-pointer text-white h-[55px] text-lg leading-[24px] rounded-xl w-full shadow-blue-button hover:shadow-blue-button-hover`,
+    claimed : `flex select-none items-center justify-center bg-button-blue leading-none font-normal 
+    cursor-default text-white h-[55px] text-lg leading-[24px] rounded-xl w-full`,
 }
 
 const FaucetMenu = () => {
@@ -36,11 +38,11 @@ const FaucetMenu = () => {
     
         if (claimed) {
             console.log(`Tokens claimed successfully.`);
+            setClaimed(true);
         } else {
             console.error('Failed. It seems the transaction has been reverted.');
         }
 
-        setClaimed(true);
     }
 
     return (
@@ -56,9 +58,14 @@ const FaucetMenu = () => {
                 Note: Since we are collaborating with <span className={style.syncSwapText}>SyncSwap</span> to implement this faucet, 
                 any funds claimed from the <span className={style.syncSwapText}>SyncSwap faucet</span> will not be claimable. 
             </div>
-            <button className={style.button} onClick={ () => claimTokens() }>
-                <span className="font-semibold">Claim Testnet Tokens</span>
-            </button>
+
+            { claimed ? 
+                <button className={style.button} onClick={ () => claimTokens() }>
+                    <span className="font-semibold">Claim Testnet Tokens</span> 
+                </button>
+                :
+                <button className={style.claimed}><span className="font-semibold">Tokens Have Been Claimed</span></button>
+            }
         </div>
     )
 }
