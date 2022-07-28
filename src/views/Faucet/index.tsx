@@ -57,19 +57,23 @@ const FaucetMenu = () => {
                 Note: Since we are collaborating with <Link href="https://syncswap.xyz"><span className={style.zkSyncText}>SyncSwap</span></Link> to implement this faucet, 
                 any tokens claimed from the <Link href="https://syncswap.xyz"><span className={style.zkSyncText}>SyncSwap faucet</span></Link> will not be dripped. 
                 <br></br><br></br>
-                Notable addresses to add to <span className="text-[#F6851B]">MetaMask</span>: 
-                <br></br>
-                testnet CryptoSwap: 
-                <br></br>
-                <span className="text-sm">0xfD2a81f7FC4fcc9dc26cB0641B190C1e0F37c43B</span>
-                <br></br>
-                testnet SyncSwap: 
-                <br></br>
-                <span className="text-sm">0x0E7896E6cE62a3481000dEf9B769d3563D0941F4</span>
-                <br></br>
-                FRAX: 
-                <br></br>
-                <span className="text-sm">0x6e5056cBaa4082d4eeE06906Be7680A8524Ed675</span>
+                { claimed ?
+                    <div>
+                        Notable addresses to add to <span className="text-[#F6851B]">MetaMask</span>: 
+                        <br></br>
+                        testnet CryptoSwap: 
+                        <br></br>
+                        <span className="text-sm">0xfD2a81f7FC4fcc9dc26cB0641B190C1e0F37c43B</span>
+                        <br></br>
+                        testnet SyncSwap: 
+                        <br></br>
+                        <span className="text-sm">0x0E7896E6cE62a3481000dEf9B769d3563D0941F4</span>
+                        <br></br>
+                        FRAX: 
+                        <br></br>
+                        <span className="text-sm">0x6e5056cBaa4082d4eeE06906Be7680A8524Ed675</span>
+                    </div> : <></>
+                }
             </div>
 
             { claimed ? 
