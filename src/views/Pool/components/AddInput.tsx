@@ -54,9 +54,26 @@ const PoolInput = ({ tokenB = false, value, token, setToken, setTokenA_Amount, s
           }
           }
         />
-        <TokenSelect
-          {...{ value: token, setToken }}
-        />
+        <div className="flex flex-row gap-x-4 items-center">
+          <button className="relative cursor-pointer text-sm px-1.5 shadow-card-sm dark:shadow-card-dark-sm rounded-full hover:shadow-button-hover dark:hover:shadow-button-hover-dark ">
+            Max
+          </button>
+
+          <TokenSelect
+            {...{ value: token, setToken }}
+            onChange={(token) => {
+              let output;
+              if (receive) {
+                output = onChange(false, undefined, undefined, token);
+              } else {
+                output = onChange(false, undefined, token);
+              }
+              if (Number.isFinite(output)) {
+                setReceiveAmount(output.toString());
+              }
+            }}
+          />
+      </div>
       </div>
     </>
   )
