@@ -67,6 +67,10 @@ module.exports = {
           'inset 10px 10px 15px -10px #c7c7c7, inset -10px -10px 15px -10px #ffffff',
         'search-border-dark':
           'inset 10px 10px 15px -10px #171a29, inset -10px -10px 15px -10px #272b45',
+        'blue-button-small':
+          '1px 1px 0px #2059d0, -1px -1px 0px #2c79ff',
+        'blue-button-hover-small':
+          'inset 2.5px 2.5px 0px #2059d0, inset -2.5px -2.5px 0px #2c79ff',
       },
       backgroundImage : {
         'intro-background': "url('/assets/intro_backgrounds.png')",
