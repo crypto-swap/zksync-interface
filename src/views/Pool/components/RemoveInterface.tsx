@@ -2,6 +2,7 @@ import RemoveLiquidityButton from './RemoveLiquidityButton';
 import RemoveInput from './RemoveInput';
 import RemoveOutput from './RemoveOutput';
 import { ArrowDownIcon } from '@heroicons/react/solid';
+import { Transition } from '@headlessui/react';
 
 const style = { 
     wrapper: `pb-3`,
