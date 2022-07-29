@@ -71,6 +71,8 @@ module.exports = {
           '1px 1px 0px #2059d0, -1px -1px 0px #2c79ff',
         'blue-button-hover-small':
           'inset 2.5px 2.5px 0px #2059d0, inset -2.5px -2.5px 0px #2c79ff',
+        'card-sm': '2px 2px 2px #c7c7c7, -2px -2px 2px #ffffff',
+        'card-dark-sm': '2px 2px 2px #171a29, -2px -2px 2px  #272b45',
       },
       backgroundImage : {
         'intro-background': "url('/assets/intro_backgrounds.png')",

@@ -52,7 +52,7 @@ const TokenSelect = ({
       <button
         type="button"
         onClick={openModal}
-        className="relative my-auto inline-flex items-center gap-1.5 rounded-full py-0.5 px-1.5 text-sm font-semibold uppercase leading-6 text-white border border-[#4b86ff] hover:border-none bg-button-blue shadow-blue-button-small hover:shadow-blue-button-hover-small"
+        className="relative my-auto inline-flex items-center gap-1.5 rounded-xl py-0.5 px-1.5 text-sm font-semibold uppercase leading-6 text-white border border-[#4b86ff] hover:border-none bg-button-blue shadow-blue-button-small hover:shadow-blue-button-hover-small"
       >
         <QuestionMarkCircleIcon width={16} height={16} />
         {value}
