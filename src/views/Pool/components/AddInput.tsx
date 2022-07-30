@@ -57,7 +57,7 @@ const PoolInput = ({ tokenB = false, value, token, setToken, setTokenA_Amount, s
         <div className="flex flex-row gap-x-4 items-center">
           
 
-          <button className="relative cursor-pointer text-sm px-1.5 shadow-card-sm dark:shadow-card-dark-sm rounded-full hover:shadow-button-hover dark:hover:shadow-button-hover-dark ">
+          <button className="relative cursor-pointer text-sm px-1.5 shadow-card-sm dark:shadow-card-dark-sm rounded-full active:shadow-button-hover dark:active:shadow-button-hover-dark ">
             Max
           </button>
 
