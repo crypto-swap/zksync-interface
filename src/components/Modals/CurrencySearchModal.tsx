@@ -7,10 +7,12 @@ import Link from 'next/link';
 import { useAccount } from '../../hooks';
 import TOKEN_LIST from '../../config/constants/testnet.tokenlist.json';
 
-
 export type Token = string;
 
-export const tokens = TOKEN_LIST.tokens.map(x => x.symbol)
+const tokens = TOKEN_LIST.tokens
+
+export const tokenSymbols = tokens.map(x => x.symbol)
+
 
 interface CurrencySearchModalProps {
   value: Token;
@@ -54,8 +56,8 @@ const CurrencySearchModal = ({
 
   const filteredTokens =
     query === ''
-      ? tokens
-      : tokens.filter((token) =>
+      ? tokenSymbols
+      : tokenSymbols.filter((token) =>
         token
           .toLowerCase()
           .replace(/\s+/g, '')
@@ -81,7 +83,7 @@ const CurrencySearchModal = ({
           ref={inputRef}
           onChange={(event) => setQuery(event.target.value)}
           onKeyDown={(event) => {
-            if (event.key === 'Enter' && tokens.includes(query)) {
+            if (event.key === 'Enter' && tokenSymbols.includes(query)) {
               handleTokenChange(query);
             }
           }}
@@ -96,8 +98,9 @@ const CurrencySearchModal = ({
                   handleTokenChange(token);
                 }}
               >
-                <QuestionMarkCircleIcon width={30} height={30} />
-                <span className="ml-2 uppercase">{token}</span>
+                <Image src={tokens[tokenSymbols.indexOf(token)].logoURI} width={30} height={30} />
+                <span className="pl-2">{token}</span>
+                
               </li>
             ))}
           </ol>

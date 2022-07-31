@@ -6,14 +6,14 @@ import { Transition } from '@headlessui/react';
 import { hooks } from '../../connectors/metaMask';
 import { useRouter } from 'next/router';
 import { AdjustmentsIcon } from '@heroicons/react/solid';
-import { Token, tokens } from '../../components/Modals/CurrencySearchModal'
+import { Token, tokenSymbols} from '../../components/Modals/CurrencySearchModal'
 
 const { useIsActive } = hooks;
 
 export async function getStaticPaths() {
   return {
     paths: [
-      { tokens: false }
+      { tokenSymbols: false }
     ],
     fallback: false
   }
@@ -66,9 +66,9 @@ const SwapMenu = () => {
   const router = useRouter()
   const [effect, setEffect] = useState(false);
 
-  const [payToken, setPayToken_] = useState(tokens[0]);
+  const [payToken, setPayToken_] = useState(tokenSymbols[0]);
 
-  const [receiveToken, setReceiveToken_] = useState(tokens[1]);
+  const [receiveToken, setReceiveToken_] = useState(tokenSymbols[1]);
 
   function setPayToken(value: React.SetStateAction<Token>) {
     setPayToken_(value);

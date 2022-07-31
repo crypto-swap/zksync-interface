@@ -49,7 +49,7 @@
             "decimals": 18, 
             "name": "testnet CryptoSwap",
             "symbol": "tCS", 
-            "logoURI": "https://raw.githubusercontent.com/crypto-swap/zksync-testnet-tokenlist/7409fbc3b6ec0c56611cc3d89baa6d40df3dc575/logos/0xfd2a81f7fc4fcc9dc26cb0641b190c1e0f37c43b/logo.png"
+            "logoURI": "https://raw.githubusercontent.com/crypto-swap/zksync-testnet-tokenlist/main/logos/0xfd2a81f7fc4fcc9dc26cb0641b190c1e0f37c43b/logo.png"
         },
         {
             "chainId": 280, 

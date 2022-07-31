@@ -4,30 +4,7 @@ import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
 import { PlusIcon } from '@heroicons/react/solid';
 import { Transition } from '@headlessui/react';
-
-export type Token = string;
-
-export const tokens: Token[] = [
-  'eth',
-  'bat',
-  'wbtc',
-  'dai',
-  'usdc',
-  'usdt',
-  'zrx',
-  'link',
-  'mkr',
-  'rep',
-  'knc',
-  'gnt',
-  'snt',
-  'bnt',
-  'dnt',
-  'eng',
-  'salt',
-  'fun',
-  'mana',
-];
+import { Token, tokenSymbols} from '../../../components/Modals/CurrencySearchModal'
 
 const emptyPoolInformation = new Map([
   ['Rate', 0],
@@ -75,8 +52,8 @@ const AddInterface = () => {
     
     const router = useRouter()
 
-    const [tokenA, setTokenA_] = useState(tokens[0]);
-    const [tokenB, setTokenB_] = useState(tokens[1]);
+    const [tokenA, setTokenA_] = useState(tokenSymbols[0]);
+    const [tokenB, setTokenB_] = useState(tokenSymbols[1]);
     function setTokenA(value: React.SetStateAction<Token>) {
       setTokenA_(value);
       router.push(`${(value as string).toUpperCase()}/${tokenB.toUpperCase()}`);
