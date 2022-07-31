@@ -5,6 +5,7 @@ import Popup from './Popup';
 import { Token, tokens } from '../../views/Swap';
 import { QuestionMarkCircleIcon } from '@heroicons/react/outline'
 import Link from 'next/link';
+import CurrencyList from './CurrencyList'
 
 interface CurrencySearchModalProps {
   value: Token;
@@ -17,6 +18,8 @@ const CurrencySearchModal = ({
   setToken,
   onChange,
 }: CurrencySearchModalProps) => {
+
+ 
 
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
@@ -71,6 +74,7 @@ const CurrencySearchModal = ({
             }
           }}
         />
+      <CurrencyList/>
         <div className="mt-4 h-[325px] overflow-hidden rounded-lg shadow-card dark:shadow-card-dark">
           <ol className="h-full snap-y overflow-y-scroll">
             {filteredTokens.map((token) => (

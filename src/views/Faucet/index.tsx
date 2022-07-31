@@ -1,10 +1,8 @@
 import React, { useState } from 'react'; 
 import Link from 'next/link';
-import { hooks, metaMask } from '../../connectors/metaMask'
 import * as zksync from "zksync-web3";
 import testnetFaucet from '../../config/constants/contracts';
-
-const { useProvider, useAccounts } = hooks;
+import { useProvider, useAccount } from '../../hooks';
 
 const style = {
     faucetMenuWrapper : `flex flex-col relative z-10 mx-auto mt-16 h-auto w-full max-w-md rounded-3xl bg-bg-card-light p-7 pt-6 shadow-card dark:bg-bg-card-dark dark:shadow-card-dark`,
@@ -22,7 +20,7 @@ const FaucetMenu = () => {
     const [claimed, setClaimed] = useState(false);
 
     const provider = useProvider();
-    const accounts = useAccounts();
+    const account = useAccount();
 
     const signer = provider?.getSigner();
 
@@ -31,7 +29,7 @@ const FaucetMenu = () => {
     
     async function claimTokens() {
     
-        console.log(`Sending tokens to ${accounts}`);
+        console.log(`Sending tokens to ${account}`);
     
         const claimed = await faucetContract.claimAll();
     
