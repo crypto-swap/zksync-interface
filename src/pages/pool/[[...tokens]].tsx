@@ -10,9 +10,9 @@ const Pool = () => {
     return (
         <div className="bg-bg-light dark:bg-bg-dark">
             <Head>
-                <title>CryptoSwap</title>
-                <meta name="description" content="CryptoSwap is a very efficient simple DEX on zkSync (Swap, Pool, Liquidity Options, and Generate). No presale, fully decentralized, and community-driven." />
-                <meta key="twitter:description" name="twitter:description" content="CryptoSwap" />
+                <title>Crypto Swap</title>
+                <meta name="description" content="Crypto Swap is a very efficient simple DEX on zkSync (Swap, Pool, Liquidity Options, and Generate). No presale, fully decentralized, and community-driven." />
+                <meta key="twitter:description" name="twitter:description" content="Crypto Swap" />
                 <link rel="icon" href="/icons/black_logo.svg" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="canonical" href="https://cryptoswap.org" />
