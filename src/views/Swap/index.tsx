@@ -6,32 +6,9 @@ import { Transition } from '@headlessui/react';
 import { hooks } from '../../connectors/metaMask';
 import { useRouter } from 'next/router';
 import { AdjustmentsIcon } from '@heroicons/react/solid';
+import { Token, tokens } from '../../components/Modals/CurrencySearchModal'
 
 const { useIsActive } = hooks;
-
-export type Token = string;
-
-export const tokens: Token[] = [
-  'eth',
-  'bat',
-  'wbtc',
-  'dai',
-  'usdc',
-  'usdt',
-  'zrx',
-  'link',
-  'mkr',
-  'rep',
-  'knc',
-  'gnt',
-  'snt',
-  'bnt',
-  'dnt',
-  'eng',
-  'salt',
-  'fun',
-  'mana',
-];
 
 export async function getStaticPaths() {
   return {

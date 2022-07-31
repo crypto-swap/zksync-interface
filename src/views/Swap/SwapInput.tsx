@@ -1,6 +1,5 @@
 import { Router, useRouter } from 'next/router';
-import CurrencySearchModal from '../../components/Modals/CurrencySearchModal';
-import { Token } from '.';
+import CurrencySearchModal, { Token } from '../../components/Modals/CurrencySearchModal';
 
 export interface Wallet {
   name: string;

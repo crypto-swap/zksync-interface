@@ -1,5 +1,4 @@
-import CurrencySearchModal from '../../../components/Modals/CurrencySearchModal';
-import { Token } from '../../Swap';
+import CurrencySearchModal, { Token } from '../../../components/Modals/CurrencySearchModal';
 import Link from 'next/link'
 
 export interface Wallet {
