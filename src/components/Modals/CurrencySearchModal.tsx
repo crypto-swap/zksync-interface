@@ -6,17 +6,17 @@ import { Token, tokens } from '../../views/Swap';
 import { QuestionMarkCircleIcon } from '@heroicons/react/outline'
 import Link from 'next/link';
 
-interface TokenSelectProps {
+interface CurrencySearchModalProps {
   value: Token;
   setToken: React.Dispatch<React.SetStateAction<Token>>;
   onChange?: (to: Token) => void;
 }
 
-const TokenSelect = ({
+const CurrencySearchModal = ({
   value,
   setToken,
   onChange,
-}: TokenSelectProps) => {
+}: CurrencySearchModalProps) => {
 
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
@@ -92,4 +92,4 @@ const TokenSelect = ({
   );
 };
 
-export default TokenSelect;
+export default CurrencySearchModal;

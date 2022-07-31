@@ -1,4 +1,4 @@
-import TokenSelect from '../../../components/Popups/TokenSelect';
+import CurrencySearchModal from '../../../components/Modals/CurrencySearchModal';
 import { Token } from '../../Swap';
 import Link from 'next/link'
 
@@ -61,7 +61,7 @@ const PoolInput = ({ tokenB = false, value, token, setToken, setTokenA_Amount, s
             Max
           </button>
 
-          <TokenSelect
+          <CurrencySearchModal
             {...{ value: token, setToken }}
           />
       </div>

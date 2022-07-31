@@ -2,10 +2,10 @@
 import React, { useContext } from 'react';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
-import WalletPopup from '../Popups/WalletPopup';
-import NetworksPopup from '../Popups/NetworksPopup';
+import WalletPopup from '../Modals/WalletPopup';
+import NetworksPopup from '../Modals/NetworksPopup';
 import { PopupContext } from '../../context/PopupProvider';
-import { networks } from '../Popups/NetworksPopup';
+import { networks } from '../Modals/NetworksPopup';
 import { hooks } from '../../connectors/metaMask';
 import Link from "next/link";
 import { useRouter } from "next/router";

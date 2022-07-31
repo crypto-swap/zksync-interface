@@ -1,5 +1,5 @@
 import { Router, useRouter } from 'next/router';
-import TokenSelect from '../../components/Popups/TokenSelect';
+import CurrencySearchModal from '../../components/Modals/CurrencySearchModal';
 import { Token } from '.';
 
 export interface Wallet {
@@ -72,7 +72,7 @@ const SwapInput = ({
             Max
           </button>
 
-          <TokenSelect
+          <CurrencySearchModal
             {...{ value: token, setToken }}
             onChange={(token) => {
               let output;
