@@ -5,6 +5,22 @@
     "tokens": [
         {
             "chainId": 280, 
+            "address": "0x000000000000000000000000000000000000800a", 
+            "decimals": 18, 
+            "name": "Ethereum",
+            "symbol": "ETH", 
+            "logoURI": "https://raw.githubusercontent.com/crypto-swap/zksync-testnet-tokenlist/7409fbc3b6ec0c56611cc3d89baa6d40df3dc575/logos/0x000000000000000000000000000000000000800a/logo.png"
+        },
+        {
+            "chainId": 280, 
+            "address": "0x54a14d7559baf2c8e8fa504e019d32479739018c", 
+            "decimals": 18, 
+            "name": "USD Coin",
+            "symbol": "USDC", 
+            "logoURI": "https://raw.githubusercontent.com/crypto-swap/zksync-testnet-tokenlist/7409fbc3b6ec0c56611cc3d89baa6d40df3dc575/logos/0x54a14d7559baf2c8e8fa504e019d32479739018c/logo.png"
+        },
+        {
+            "chainId": 280, 
             "address": "0xe9f4149276e8a4f8db89e0e3bb78fd853f01e87d", 
             "decimals": 18, 
             "name": "DAI",
@@ -19,14 +35,6 @@
             "symbol": "LINK", 
             "logoURI": "https://raw.githubusercontent.com/crypto-swap/zksync-testnet-tokenlist/7409fbc3b6ec0c56611cc3d89baa6d40df3dc575/logos/0x4732c03b2cf6ede46500e799de79a15df44929eb/logo.png"
         },
-        {
-            "chainId": 280, 
-            "address": "0x54a14d7559baf2c8e8fa504e019d32479739018c", 
-            "decimals": 18, 
-            "name": "USD Coin",
-            "symbol": "USDC", 
-            "logoURI": "https://raw.githubusercontent.com/crypto-swap/zksync-testnet-tokenlist/7409fbc3b6ec0c56611cc3d89baa6d40df3dc575/logos/0x54a14d7559baf2c8e8fa504e019d32479739018c/logo.png"
-        },
         {	
             "chainId": 280, 
             "address": "0x98ddd69b2443fc67755f0901aeb9828a8a62cc65", 
@@ -34,22 +42,6 @@
             "name": "wBTC",
             "symbol": "wBTC", 
             "logoURI": "https://raw.githubusercontent.com/crypto-swap/zksync-testnet-tokenlist/7409fbc3b6ec0c56611cc3d89baa6d40df3dc575/logos/0x98ddd69b2443fc67755f0901aeb9828a8a62cc65/logo.png"
-        },
-        {
-            "chainId": 280, 
-            "address": "0x98ddd69b2443fc67755f0901aeb9828a8a62cc65", 
-            "decimals": 18, 
-            "name": "wBTC",
-            "symbol": "wBTC", 
-            "logoURI": "https://raw.githubusercontent.com/crypto-swap/zksync-testnet-tokenlist/7409fbc3b6ec0c56611cc3d89baa6d40df3dc575/logos/0x98ddd69b2443fc67755f0901aeb9828a8a62cc65/logo.png"
-        },
-        {
-            "chainId": 280, 
-            "address": "0x000000000000000000000000000000000000800a", 
-            "decimals": 18, 
-            "name": "Ethereum",
-            "symbol": "ETH", 
-            "logoURI": "https://raw.githubusercontent.com/crypto-swap/zksync-testnet-tokenlist/7409fbc3b6ec0c56611cc3d89baa6d40df3dc575/logos/0x000000000000000000000000000000000000800a/logo.png"
         },
         {
             "chainId": 280, 
