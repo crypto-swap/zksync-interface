@@ -6,12 +6,15 @@ import { QuestionMarkCircleIcon } from '@heroicons/react/outline'
 import Link from 'next/link';
 import { useAccount } from '../../hooks';
 import TOKEN_LIST from '../../config/constants/testnet.tokenlist.json';
+import { useAllTokens } from '../../hooks';
+
+const tokenSymbols = useAllTokens
 
 export type Token = string;
 
 const tokens = TOKEN_LIST.tokens
 
-export const tokenSymbols = tokens.map(x => x.symbol)
+
 
 
 interface CurrencySearchModalProps {

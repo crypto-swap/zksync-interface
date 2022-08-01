@@ -6,7 +6,10 @@ import { Transition } from '@headlessui/react';
 import { hooks } from '../../connectors/metaMask';
 import { useRouter } from 'next/router';
 import { AdjustmentsIcon } from '@heroicons/react/solid';
-import { Token, tokenSymbols} from '../../components/Modals/CurrencySearchModal'
+import { Token } from '../../components/Modals/CurrencySearchModal'
+import { useAllTokens } from '../../hooks';
+
+const tokenSymbols = useAllTokens
 
 const { useIsActive } = hooks;
 

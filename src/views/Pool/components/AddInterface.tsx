@@ -4,7 +4,10 @@ import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
 import { PlusIcon } from '@heroicons/react/solid';
 import { Transition } from '@headlessui/react';
-import { Token, tokenSymbols} from '../../../components/Modals/CurrencySearchModal'
+import { Token } from '../../../components/Modals/CurrencySearchModal'
+import { useAllTokens } from '../../../hooks';
+
+const tokenSymbols = useAllTokens;
 
 const emptyPoolInformation = new Map([
   ['Rate', 0],
