@@ -70,6 +70,9 @@ function convert(
 
 const SwapMenu = () => {
 
+  const account = useAccount();
+  const provider = useProvider();
+
   const router = useRouter()
 
   const [effect, setEffect] = useState(false);
@@ -82,6 +85,12 @@ const SwapMenu = () => {
 
   const [balanceReceive, setBalanceReceive] = useState(0);
 
+  const [modalOpened, setModalOpened] = useState(false);
+
+  useEffect( () => {
+    useCurrencyBalance(account, '0x000000000000000000000000000000000000800a', provider).then( (result) => { setBalancePay(result)} )
+    useCurrencyBalance(account, '0x54a14d7559baf2c8e8fa504e019d32479739018c', provider).then( (result) => { setBalanceReceive(result * 1e12)} )
+  }, [])
 
   function setPayToken(value: React.SetStateAction<Token>) {
     setPayToken_(value);
@@ -107,9 +116,11 @@ const SwapMenu = () => {
     const transactionInformation = convert(amount, from, to, reverse);
     setTransactionInformation(transactionInformation);
 
-    useCurrencyBalance(account, tokens[tokenSymbols.indexOf(from)].address, provider).then( (result) => { setBalancePay(result)} )
-    useCurrencyBalance(account, tokens[tokenSymbols.indexOf(to)].address, provider).then( (result) => { setBalanceReceive(result)} )
+    useCurrencyBalance(account, tokens[tokenSymbols.indexOf(from)].address, provider).then( (result) => { setBalancePay(result)} );
+    useCurrencyBalance(account, tokens[tokenSymbols.indexOf(to)].address, provider).then( (result) => { setBalanceReceive(result)} );
 
+    setModalOpened(true);
+    
     return transactionInformation.get('Receive')!!;
   }
 
@@ -117,14 +128,11 @@ const SwapMenu = () => {
     setTransactionInformation(emptyTransactionInformation);
   }
 
-  
-  const account = useAccount();
-  const provider = useProvider();
 
-  useEffect( () => {
-    useCurrencyBalance(account, '0x000000000000000000000000000000000000800a', provider).then( (result) => { setBalancePay(result)} )
-    useCurrencyBalance(account, '0x54a14d7559baf2c8e8fa504e019d32479739018c', provider).then( (result) => { setBalanceReceive(result * 1e12)} )
-  }, [])
+
+  console.log(balancePay);
+  console.log(balanceReceive);
+  console.log(tokens[tokenSymbols.indexOf('TEST')].address)
 
   return (
     <div className="text-text-light dark:text-text-dark ">
@@ -142,6 +150,7 @@ const SwapMenu = () => {
             setToken: setPayToken,
             resetTransactionInformation,
             balance: balancePay,
+            opened: modalOpened,
           }}
           onChange={handleChange}
         />
@@ -177,6 +186,7 @@ const SwapMenu = () => {
             setToken: setReceiveToken,
             resetTransactionInformation,
             balance: balanceReceive,
+            opened: modalOpened,
           }}
           onChange={handleChange}
         />
