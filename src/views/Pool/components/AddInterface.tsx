@@ -72,6 +72,7 @@ const AddInterface = () => {
       
     const [tokenA_Amount, setTokenA_Amount] = useState('');
     const [tokenB_Amount, setTokenB_Amount] = useState('');
+
     const [poolInformation, setPoolInformation] = useState<Map<string, number>>(emptyPoolInformation)
 
     useEffect( () => {
@@ -81,33 +82,27 @@ const AddInterface = () => {
 
     function setTokenA(value: React.SetStateAction<Token>) {
       setTokenA_(value);
-      router.push(`${(value as string).toUpperCase()}/${tokenB.toUpperCase()}`);
     }
     function setTokenB(value: React.SetStateAction<Token>) {
       setTokenB_(value);
-      router.push(`${tokenA.toUpperCase()}/${(value as string).toUpperCase()}`);
     }
-
-    useEffect(() => {
-      if (router.query.tokens) {
-        setTokenA_(router.query.tokens[0])
-        setTokenB_(router.query.tokens[1])
-      }
-    }, [router.isReady])
-
   
-    function handleChange(reverse: boolean, amount: number = parseFloat(tokenA_Amount), token_a: Token = tokenA, token_b: Token = tokenB) {
+    function handleChange(
+      reverse: boolean, 
+      amount: number = parseFloat(tokenA_Amount), 
+      token_a: Token = tokenA, 
+      token_b: Token = tokenB
+    ) {
       const poolInformation = convert(amount, token_a, token_b, reverse);
       setPoolInformation(poolInformation);
-
         
       useCurrencyBalance(account, tokens[tokenSymbols.indexOf(token_a)].address, provider).then( (result) => { setBalanceA_(result)} );
+      console.log(balanceA)
       useCurrencyBalance(account, tokens[tokenSymbols.indexOf(token_b)].address, provider).then( (result) => { setBalanceB_(result)} );
-
+      console.log(balanceB)
       setModalOpened(true);
 
       return poolInformation.get('Token B Amount')! //non-null (!)
-
     }
 
     return (
@@ -121,7 +116,7 @@ const AddInterface = () => {
                   setTokenA_Amount: setTokenA_Amount,
                   setTokenB_Amount: setTokenB_Amount,
                   balance: balanceA,
-                  opened: true,
+                  opened: modalOpened,
                 }}
                   onChange={handleChange} />
               </div>

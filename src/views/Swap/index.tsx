@@ -100,6 +100,7 @@ const SwapMenu = () => {
 
   const [payAmount, setPayAmount] = useState('');
   const [receiveAmount, setReceiveAmount] = useState('');
+  
   const [transactionInformation, setTransactionInformation] = useState<
     Map<string, number>
   >(emptyTransactionInformation);
