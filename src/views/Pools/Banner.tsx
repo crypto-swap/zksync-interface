@@ -42,7 +42,7 @@ const Banner = () => {
                     <Link href="/pool"><button className={style.pool}>Create a Pool</button></Link>
                 </div>
                 <div className={style.poolImage}>
-                    <Image src='https://zksync-cryptoswap.s3.amazonaws.com/assets/stolen_temp_image.png' width={171} height={208.62}/>
+                    <Image src='https://cryptoswap-assets.s3.amazonaws.com/assets/create_pool.png' width={200} height={244}/>
                 </div>
             </div>
             <div className={style.zap}>
