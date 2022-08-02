@@ -7,6 +7,8 @@ import Link from 'next/link';
 import { useAccount } from '../../hooks';
 import TOKEN_LIST from '../../config/constants/testnet.tokenlist.json';
 import { useAllTokens } from '../../hooks';
+import { useCurrencyBalance } from '../../hooks';
+import { useProvider } from '../../hooks';
 
 const tokenSymbols = useAllTokens
 
@@ -30,13 +32,13 @@ const CurrencySearchModal = ({
 }: CurrencySearchModalProps) => {
 
   const account = useAccount();
-
-    console.log(account)
-
-    for (let i = 0; i < TOKEN_LIST.tokens.length; i++) {
-        console.log(TOKEN_LIST.tokens[i].symbol)
-        console.log(TOKEN_LIST.tokens[i].address)
-  }
+  console.log(account)
+  
+  let balance = useCurrencyBalance(account, '0xfd2a81f7fc4fcc9dc26cb0641b190c1e0f37c43b').then( function(result){
+      console.log(result);
+    }
+  )
+  
 
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
