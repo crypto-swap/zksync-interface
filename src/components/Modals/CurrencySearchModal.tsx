@@ -34,10 +34,7 @@ const CurrencySearchModal = ({
   const account = useAccount();
   console.log(account)
   
-  let balance = useCurrencyBalance(account, '0xfd2a81f7fc4fcc9dc26cb0641b190c1e0f37c43b').then( function(result){
-      console.log(result);
-    }
-  )
+
   
 
   const [open, setOpen] = useState(false);

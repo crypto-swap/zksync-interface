@@ -1,5 +1,7 @@
 import { Router, useRouter } from 'next/router';
 import CurrencySearchModal, { Token } from '../../components/Modals/CurrencySearchModal';
+import { useCurrencyBalance } from '../../hooks';
+import { useAccount } from '../../hooks'
 
 export interface Wallet {
   name: string;
@@ -32,11 +34,20 @@ const SwapInput = ({
   resetTransactionInformation
 }: SwapInputProps): JSX.Element => {
 
+  const account = useAccount();
+
+  function getBalance(account, address){
+    let balance = useCurrencyBalance(account, address).then( function(result){
+        return (result);
+      }
+    )
+  }
+
   return (
     <>
       <div className="mb-2 flex place-content-between items-center px-0.5">
         <div className="text-sm font-bold">{receive ? 'Receive' : 'Pay'}</div>
-        <div className="text-xs">Balance: 0.0</div>
+        <div className="text-xs">Balance: { <span>{getBalance(account, '0xfd2a81f7fc4fcc9dc26cb0641b190c1e0f37c43b') }</span> }</div>
       </div>
       <div className="relative flex flex-row-reverse text-lg h-[60px] place-content-between rounded-lg px-4 py-2 shadow-[inset_0.5px_1px_5px_rgba(0,0,0,0.3)]">
         <input
