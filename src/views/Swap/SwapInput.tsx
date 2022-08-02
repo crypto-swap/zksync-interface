@@ -45,7 +45,7 @@ const SwapInput = ({
     <>
       <div className="mb-2 flex place-content-between items-center px-0.5">
         <div className="text-sm font-bold">{receive ? 'Receive' : 'Pay'}</div>
-        {opened ? <div className="text-xs">Balance: {balance.toFixed(4).toString()}</div> : <></>}
+        {opened ? <div className="text-xs">Balance: {`${Number(balance).toFixed(2).toString()} ${token}`}</div> : <div className="text-xs">Select a token</div>}
       </div>
       <div className="relative flex flex-row-reverse text-lg h-[60px] place-content-between rounded-lg px-4 py-2 shadow-[inset_0.5px_1px_5px_rgba(0,0,0,0.3)]">
         <input

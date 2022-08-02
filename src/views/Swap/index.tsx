@@ -71,6 +71,7 @@ function convert(
 const SwapMenu = () => {
 
   const account = useAccount();
+
   const provider = useProvider();
 
   const router = useRouter()
@@ -78,18 +79,16 @@ const SwapMenu = () => {
   const [effect, setEffect] = useState(false);
 
   const [payToken, setPayToken_] = useState(tokenSymbols[0]);
-
   const [receiveToken, setReceiveToken_] = useState(tokenSymbols[1]);
 
   const [balancePay, setBalancePay] = useState(0);
-
   const [balanceReceive, setBalanceReceive] = useState(0);
 
   const [modalOpened, setModalOpened] = useState(false);
 
   useEffect( () => {
     useCurrencyBalance(account, '0x000000000000000000000000000000000000800a', provider).then( (result) => { setBalancePay(result)} )
-    useCurrencyBalance(account, '0x54a14d7559baf2c8e8fa504e019d32479739018c', provider).then( (result) => { setBalanceReceive(result * 1e12)} )
+    useCurrencyBalance(account, '0x54a14d7559baf2c8e8fa504e019d32479739018c', provider).then( (result) => { setBalanceReceive(result)} )
   }, [])
 
   function setPayToken(value: React.SetStateAction<Token>) {
@@ -120,19 +119,13 @@ const SwapMenu = () => {
     useCurrencyBalance(account, tokens[tokenSymbols.indexOf(to)].address, provider).then( (result) => { setBalanceReceive(result)} );
 
     setModalOpened(true);
-    
+
     return transactionInformation.get('Receive')!!;
   }
 
   function resetTransactionInformation() {
     setTransactionInformation(emptyTransactionInformation);
   }
-
-
-
-  console.log(balancePay);
-  console.log(balanceReceive);
-  console.log(tokens[tokenSymbols.indexOf('TEST')].address)
 
   return (
     <div className="text-text-light dark:text-text-dark ">
