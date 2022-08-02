@@ -17,7 +17,7 @@ const style = {
     mobilePool: `flex select-none items-center text-white justify-center whitespace-nowrap leading-none font-medium transition duration-300 cursor-pointer 
     bg-button-blue shadow-blue-button hover:shadow-blue-button-hover
     h-[50px] text-sm leading-[24px] rounded-xl py-[13px] px-[17px] w-full md:w-auto md:min-w-[200px]`,
-    poolImage: `absolute bottom-0 right-[20px] `,
+    poolImage: `absolute bottom-0 right-[10px] `,
 }
 
 const Banner = () => {
@@ -42,7 +42,7 @@ const Banner = () => {
                     <Link href="/pool"><button className={style.pool}>Create a Pool</button></Link>
                 </div>
                 <div className={style.poolImage}>
-                    <Image src='https://cryptoswap-assets.s3.amazonaws.com/assets/create_pool.png' width={200} height={244}/>
+                    <Image src='https://cryptoswap-assets.s3.amazonaws.com/assets/create_pool.png' width={210} height={230}/>
                 </div>
             </div>
             <div className={style.zap}>
