@@ -18,13 +18,15 @@ interface PoolInputProps {
     token_a?: Token,
     token_b?: Token,
   ) => number;
+  balance: number;
+  opened: boolean;
 }
 
 const style = {
   addInputContainer: `mb-2 flex place-content-between items-center px-0.5`,
 }
 
-const PoolInput = ({ tokenB = false, value, token, setToken, setTokenA_Amount, setTokenB_Amount, onChange }: PoolInputProps) => {
+const PoolInput = ({ tokenB = false, value, token, setToken, setTokenA_Amount, setTokenB_Amount, onChange, balance, opened }: PoolInputProps) => {
   return (
     <>
       <div className={style.addInputContainer}>

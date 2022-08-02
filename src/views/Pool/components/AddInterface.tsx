@@ -6,6 +6,9 @@ import { PlusIcon } from '@heroicons/react/solid';
 import { Transition } from '@headlessui/react';
 import { Token } from '../../../components/Modals/CurrencySearchModal'
 import { useAllTokens, useCurrencyBalance, useProvider, useAccount } from '../../../hooks';
+import TOKEN_LIST from '../../../config/constants/testnet.tokenlist.json';
+
+const tokens = TOKEN_LIST.tokens; 
 
 const tokenSymbols = useAllTokens;
 
@@ -62,8 +65,8 @@ const AddInterface = () => {
     const [tokenA, setTokenA_] = useState(tokenSymbols[0]);
     const [tokenB, setTokenB_] = useState(tokenSymbols[1]);
 
-    const [balancePay, setBalancePay] = useState(0);
-    const [balanceReceive, setBalanceReceive] = useState(0);
+    const [balanceA, setBalanceA_] = useState(0);
+    const [balanceB, setBalanceB_] = useState(0);
   
     const [modalOpened, setModalOpened] = useState(false);
       
@@ -72,8 +75,8 @@ const AddInterface = () => {
     const [poolInformation, setPoolInformation] = useState<Map<string, number>>(emptyPoolInformation)
 
     useEffect( () => {
-      useCurrencyBalance(account, '0x000000000000000000000000000000000000800a', provider).then( (result) => { setBalancePay(result)} )
-      useCurrencyBalance(account, '0x54a14d7559baf2c8e8fa504e019d32479739018c', provider).then( (result) => { setBalanceReceive(result)} )
+      useCurrencyBalance(account, '0x000000000000000000000000000000000000800a', provider).then( (result) => { setBalanceA_(result)} )
+      useCurrencyBalance(account, '0x54a14d7559baf2c8e8fa504e019d32479739018c', provider).then( (result) => { setBalanceB_(result)} )
     }, [])
 
     function setTokenA(value: React.SetStateAction<Token>) {
@@ -84,7 +87,7 @@ const AddInterface = () => {
       setTokenB_(value);
       router.push(`${tokenA.toUpperCase()}/${(value as string).toUpperCase()}`);
     }
-    
+
     useEffect(() => {
       if (router.query.tokens) {
         setTokenA_(router.query.tokens[0])
@@ -96,7 +99,15 @@ const AddInterface = () => {
     function handleChange(reverse: boolean, amount: number = parseFloat(tokenA_Amount), token_a: Token = tokenA, token_b: Token = tokenB) {
       const poolInformation = convert(amount, token_a, token_b, reverse);
       setPoolInformation(poolInformation);
+
+        
+      useCurrencyBalance(account, tokens[tokenSymbols.indexOf(token_a)].address, provider).then( (result) => { setBalanceA_(result)} );
+      useCurrencyBalance(account, tokens[tokenSymbols.indexOf(token_b)].address, provider).then( (result) => { setBalanceB_(result)} );
+
+      setModalOpened(true);
+
       return poolInformation.get('Token B Amount')! //non-null (!)
+
     }
 
     return (
@@ -109,6 +120,8 @@ const AddInterface = () => {
                   setToken: setTokenA,
                   setTokenA_Amount: setTokenA_Amount,
                   setTokenB_Amount: setTokenB_Amount,
+                  balance: balanceA,
+                  opened: modalOpened,
                 }}
                   onChange={handleChange} />
               </div>
@@ -122,6 +135,8 @@ const AddInterface = () => {
                     setToken: setTokenB,
                     setTokenA_Amount: setTokenA_Amount,
                     setTokenB_Amount: setTokenB_Amount,
+                    balance: balanceB,
+                    opened: modalOpened,
                   }}
                   onChange={handleChange}
                 />

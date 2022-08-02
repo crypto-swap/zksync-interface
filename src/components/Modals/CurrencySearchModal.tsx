@@ -32,10 +32,6 @@ const CurrencySearchModal = ({
 }: CurrencySearchModalProps) => {
 
   const account = useAccount();
-  console.log(account)
-  
-
-  
 
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
