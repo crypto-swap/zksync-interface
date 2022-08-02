@@ -26,12 +26,23 @@ const style = {
   addInputContainer: `mb-2 flex place-content-between items-center px-0.5`,
 }
 
-const PoolInput = ({ tokenB = false, value, token, setToken, setTokenA_Amount, setTokenB_Amount, onChange, balance, opened }: PoolInputProps) => {
+const PoolInput = ({ 
+  tokenB = false, 
+  value,
+  onChange,  
+  token, 
+  setToken, 
+  setTokenA_Amount, 
+  setTokenB_Amount, 
+  balance, 
+  opened
+}: PoolInputProps) : JSX.Element => {
+
   return (
     <>
       <div className={style.addInputContainer}>
         <div className="text-sm font-bold text-gray-500 dark:text-gray-400 ">Input</div>
-        <div className="text-xs">Balance: 0.0</div>
+        {opened ?  <div className="text-xs">Balance: {`${Number(balance).toFixed(2).toString()} ${token}`}</div> : <div className="text-xs">Select a token</div>}
       </div>
       <div className="relative flex flex-row-reverse place-content-between text-lg h-[60px] rounded-lg px-4 py-2 shadow-[inset_0.5px_1px_5px_rgba(0,0,0,0.3)]">
         <input

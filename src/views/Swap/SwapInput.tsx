@@ -38,9 +38,6 @@ const SwapInput = ({
   opened
 }: SwapInputProps): JSX.Element => {
 
-  const account = useAccount();
-  const provider = useProvider();
-
   return (
     <>
       <div className="mb-2 flex place-content-between items-center px-0.5">
