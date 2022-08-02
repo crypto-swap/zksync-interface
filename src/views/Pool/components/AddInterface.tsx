@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { PlusIcon } from '@heroicons/react/solid';
 import { Transition } from '@headlessui/react';
 import { Token } from '../../../components/Modals/CurrencySearchModal'
-import { useAllTokens } from '../../../hooks';
+import { useAllTokens, useCurrencyBalance, useProvider, useAccount } from '../../../hooks';
 
 const tokenSymbols = useAllTokens;
 
@@ -53,10 +53,29 @@ function convert(
 
 const AddInterface = () => {
     
+    const account = useAccount();
+
+    const provider = useProvider();
+
     const router = useRouter()
 
     const [tokenA, setTokenA_] = useState(tokenSymbols[0]);
     const [tokenB, setTokenB_] = useState(tokenSymbols[1]);
+
+    const [balancePay, setBalancePay] = useState(0);
+    const [balanceReceive, setBalanceReceive] = useState(0);
+  
+    const [modalOpened, setModalOpened] = useState(false);
+      
+    const [tokenA_Amount, setTokenA_Amount] = useState('');
+    const [tokenB_Amount, setTokenB_Amount] = useState('');
+    const [poolInformation, setPoolInformation] = useState<Map<string, number>>(emptyPoolInformation)
+
+    useEffect( () => {
+      useCurrencyBalance(account, '0x000000000000000000000000000000000000800a', provider).then( (result) => { setBalancePay(result)} )
+      useCurrencyBalance(account, '0x54a14d7559baf2c8e8fa504e019d32479739018c', provider).then( (result) => { setBalanceReceive(result)} )
+    }, [])
+
     function setTokenA(value: React.SetStateAction<Token>) {
       setTokenA_(value);
       router.push(`${(value as string).toUpperCase()}/${tokenB.toUpperCase()}`);
@@ -65,16 +84,14 @@ const AddInterface = () => {
       setTokenB_(value);
       router.push(`${tokenA.toUpperCase()}/${(value as string).toUpperCase()}`);
     }
+    
     useEffect(() => {
       if (router.query.tokens) {
         setTokenA_(router.query.tokens[0])
         setTokenB_(router.query.tokens[1])
       }
     }, [router.isReady])
-  
-    const [tokenA_Amount, setTokenA_Amount] = useState('');
-    const [tokenB_Amount, setTokenB_Amount] = useState('');
-    const [poolInformation, setPoolInformation] = useState<Map<string, number>>(emptyPoolInformation)
+
   
     function handleChange(reverse: boolean, amount: number = parseFloat(tokenA_Amount), token_a: Token = tokenA, token_b: Token = tokenB) {
       const poolInformation = convert(amount, token_a, token_b, reverse);
