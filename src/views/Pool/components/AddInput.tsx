@@ -1,5 +1,7 @@
 import CurrencySearchModal, { Token } from '../../../components/Modals/CurrencySearchModal';
 import Link from 'next/link'
+import { useCurrencyBalance, useProvider, useAccount } from '../../../hooks';
+import { useState, useEffect } from 'react';
 
 export interface Wallet {
   name: string;
@@ -37,6 +39,18 @@ const PoolInput = ({
   balance, 
   opened
 }: PoolInputProps) : JSX.Element => {
+
+  const account = useAccount();
+
+  const provider = useProvider();
+
+  const [balanceETH, setBalanceETH] = useState(0);
+  const [balanceUSDC, setBalanceUSDC] = useState(0);
+
+  useEffect( () => {
+    useCurrencyBalance(account, '0x000000000000000000000000000000000000800a', provider).then( (result) => { setBalanceETH(result)} )
+    useCurrencyBalance(account, '0x54a14d7559baf2c8e8fa504e019d32479739018c', provider).then( (result) => { setBalanceUSDC(result)} )
+  }, [])
 
   return (
     <>

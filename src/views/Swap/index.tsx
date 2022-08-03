@@ -79,7 +79,7 @@ const SwapMenu = () => {
   const [effect, setEffect] = useState(false);
 
   const [payToken, setPayToken_] = useState(tokenSymbols[0]);
-  const [receiveToken, setReceiveToken_] = useState(tokenSymbols[1]);
+  const [receiveToken, setReceiveToken_] = useState('Select A Token');
 
   const [balancePay, setBalancePay] = useState(0);
   const [balanceReceive, setBalanceReceive] = useState(0);
@@ -100,7 +100,7 @@ const SwapMenu = () => {
 
   const [payAmount, setPayAmount] = useState('');
   const [receiveAmount, setReceiveAmount] = useState('');
-  
+
   const [transactionInformation, setTransactionInformation] = useState<
     Map<string, number>
   >(emptyTransactionInformation);

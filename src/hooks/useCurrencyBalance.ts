@@ -24,6 +24,7 @@ export async function useCurrencyBalance(account: string, tokenAddress: string, 
     const decimals = await tokenContract.decimals();
     console.log(decimals)
 
+
     let balance = format(await tokenContract.balanceOf(account), decimals)
 
     return balance
