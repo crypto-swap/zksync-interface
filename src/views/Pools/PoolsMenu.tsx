@@ -39,7 +39,7 @@ const PoolMenu = () => {
     const upperBound = (currPage) * numBarInPage;
     const pagePools = filteredPools.slice(lowerBound, upperBound);
 
-    const { items: sortedPools, requestSort, sortConfig } = useSortableData(pagePools, {
+    const { items: sortedPools, requestSort } = useSortableData(pagePools, {
         key: 'asset1',
         direction: SortDirection.DESCENDING
     })
@@ -111,8 +111,8 @@ const PoolMenu = () => {
 
                 </div>
                 {
-                    sortedPools.map((pool) => (
-                        <PoolBar key={pool.asset1 + pool.asset2} image1='/icons/discord.svg' image2='/icons/discord.svg' ticker1={pool['asset1']} ticker2={pool['asset2']}
+                    sortedPools.map((pool, index) => (
+                        <PoolBar key={index.toString()} image1='/icons/discord.svg' image2='/icons/discord.svg' ticker1={pool['asset1']} ticker2={pool['asset2']}
                             liquidity={pool['liquidity']} volume={pool['volume']} fees={(pool['volume'] * 0.025).toFixed(0)} apr={(pool['volume'] * 0.025 / pool['liquidity'] * 365).toFixed(4)} />
                     ))
                 }
