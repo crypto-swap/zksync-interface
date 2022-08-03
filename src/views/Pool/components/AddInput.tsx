@@ -75,6 +75,17 @@ const PoolInput = ({
 
           <CurrencySearchModal
             {...{ value: token, setToken }}
+            onChange={(token) => {
+              let output;
+              if (tokenB) {
+                output = onChange(false, undefined, undefined, token);
+              } else {
+                output = onChange(false, undefined, token);
+              }
+              if (Number.isFinite(output)) {
+                setTokenB_Amount(output.toString());
+              }
+            }}
           />
       </div>
       </div>
