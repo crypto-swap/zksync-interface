@@ -2,6 +2,7 @@ import { Router, useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
 import CurrencySearchModal, { Token } from '../../components/Modals/CurrencySearchModal';
 import { useAccount, useCurrencyBalance, useProvider } from '../../hooks'
+import '../../functions/number.extensions'
 
 export interface Wallet {
   name: string;
@@ -54,7 +55,7 @@ const SwapInput = ({
     <>
       <div className="mb-2 flex place-content-between items-center px-0.5">
         <div className="text-sm font-bold">{receive ? 'Receive' : 'Pay'}</div>
-        {opened ? <div className="text-xs">Balance: {`${Number(balance).toFixed(2).toString()} ${token}`}</div> : <></>}
+        {opened ? <div className="text-xs">Balance: {`${Number(balance).toFixedDown(7).toString()}`}</div> : <></>}
       </div>
       <div className="relative flex flex-row-reverse text-lg h-[60px] place-content-between rounded-lg px-4 py-2 shadow-[inset_0.5px_1px_5px_rgba(0,0,0,0.3)]">
         <input
