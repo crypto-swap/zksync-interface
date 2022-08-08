@@ -45,19 +45,11 @@ const PoolInput = ({
 
   const provider = useProvider();
 
-  const [balanceETH, setBalanceETH] = useState(0);
-  const [balanceUSDC, setBalanceUSDC] = useState(0);
-
-  useEffect( () => {
-    useCurrencyBalance(account, '0x000000000000000000000000000000000000800a', provider).then( (result) => { setBalanceETH(result)} )
-    useCurrencyBalance(account, '0x54a14d7559baf2c8e8fa504e019d32479739018c', provider).then( (result) => { setBalanceUSDC(result)} )
-  }, [])
-
   return (
     <>
       <div className={style.addInputContainer}>
         <div className="text-sm font-bold text-gray-500 dark:text-gray-400 ">Input</div>
-        {opened ?  <div className="text-xs">Balance: {`${Number(balance).toFixedDown(7)}`}</div> : <div className="text-xs">Select a token</div>}
+        {opened ?  <div className="text-xs">Balance: {`${Number(balance).toFixedDown(7)}`}</div> : <></>}
       </div>
       <div className="relative flex flex-row-reverse place-content-between text-lg h-[60px] rounded-lg px-4 py-2 shadow-[inset_0.5px_1px_5px_rgba(0,0,0,0.3)]">
         <input

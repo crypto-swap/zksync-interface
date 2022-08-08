@@ -13,7 +13,7 @@ const ERC20ABI = require("../config/abi/erc20.json");
 const zksync = require('zksync-web3');
 
 export async function useCurrencyBalance(account: string, tokenAddress: string, provider: any) {
-
+    
     const tokenContract = new zksync.Contract(tokenAddress, ERC20ABI, provider);
 
     if (tokenAddress === "0x000000000000000000000000000000000000800a") {
