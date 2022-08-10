@@ -62,8 +62,8 @@ const AddInterface = () => {
 
     const router = useRouter()
 
-    const [tokenA, setTokenA_] = useState(tokenSymbols[0]);
-    const [tokenB, setTokenB_] = useState(tokenSymbols[1]);
+    const [tokenA, setTokenA_] = useState('Select A Token');
+    const [tokenB, setTokenB_] = useState('Select A Token');
 
     const [balanceA, setBalanceA_] = useState(0);
     const [balanceB, setBalanceB_] = useState(0);

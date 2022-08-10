@@ -1,5 +1,8 @@
 import CurrencySearchModal, { Token } from '../../../components/Modals/CurrencySearchModal';
 import Link from 'next/link'
+import { useCurrencyBalance, useProvider, useAccount } from '../../../hooks';
+import { useState, useEffect } from 'react';
+import '../../../functions/number.extensions'
 
 export interface Wallet {
   name: string;
@@ -38,11 +41,15 @@ const PoolInput = ({
   opened
 }: PoolInputProps) : JSX.Element => {
 
+  const account = useAccount();
+
+  const provider = useProvider();
+
   return (
     <>
       <div className={style.addInputContainer}>
         <div className="text-sm font-bold text-gray-500 dark:text-gray-400 ">Input</div>
-        {opened ?  <div className="text-xs">Balance: {`${Number(balance).toFixed(2).toString()} ${token}`}</div> : <div className="text-xs">Select a token</div>}
+        {opened ?  <div className="text-xs">Balance: {`${Number(balance).toFixedDown(7)}`}</div> : <></>}
       </div>
       <div className="relative flex flex-row-reverse place-content-between text-lg h-[60px] rounded-lg px-4 py-2 shadow-[inset_0.5px_1px_5px_rgba(0,0,0,0.3)]">
         <input
@@ -75,6 +82,17 @@ const PoolInput = ({
 
           <CurrencySearchModal
             {...{ value: token, setToken }}
+            onChange={(token) => {
+              let output;
+              if (tokenB) {
+                output = onChange(false, undefined, undefined, token);
+              } else {
+                output = onChange(false, undefined, token);
+              }
+              if (Number.isFinite(output)) {
+                setTokenB_Amount(output.toString());
+              }
+            }}
           />
       </div>
       </div>

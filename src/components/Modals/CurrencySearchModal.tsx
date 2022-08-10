@@ -69,7 +69,7 @@ const CurrencySearchModal = ({
         onClick={openModal}
         className="relative my-auto inline-flex items-center gap-1.5 rounded-xl py-0.5 px-1.5 text-sm font-semibold leading-6 text-white border border-[#4b86ff] hover:bg-[#4b86ff] active:border-none bg-button-blue shadow-blue-button-small active:shadow-blue-button-hover-small"
       >
-        <Image src={tokens[tokenSymbols.indexOf(value)].logoURI} width={20} height={20} />
+        { tokenSymbols.includes(value) ? <Image src={tokens[tokenSymbols.indexOf(value)].logoURI} width={20} height={20} /> : <QuestionMarkCircleIcon width={20} height={20}/>}
         {value}
         <ChevronDownIcon className="inline h-4 w-4" />
       </button>
