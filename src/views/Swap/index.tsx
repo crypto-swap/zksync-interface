@@ -10,6 +10,7 @@ import { Token } from '../../components/Modals/CurrencySearchModal'
 import { useAllTokens, useAccount, useCurrencyBalance, useProvider } from '../../hooks';
 import TOKEN_LIST from '../../config/constants/testnet.tokenlist.json';
 import { PopupContext } from '../../context/PopupProvider';
+import SlippageModal from '../../components/Modals/SlippagePopup';
 
 const tokens = TOKEN_LIST.tokens; 
 
@@ -137,6 +138,7 @@ const SwapMenu = () => {
 
   return (
     <div className="text-text-light dark:text-text-dark ">
+      <SlippageModal/>
       <div className="relative z-10 mx-auto mt-16 text-left h-auto w-full max-w-md rounded-3xl bg-bg-card-light p-7 pt-6 shadow-card dark:bg-bg-card-dark dark:shadow-card-dark">
         <div className="mb-[27px] text-xl font-bold flex flex-nowrap flex-row justify-between items-center">
           <div>Swap</div>
