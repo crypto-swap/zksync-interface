@@ -87,7 +87,7 @@ const SwapMenu = () => {
 
   const [modalOpened, setModalOpened] = useState(false);
 
-  const { setSlippagePopupOpen} = useContext(PopupContext);
+  const { setSlippagePopupOpen } = useContext(PopupContext);
 
   useEffect( () => {
     useCurrencyBalance(account, '0x000000000000000000000000000000000000800a', provider).then( (result) => { setBalancePay(result)} )
@@ -101,7 +101,7 @@ const SwapMenu = () => {
     setReceiveToken_(value);
   }
 
-  function openWalletPopup() {
+  function openSlippageModal() {
     setSlippagePopupOpen(true);
   }
 
@@ -140,7 +140,11 @@ const SwapMenu = () => {
       <div className="relative z-10 mx-auto mt-16 text-left h-auto w-full max-w-md rounded-3xl bg-bg-card-light p-7 pt-6 shadow-card dark:bg-bg-card-dark dark:shadow-card-dark">
         <div className="mb-[27px] text-xl font-bold flex flex-nowrap flex-row justify-between items-center">
           <div>Swap</div>
-          <button><AdjustmentsIcon className="w-6 h-6" /></button>
+          <button
+            id="slippage"
+            className="slippage-button"
+            onClick={openSlippageModal}
+          ><AdjustmentsIcon className="w-6 h-6" /></button>
         </div>
         <SwapInput
           {...{
