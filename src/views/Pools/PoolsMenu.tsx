@@ -22,6 +22,11 @@ const PoolMenu = () => {
     const [value, setValue] = useState("");
     const filteredPools = pools.filter((pool) => ((pool.asset1 + "-" + pool.asset2).includes(value) || (pool.asset2 + "-" + pool.asset1).includes(value)))
 
+    const { items: sortedPools, requestSort } = useSortableData(filteredPools, {
+        key: 'asset1',
+        direction: SortDirection.DESCENDING
+    })
+
     // ========================
     // Variables for Pagination
     // ========================
@@ -37,12 +42,7 @@ const PoolMenu = () => {
     // Range of Bars to load
     const lowerBound = (currPage - 1) * numBarInPage;
     const upperBound = (currPage) * numBarInPage;
-    const pagePools = filteredPools.slice(lowerBound, upperBound);
-
-    const { items: sortedPools, requestSort } = useSortableData(pagePools, {
-        key: 'asset1',
-        direction: SortDirection.DESCENDING
-    })
+    const pagePools = sortedPools.slice(lowerBound, upperBound);
 
     return (
         <div className={style.poolMenuContainer}>
@@ -111,7 +111,7 @@ const PoolMenu = () => {
 
                 </div>
                 {
-                    sortedPools.map((pool, index) => (
+                    pagePools.map((pool, index) => (
                         <PoolBar key={index.toString()} image1='/icons/discord.svg' image2='/icons/discord.svg' ticker1={pool['asset1']} ticker2={pool['asset2']}
                             liquidity={pool['liquidity']} volume={pool['volume']} fees={(pool['volume'] * 0.025).toFixed(0)} apr={(pool['volume'] * 0.025 / pool['liquidity'] * 365).toFixed(4)} />
                     ))
