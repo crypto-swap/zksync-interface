@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Image from 'next/image';
 import SwapInput from './SwapInput';
 import SwapButton from './SwapButton';
@@ -9,6 +9,7 @@ import { AdjustmentsIcon } from '@heroicons/react/solid';
 import { Token } from '../../components/Modals/CurrencySearchModal'
 import { useAllTokens, useAccount, useCurrencyBalance, useProvider } from '../../hooks';
 import TOKEN_LIST from '../../config/constants/testnet.tokenlist.json';
+import { PopupContext } from '../../context/PopupProvider';
 
 const tokens = TOKEN_LIST.tokens; 
 
@@ -86,6 +87,8 @@ const SwapMenu = () => {
 
   const [modalOpened, setModalOpened] = useState(false);
 
+  const { setSlippagePopupOpen} = useContext(PopupContext);
+
   useEffect( () => {
     useCurrencyBalance(account, '0x000000000000000000000000000000000000800a', provider).then( (result) => { setBalancePay(result)} )
     useCurrencyBalance(account, '0x54a14d7559baf2c8e8fa504e019d32479739018c', provider).then( (result) => { setBalanceReceive(result)} )
@@ -96,6 +99,10 @@ const SwapMenu = () => {
   }
   function setReceiveToken(value: React.SetStateAction<Token>) {
     setReceiveToken_(value);
+  }
+
+  function openWalletPopup() {
+    setSlippagePopupOpen(true);
   }
 
   const [payAmount, setPayAmount] = useState('');
