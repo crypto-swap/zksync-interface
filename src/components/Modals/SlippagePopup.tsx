@@ -1,9 +1,9 @@
 
-const SlippagePopup = () => {
+const SlippageModal = () => {
     return (
         <>
         </>
     )
 }
 
-export default SlippagePopup
+export default SlippageModal
