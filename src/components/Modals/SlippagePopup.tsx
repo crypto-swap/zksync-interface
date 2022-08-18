@@ -1,18 +1,17 @@
-import React, {useState} from 'react';
+import React, { useState, useContext} from 'react';
+import { PopupContext } from '../../context/PopupProvider';
 import Popup from './Popup';
 
 const SlippageModal = () => {
 
-    const [open, setOpen] = useState(false);
-    const [query, setQuery] = useState('');
+    const {
+        slippagePopupOpen: open,
+        setSlippagePopupOpen: setOpen,
+    } = useContext(PopupContext);
+
   
     function closeModal() {
       setOpen(false);
-    }
-  
-    function openModal() {
-      setQuery('');
-      setOpen(true);
     }
 
     return (
