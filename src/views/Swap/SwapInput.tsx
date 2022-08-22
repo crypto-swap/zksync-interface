@@ -24,6 +24,7 @@ interface SwapInputProps {
   resetTransactionInformation: () => void;
   balance: number;
   opened: boolean;
+  otherToken: Token;
 }
 
 const SwapInput = ({
@@ -36,7 +37,8 @@ const SwapInput = ({
   setToken,
   resetTransactionInformation,
   balance,
-  opened
+  opened,
+  otherToken,
 }: SwapInputProps): JSX.Element => {
 
   const account = useAccount();
@@ -91,7 +93,7 @@ const SwapInput = ({
           </button>
 
           <CurrencySearchModal
-            {...{ value: token, setToken }}
+            {...{ value: token, setToken, tokenA: token, tokenB: otherToken }}
             onChange={(token) => {
               let output;
               if (receive) {

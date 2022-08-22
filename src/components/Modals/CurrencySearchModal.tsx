@@ -23,14 +23,19 @@ interface CurrencySearchModalProps {
   value: Token;
   setToken: React.Dispatch<React.SetStateAction<Token>>;
   onChange?: (to: Token) => void;
+  tokenA: Token;
+  tokenB: Token; 
 }
 
 const CurrencySearchModal = ({
   value,
   setToken,
   onChange,
+  tokenA,
+  tokenB,
 }: CurrencySearchModalProps) => {
 
+  console.log(tokenA, tokenB);
   const account = useAccount();
 
   const [open, setOpen] = useState(false);
@@ -89,17 +94,28 @@ const CurrencySearchModal = ({
         <div className="mt-4 h-[325px] overflow-hidden rounded-lg shadow-card dark:shadow-card-dark">
           <ol className="h-full snap-y overflow-y-scroll">
             {filteredTokens.map((token) => (
-              <li
-                key={token}
-                className="flex cursor-pointer snap-start items-center p-2.5 hover:bg-bg-blue dark:hover:bg-menu-blue"
-                onClick={() => {
-                  handleTokenChange(token);
-                }}
-              >
-                <Image src={tokens[tokenSymbols.indexOf(token)].logoURI} width={30} height={30} />
-                <span className="pl-2">{token}</span>
                 
-              </li>
+                (token === tokenA || token === tokenB) ? 
+                <li
+                  key={token}
+                  className="flex cursor-default snap-start font-medium select-none items-center p-2.5  opacity-30"
+                >
+                  <Image src={tokens[tokenSymbols.indexOf(token)].logoURI} width={30} height={30} />
+                  <span className="pl-2">{token}</span>
+                  
+                </li>
+                :
+                <li
+                  key={token}
+                  className="flex cursor-pointer snap-start font-medium items-center p-2.5 hover:bg-bg-blue dark:hover:bg-menu-blue"
+                  onClick={() => {
+                    handleTokenChange(token);
+                  }}
+                >
+                  <Image src={tokens[tokenSymbols.indexOf(token)].logoURI} width={30} height={30} />
+                  <span className="pl-2">{token}</span>
+                  
+                </li>
             ))}
           </ol>
         </div>

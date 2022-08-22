@@ -158,6 +158,7 @@ const SwapMenu = () => {
             resetTransactionInformation,
             balance: balancePay,
             opened: modalOpened,
+            otherToken: receiveToken,
           }}
           onChange={handleChange}
         />
@@ -194,6 +195,7 @@ const SwapMenu = () => {
             resetTransactionInformation,
             balance: balanceReceive,
             opened: modalOpened,
+            otherToken: payToken,
           }}
           onChange={handleChange}
         />

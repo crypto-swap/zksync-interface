@@ -23,6 +23,7 @@ interface PoolInputProps {
   ) => number;
   balance: number;
   opened: boolean;
+  otherToken: Token; 
 }
 
 const style = {
@@ -38,7 +39,8 @@ const PoolInput = ({
   setTokenA_Amount, 
   setTokenB_Amount, 
   balance, 
-  opened
+  opened,
+  otherToken,
 }: PoolInputProps) : JSX.Element => {
 
   const account = useAccount();
@@ -81,7 +83,7 @@ const PoolInput = ({
           </button>
 
           <CurrencySearchModal
-            {...{ value: token, setToken }}
+            {...{ value: token, setToken, tokenA: token, tokenB: otherToken }}
             onChange={(token) => {
               let output;
               if (tokenB) {

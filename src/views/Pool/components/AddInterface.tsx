@@ -117,6 +117,7 @@ const AddInterface = () => {
                   setTokenB_Amount: setTokenB_Amount,
                   balance: balanceA,
                   opened: modalOpened,
+                  otherToken: tokenB,
                 }}
                   onChange={handleChange} />
               </div>
@@ -132,6 +133,7 @@ const AddInterface = () => {
                     setTokenB_Amount: setTokenB_Amount,
                     balance: balanceB,
                     opened: modalOpened,
+                    otherToken: tokenA,
                   }}
                   onChange={handleChange}
                 />
