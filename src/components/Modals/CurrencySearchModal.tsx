@@ -98,7 +98,7 @@ const CurrencySearchModal = ({
                 (token === tokenA || token === tokenB) ? 
                 <li
                   key={token}
-                  className="flex cursor-pointer snap-start select-none items-center p-2.5 bg-bg-blue dark:bg-menu-blue"
+                  className="flex cursor-default snap-start font-medium select-none items-center p-2.5  opacity-30"
                 >
                   <Image src={tokens[tokenSymbols.indexOf(token)].logoURI} width={30} height={30} />
                   <span className="pl-2">{token}</span>
@@ -107,7 +107,7 @@ const CurrencySearchModal = ({
                 :
                 <li
                   key={token}
-                  className="flex cursor-pointer snap-start items-center p-2.5 hover:bg-bg-blue dark:hover:bg-menu-blue"
+                  className="flex cursor-pointer snap-start font-medium items-center p-2.5 hover:bg-bg-blue dark:hover:bg-menu-blue"
                   onClick={() => {
                     handleTokenChange(token);
                   }}
