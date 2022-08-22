@@ -31,10 +31,11 @@ const CurrencySearchModal = ({
   value,
   setToken,
   onChange,
-  tokenA = '' ,
-  tokenB = '' ,
+  tokenA,
+  tokenB,
 }: CurrencySearchModalProps) => {
 
+  console.log(tokenA, tokenB);
   const account = useAccount();
 
   const [open, setOpen] = useState(false);
@@ -93,7 +94,17 @@ const CurrencySearchModal = ({
         <div className="mt-4 h-[325px] overflow-hidden rounded-lg shadow-card dark:shadow-card-dark">
           <ol className="h-full snap-y overflow-y-scroll">
             {filteredTokens.map((token) => (
+                
                 (token === tokenA || token === tokenB) ? 
+                <li
+                  key={token}
+                  className="flex cursor-pointer snap-start select-none items-center p-2.5 bg-bg-blue dark:bg-menu-blue"
+                >
+                  <Image src={tokens[tokenSymbols.indexOf(token)].logoURI} width={30} height={30} />
+                  <span className="pl-2">{token}</span>
+                  
+                </li>
+                :
                 <li
                   key={token}
                   className="flex cursor-pointer snap-start items-center p-2.5 hover:bg-bg-blue dark:hover:bg-menu-blue"
@@ -105,9 +116,6 @@ const CurrencySearchModal = ({
                   <span className="pl-2">{token}</span>
                   
                 </li>
-                :
-                <>
-                </>
             ))}
           </ol>
         </div>
